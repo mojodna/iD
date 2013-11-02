@@ -83,6 +83,7 @@ module.exports = function(o) {
                 params = timenonce(getAuth(o)),
                 request_token_secret = token('oauth_request_token_secret');
             params.oauth_token = oauth_token;
+            params.request_token_secret = request_token_secret;
             params.oauth_signature = ohauth.signature(
                 o.oauth_secret,
                 request_token_secret,
