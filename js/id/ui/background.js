@@ -83,7 +83,7 @@ iD.ui.Background = function(context) {
             enter.filter(function(d) { return d.description; })
                 .call(bootstrap.tooltip()
                     .title(function(d) { return d.description; })
-                    .placement('left'));
+                    .placement('top'));
 
             var label = enter.append('label');
 
@@ -139,7 +139,7 @@ iD.ui.Background = function(context) {
         }
 
         var content = selection.append('div')
-                .attr('class', 'fillL map-overlay content hide'),
+                .attr('class', 'fillL map-overlay col3 content hide'),
             tooltip = bootstrap.tooltip()
                 .placement('left')
                 .html(true)
@@ -163,16 +163,16 @@ iD.ui.Background = function(context) {
                         return d3.event.stopPropagation();
                     });
                     content.style('display', 'block')
-                        .style('left', '0px')
+                        .style('right', '-300px')
                         .transition()
                         .duration(200)
-                        .style('left', '-260px');
+                        .style('right', '0px');
                 } else {
                     content.style('display', 'block')
-                        .style('left', '-260px')
+                        .style('right', '0px')
                         .transition()
                         .duration(200)
-                        .style('left', '0px')
+                        .style('right', '-300px')
                         .each('end', function() {
                             d3.select(this).style('display', 'none');
                         });
@@ -209,7 +209,7 @@ iD.ui.Background = function(context) {
             .on('click.set-opacity', setOpacity)
             .html('<div class="select-box"></div>')
             .call(bootstrap.tooltip()
-                .placement('top'))
+                .placement('left'))
             .append('div')
             .attr('class', 'opacity')
             .style('opacity', String);
@@ -272,7 +272,7 @@ iD.ui.Background = function(context) {
         label = gpxLayerItem.append('label')
             .call(bootstrap.tooltip()
                 .title(t('gpx.drag_drop'))
-                .placement('left'));
+                .placement('top'));
 
         label.append('input')
             .attr('type', 'checkbox')
@@ -316,10 +316,6 @@ iD.ui.Background = function(context) {
 
         resetButton.append('div')
             .attr('class', 'icon undo');
-
-        resetButton.call(bootstrap.tooltip()
-            .title(t('background.reset'))
-            .placement('bottom'));
 
         context.map()
             .on('move.background-update', _.debounce(update, 1000));

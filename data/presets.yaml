@@ -1,6 +1,10 @@
 en: 
   presets: 
     categories: 
+      "category-building": 
+        name: Building
+      "category-golf": 
+        name: Golf
       "category-landuse": 
         name: Land Use
       "category-path": 
@@ -11,7 +15,9 @@ en:
         name: Road
       "category-route": 
         name: Route
-      "category-water": 
+      "category-water-area": 
+        name: Water
+      "category-water-line": 
         name: Water
     fields: 
       access: 
@@ -42,7 +48,7 @@ en:
           destination: 
             title: Destination
             description: Access permitted only to reach a destination
-      access_toilets: 
+      access_simple: 
         label: Access
       address: 
         label: Address
@@ -54,6 +60,25 @@ en:
           postcode: Postal code
       admin_level: 
         label: Admin Level
+      aerialway: 
+        label: Type
+      aerialway/access: 
+        label: Access
+      aerialway/bubble: 
+        label: Bubble
+      aerialway/capacity: 
+        label: Capacity (per hour)
+        placeholder: "500, 2500, 5000..."
+      aerialway/duration: 
+        label: Duration (minutes)
+        placeholder: "1, 2, 3..."
+      aerialway/heating: 
+        label: Heated
+      aerialway/occupancy: 
+        label: Occupancy
+        placeholder: "2, 4, 8..."
+      aerialway/summer/access: 
+        label: Access (summer)
       aeroway: 
         label: Type
       amenity: 
@@ -76,8 +101,8 @@ en:
         label: Building
       building_area: 
         label: Building
-      building_yes: 
-        label: Building
+      cans: 
+        label: Accepts Cans
       capacity: 
         label: Capacity
         placeholder: "50, 100, 200..."
@@ -88,12 +113,16 @@ en:
         options: 
           clockwise: Clockwise
           anticlockwise: Counterclockwise
+      clothes: 
+        label: Accepts Clothes
       collection_times: 
         label: Collection Times
       construction: 
         label: Type
       country: 
         label: Country
+      covered: 
+        label: Covered
       crossing: 
         label: Type
       cuisine: 
@@ -125,6 +154,14 @@ en:
         label: Source
       generator/type: 
         label: Type
+      glass: 
+        label: Accepts Glass
+      golf_hole: 
+        label: Reference
+        placeholder: "Hole number (1-18)"
+      handicap: 
+        label: Handicap
+        placeholder: "1-18"
       highway: 
         label: Type
       historic: 
@@ -135,6 +172,8 @@ en:
         label: ICAO
       incline: 
         label: Incline
+      information: 
+        label: Type
       internet_access: 
         label: Internet Access
         options: 
@@ -183,6 +222,11 @@ en:
         label: Hours
       operator: 
         label: Operator
+      paper: 
+        label: Accepts Paper
+      par: 
+        label: Par
+        placeholder: "3, 4, 5..."
       park_ride: 
         label: Park and Ride
       parking: 
@@ -190,6 +234,12 @@ en:
       phone: 
         label: Phone
         placeholder: +31 42 123 4567
+      piste/difficulty: 
+        label: Difficulty
+      piste/grooming: 
+        label: Grooming
+      piste/type: 
+        label: Type
       place: 
         label: Type
       power: 
@@ -222,6 +272,8 @@ en:
         label: Type
       shelter: 
         label: Shelter
+      shelter_type: 
+        label: Type
       shop: 
         label: Type
       source: 
@@ -236,6 +288,8 @@ en:
           tunnel: Tunnel
           embankment: Embankment
           cutting: Cutting
+      studio_type: 
+        label: Type
       supervised: 
         label: Supervised
       surface: 
@@ -250,6 +304,10 @@ en:
         label: Type
       trail_visibility: 
         label: Trail Visibility
+      tree_type: 
+        label: Type
+      tunnel: 
+        label: Tunnel
       vending: 
         label: Type of Goods
       water: 
@@ -271,6 +329,36 @@ en:
       address: 
         name: Address
         terms: "<translate with synonyms or related terms for 'Address', separated by commas>"
+      aerialway: 
+        name: Aerialway
+        terms: "<translate with synonyms or related terms for 'Aerialway', separated by commas>"
+      aerialway/cable_car: 
+        name: Cable Car
+        terms: "<translate with synonyms or related terms for 'Cable Car', separated by commas>"
+      aerialway/chair_lift: 
+        name: Chair Lift
+        terms: "<translate with synonyms or related terms for 'Chair Lift', separated by commas>"
+      aerialway/gondola: 
+        name: Gondola
+        terms: "<translate with synonyms or related terms for 'Gondola', separated by commas>"
+      aerialway/magic_carpet: 
+        name: Magic Carpet Lift
+        terms: "<translate with synonyms or related terms for 'Magic Carpet Lift', separated by commas>"
+      aerialway/platter: 
+        name: Platter Lift
+        terms: "<translate with synonyms or related terms for 'Platter Lift', separated by commas>"
+      aerialway/pylon: 
+        name: Aerialway Pylon
+        terms: "<translate with synonyms or related terms for 'Aerialway Pylon', separated by commas>"
+      aerialway/rope_tow: 
+        name: Rope Tow Lift
+        terms: "<translate with synonyms or related terms for 'Rope Tow Lift', separated by commas>"
+      aerialway/station: 
+        name: Aerialway Station
+        terms: "<translate with synonyms or related terms for 'Aerialway Station', separated by commas>"
+      "aerialway/t-bar": 
+        name: "T-bar Lift"
+        terms: "<translate with synonyms or related terms for 'T-bar Lift', separated by commas>"
       aeroway: 
         name: Aeroway
         terms: "<translate with synonyms or related terms for 'Aeroway', separated by commas>"
@@ -343,12 +431,21 @@ en:
       amenity/cinema: 
         name: Cinema
         terms: "<translate with synonyms or related terms for 'Cinema', separated by commas>"
+      amenity/clinic: 
+        name: Clinic
+        terms: "<translate with synonyms or related terms for 'Clinic', separated by commas>"
       amenity/college: 
         name: College
         terms: "<translate with synonyms or related terms for 'College', separated by commas>"
       amenity/courthouse: 
         name: Courthouse
         terms: "<translate with synonyms or related terms for 'Courthouse', separated by commas>"
+      amenity/dentist: 
+        name: Dentist
+        terms: "<translate with synonyms or related terms for 'Dentist', separated by commas>"
+      amenity/doctor: 
+        name: Doctor
+        terms: "<translate with synonyms or related terms for 'Doctor', separated by commas>"
       amenity/drinking_water: 
         name: Drinking Water
         terms: "<translate with synonyms or related terms for 'Drinking Water', separated by commas>"
@@ -383,8 +480,8 @@ en:
         name: Marketplace
         terms: "<translate with synonyms or related terms for 'Marketplace', separated by commas>"
       amenity/parking: 
-        name: Parking
-        terms: "<translate with synonyms or related terms for 'Parking', separated by commas>"
+        name: Car Parking
+        terms: "<translate with synonyms or related terms for 'Car Parking', separated by commas>"
       amenity/pharmacy: 
         name: Pharmacy
         terms: "<translate with synonyms or related terms for 'Pharmacy', separated by commas>"
@@ -418,12 +515,21 @@ en:
       amenity/ranger_station: 
         name: Ranger Station
         terms: "<translate with synonyms or related terms for 'Ranger Station', separated by commas>"
+      amenity/recycling: 
+        name: Recycling
+        terms: "<translate with synonyms or related terms for 'Recycling', separated by commas>"
       amenity/restaurant: 
         name: Restaurant
         terms: "<translate with synonyms or related terms for 'Restaurant', separated by commas>"
       amenity/school: 
         name: School
         terms: "<translate with synonyms or related terms for 'School', separated by commas>"
+      amenity/shelter: 
+        name: Shelter
+        terms: "<translate with synonyms or related terms for 'Shelter', separated by commas>"
+      amenity/studio: 
+        name: Studio
+        terms: "<translate with synonyms or related terms for 'Studio', separated by commas>"
       amenity/swimming_pool: 
         name: Swimming Pool
         terms: "<translate with synonyms or related terms for 'Swimming Pool', separated by commas>"
@@ -535,6 +641,144 @@ en:
       building/residential: 
         name: Residential Building
         terms: "<translate with synonyms or related terms for 'Residential Building', separated by commas>"
+      craft/basket_maker: 
+        name: Basket Maker
+        terms: "<translate with synonyms or related terms for 'Basket Maker', separated by commas>"
+      craft/beekeeper: 
+        name: Beekeeper
+        terms: "<translate with synonyms or related terms for 'Beekeeper', separated by commas>"
+      craft/blacksmith: 
+        name: Blacksmith
+        terms: "<translate with synonyms or related terms for 'Blacksmith', separated by commas>"
+      craft/boatbuilder: 
+        name: Boat Builder
+        terms: "<translate with synonyms or related terms for 'Boat Builder', separated by commas>"
+      craft/bookbinder: 
+        name: Bookbinder
+        terms: "<translate with synonyms or related terms for 'Bookbinder', separated by commas>"
+      craft/brewery: 
+        name: Brewery
+        terms: "<translate with synonyms or related terms for 'Brewery', separated by commas>"
+      craft/carpenter: 
+        name: Carpenter
+        terms: "<translate with synonyms or related terms for 'Carpenter', separated by commas>"
+      craft/carpet_layer: 
+        name: Carpet Layer
+        terms: "<translate with synonyms or related terms for 'Carpet Layer', separated by commas>"
+      craft/caterer: 
+        name: Caterer
+        terms: "<translate with synonyms or related terms for 'Caterer', separated by commas>"
+      craft/clockmaker: 
+        name: Clockmaker
+        terms: "<translate with synonyms or related terms for 'Clockmaker', separated by commas>"
+      craft/confectionary: 
+        name: Confectionary
+        terms: "<translate with synonyms or related terms for 'Confectionary', separated by commas>"
+      craft/dressmaker: 
+        name: Dressmaker
+        terms: "<translate with synonyms or related terms for 'Dressmaker', separated by commas>"
+      craft/electrician: 
+        name: Electrician
+        terms: "<translate with synonyms or related terms for 'Electrician', separated by commas>"
+      craft/gardener: 
+        name: Gardener
+        terms: "<translate with synonyms or related terms for 'Gardener', separated by commas>"
+      craft/glaziery: 
+        name: Glaziery
+        terms: "<translate with synonyms or related terms for 'Glaziery', separated by commas>"
+      craft/handicraft: 
+        name: Handicraft
+        terms: "<translate with synonyms or related terms for 'Handicraft', separated by commas>"
+      craft/hvac: 
+        name: HVAC
+        terms: "<translate with synonyms or related terms for 'HVAC', separated by commas>"
+      craft/insulator: 
+        name: Insulator
+        terms: "<translate with synonyms or related terms for 'Insulator', separated by commas>"
+      craft/jeweler: 
+        name: Jeweler
+        terms: "<translate with synonyms or related terms for 'Jeweler', separated by commas>"
+      craft/key_cutter: 
+        name: Key Cutter
+        terms: "<translate with synonyms or related terms for 'Key Cutter', separated by commas>"
+      craft/locksmith: 
+        name: Locksmith
+        terms: "<translate with synonyms or related terms for 'Locksmith', separated by commas>"
+      craft/metal_construction: 
+        name: Metal Construction
+        terms: "<translate with synonyms or related terms for 'Metal Construction', separated by commas>"
+      craft/optician: 
+        name: Optician
+        terms: "<translate with synonyms or related terms for 'Optician', separated by commas>"
+      craft/painter: 
+        name: painter
+        terms: "<translate with synonyms or related terms for 'painter', separated by commas>"
+      craft/photographer: 
+        name: Photographer
+        terms: "<translate with synonyms or related terms for 'Photographer', separated by commas>"
+      craft/photographic_labratory: 
+        name: Photographic Labratory
+        terms: "<translate with synonyms or related terms for 'Photographic Labratory', separated by commas>"
+      craft/plasterer: 
+        name: Plasterer
+        terms: "<translate with synonyms or related terms for 'Plasterer', separated by commas>"
+      craft/plumber: 
+        name: Plumber
+        terms: "<translate with synonyms or related terms for 'Plumber', separated by commas>"
+      craft/pottery: 
+        name: Pottery
+        terms: "<translate with synonyms or related terms for 'Pottery', separated by commas>"
+      craft/rigger: 
+        name: Rigger
+        terms: "<translate with synonyms or related terms for 'Rigger', separated by commas>"
+      craft/roofer: 
+        name: Roofer
+        terms: "<translate with synonyms or related terms for 'Roofer', separated by commas>"
+      craft/saddler: 
+        name: Saddler
+        terms: "<translate with synonyms or related terms for 'Saddler', separated by commas>"
+      craft/sailmaker: 
+        name: Sailmaker
+        terms: "<translate with synonyms or related terms for 'Sailmaker', separated by commas>"
+      craft/sawmill: 
+        name: Sawmill
+        terms: "<translate with synonyms or related terms for 'Sawmill', separated by commas>"
+      craft/scaffolder: 
+        name: Scaffolder
+        terms: "<translate with synonyms or related terms for 'Scaffolder', separated by commas>"
+      craft/sculpter: 
+        name: Sculpter
+        terms: "<translate with synonyms or related terms for 'Sculpter', separated by commas>"
+      craft/shoemaker: 
+        name: Shoemaker
+        terms: "<translate with synonyms or related terms for 'Shoemaker', separated by commas>"
+      craft/stonemason: 
+        name: Stonemason
+        terms: "<translate with synonyms or related terms for 'Stonemason', separated by commas>"
+      craft/sweep: 
+        name: Chimney Sweep
+        terms: "<translate with synonyms or related terms for 'Chimney Sweep', separated by commas>"
+      craft/tailor: 
+        name: Tailor
+        terms: "<translate with synonyms or related terms for 'Tailor', separated by commas>"
+      craft/tiler: 
+        name: Tiler
+        terms: "<translate with synonyms or related terms for 'Tiler', separated by commas>"
+      craft/tinsmith: 
+        name: Tinsmith
+        terms: "<translate with synonyms or related terms for 'Tinsmith', separated by commas>"
+      craft/upholsterer: 
+        name: Upholsterer
+        terms: "<translate with synonyms or related terms for 'Upholsterer', separated by commas>"
+      craft/watchmaker: 
+        name: Watchmaker
+        terms: "<translate with synonyms or related terms for 'Watchmaker', separated by commas>"
+      craft/window_construction: 
+        name: Window Construction
+        terms: "<translate with synonyms or related terms for 'Window Construction', separated by commas>"
+      embankment: 
+        name: Embankment
+        terms: "<translate with synonyms or related terms for 'Embankment', separated by commas>"
       emergency/ambulance_station: 
         name: Ambulance Station
         terms: "<translate with synonyms or related terms for 'Ambulance Station', separated by commas>"
@@ -547,6 +791,36 @@ en:
       entrance: 
         name: Entrance
         terms: "<translate with synonyms or related terms for 'Entrance', separated by commas>"
+      footway/crossing: 
+        name: Crossing
+        terms: "<translate with synonyms or related terms for 'Crossing', separated by commas>"
+      footway/sidewalk: 
+        name: Sidewalk
+        terms: "<translate with synonyms or related terms for 'Sidewalk', separated by commas>"
+      golf/bunker: 
+        name: Sand Trap
+        terms: "<translate with synonyms or related terms for 'Sand Trap', separated by commas>"
+      golf/fairway: 
+        name: Fairway
+        terms: "<translate with synonyms or related terms for 'Fairway', separated by commas>"
+      golf/green: 
+        name: Putting Green
+        terms: "<translate with synonyms or related terms for 'Putting Green', separated by commas>"
+      golf/hole: 
+        name: Golf Hole
+        terms: "<translate with synonyms or related terms for 'Golf Hole', separated by commas>"
+      golf/lateral_water_hazard: 
+        name: Lateral Water Hazard
+        terms: "<translate with synonyms or related terms for 'Lateral Water Hazard', separated by commas>"
+      golf/rough: 
+        name: Rough
+        terms: "<translate with synonyms or related terms for 'Rough', separated by commas>"
+      golf/tee: 
+        name: Tee Box
+        terms: "<translate with synonyms or related terms for 'Tee Box', separated by commas>"
+      golf/water_hazard: 
+        name: Water Hazard
+        terms: "<translate with synonyms or related terms for 'Water Hazard', separated by commas>"
       highway: 
         name: Highway
         terms: "<translate with synonyms or related terms for 'Highway', separated by commas>"
@@ -700,6 +974,9 @@ en:
       landuse/farm: 
         name: Farm
         terms: "<translate with synonyms or related terms for 'Farm', separated by commas>"
+      landuse/farmland: 
+        name: Farmland
+        terms: "<translate with synonyms or related terms for 'Farmland', separated by commas>"
       landuse/farmyard: 
         name: Farmyard
         terms: "<translate with synonyms or related terms for 'Farmyard', separated by commas>"
@@ -805,6 +1082,12 @@ en:
       man_made/cutline: 
         name: Cut line
         terms: "<translate with synonyms or related terms for 'Cut line', separated by commas>"
+      man_made/embankment: 
+        name: Embankment
+        terms: "<translate with synonyms or related terms for 'Embankment', separated by commas>"
+      man_made/flagpole: 
+        name: Flagpole
+        terms: "<translate with synonyms or related terms for 'Flagpole', separated by commas>"
       man_made/lighthouse: 
         name: Lighthouse
         terms: "<translate with synonyms or related terms for 'Lighthouse', separated by commas>"
@@ -835,6 +1118,18 @@ en:
       man_made/water_works: 
         name: Water Works
         terms: "<translate with synonyms or related terms for 'Water Works', separated by commas>"
+      military/airfield: 
+        name: Airfield
+        terms: "<translate with synonyms or related terms for 'Airfield', separated by commas>"
+      military/barracks: 
+        name: Barracks
+        terms: "<translate with synonyms or related terms for 'Barracks', separated by commas>"
+      military/bunker: 
+        name: Bunker
+        terms: "<translate with synonyms or related terms for 'Bunker', separated by commas>"
+      military/range: 
+        name: Military Range
+        terms: "<translate with synonyms or related terms for 'Military Range', separated by commas>"
       natural: 
         name: Natural
         terms: "<translate with synonyms or related terms for 'Natural', separated by commas>"
@@ -958,6 +1253,9 @@ en:
       office/travel_agent: 
         name: Travel Agency
         terms: "<translate with synonyms or related terms for 'Travel Agency', separated by commas>"
+      piste: 
+        name: Piste/Ski Trail
+        terms: "<translate with synonyms or related terms for 'Piste/Ski Trail', separated by commas>"
       place: 
         name: Place
         terms: "<translate with synonyms or related terms for 'Place', separated by commas>"
@@ -1009,6 +1307,12 @@ en:
       power/transformer: 
         name: Transformer
         terms: "<translate with synonyms or related terms for 'Transformer', separated by commas>"
+      public_transport/platform: 
+        name: Platform
+        terms: "<translate with synonyms or related terms for 'Platform', separated by commas>"
+      public_transport/stop_position: 
+        name: Stop Position
+        terms: "<translate with synonyms or related terms for 'Stop Position', separated by commas>"
       railway: 
         name: Railway
         terms: "<translate with synonyms or related terms for 'Railway', separated by commas>"

@@ -46,7 +46,7 @@
             }
         }
     },
-    "access_toilets": {
+    "access_simple": {
         "key": "access",
         "type": "combo",
         "label": "Access",
@@ -83,6 +83,59 @@
         "key": "admin_level",
         "type": "number",
         "label": "Admin Level"
+    },
+    "aerialway": {
+        "key": "aerialway",
+        "type": "typeCombo",
+        "label": "Type"
+    },
+    "aerialway/access": {
+        "key": "aerialway:access",
+        "type": "combo",
+        "options": [
+            "entry",
+            "exit",
+            "both"
+        ],
+        "label": "Access"
+    },
+    "aerialway/bubble": {
+        "key": "aerialway:bubble",
+        "type": "check",
+        "label": "Bubble"
+    },
+    "aerialway/capacity": {
+        "key": "aerialway:capacity",
+        "type": "number",
+        "label": "Capacity (per hour)",
+        "placeholder": "500, 2500, 5000..."
+    },
+    "aerialway/duration": {
+        "key": "aerialway:duration",
+        "type": "number",
+        "label": "Duration (minutes)",
+        "placeholder": "1, 2, 3..."
+    },
+    "aerialway/heating": {
+        "key": "aerialway:heating",
+        "type": "check",
+        "label": "Heated"
+    },
+    "aerialway/occupancy": {
+        "key": "aerialway:occupancy",
+        "type": "number",
+        "label": "Occupancy",
+        "placeholder": "2, 4, 8..."
+    },
+    "aerialway/summer/access": {
+        "key": "aerialway:summer:access",
+        "type": "combo",
+        "options": [
+            "entry",
+            "exit",
+            "both"
+        ],
+        "label": "Access (summer)"
     },
     "aeroway": {
         "key": "aeroway",
@@ -141,11 +194,10 @@
         "geometry": "area",
         "label": "Building"
     },
-    "building_yes": {
-        "key": "building",
-        "type": "combo",
-        "default": "yes",
-        "label": "Building"
+    "cans": {
+        "key": "cans",
+        "type": "check",
+        "label": "Accepts Cans"
     },
     "capacity": {
         "key": "capacity",
@@ -190,6 +242,11 @@
             }
         }
     },
+    "clothes": {
+        "key": "clothes",
+        "type": "check",
+        "label": "Accepts Clothes"
+    },
     "collection_times": {
         "key": "collection_times",
         "type": "text",
@@ -204,6 +261,11 @@
         "key": "country",
         "type": "combo",
         "label": "Country"
+    },
+    "covered": {
+        "key": "covered",
+        "type": "check",
+        "label": "Covered"
     },
     "crossing": {
         "key": "crossing",
@@ -290,6 +352,23 @@
         "type": "combo",
         "label": "Type"
     },
+    "glass": {
+        "key": "glass",
+        "type": "check",
+        "label": "Accepts Glass"
+    },
+    "golf_hole": {
+        "key": "ref",
+        "type": "text",
+        "label": "Reference",
+        "placeholder": "Hole number (1-18)"
+    },
+    "handicap": {
+        "key": "handicap",
+        "type": "number",
+        "label": "Handicap",
+        "placeholder": "1-18"
+    },
     "highway": {
         "key": "highway",
         "type": "typeCombo",
@@ -314,6 +393,11 @@
         "key": "incline",
         "type": "combo",
         "label": "Incline"
+    },
+    "information": {
+        "key": "information",
+        "type": "typeCombo",
+        "label": "Type"
     },
     "internet_access": {
         "key": "internet_access",
@@ -433,6 +517,17 @@
         "type": "text",
         "label": "Operator"
     },
+    "paper": {
+        "key": "paper",
+        "type": "check",
+        "label": "Accepts Paper"
+    },
+    "par": {
+        "key": "par",
+        "type": "number",
+        "label": "Par",
+        "placeholder": "3, 4, 5..."
+    },
     "park_ride": {
         "key": "park_ride",
         "type": "check",
@@ -459,6 +554,21 @@
         "universal": true,
         "label": "Phone",
         "placeholder": "+31 42 123 4567"
+    },
+    "piste/difficulty": {
+        "key": "piste:difficulty",
+        "type": "combo",
+        "label": "Difficulty"
+    },
+    "piste/grooming": {
+        "key": "piste:grooming",
+        "type": "combo",
+        "label": "Grooming"
+    },
+    "piste/type": {
+        "key": "piste:type",
+        "type": "typeCombo",
+        "label": "Type"
     },
     "place": {
         "key": "place",
@@ -547,6 +657,20 @@
         "type": "check",
         "label": "Shelter"
     },
+    "shelter_type": {
+        "key": "shelter_type",
+        "type": "combo",
+        "options": [
+            "public_transport",
+            "picnic_shelter",
+            "weather_shelter",
+            "lean_to",
+            "basic_hut",
+            "field_shelter",
+            "rock_shelter"
+        ],
+        "label": "Type"
+    },
     "shop": {
         "key": "shop",
         "type": "typeCombo",
@@ -583,6 +707,15 @@
             }
         }
     },
+    "studio_type": {
+        "key": "type",
+        "type": "combo",
+        "options": [
+            "audio",
+            "video"
+        ],
+        "label": "Type"
+    },
     "supervised": {
         "key": "supervised",
         "type": "check",
@@ -617,6 +750,21 @@
         "key": "trail_visibility",
         "type": "combo",
         "label": "Trail Visibility"
+    },
+    "tree_type": {
+        "key": "type",
+        "type": "combo",
+        "options": [
+            "broad_leaved",
+            "conifer",
+            "palm"
+        ],
+        "label": "Type"
+    },
+    "tunnel": {
+        "key": "tunnel",
+        "type": "combo",
+        "label": "Tunnel"
     },
     "vending": {
         "key": "vending",

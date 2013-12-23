@@ -1,3 +1,38 @@
+## 1.3.4
+
+* Replace TIGER 2012 layer with next-generation TIGER 2013 layer (#2010)
+* Add tooltips to "untagged feature" warnings
+* Add pressets and category for golf features (#2013)
+* Information and bike parking preset refinements
+* Faster/smoother zooming and panning
+* Add "quick add" presets for common proper names
+* Fix zoom to feature when clicking search results (#2023)
+
+## 1.3.3
+
+* Support for loading GPX-files via url parameter (#1965)
+* Update osm-auth (#1904)
+* Update 3rd party dependencies (Lo-Dash, D3, RBush)
+* Build iD.Way.areaKeys from presets
+* Add public_transport, military, emankment presets
+* Reverse cardinal directions for relation member roles
+* Improved warning visibility (#1973)
+* Fix undo-related bug (#1978)
+
+## 1.3.2
+
+* Update maki
+* Fix Disconnect of way with multiple intersections (#1955)
+* Fix unclosed area rendering (#1958)
+* Add presets for amenity=shelter, footway=sidewalk, footway=crossing, and various office values
+* Add area categories
+* Full-height background settings pane
+* Add suggestions of common shop and amenity names
+* Handle https wikipedia URLs
+* Use assumed values for access placeholders (#1924)
+* Distinguish between power=line and power=minor_line
+* Reset invalid opacity values to default (#1923)
+
 ## 1.3.1
 
 * Fix misalignment -> Fix alignment (#1913)

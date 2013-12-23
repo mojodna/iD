@@ -61,7 +61,7 @@ _.extend(iD.Way.prototype, {
         if (!this.isClosed() || this.tags.area === 'no')
             return false;
         for (var key in this.tags)
-            if (key in iD.Way.areaKeys && !(this.tags[key] in iD.Way.areaKeys[key]))
+            if (key in iD.areaKeys && !(this.tags[key] in iD.areaKeys[key]))
                 return true;
         return false;
     },
@@ -146,59 +146,46 @@ _.extend(iD.Way.prototype, {
         return r;
     },
 
-    asGeoJSON: function(resolver, polygon) {
+    asGeoJSON: function(resolver) {
         return resolver.transient(this, 'GeoJSON', function() {
-            var nodes = resolver.childNodes(this);
-
-            if (this.isArea() && polygon && nodes.length >= 4) {
-                if (!this.isClosed()) {
-                    nodes = nodes.concat([nodes[0]]);
-                }
-
-                var json = {
+            var coordinates = _.pluck(resolver.childNodes(this), 'loc');
+            if (this.isArea() && this.isClosed()) {
+                return {
                     type: 'Polygon',
-                    coordinates: [_.pluck(nodes, 'loc')]
+                    coordinates: [coordinates]
                 };
-
-                // Heuristic for detecting counterclockwise winding order. Assumes
-                // that OpenStreetMap polygons are not hemisphere-spanning.
-                if (d3.geo.area(json) > 2 * Math.PI) {
-                    json.coordinates[0] = json.coordinates[0].reverse();
-                }
-
-                return json;
             } else {
                 return {
                     type: 'LineString',
-                    coordinates: _.pluck(nodes, 'loc')
+                    coordinates: coordinates
                 };
             }
         });
+    },
+
+    area: function(resolver) {
+        return resolver.transient(this, 'area', function() {
+            var nodes = resolver.childNodes(this);
+
+            if (!this.isClosed() && nodes.length) {
+                nodes = nodes.concat([nodes[0]]);
+            }
+
+            var json = {
+                type: 'Polygon',
+                coordinates: [_.pluck(nodes, 'loc')]
+            };
+
+            var area = d3.geo.area(json);
+
+            // Heuristic for detecting counterclockwise winding order. Assumes
+            // that OpenStreetMap polygons are not hemisphere-spanning.
+            if (d3.geo.area(json) > 2 * Math.PI) {
+                json.coordinates[0] = json.coordinates[0].reverse();
+                area = d3.geo.area(json);
+            }
+
+            return isNaN(area) ? 0 : area;
+        });
     }
 });
-
-// A closed way is considered to be an area if it has a tag with one
-// of the following keys, and the value is _not_ one of the associated
-// values for the respective key.
-iD.Way.areaKeys = {
-    aeroway: { taxiway: true},
-    amenity: {},
-    area: {},
-    'area:highway': {},
-    building: {},
-    'building:part': {},
-    historic: {},
-    landuse: {},
-    leisure: {},
-    man_made: { cutline: true, embankment: true, pipeline: true},
-    military: {},
-    natural: { coastline: true },
-    office: {},
-    place: {},
-    power: {},
-    public_transport: {},
-    ruins: {},
-    shop: {},
-    tourism: {},
-    waterway: {}
-};

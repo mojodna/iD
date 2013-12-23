@@ -176,14 +176,13 @@ iD.Map = function(context) {
             .scale(d3.event.scale / (2 * Math.PI));
 
         var scale = d3.event.scale / transformStart[0],
-            tX = Math.round(d3.event.translate[0] / scale - transformStart[1][0]),
-            tY = Math.round(d3.event.translate[1] / scale - transformStart[1][1]);
+            tX = Math.round((d3.event.translate[0] / scale - transformStart[1][0]) * scale),
+            tY = Math.round((d3.event.translate[1] / scale - transformStart[1][1]) * scale);
 
         var transform =
-            'scale(' + scale + ')' +
             (iD.detect().opera ?
                 'translate(' + tX + 'px,' + tY + 'px)' :
-                'translate3d(' + tX + 'px,' + tY + 'px, 0)');
+                'translate3d(' + tX + 'px,' + tY + 'px, 0)') + ' scale(' + scale + ')';
 
         transformed = true;
         supersurface.style(transformProp, transform);
@@ -194,7 +193,7 @@ iD.Map = function(context) {
 
     function resetTransform() {
         if (!transformed) return false;
-        supersurface.style(transformProp, '');
+        supersurface.style(transformProp, iD.detect().opera ? '' : 'translate3d(0,0,0)');
         transformed = false;
         return true;
     }
@@ -214,7 +213,8 @@ iD.Map = function(context) {
 
         var zoom = String(~~map.zoom());
         if (surface.attr('data-zoom') !== zoom) {
-            surface.attr('data-zoom', zoom);
+            surface.attr('data-zoom', zoom)
+                .classed('low-zoom', zoom <= 16);
         }
 
         if (!difference) {

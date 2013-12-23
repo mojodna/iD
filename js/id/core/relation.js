@@ -8,6 +8,14 @@ iD.Relation = iD.Entity.relation = function iD_Relation() {
 
 iD.Relation.prototype = Object.create(iD.Entity.prototype);
 
+iD.Relation.creationOrder = function(a, b) {
+    var aId = parseInt(iD.Entity.id.toOSM(a.id), 10);
+    var bId = parseInt(iD.Entity.id.toOSM(b.id), 10);
+
+    if (aId < 0 || bId < 0) return aId - bId;
+    return bId - aId;
+};
+
 _.extend(iD.Relation.prototype, {
     type: 'relation',
     members: [],
@@ -153,6 +161,12 @@ _.extend(iD.Relation.prototype, {
                     })
                 };
             }
+        });
+    },
+
+    area: function(resolver) {
+        return resolver.transient(this, 'area', function() {
+            return d3.geo.area(this.asGeoJSON(resolver));
         });
     },
 

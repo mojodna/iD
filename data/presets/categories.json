@@ -1,4 +1,31 @@
 {
+    "category-building": {
+        "geometry": "area",
+        "name": "Building",
+        "icon": "building",
+        "members": [
+            "building/house",
+            "building/apartments",
+            "building/commercial",
+            "building/industrial",
+            "building/residential",
+            "building"
+        ]
+    },
+    "category-golf": {
+        "geometry": "area",
+        "name": "Golf",
+        "icon": "golf",
+        "members": [
+            "golf/fairway",
+            "golf/green",
+            "golf/lateral_water_hazard",
+            "golf/rough",
+            "golf/bunker",
+            "golf/tee",
+            "golf/water_hazard"
+        ]
+    },
     "category-landuse": {
         "geometry": "area",
         "name": "Land Use",
@@ -82,7 +109,18 @@
             "type/route"
         ]
     },
-    "category-water": {
+    "category-water-area": {
+        "geometry": "area",
+        "name": "Water",
+        "icon": "water",
+        "members": [
+            "natural/water/lake",
+            "natural/water/pond",
+            "natural/water/reservoir",
+            "natural/water"
+        ]
+    },
+    "category-water-line": {
         "geometry": "line",
         "name": "Water",
         "icon": "category-water",
@@ -90,7 +128,8 @@
             "waterway/river",
             "waterway/stream",
             "waterway/canal",
-            "waterway/ditch"
+            "waterway/ditch",
+            "waterway/drain"
         ]
     }
 }

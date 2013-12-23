@@ -5,7 +5,8 @@ var fs = require('fs'),
     _ = require('./js/lib/lodash'),
     jsonschema = require('jsonschema'),
     fieldSchema = require('./data/presets/schema/field.json'),
-    presetSchema = require('./data/presets/schema/preset.json');
+    presetSchema = require('./data/presets/schema/preset.json'),
+    suggestions = require('./data/name-suggestions.json');
 
 function readtxt(f) {
     return fs.readFileSync(f, 'utf8');
@@ -88,8 +89,61 @@ function generateFields() {
     fs.writeFileSync('data/presets/fields.json', stringify(fields));
 }
 
+function suggestionsToPresets(presets) {
+    var existing = {},
+        countThreshold = 0;
+
+    for (var preset in presets) {
+        existing[presets[preset].name] = {
+            category: preset,
+            count: -1
+        };
+    }
+
+    for (var key in suggestions) {
+        for (var value in suggestions[key]) {
+            for (var name in suggestions[key][value]) {
+                var item = key + '/' + value + '/' + name,
+                    tags = {},
+                    count = suggestions[key][value][name].count;
+
+                tags = _.extend({name: name}, suggestions[key][value][name].tags);
+
+                if (!existing[name] && count > countThreshold) addPreset(item, tags, name, count);
+            }
+        }
+    }
+
+    function addPreset(category, tags, name, count) {
+        var tag = category.split('/'),
+            parent = presets[tag[0] + '/' + tag[1]];
+
+        presets[category] = {
+            tags: parent.tags ? _.merge(tags, parent.tags) : tags,
+            name: name,
+            icon: parent.icon,
+            geometry: parent.geometry,
+            fields: parent.fields,
+            suggestion: true
+        };
+
+        existing[name] = {
+            category: category,
+            count: count
+        };
+    }
+
+    return presets;
+}
+
 function generatePresets() {
     var presets = {};
+
+    // A closed way is considered to be an area if it has a tag with one
+    // of the following keys, and the value is _not_ one of the associated
+    // values for the respective key.
+    var areaKeys = {};
+
     glob.sync(__dirname + '/data/presets/presets/**/*.json').forEach(function(file) {
         var preset = read(file),
             id = file.match(/presets\/presets\/([^.]*)\.json/)[1];
@@ -101,10 +155,24 @@ function generatePresets() {
             terms: (preset.terms || []).join(',')
         };
 
+        for (var key in preset.tags) break;
+        var value = preset.tags[key];
+
+        if (['highway', 'footway', 'railway', 'type'].indexOf(key) === -1) {
+            if (preset.geometry.indexOf('area') >= 0) {
+                areaKeys[key] = areaKeys[key] || {};
+            } else if (key in areaKeys && value !== '*') {
+                areaKeys[key][value] = true;
+            }
+        }
+
         presets[id] = preset;
     });
 
+    presets = _.merge(presets, suggestionsToPresets(presets));
+
     fs.writeFileSync('data/presets/presets.json', stringify(presets));
+    fs.writeFileSync('js/id/core/area_keys.js', '/* jshint -W109 */\niD.areaKeys = ' + stringify(areaKeys) + ';');
 
     var presetsYaml = _.cloneDeep(translations);
     _.forEach(presetsYaml.presets, function(preset) {
@@ -139,5 +207,6 @@ fs.writeFileSync('data/data.js', 'iD.data = ' + stringify({
     featureIcons: r('feature-icons.json'),
     operations: r('operations-sprite.json'),
     locales: r('locales.json'),
-    en: read('dist/locales/en.json')
+    en: read('dist/locales/en.json'),
+    suggestions: r('name-suggestions.json')
 }) + ';');

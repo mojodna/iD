@@ -3,7 +3,9 @@
     "fields": [
         "cuisine",
         "building_area",
-        "address"
+        "address",
+        "opening_hours",
+        "capacity"
     ],
     "geometry": [
         "point",

@@ -5,7 +5,7 @@ describe("iD.Tree", function() {
                 tree = iD.Tree(graph),
                 node = iD.Node({id: 'n', loc: [1, 1]});
 
-            graph.rebase({n: node});
+            graph.rebase([node]);
             tree.rebase([node]);
 
             expect(tree.intersects(iD.geo.Extent([0, 0], [2, 2]), graph)).to.eql([node]);
@@ -17,11 +17,11 @@ describe("iD.Tree", function() {
                 node = iD.Node({id: 'n', loc: [1, 1]}),
                 extent = iD.geo.Extent([0, 0], [2, 2]);
 
-            graph.rebase({n: node});
+            graph.rebase([node]);
             tree.rebase([node]);
             expect(tree.intersects(extent, graph)).to.eql([node]);
 
-            graph.rebase({n: node});
+            graph.rebase([node]);
             tree.rebase([node]);
             expect(tree.intersects(extent, graph)).to.eql([node]);
         });
@@ -63,11 +63,11 @@ describe("iD.Tree", function() {
                 relation = iD.Relation({id: 'r', members: [{id: 'n1'}, {id: 'n2'}]}),
                 extent = iD.geo.Extent([0.5, 0.5], [1.5, 1.5]);
 
-            graph.rebase({r: relation, n1: n1});
+            graph.rebase([relation, n1]);
             tree.rebase([relation, n1]);
             expect(tree.intersects(extent, graph)).to.eql([]);
 
-            graph.rebase({n2: n2});
+            graph.rebase([n2]);
             tree.rebase([n2]);
             expect(tree.intersects(extent, graph)).to.eql([n2, relation]);
         });
@@ -83,8 +83,8 @@ describe("iD.Tree", function() {
 
             expect(tree.intersects(extent, graph)).to.eql([]);
 
-            base.rebase({n: node});
-            graph.rebase({n: node});
+            base.rebase([node]);
+            graph.rebase([node]);
             tree.rebase([node]);
             expect(tree.intersects(extent, graph)).to.eql([node, way]);
         });
@@ -118,6 +118,26 @@ describe("iD.Tree", function() {
             expect(tree.intersects(extent, graph)).to.eql([n1]);
         });
 
+        it("don't include parent way multiple times when multiple child nodes are moved", function() {
+            // checks against the following regression: https://github.com/systemed/iD/issues/1978
+            var graph = iD.Graph(),
+                tree = iD.Tree(graph),
+                n1 = iD.Node({id: 'n1', loc: [1, 1]}),
+                n2 = iD.Node({id: 'n2', loc: [3, 3]}),
+                way = iD.Way({nodes: ['n1', 'n2']}),
+                extent = iD.geo.Extent([0, 0], [4, 4]);
+
+            graph = graph.replace(n1).replace(n2).replace(way);
+            expect(tree.intersects(extent, graph)).to.eql([n1, n2, way]);
+
+            graph = graph.replace(n1.move([1.1,1.1])).replace(n2.move([2.1,2.1]));
+            expect(
+                _.pluck(tree.intersects(extent, graph),'id').sort()
+            ).to.eql(
+                _.pluck([n1, n2, way],'id').sort()
+            );
+        });
+
         it("doesn't include removed entities", function() {
             var graph = iD.Graph(),
                 tree = iD.Tree(graph),
@@ -140,7 +160,7 @@ describe("iD.Tree", function() {
             var graph = base.replace(node).remove(node);
             expect(tree.intersects(extent, graph)).to.eql([]);
 
-            base.rebase({n: node});
+            base.rebase([node]);
             tree.rebase([node]);
             expect(tree.intersects(extent, graph)).to.eql([]);
         });
@@ -156,8 +176,8 @@ describe("iD.Tree", function() {
             var graph = base.replace(r1).replace(r2);
             expect(tree.intersects(extent, graph)).to.eql([]);
 
-            base.rebase({n: node});
-            graph.rebase({n: node});
+            base.rebase([node]);
+            graph.rebase([node]);
             tree.rebase([node]);
             expect(tree.intersects(extent, graph)).to.eql([node, r1, r2]);
         });

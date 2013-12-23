@@ -141,7 +141,6 @@ iD.Background = function(context) {
         reader.onload = function(e) {
             gpxLayer.geojson(toGeoJSON.gpx(toDom(e.target.result)));
             dispatch.change();
-            context.map().pan([0, 0]);
         };
 
         reader.readAsText(f);
@@ -227,6 +226,14 @@ iD.Background = function(context) {
         overlay = findSource(overlay);
         if (overlay) background.toggleOverlayLayer(overlay);
     });
+
+    var gpx = q.gpx;
+    if (gpx) {
+        d3.text(gpx, function(err, gpxTxt) {
+            gpxLayer.geojson(toGeoJSON.gpx(toDom(gpxTxt)));
+            dispatch.change();
+        });
+    }
 
     return d3.rebind(background, dispatch, 'on');
 };
