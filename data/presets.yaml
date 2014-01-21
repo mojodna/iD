@@ -133,6 +133,8 @@ en:
         label: Denotation
       description: 
         label: Description
+      electrified: 
+        label: Electrification
       elevation: 
         label: Elevation
       emergency: 
@@ -148,6 +150,8 @@ en:
         label: Type
       fixme: 
         label: Fix Me
+      gauge: 
+        label: Gauge
       generator/method: 
         label: Method
       generator/source: 
@@ -434,6 +438,9 @@ en:
       amenity/clinic: 
         name: Clinic
         terms: "<translate with synonyms or related terms for 'Clinic', separated by commas>"
+      amenity/clock: 
+        name: Clock
+        terms: "<translate with synonyms or related terms for 'Clock', separated by commas>"
       amenity/college: 
         name: College
         terms: "<translate with synonyms or related terms for 'College', separated by commas>"
@@ -554,6 +561,9 @@ en:
       amenity/vending_machine: 
         name: Vending Machine
         terms: "<translate with synonyms or related terms for 'Vending Machine', separated by commas>"
+      amenity/veterinary: 
+        name: Veterinary
+        terms: "<translate with synonyms or related terms for 'Veterinary', separated by commas>"
       amenity/waste_basket: 
         name: Waste Basket
         terms: "<translate with synonyms or related terms for 'Waste Basket', separated by commas>"
@@ -711,8 +721,8 @@ en:
         name: Optician
         terms: "<translate with synonyms or related terms for 'Optician', separated by commas>"
       craft/painter: 
-        name: painter
-        terms: "<translate with synonyms or related terms for 'painter', separated by commas>"
+        name: Painter
+        terms: "<translate with synonyms or related terms for 'Painter', separated by commas>"
       craft/photographer: 
         name: Photographer
         terms: "<translate with synonyms or related terms for 'Photographer', separated by commas>"
@@ -869,6 +879,9 @@ en:
       highway/residential: 
         name: Residential Road
         terms: "<translate with synonyms or related terms for 'Residential Road', separated by commas>"
+      highway/rest_area: 
+        name: Rest Area
+        terms: "<translate with synonyms or related terms for 'Rest Area', separated by commas>"
       highway/road: 
         name: Unknown Road
         terms: "<translate with synonyms or related terms for 'Unknown Road', separated by commas>"
@@ -896,6 +909,9 @@ en:
       highway/service/parking_aisle: 
         name: Parking Aisle
         terms: "<translate with synonyms or related terms for 'Parking Aisle', separated by commas>"
+      highway/services: 
+        name: Service Area
+        terms: "<translate with synonyms or related terms for 'Service Area', separated by commas>"
       highway/steps: 
         name: Steps
         terms: "<translate with synonyms or related terms for 'Steps', separated by commas>"
@@ -1322,6 +1338,9 @@ en:
       railway/disused: 
         name: Disused Railway
         terms: "<translate with synonyms or related terms for 'Disused Railway', separated by commas>"
+      railway/funicular: 
+        name: Funicular
+        terms: "<translate with synonyms or related terms for 'Funicular', separated by commas>"
       railway/halt: 
         name: Railway Halt
         terms: "<translate with synonyms or related terms for 'Railway Halt', separated by commas>"
@@ -1331,6 +1350,9 @@ en:
       railway/monorail: 
         name: Monorail
         terms: "<translate with synonyms or related terms for 'Monorail', separated by commas>"
+      railway/narrow_gauge: 
+        name: Narrow Gauge Rail
+        terms: "<translate with synonyms or related terms for 'Narrow Gauge Rail', separated by commas>"
       railway/platform: 
         name: Railway Platform
         terms: "<translate with synonyms or related terms for 'Railway Platform', separated by commas>"
