@@ -1,13 +1,13 @@
 iD.Connection = function() {
 
     var event = d3.dispatch('authenticating', 'authenticated', 'auth', 'loading', 'load', 'loaded'),
-        url = 'http://172.16.42.91:3000',
+        url = 'http://10.147.146.119:3000',
         connection = {},
         inflight = {},
         loadedTiles = {},
         tileZoom = 16,
         oauth = osmAuth({
-            url: 'http://172.16.42.91:3000',
+            url: 'http://10.147.146.119:3000',
             oauth_consumer_key: 'g3cmPe2OSqxkDmSIi8tOZjG4s1DYQtgtyYOOq1yx',
             oauth_secret: 'VaqYSfpCGFOletdeDaPanfrpbrZbQh38ytBLo3mX',
             loading: authenticating,
