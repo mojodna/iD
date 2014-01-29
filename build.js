@@ -118,14 +118,17 @@ function suggestionsToPresets(presets) {
         var tag = category.split('/'),
             parent = presets[tag[0] + '/' + tag[1]];
 
-        presets[category] = {
+        console.log(category);
+        if (presets[category]) {
+          presets[category] = {
             tags: parent.tags ? _.merge(tags, parent.tags) : tags,
             name: name,
             icon: parent.icon,
             geometry: parent.geometry,
             fields: parent.fields,
             suggestion: true
-        };
+          };
+        }
 
         existing[name] = {
             category: category,
@@ -133,7 +136,7 @@ function suggestionsToPresets(presets) {
         };
     }
 
-    return presets;
+    return false; //presets;
 }
 
 function generatePresets() {
@@ -189,7 +192,7 @@ function validateCategoryPresets(categories, presets) {
             category.members.forEach(function(preset) {
                 if (presets[preset] === undefined) {
                     console.error('Unknown preset: ' + preset + ' in category ' + category.name);
-                    process.exit(1);
+                    //process.exit(1);
                 }
             });
         }
