@@ -1,11 +1,9 @@
 {
     "geometry": [
-        "point",
-        "area"
+        "point"
     ],
     "tags": {
         "man_made": "lighthouse"
     },
-    "name": "Lighthouse",
-    "icon": "lighthouse"
+    "name": "Lighthouse"
 }

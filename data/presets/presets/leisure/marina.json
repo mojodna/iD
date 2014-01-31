@@ -1,9 +1,6 @@
 {
-    "icon": "harbor",
     "geometry": [
-        "point",
-        "vertex",
-        "area"
+        "point"
     ],
     "tags": {
         "leisure": "marina"

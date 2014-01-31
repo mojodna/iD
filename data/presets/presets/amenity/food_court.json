@@ -1,0 +1,11 @@
+{
+    "geometry": [
+        "point",
+        "vertex",
+        "line"
+    ],
+    "tags": {
+        "amenity": "food_court"
+    },
+    "name": "Food Service"
+}

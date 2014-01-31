@@ -1,0 +1,9 @@
+{
+    "geometry": [
+        "point"
+    ],
+    "tags": {
+        "wheelchair": "yes"
+    },
+    "name": "Wheelchair Accessibility"
+}

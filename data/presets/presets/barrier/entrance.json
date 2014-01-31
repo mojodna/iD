@@ -1,11 +1,9 @@
 {
-    "icon": "entrance",
     "geometry": [
-        "vertex"
+        "point"
     ],
     "tags": {
         "barrier": "entrance"
     },
-    "name": "Entrance",
-    "searchable": false
+    "name": "Entrance Station"
 }

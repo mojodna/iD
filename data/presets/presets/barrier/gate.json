@@ -1,11 +1,6 @@
 {
-    "fields": [
-        "access"
-    ],
     "geometry": [
-        "point",
-        "vertex",
-        "line"
+        "point"
     ],
     "tags": {
         "barrier": "gate"

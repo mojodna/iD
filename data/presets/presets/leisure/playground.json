@@ -1,15 +1,9 @@
 {
-    "icon": "playground",
     "geometry": [
-        "point",
-        "area"
+        "point"
     ],
     "tags": {
         "leisure": "playground"
     },
-    "name": "Playground",
-    "terms": [
-        "jungle gym",
-        "play area"
-    ]
+    "name": "Playgound"
 }

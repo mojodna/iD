@@ -1,16 +1,9 @@
 {
-    "icon": "bus",
-    "fields": [
-        "operator",
-        "shelter"
-    ],
     "geometry": [
-        "point",
-        "vertex"
+        "point"
     ],
     "tags": {
         "highway": "bus_stop"
     },
-    "terms": [],
-    "name": "Bus Stop"
+    "name": "Transit Stop"
 }

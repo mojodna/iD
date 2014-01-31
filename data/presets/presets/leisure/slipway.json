@@ -1,10 +1,9 @@
 {
     "geometry": [
-        "point",
-        "line"
+        "point"
     ],
     "tags": {
         "leisure": "slipway"
     },
-    "name": "Slipway"
+    "name": "Boat Launch"
 }

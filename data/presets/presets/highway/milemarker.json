@@ -3,7 +3,7 @@
         "point"
     ],
     "tags": {
-        "tourism": "information"
+        "highway": "milemarker"
     },
-    "name": "Information"
+    "name": "Mile Marker"
 }

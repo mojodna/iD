@@ -1,16 +1,9 @@
 {
-    "icon": "lodging",
-    "fields": [
-        "operator",
-        "address"
-    ],
     "geometry": [
-        "point",
-        "vertex",
-        "area"
+        "point"
     ],
     "tags": {
         "tourism": "alpine_hut"
     },
-    "name": "Alpine Hut"
+    "name": "Lodge"
 }
