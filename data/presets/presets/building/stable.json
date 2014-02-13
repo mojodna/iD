@@ -1,6 +1,18 @@
 {
+<<<<<<< HEAD
     "geometry": [
         "point"
+=======
+    "icon": "building",
+    "fields": [
+        "address",
+        "levels"
+    ],
+    "geometry": [
+        "point",
+        "vertex",
+        "area"
+>>>>>>> upstream/master
     ],
     "tags": {
         "building": "stable"
