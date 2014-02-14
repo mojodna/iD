@@ -63,6 +63,26 @@
             "opening_hours"
         ]
     },
+    "amenity/dentist": {
+        "name": "Dentist",
+        "geometry": [
+            "point",
+            "area"
+        ],
+        "terms": [
+            "dentist",
+            "dentist's office"
+        ],
+        "tags": {
+            "amenity": "dentist"
+        },
+        "icon": "hospital",
+        "fields": [
+            "building_area",
+            "address",
+            "opening_hours"
+        ]
+    },
     "amenity/drinking_water": {
         "icon": "water",
         "geometry": [

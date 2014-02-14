@@ -891,6 +891,10 @@
                 "name": "Clinic",
                 "terms": "clinic,medical clinic"
             },
+            "amenity/dentist": {
+                "name": "Dentist",
+                "terms": "dentist,dentist's office"
+            },
             "amenity/drinking_water": {
                 "name": "Drinking Water",
                 "terms": "water fountain,potable water"

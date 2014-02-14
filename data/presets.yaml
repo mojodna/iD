@@ -345,6 +345,9 @@ en:
       amenity/clinic: 
         name: Clinic
         terms: "<translate with synonyms or related terms for 'Clinic', separated by commas>"
+      amenity/dentist: 
+        name: Dentist
+        terms: "<translate with synonyms or related terms for 'Dentist', separated by commas>"
       amenity/drinking_water: 
         name: Drinking Water
         terms: "<translate with synonyms or related terms for 'Drinking Water', separated by commas>"
