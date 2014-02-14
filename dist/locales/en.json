@@ -928,7 +928,7 @@
                 "terms": "phone"
             },
             "amenity/theatre": {
-                "name": "Theater",
+                "name": "Amphitheater",
                 "terms": "theatre,performance,play,musical"
             },
             "amenity/toilets": {
@@ -947,48 +947,8 @@
                 "name": "Gate",
                 "terms": ""
             },
-<<<<<<< HEAD
             "bridge/yes_bridge": {
                 "name": "Bridge",
-=======
-            "barrier/hedge": {
-                "name": "Hedge",
-                "terms": ""
-            },
-            "barrier/kissing_gate": {
-                "name": "Kissing Gate",
-                "terms": ""
-            },
-            "barrier/lift_gate": {
-                "name": "Lift Gate",
-                "terms": ""
-            },
-            "barrier/retaining_wall": {
-                "name": "Retaining Wall",
-                "terms": ""
-            },
-            "barrier/stile": {
-                "name": "Stile",
-                "terms": ""
-            },
-            "barrier/toll_booth": {
-                "name": "Toll Booth",
-                "terms": ""
-            },
-            "barrier/wall": {
-                "name": "Wall",
-                "terms": ""
-            },
-            "boundary/administrative": {
-                "name": "Administrative Boundary",
-                "terms": ""
-            },
-            "building": {
-                "name": "Building",
-                "terms": ""
-            },
-            "building/apartments": {
-                "name": "Apartments",
                 "terms": ""
             },
             "building/barn": {
@@ -1015,10 +975,6 @@
                 "name": "Church",
                 "terms": ""
             },
-            "building/commercial": {
-                "name": "Commercial Building",
-                "terms": ""
-            },
             "building/construction": {
                 "name": "Building Under Construction",
                 "terms": ""
@@ -1029,14 +985,6 @@
             },
             "building/dormitory": {
                 "name": "Dormitory",
-                "terms": ""
-            },
-            "building/entrance": {
-                "name": "Entrance",
-                "terms": ""
-            },
-            "building/garage": {
-                "name": "Garage",
                 "terms": ""
             },
             "building/garages": {
@@ -1055,24 +1003,12 @@
                 "name": "Hotel Building",
                 "terms": ""
             },
-            "building/house": {
-                "name": "House",
-                "terms": ""
-            },
-            "building/hut": {
-                "name": "Hut",
-                "terms": ""
-            },
-            "building/industrial": {
-                "name": "Industrial Building",
+            "building/office": {
+                "name": "Office",
                 "terms": ""
             },
             "building/public": {
                 "name": "Public Building",
-                "terms": ""
-            },
-            "building/residential": {
-                "name": "Residential Building",
                 "terms": ""
             },
             "building/retail": {
@@ -1115,231 +1051,6 @@
                 "name": "Warehouse",
                 "terms": ""
             },
-            "craft/basket_maker": {
-                "name": "Basket Maker",
-                "terms": "basket,basketry,basket maker,basket weaver"
-            },
-            "craft/beekeeper": {
-                "name": "Beekeeper",
-                "terms": "bees,beekeeper,bee box"
-            },
-            "craft/blacksmith": {
-                "name": "Blacksmith",
-                "terms": "blacksmith"
-            },
-            "craft/boatbuilder": {
-                "name": "Boat Builder",
-                "terms": "boat builder"
-            },
-            "craft/bookbinder": {
-                "name": "Bookbinder",
-                "terms": "bookbinder,book repair"
-            },
-            "craft/brewery": {
-                "name": "Brewery",
-                "terms": "brewery"
-            },
-            "craft/carpenter": {
-                "name": "Carpenter",
-                "terms": "carpenter,woodworker"
-            },
-            "craft/carpet_layer": {
-                "name": "Carpet Layer",
-                "terms": "carpet layer"
-            },
-            "craft/caterer": {
-                "name": "Caterer",
-                "terms": "Caterer,Catering"
-            },
-            "craft/clockmaker": {
-                "name": "Clockmaker",
-                "terms": "clock,clockmaker,clock repair"
-            },
-            "craft/confectionary": {
-                "name": "Confectionary",
-                "terms": "confectionary,sweets,candy"
-            },
-            "craft/dressmaker": {
-                "name": "Dressmaker",
-                "terms": "dress,dressmaker"
-            },
-            "craft/electrician": {
-                "name": "Electrician",
-                "terms": "electrician"
-            },
-            "craft/gardener": {
-                "name": "Gardener",
-                "terms": "gardener,landscaper,grounds keeper"
-            },
-            "craft/glaziery": {
-                "name": "Glaziery",
-                "terms": "glass,glass foundry,stained-glass,window"
-            },
-            "craft/handicraft": {
-                "name": "Handicraft",
-                "terms": "handicraft"
-            },
-            "craft/hvac": {
-                "name": "HVAC",
-                "terms": "heating,ventilating,air-conditioning,air conditioning"
-            },
-            "craft/insulator": {
-                "name": "Insulator",
-                "terms": "insulation,insulator"
-            },
-            "craft/jeweler": {
-                "name": "Jeweler",
-                "terms": "jeweler,gem,diamond"
-            },
-            "craft/key_cutter": {
-                "name": "Key Cutter",
-                "terms": "key,key cutter"
-            },
-            "craft/locksmith": {
-                "name": "Locksmith",
-                "terms": "locksmith,lock"
-            },
-            "craft/metal_construction": {
-                "name": "Metal Construction",
-                "terms": "metal construction"
-            },
-            "craft/optician": {
-                "name": "Optician",
-                "terms": "glasses,optician"
-            },
-            "craft/painter": {
-                "name": "Painter",
-                "terms": "painter"
-            },
-            "craft/photographer": {
-                "name": "Photographer",
-                "terms": "photographer"
-            },
-            "craft/photographic_labratory": {
-                "name": "Photographic Labratory",
-                "terms": "photographic labratory,film developer"
-            },
-            "craft/plasterer": {
-                "name": "Plasterer",
-                "terms": "plasterer"
-            },
-            "craft/plumber": {
-                "name": "Plumber",
-                "terms": "pumber"
-            },
-            "craft/pottery": {
-                "name": "Pottery",
-                "terms": "pottery,potter"
-            },
-            "craft/rigger": {
-                "name": "Rigger",
-                "terms": "rigger"
-            },
-            "craft/roofer": {
-                "name": "Roofer",
-                "terms": "roofer"
-            },
-            "craft/saddler": {
-                "name": "Saddler",
-                "terms": "saddler"
-            },
-            "craft/sailmaker": {
-                "name": "Sailmaker",
-                "terms": "sailmaker"
-            },
-            "craft/sawmill": {
-                "name": "Sawmill",
-                "terms": "sawmill,lumber"
-            },
-            "craft/scaffolder": {
-                "name": "Scaffolder",
-                "terms": "scaffolder"
-            },
-            "craft/sculpter": {
-                "name": "Sculpter",
-                "terms": "sculpter"
-            },
-            "craft/shoemaker": {
-                "name": "Shoemaker",
-                "terms": "shoe repair,shoemaker"
-            },
-            "craft/stonemason": {
-                "name": "Stonemason",
-                "terms": "stonemason,masonry"
-            },
-            "craft/sweep": {
-                "name": "Chimney Sweep",
-                "terms": "sweep,chimney sweep"
-            },
-            "craft/tailor": {
-                "name": "Tailor",
-                "terms": "tailor,clothes"
-            },
-            "craft/tiler": {
-                "name": "Tiler",
-                "terms": "tiler"
-            },
-            "craft/tinsmith": {
-                "name": "Tinsmith",
-                "terms": "tinsmith"
-            },
-            "craft/upholsterer": {
-                "name": "Upholsterer",
-                "terms": "upholsterer"
-            },
-            "craft/watchmaker": {
-                "name": "Watchmaker",
-                "terms": "watch,watchmaker,watch repair"
-            },
-            "craft/window_construction": {
-                "name": "Window Construction",
-                "terms": "window,window maker,window construction"
-            },
-            "embankment": {
-                "name": "Embankment",
-                "terms": ""
-            },
-            "emergency/ambulance_station": {
-                "name": "Ambulance Station",
-                "terms": ""
-            },
-            "emergency/fire_hydrant": {
-                "name": "Fire Hydrant",
-                "terms": ""
-            },
-            "emergency/phone": {
-                "name": "Emergency Phone",
-                "terms": ""
-            },
-            "entrance": {
-                "name": "Entrance",
-                "terms": ""
-            },
-            "footway/crossing": {
-                "name": "Crossing",
-                "terms": "crosswalk,zebra crossing"
-            },
-            "footway/sidewalk": {
-                "name": "Sidewalk",
-                "terms": ""
-            },
-            "golf/bunker": {
-                "name": "Sand Trap",
-                "terms": "hazard,bunker"
-            },
-            "golf/fairway": {
-                "name": "Fairway",
->>>>>>> upstream/master
-                "terms": ""
-            },
-            "building/office": {
-                "name": "Office",
-                "terms": ""
-            },
-            "building/stable": {
-                "name": "Stable",
-                "terms": ""
-            },
             "free_flying_site/takeoff": {
                 "name": "Parasailing Launch",
                 "terms": ""
@@ -1372,6 +1083,10 @@
                 "name": "Boat Launch",
                 "terms": ""
             },
+            "line": {
+                "name": "Line",
+                "terms": ""
+            },
             "man_made/buoy": {
                 "name": "Buoy",
                 "terms": ""
@@ -1390,6 +1105,10 @@
             },
             "piste_type/sled": {
                 "name": "Sledding",
+                "terms": ""
+            },
+            "point": {
+                "name": "Point",
                 "terms": ""
             },
             "railway/station": {
@@ -1438,6 +1157,14 @@
             },
             "traffic_sign/yes_traffic": {
                 "name": "Sign",
+                "terms": ""
+            },
+            "type/multipolygon": {
+                "name": "Multipolygon",
+                "terms": ""
+            },
+            "vertex": {
+                "name": "Other",
                 "terms": ""
             },
             "waterway/dock": {

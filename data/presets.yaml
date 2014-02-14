@@ -373,8 +373,8 @@ en:
         name: Telephone
         terms: "<translate with synonyms or related terms for 'Telephone', separated by commas>"
       amenity/theatre: 
-        name: Theater
-        terms: "<translate with synonyms or related terms for 'Theater', separated by commas>"
+        name: Amphitheater
+        terms: "<translate with synonyms or related terms for 'Amphitheater', separated by commas>"
       amenity/toilets: 
         name: Toilets
         terms: "<translate with synonyms or related terms for 'Toilets', separated by commas>"
@@ -390,12 +390,171 @@ en:
       bridge/yes_bridge: 
         name: Bridge
         terms: "<translate with synonyms or related terms for 'Bridge', separated by commas>"
+      building/barn: 
+        name: Barn
+        terms: "<translate with synonyms or related terms for 'Barn', separated by commas>"
+      building/bunker: 
+        name: Bunker
+        terms: "<translate with synonyms or related terms for 'Bunker', separated by commas>"
+      building/cabin: 
+        name: Cabin
+        terms: "<translate with synonyms or related terms for 'Cabin', separated by commas>"
+      building/cathedral: 
+        name: Cathedral
+        terms: "<translate with synonyms or related terms for 'Cathedral', separated by commas>"
+      building/chapel: 
+        name: Chapel
+        terms: "<translate with synonyms or related terms for 'Chapel', separated by commas>"
+      building/church: 
+        name: Church
+        terms: "<translate with synonyms or related terms for 'Church', separated by commas>"
+      building/construction: 
+        name: Building Under Construction
+        terms: "<translate with synonyms or related terms for 'Building Under Construction', separated by commas>"
+      building/detached: 
+        name: Detached Home
+        terms: "<translate with synonyms or related terms for 'Detached Home', separated by commas>"
+      building/dormitory: 
+        name: Dormitory
+        terms: "<translate with synonyms or related terms for 'Dormitory', separated by commas>"
+      building/garages: 
+        name: Garages
+        terms: "<translate with synonyms or related terms for 'Garages', separated by commas>"
+      building/greenhouse: 
+        name: Greenhouse
+        terms: "<translate with synonyms or related terms for 'Greenhouse', separated by commas>"
+      building/hospital: 
+        name: Hospital Building
+        terms: "<translate with synonyms or related terms for 'Hospital Building', separated by commas>"
+      building/hotel: 
+        name: Hotel Building
+        terms: "<translate with synonyms or related terms for 'Hotel Building', separated by commas>"
       building/office: 
         name: Office
         terms: "<translate with synonyms or related terms for 'Office', separated by commas>"
+      building/public: 
+        name: Public Building
+        terms: "<translate with synonyms or related terms for 'Public Building', separated by commas>"
+      building/retail: 
+        name: Retail Building
+        terms: "<translate with synonyms or related terms for 'Retail Building', separated by commas>"
+      building/roof: 
+        name: Roof
+        terms: "<translate with synonyms or related terms for 'Roof', separated by commas>"
+      building/school: 
+        name: School Building
+        terms: "<translate with synonyms or related terms for 'School Building', separated by commas>"
+      building/shed: 
+        name: Shed
+        terms: "<translate with synonyms or related terms for 'Shed', separated by commas>"
       building/stable: 
         name: Stable
         terms: "<translate with synonyms or related terms for 'Stable', separated by commas>"
+      building/static_caravan: 
+        name: Static Mobile Home
+        terms: "<translate with synonyms or related terms for 'Static Mobile Home', separated by commas>"
+      building/terrace: 
+        name: Row Houses
+        terms: "<translate with synonyms or related terms for 'Row Houses', separated by commas>"
+      building/train_station: 
+        name: Train Station
+        terms: "<translate with synonyms or related terms for 'Train Station', separated by commas>"
+      building/university: 
+        name: University Building
+        terms: "<translate with synonyms or related terms for 'University Building', separated by commas>"
+      building/warehouse: 
+        name: Warehouse
+        terms: "<translate with synonyms or related terms for 'Warehouse', separated by commas>"
       free_flying_site/takeoff: 
         name: Parasailing Launch
         terms: "<translate with synonyms or related terms for 'Parasailing Launch', separated by commas>"
+      highway/bus_stop: 
+        name: Transit Stop
+        terms: "<translate with synonyms or related terms for 'Transit Stop', separated by commas>"
+      highway/milemarker: 
+        name: Mile Marker
+        terms: "<translate with synonyms or related terms for 'Mile Marker', separated by commas>"
+      highway/trailhead: 
+        name: Trailhead
+        terms: "<translate with synonyms or related terms for 'Trailhead', separated by commas>"
+      leisure/fishing: 
+        name: Fishing
+        terms: "<translate with synonyms or related terms for 'Fishing', separated by commas>"
+      leisure/marina: 
+        name: Marina
+        terms: "<translate with synonyms or related terms for 'Marina', separated by commas>"
+      leisure/playground: 
+        name: Playgound
+        terms: "<translate with synonyms or related terms for 'Playgound', separated by commas>"
+      leisure/slipway: 
+        name: Boat Launch
+        terms: "<translate with synonyms or related terms for 'Boat Launch', separated by commas>"
+      line: 
+        name: Line
+        terms: "<translate with synonyms or related terms for 'Line', separated by commas>"
+      man_made/buoy: 
+        name: Buoy
+        terms: "<translate with synonyms or related terms for 'Buoy', separated by commas>"
+      man_made/lighthouse: 
+        name: Lighthouse
+        terms: "<translate with synonyms or related terms for 'Lighthouse', separated by commas>"
+      natural/cave_entrance: 
+        name: Cave Entrance
+        terms: "<translate with synonyms or related terms for 'Cave Entrance', separated by commas>"
+      piste_type/nordic: 
+        name: Crosscountry Skiing
+        terms: "<translate with synonyms or related terms for 'Crosscountry Skiing', separated by commas>"
+      piste_type/sled: 
+        name: Sledding
+        terms: "<translate with synonyms or related terms for 'Sledding', separated by commas>"
+      point: 
+        name: Point
+        terms: "<translate with synonyms or related terms for 'Point', separated by commas>"
+      railway/station: 
+        name: Railway Station
+        terms: "<translate with synonyms or related terms for 'Railway Station', separated by commas>"
+      safety_equipment/ladder: 
+        name: Ladder
+        terms: "<translate with synonyms or related terms for 'Ladder', separated by commas>"
+      shop/general: 
+        name: Store
+        terms: "<translate with synonyms or related terms for 'Store', separated by commas>"
+      sport/canoe: 
+        name: Canoe Access
+        terms: "<translate with synonyms or related terms for 'Canoe Access', separated by commas>"
+      sport/swimming: 
+        name: Swim
+        terms: "<translate with synonyms or related terms for 'Swim', separated by commas>"
+      tourism/alpine_hut: 
+        name: Lodge
+        terms: "<translate with synonyms or related terms for 'Lodge', separated by commas>"
+      tourism/camp_site: 
+        name: Camp Site
+        terms: "<translate with synonyms or related terms for 'Camp Site', separated by commas>"
+      tourism/information: 
+        name: Information
+        terms: "<translate with synonyms or related terms for 'Information', separated by commas>"
+      tourism/museum: 
+        name: Museum
+        terms: "<translate with synonyms or related terms for 'Museum', separated by commas>"
+      tourism/picnic_site: 
+        name: Picnic Site
+        terms: "<translate with synonyms or related terms for 'Picnic Site', separated by commas>"
+      tourism/viewpoint: 
+        name: Viewpoint
+        terms: "<translate with synonyms or related terms for 'Viewpoint', separated by commas>"
+      traffic_sign/yes_traffic: 
+        name: Sign
+        terms: "<translate with synonyms or related terms for 'Sign', separated by commas>"
+      type/multipolygon: 
+        name: Multipolygon
+        terms: "<translate with synonyms or related terms for 'Multipolygon', separated by commas>"
+      vertex: 
+        name: Other
+        terms: "<translate with synonyms or related terms for 'Other', separated by commas>"
+      waterway/dock: 
+        name: Dock
+        terms: "<translate with synonyms or related terms for 'Dock', separated by commas>"
+      wheelchair/yes_wc: 
+        name: Wheelchair Accessibility
+        terms: "<translate with synonyms or related terms for 'Wheelchair Accessibility', separated by commas>"

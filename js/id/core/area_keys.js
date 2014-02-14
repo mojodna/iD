@@ -7,6 +7,10 @@ iD.areaKeys = {
         "telephone": true,
         "waste_basket": true
     },
+    "building": {
+        "office": true,
+        "stable": true
+    },
     "tourism": {
         "viewpoint": true
     }

@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-=======
-    "icon": "rail",
-    "fields": [
-        "building_area"
-    ],
->>>>>>> upstream/master
     "geometry": [
         "point"
     ],
