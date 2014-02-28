@@ -1,2 +1,5 @@
 dist/*
 transifex.auth
+./data/presets/categories.json
+./data/presets/fields.json
+./data/presets/presets.json
