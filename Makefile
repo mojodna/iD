@@ -1,6 +1,6 @@
 # See the README for installation instructions.
 
-CLEAN_BUILD = $(shell echo "" > ./data/presets.yaml && echo "{}" > ./data/presets/presets.json && echo "{}" > ./data/presets/defaults.json && echo "{}" > ./data/presets/categories.json && echo "{}" > ./data/presets/fields.json)
+CLEAN_BUILD = $(shell echo "" > ./data/presets.yaml && echo "{}" > ./data/presets/presets.json && echo "{}" > ./data/presets/defaults.json && echo "{}" > ./data/presets/categories.json && echo "{}" > ./data/presets/fields.json %% mkdir -p dist/locales && mkdir -p dist/img)
 all: \
 	$(CLEAN_BUILD) \
 	dist/iD.css \
