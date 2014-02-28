@@ -9,6 +9,10 @@ all: \
 
 DATA_FILES = $(shell find data -type f -name '*.json' -o -name '*.md')
 data/data.js: $(DATA_FILES) dist/locales/en.json dist/img/maki-sprite.png
+	echo '{}' > ./data/presets/presets.json
+	echo '{}' > ./data/presets/defaults.json
+	echo '{}' > ./data/presets/categories.json
+	echo '{}' > ./data/presets/fields.json
 	node build.js
 
 dist/locales/en.json: data/core.yaml data/presets.yaml
