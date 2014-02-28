@@ -1,5 +1,9 @@
-dist/*
+dist
+node_modules
 transifex.auth
-./data/presets/categories.json
-./data/presets/fields.json
-./data/presets/presets.json
+data/presets/categories.json
+data/presets/fields.json
+data/presets/presets.json
+data/presets/defaults.json
+data/presets.yaml
+js/id/core/area_keys.js
