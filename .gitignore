@@ -1,4 +1,8 @@
-dist
+dist/iD.css
+dist/iD.js
+dist/iD.min.js
+dist/img
+dist/locales
 node_modules
 transifex.auth
 data/presets/categories.json
