@@ -1,13 +1,12 @@
 {
+    "icon": "park",
     "fields": [
         "operator",
-        "building_area",
         "address"
     ],
     "geometry": [
         "point",
-        "vertex",
-        "area"
+        "vertex"
     ],
     "terms": [],
     "tags": {
