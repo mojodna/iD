@@ -56,11 +56,12 @@ iD.modes.AddArea = function(context) {
     }
 
     mode.enter = function() {
-        context.install(behavior);
+        alert('Current Not Supported');
+        //context.install(behavior);
     };
 
     mode.exit = function() {
-        context.uninstall(behavior);
+        //context.uninstall(behavior);
     };
 
     return mode;
