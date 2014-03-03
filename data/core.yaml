@@ -2,12 +2,12 @@ en:
   modes:
     add_area:
       title: Area
-      description: "Add parks, buildings, lakes or other areas to the map."
-      tail: "Click on the map to start drawing an area, like a park, lake, or building."
+      description: "Current Not Supported"
+      tail: ""
     add_line:
       title: Line
-      description: "Add highways, streets, pedestrian paths, canals or other lines to the map."
-      tail: "Click on the map to start drawing a road, path, or route."
+      description: "Current Not Supported"
+      tail: ""
     add_point:
       title: Point
       description: "Add restaurants, monuments, postal boxes or other points to the map."
@@ -253,9 +253,9 @@ en:
     walkthrough: "Start the Walkthrough"
     start: "Edit Now"
   source_switch:
-    live: live
+    live: nps-live
     lose_changes: "You have unsaved changes. Switching the map server will discard them. Are you sure you want to switch servers?"
-    dev: dev
+    dev: "There is current no dev mode"
   tag_reference:
     description: Description
     on_wiki: "{tag} on wiki.osm.org"
