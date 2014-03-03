@@ -23,7 +23,7 @@ data/presets.yaml:
 	echo "" > $@
 
 DATA_FILES = $(shell find data -type f -name '*.json' -o -name '*.md')
-data/data.js: $(DATA_FILES) dist/locales/en.json css/img/maki-sprite.png data/presets/presets.json data/presets/defaults.json data/presets/categories.json data/presets/fields.json
+data/data.js: $(DATA_FILES) dist/locales/en.json dist/img/maki-sprite.png data/presets/presets.json data/presets/defaults.json data/presets/categories.json data/presets/fields.json
 	node build.js
 
 dist/locales/en.json: data/core.yaml data/presets.yaml data/presets/presets.json data/presets/defaults.json data/presets/categories.json data/presets/fields.json
@@ -96,7 +96,6 @@ node_modules/.install: package.json
 
 clean:
 	rm -f dist/iD*.js dist/iD.css \
-	mkdir dist/locales dist/img css/img
 
 translations:
 	node data/update_locales
@@ -119,9 +118,6 @@ dist/img/relation-presets.png: svg/relation-presets.svg
 dist/img/maki-sprite.png: ./node_modules/maki/www/images/maki-sprite.png
 	cp $< $@
 	node data/maki_sprite
-
-css/img/maki-sprite.png: dist/img/maki-sprite.png
-	cp $< $@
 
 D3_FILES = \
 	node_modules/d3/src/start.js \
