@@ -1,0 +1,26 @@
+{
+    "area": [
+    ],
+    "line": [
+    ],
+    "point": [
+      "amenity/bbq",
+      "amenity/bench",
+      "amenity/bicycle_parking",
+      "amenity/clinic",
+      "amenity/drinking_water",
+      "amenity/food_court",
+      "amenity/fuel",
+      "amenity/parking",
+      "amenity/shelter",
+      "amenity/shower",
+      "amenity/telephone",
+      "amenity/theatre",
+      "amenity/toilets",
+      "amenity/waste_basket"
+    ],
+    "vertex": [
+    ],
+    "relation": [
+    ]
+}

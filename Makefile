@@ -10,9 +10,6 @@ all: \
 data/presets/presets.json:
 	echo "{}" > $@
 
-data/presets/defaults.json:
-	echo "{}" > $@
-
 data/presets/categories.json:
 	echo "{}" > $@
 
