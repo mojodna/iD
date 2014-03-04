@@ -7,23 +7,13 @@ all: \
 	dist/img/line-presets.png \
 	dist/img/relation-presets.png
 
-data/presets/presets.json:
-	echo "{}" > $@
-
-data/presets/categories.json:
-	echo "{}" > $@
-
-data/presets/fields.json:
-	echo "{}" > $@
-
-data/presets.yaml:
-	echo "" > $@
-
 DATA_FILES = $(shell find data -type f -name '*.json' -o -name '*.md')
 data/data.js: $(DATA_FILES) dist/locales/en.json dist/img/maki-sprite.png data/presets/presets.json data/presets/defaults.json data/presets/categories.json data/presets/fields.json
+	@echo "----< $@ >----"
 	node build.js
 
 dist/locales/en.json: data/core.yaml data/presets.yaml data/presets/presets.json data/presets/defaults.json data/presets/categories.json data/presets/fields.json
+	@echo "----< $@ >----"
 	node build.js
 
 dist/iD.js: \
@@ -78,43 +68,73 @@ dist/iD.js: \
 .INTERMEDIATE dist/iD.js: data/data.js
 
 dist/iD.js: node_modules/.install Makefile
+	@echo "----< $@ >----"
 	@rm -f $@
 	cat $(filter %.js,$^) > $@
 
 dist/iD.min.js: dist/iD.js Makefile
+	@echo "----< $@ >----"
 	@rm -f $@
 	node_modules/.bin/uglifyjs $< -c -m -o $@
 
 dist/iD.css: css/*.css
+	@echo "----< $@ >----"
 	cat css/reset.css css/map.css css/app.css css/feature-icons.css > $@
 
 node_modules/.install: package.json
+	@echo "----< $@ >----"
 	npm install && touch node_modules/.install
 
 clean:
-	rm -f dist/iD*.js dist/iD.css \
+	@echo "----< $@ >----"
+	rm -f dist/iD*.js dist/iD.css
+	rm -f dist/img/maki-sprite.png
+	rm -f data/presets.yaml data/presets/fields.json data/presets/categories.json data/presets/presets.json dist/img/relation-presets.png dist/img/line-presets.png
 
 translations:
+	@echo "----< $@ >----"
 	node data/update_locales
 
 imagery:
+	@echo "----< $@ >----"
 	npm install editor-imagery-index@git://github.com/osmlab/editor-imagery-index.git#gh-pages && node data/update_imagery
 
 suggestions:
+	@echo "----< $@ >----"
 	npm install name-suggestion-index@git://github.com/osmlab/name-suggestion-index.git
 	cp node_modules/name-suggestion-index/name-suggestions.json data/name-suggestions.json
 
 SPRITE = inkscape --export-area-page
 
 dist/img/line-presets.png: svg/line-presets.svg
+	@echo "----< $@ >----"
 	if [ `which inkscape` ]; then $(SPRITE) --export-png=$@ $<; else echo "Inkscape is not installed"; fi;
 
 dist/img/relation-presets.png: svg/relation-presets.svg
+	@echo "----< $@ >----"
 	if [ `which inkscape` ]; then $(SPRITE) --export-png=$@ $<; else echo "Inkscape is not installed"; fi;
 
-dist/img/maki-sprite.png: ./node_modules/maki/www/images/maki-sprite.png
-	cp $< $@
+dist/img/maki-sprite.png: ./node_modules/npmaki/www/images/maki-sprite.png
+	@echo "----< $@ >----"
 	node data/maki_sprite
+	cp $< $@
+	cp $< css/img/
+
+data/presets/presets.json:
+	@echo "----< $@ >----"
+	@echo "{}" > $@
+
+data/presets/categories.json:
+	@echo "----< $@ >----"
+	@echo "{}" > $@
+
+data/presets/fields.json:
+	@echo "----< $@ >----"
+	@echo "{}" > $@
+
+data/presets.yaml:
+	@echo "----< $@ >----"
+	@echo "" > $@
 
 D3_FILES = \
 	node_modules/d3/src/start.js \
@@ -133,5 +153,6 @@ D3_FILES = \
 	node_modules/d3/src/end.js
 
 js/lib/d3.v3.js: $(D3_FILES)
+	echo "----< $@ >----"
 	node_modules/.bin/smash $(D3_FILES) > $@
 	@echo 'd3 rebuilt. Please reapply 7e2485d, 4da529f, and 223974d'

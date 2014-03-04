@@ -10,5 +10,10 @@ data/presets/fields.json
 data/presets/presets.json
 data/presets/defaults.json
 data/presets.yaml
+css/feature-icons.css
+data/feature-icons.json
+data/presets.yaml
+dist/img/relation-presets.png
+dist/img/line-presets.png
 css/img
 js/id/core/area_keys.js
