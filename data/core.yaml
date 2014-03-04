@@ -158,7 +158,7 @@ en:
     localized_translation_name: Name
   zoom_in_edit: Zoom in to Edit
   logout: logout
-  loading_auth: "Connecting to OpenStreetMap..."
+  loading_auth: "Connecting to The National Park Service Places of Interest Project..."
   report_a_bug: report a bug
   status:
     error: Unable to connect to API.
@@ -168,8 +168,8 @@ en:
     title: Save Changes
     description_placeholder: Brief description of your contributions
     message_label: Commit message
-    upload_explanation: "The changes you upload will be visible on all maps that use OpenStreetMap data."
-    upload_explanation_with_user: "The changes you upload as {user} will be visible on all maps that use OpenStreetMap data."
+    upload_explanation: "The changes you upload will be visible on all maps that use The National Park Service Placs of Interest Project data."
+    upload_explanation_with_user: "The changes you upload as {user} will be visible on all maps that use The National Park Service Places of Interest Project data."
     save: Save
     cancel: Cancel
     warnings: Warnings
@@ -230,15 +230,15 @@ en:
     reset: Reset
   save:
     title: Save
-    help: "Save changes to OpenStreetMap, making them visible to other users."
+    help: "Save changes to The National Park Service Places of Interest Project, making them visible to other users."
     no_changes: No changes to save.
     error: An error occurred while trying to save
-    uploading: Uploading changes to OpenStreetMap.
+    uploading: Uploading changes to The National Park Service Places of Interest Project.
     unsaved_changes: You have unsaved changes
   success:
-    edited_osm: "Edited OSM!"
-    just_edited: "You just edited OpenStreetMap!"
-    view_on_osm: "View on OSM"
+    edited_osm: "Edited NPS Places!"
+    just_edited: "You just edited The National Park Service Places of Interest Project!"
+    view_on_osm: "View on NPS Places"
     facebook: "Share on Facebook"
     twitter: "Share on Twitter"
     google: "Share on Google+"
@@ -248,7 +248,7 @@ en:
   confirm:
     okay: "Okay"
   splash:
-    welcome: Welcome to the iD OpenStreetMap editor
+    welcome: Welcome to the iD editor for The National Park Service Places of Interest Project
     text: "iD is a friendly but powerful tool for contributing to the world's best free world map. This is version {version}. For more information see {website} and report bugs at {github}."
     walkthrough: "Start the Walkthrough"
     start: "Edit Now"
@@ -282,17 +282,19 @@ en:
     help: |
       # Help
 
-      This is an editor for [OpenStreetMap](http://www.openstreetmap.org/), the
+      This is an editor for [The National Park Service Places of Interest Project](http://www.nps.gov/poi/), the
       free and editable map of the world. You can use it to add and update
       data in your area, making an open-source and open-data map of the world
       better for everyone.
 
       Edits that you make on this map will be visible to everyone who uses
-      OpenStreetMap. In order to make an edit, you'll need a
+      The National Park Service Places of Interest Project. In order to make an edit, you'll need a
       [free OpenStreetMap account](https://www.openstreetmap.org/user/new).
 
       The [iD editor](http://ideditor.com/) is a collaborative project with [source
-      code available on GitHub](https://github.com/openstreetmap/iD).
+      code available on GitHub](https://github.com/openstreetmap/iD). The National Park
+      Service maintains a forked version of the editor with its [source code
+      available on GitHub](https://github.com/nationalparkservice/iD).
     editing_saving: |
       # Editing & Saving
 
