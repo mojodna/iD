@@ -12,18 +12,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/openstreetmap/iD.git"
+    "url": "git://github.com/nationalparkservice/iD.git"
   },
   "keywords": [
     "editor",
-    "openstreetmap"
+    "openstreetmap",
+    "nationalparkservice"
   ],
   "license": "WTFPL",
   "devDependencies": {
     "d3": "3.3.10",
     "smash": "0.0",
     "uglify-js": "~2.2.5",
-    "maki": "0.4",
+    "npmaki": "git+https://github.com/nationalparkservice/npmaki.git#gh-pages",
     "jshint": "2.3.0",
     "mocha": "1",
     "mocha-phantomjs": "3",
