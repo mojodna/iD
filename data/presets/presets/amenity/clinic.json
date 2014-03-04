@@ -1,4 +1,5 @@
 {
+    "icon": "first-aid-black",
     "name": "Clinic",
     "geometry": [
         "point",

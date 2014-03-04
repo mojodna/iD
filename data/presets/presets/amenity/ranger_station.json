@@ -21,5 +21,6 @@
     "tags": {
         "amenity": "ranger_station"
     },
+    "icon": "ranger-station-black",
     "name": "Ranger Station"
 }
