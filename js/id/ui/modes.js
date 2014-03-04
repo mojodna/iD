@@ -1,8 +1,9 @@
 iD.ui.Modes = function(context) {
     var modes = [
-        iD.modes.AddPoint(context),
-        iD.modes.AddLine(context),
-        iD.modes.AddArea(context)];
+        iD.modes.AddPoint(context)
+        //iD.modes.AddLine(context),
+        //iD.modes.AddArea(context)
+    ];
 
     return function(selection) {
         var buttons = selection.selectAll('button.add-button')
