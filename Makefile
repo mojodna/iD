@@ -77,7 +77,7 @@ dist/iD.min.js: dist/iD.js Makefile
 	@rm -f $@
 	node_modules/.bin/uglifyjs $< -c -m -o $@
 
-dist/iD.css: css/*.css
+dist/iD.css: css/*.css dist/img/maki-sprite.png
 	@echo "----< $@ >----"
 	cat css/reset.css css/map.css css/app.css css/feature-icons.css > $@
 

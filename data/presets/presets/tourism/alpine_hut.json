@@ -5,5 +5,6 @@
     "tags": {
         "tourism": "alpine_hut"
     },
-    "name": "Lodge"
+    "name": "Lodge",
+    "icon": "lodging-black"
 }
