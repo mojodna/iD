@@ -237,13 +237,13 @@ en:
     unsaved_changes: You have unsaved changes
   success:
     edited_osm: "Edited NPS Places!"
-    just_edited: "You just edited The National Park Service Places of Interest Project!"
+    just_edited: "You just edited The NPS POI Map!"
     view_on_osm: "View on NPS Places"
     facebook: "Share on Facebook"
     twitter: "Share on Twitter"
     google: "Share on Google+"
     help_html: |
-      Your changes should appear in the "Standard" layer in a few minutes. Other layers, and certain features, may take longer
+      Your changes should appear in the "Standard" layer in a few hours. Other layers, and certain features, may take longer
       (<a href='https://help.openstreetmap.org/questions/4705/why-havent-my-changes-appeared-on-the-map' target='_blank'>details</a>).
   confirm:
     okay: "Okay"
