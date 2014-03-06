@@ -189,7 +189,7 @@ en:
     no_documentation_combination: There is no documentation available for this tag combination
     no_documentation_key: There is no documentation available for this key
     show_more: Show More
-    view_on_osm: View on openstreetmap.org
+    view_on_osm: View on NPS Places
     all_tags: All tags
     all_members: All members
     all_relations: All relations
@@ -237,7 +237,7 @@ en:
     unsaved_changes: You have unsaved changes
   success:
     edited_osm: "Edited NPS Places!"
-    just_edited: "You just edited The NPS POI Map!"
+    just_edited: "Congratulations, You edited NPS Places!"
     view_on_osm: "View on NPS Places"
     facebook: "Share on Facebook"
     twitter: "Share on Twitter"
