@@ -173,8 +173,9 @@ iD.svg.Labels = function(projection, context) {
 
         icons.attr('transform', get(labels, 'transform'))
             .attr('xlink:href', function(d) {
-              console.log('does this get called?', d);
-                return '#maki-' + context.presets().match(d, context.graph()).icon + '-18';
+                var type = context.presets().match(d, context.graph()) || {};
+                type.maki = type.maki || 'maki';
+                return '#' + type.maki + '-' + type.icon + '-18';
             });
 
 

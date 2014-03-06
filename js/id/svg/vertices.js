@@ -93,7 +93,9 @@ iD.svg.Vertices = function(projection, context) {
             .append('use')
             .attr('transform', 'translate(-6, -6)')
             .attr('clip-path', 'url(#clip-square-12)')
-            .attr('xlink:href', function(d) { return '#maki-' + icon(d) + '-12'; });
+            .attr('xlink:href', function(d) {
+              return '#maki-' + icon(d) + '-12';
+            });
             // TODO: This will need an update to use npmaki if we add a vertex to npmaki (not likely)
 
         // Vertices with tags get a `circle`.
