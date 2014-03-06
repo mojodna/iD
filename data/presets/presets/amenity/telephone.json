@@ -11,6 +11,5 @@
     "terms":  [
         "phone"
     ],
-    "searchable": false,
     "name": "Telephone"
 }

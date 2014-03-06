@@ -5,7 +5,6 @@
     "tags": {
         "tourism": "information"
     },
-    "searchable": false,
     "name": "Information",
     "icon": "information-black",
     "maki": "npmaki"

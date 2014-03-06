@@ -1,7 +1,6 @@
 {
     "icon": "first-aid-black",
     "maki": "npmaki",
-    "searchable": false,
     "name": "Clinic",
     "geometry": [
         "point",

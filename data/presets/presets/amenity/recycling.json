@@ -14,7 +14,6 @@
     "tags": {
         "amenity": "recycling"
     },
-    "searchable": false,
     "name": "Recycling",
     "icon": "recycling",
     "maki": "maki"

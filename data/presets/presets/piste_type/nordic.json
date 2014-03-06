@@ -5,7 +5,6 @@
     "tags": {
         "piste:type": "nordic"
     },
-    "searchable": false,
     "name": "Crosscountry Skiing",
     "icon": "cross-country-ski-trail-black",
     "maki": "npmaki"
