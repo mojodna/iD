@@ -6,5 +6,6 @@
         "shop": "general"
     },
     "name": "Store",
-    "icon": "store-black"
+    "icon": "store-black",
+    "maki": "npmaki"
 }

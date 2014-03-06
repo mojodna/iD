@@ -5,5 +5,7 @@
     "tags": {
         "railway": "station"
     },
-    "name": "Railway Station"
+    "name": "Railway Station",
+    "icon": "rail",
+    "maki": "maki"
 }

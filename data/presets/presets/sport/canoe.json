@@ -6,5 +6,6 @@
         "sport": "canoe"
     },
     "name": "Canoe Access",
-    "icon": "canoe-access-black"
+    "icon": "canoe-access-black",
+    "maki": "npmaki"
 }

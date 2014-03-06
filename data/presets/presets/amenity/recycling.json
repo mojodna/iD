@@ -1,5 +1,4 @@
 {
-    "icon": "recycling",
     "fields": [
         "recycling/cans",
         "recycling/glass",
@@ -15,5 +14,7 @@
     "tags": {
         "amenity": "recycling"
     },
-    "name": "Recycling"
+    "name": "Recycling",
+    "icon": "recycling",
+    "maki": "maki"
 }

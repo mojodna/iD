@@ -1,5 +1,6 @@
 {
     "icon": "litter-receptacle-black",
+    "maki": "npmaki",
     "geometry": [
         "point",
         "vertex"

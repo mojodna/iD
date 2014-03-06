@@ -1,5 +1,6 @@
 {
     "icon": "telephone",
+    "maki": "maki",
     "geometry": [
         "point",
         "vertex"

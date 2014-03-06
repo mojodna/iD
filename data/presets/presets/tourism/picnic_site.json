@@ -1,5 +1,4 @@
 {
-    "icon": "park",
     "fields": [
         "operator",
         "address"
@@ -13,5 +12,6 @@
         "tourism": "picnic_site"
     },
     "name": "Picnic Site",
-    "icon": "picnic-black"
+    "icon": "picnic-black",
+    "maki": "npmaki"
 }

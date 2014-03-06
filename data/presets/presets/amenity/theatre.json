@@ -1,5 +1,6 @@
 {
     "icon": "amphitheater-black",
+    "maki": "npmaki",
     "fields": [
         "operator",
         "building_area",

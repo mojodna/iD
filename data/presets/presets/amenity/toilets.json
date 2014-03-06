@@ -27,5 +27,6 @@
         "amenity": "toilets"
     },
     "icon": "restroom-black",
+    "maki": "npmaki",
     "name": "Toilets"
 }

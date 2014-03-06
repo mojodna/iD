@@ -1,5 +1,6 @@
 {
     "icon": "fishing-black",
+    "maki": "npmaki",
     "geometry": [
         "point"
     ],

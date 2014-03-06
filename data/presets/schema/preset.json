@@ -52,6 +52,10 @@
             "description": "Name of preset icon which represents this preset",
             "type": "string"
         },
+        "maki": {
+          "description": "Custom type used to allow National Park Service Icons (npmaki) along with other maki based libraries",
+          "type": "string"
+        },
         "terms": {
             "description": "English synonyms or related terms",
             "type": "array",

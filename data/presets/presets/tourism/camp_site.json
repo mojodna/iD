@@ -6,5 +6,6 @@
         "tourism": "camp_site"
     },
     "name": "Camp Site",
-    "icon": "camping-black"
+    "icon": "camping-black",
+    "maki": "npmaki"
 }

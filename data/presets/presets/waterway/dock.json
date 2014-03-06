@@ -6,5 +6,6 @@
         "waterway": "dock"
     },
     "name": "Dock",
-    "icon": "marina-black"
+    "icon": "marina-black",
+    "maki": "npmaki"
 }

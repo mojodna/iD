@@ -1,5 +1,6 @@
 {
     "icon": "food-service-black",
+    "maki": "npmaki",
     "geometry": [
         "point",
         "vertex",

@@ -1,5 +1,6 @@
 {
     "icon": "museum",
+    "maki": "maki",
     "fields": [
         "operator",
         "building_area",

@@ -6,5 +6,6 @@
         "piste:type": "nordic"
     },
     "name": "Crosscountry Skiing",
-    "icon": "cross-country-ski-trail-black"
+    "icon": "cross-country-ski-trail-black",
+    "maki": "npmaki"
 }

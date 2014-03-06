@@ -9,6 +9,7 @@
     "removeTags": {},
     "name": "Multipolygon",
     "icon": "multipolygon",
+    "maki": "maki",
     "searchable": false,
     "matchScore": 0.1
 }

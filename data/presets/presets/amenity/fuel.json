@@ -1,5 +1,6 @@
 {
     "icon": "gas-station-black",
+    "maki": "npmaki",
     "fields": [
         "operator",
         "address",

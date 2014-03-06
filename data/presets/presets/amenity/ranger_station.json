@@ -22,5 +22,6 @@
         "amenity": "ranger_station"
     },
     "icon": "ranger-station-black",
+    "maki": "npmaki",
     "name": "Ranger Station"
 }

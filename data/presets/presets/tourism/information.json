@@ -6,5 +6,6 @@
         "tourism": "information"
     },
     "name": "Information",
-    "icon": "information-black"
+    "icon": "information-black",
+    "maki": "npmaki"
 }

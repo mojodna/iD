@@ -1,5 +1,6 @@
 {
     "icon": "parking-black",
+    "maki": "npmaki",
     "fields": [
         "parking",
         "capacity",

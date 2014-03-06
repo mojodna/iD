@@ -1,5 +1,6 @@
 {
     "icon": "bike-trail-black",
+    "maki": "npmaki",
     "fields": [
         "bicycle_parking",
         "capacity",

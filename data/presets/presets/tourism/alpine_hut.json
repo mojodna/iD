@@ -6,5 +6,6 @@
         "tourism": "alpine_hut"
     },
     "name": "Lodge",
-    "icon": "lodging-black"
+    "icon": "lodging-black",
+    "maki": "npmaki"
 }
