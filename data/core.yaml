@@ -253,9 +253,9 @@ en:
     walkthrough: "Start the Walkthrough"
     start: "Edit Now"
   source_switch:
-    live: nps-live
+    live: "NPS Live Database"
     lose_changes: "You have unsaved changes. Switching the map server will discard them. Are you sure you want to switch servers?"
-    dev: "There is current no dev mode"
+    dev: "NPS Development Database"
   tag_reference:
     description: Description
     on_wiki: "{tag} on wiki.osm.org"
