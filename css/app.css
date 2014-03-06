@@ -838,7 +838,7 @@ a:hover .icon.out-link   { background-position: -500px -14px;}
     background: #ececec;
 }
 
-.preset-icon {
+.preset-icon,.preset-icon-npmaki {
     position: absolute;
     top: 17px;
     left: 17px;

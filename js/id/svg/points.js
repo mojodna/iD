@@ -42,8 +42,9 @@ iD.svg.Points = function(projection, context) {
         groups.select('.stroke');
         groups.select('.icon')
             .attr('xlink:href', function(entity) {
-                var preset = context.presets().match(entity, context.graph());
-                return preset.icon ? '#maki-' + preset.icon + '-12' : '';
+                var preset = context.presets().match(entity, context.graph()),
+                makiType = preset.maki || 'maki';
+                return preset.icon ? ('#' + makiType + '-' + preset.icon + '-12') : '';
             });
 
         groups.exit()

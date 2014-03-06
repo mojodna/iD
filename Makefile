@@ -79,7 +79,7 @@ dist/iD.min.js: dist/iD.js Makefile
 
 dist/iD.css: css/*.css dist/img/maki-sprite.png
 	@echo "----< $@ >----"
-	cat css/reset.css css/map.css css/app.css css/feature-icons.css > $@
+	cat css/reset.css css/map.css css/app.css css/feature-icons.css> $@
 
 node_modules/.install: package.json
 	@echo "----< $@ >----"
@@ -88,7 +88,8 @@ node_modules/.install: package.json
 clean:
 	@echo "----< $@ >----"
 	rm -f dist/iD*.js dist/iD.css
-	rm -f dist/img/maki-sprite.png
+	rm -f dist/img/maki-sprite.png css/img/maki-sprite.png
+	rm -f dist/img/npmaki-sprite.png css/img/npmaki-sprite.png
 	rm -f data/presets.yaml data/presets/fields.json data/presets/categories.json data/presets/presets.json dist/img/relation-presets.png dist/img/line-presets.png
 
 translations:
@@ -114,11 +115,16 @@ dist/img/relation-presets.png: svg/relation-presets.svg
 	@echo "----< $@ >----"
 	if [ `which inkscape` ]; then $(SPRITE) --export-png=$@ $<; else echo "Inkscape is not installed"; fi;
 
-dist/img/maki-sprite.png: ./node_modules/npmaki/www/images/maki-sprite.png
+dist/img/maki-sprite.png: ./node_modules/maki/www/images/maki-sprite.png dist/img/npmaki-sprite.png
 	@echo "----< $@ >----"
 	node data/maki_sprite
 	cp $< $@
 	cp $< css/img/
+
+dist/img/npmaki-sprite.png: ./node_modules/npmaki/www/images/maki-sprite.png
+	@echo "----< $@ >----"
+	cp $< $@
+	cp $< css/img/npmaki-sprite.png
 
 data/presets/presets.json:
 	@echo "----< $@ >----"

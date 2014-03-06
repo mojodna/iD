@@ -90,13 +90,16 @@ iD.svg.Surface = function(context) {
             .attr('width', function(d) { return d; })
             .attr('height', function(d) { return d; });
 
-        var maki = [];
-        _.forEach(iD.data.featureIcons, function(dimensions, name) {
+        var makis = {};
+        _.forEach(iD.data.featureIcons, function(data, id) {
+          makis[id] = [];
+          _.forEach(data, function(dimensions, name) {
             if (dimensions['12'] && dimensions['18'] && dimensions['24']) {
-                maki.push({key: 'maki-' + name + '-12', value: dimensions['12']});
-                maki.push({key: 'maki-' + name + '-18', value: dimensions['18']});
-                maki.push({key: 'maki-' + name + '-24', value: dimensions['24']});
+              makis[id].push({key: id + '-' + name + '-12', value: dimensions['12']});
+              makis[id].push({key: id + '-' + name + '-18', value: dimensions['18']});
+              makis[id].push({key: id + '-' + name + '-24', value: dimensions['24']});
             }
+          });
         });
 
         defs.call(SpriteDefinition(
@@ -107,7 +110,13 @@ iD.svg.Surface = function(context) {
         defs.call(SpriteDefinition(
             'maki-sprite',
             context.imagePath('maki-sprite.png'),
-            maki));
+            makis.maki));
+
+            defs.call(SpriteDefinition(
+            'npmaki-sprite',
+            context.imagePath('npmaki-sprite.png'),
+            makis.npmaki));
+
 
         var layers = selection.selectAll('.layer')
             .data(['fill', 'shadow', 'casing', 'stroke', 'oneway', 'hit', 'halo', 'label']);

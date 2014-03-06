@@ -24,6 +24,7 @@
     "d3": "3.3.10",
     "smash": "0.0",
     "uglify-js": "~2.2.5",
+    "maki": "0.4",
     "npmaki": "git+https://github.com/nationalparkservice/npmaki.git#gh-pages",
     "jshint": "2.3.0",
     "mocha": "1",

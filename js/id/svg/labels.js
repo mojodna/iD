@@ -173,6 +173,7 @@ iD.svg.Labels = function(projection, context) {
 
         icons.attr('transform', get(labels, 'transform'))
             .attr('xlink:href', function(d) {
+              console.log('does this get called?', d);
                 return '#maki-' + context.presets().match(d, context.graph()).icon + '-18';
             });
 
