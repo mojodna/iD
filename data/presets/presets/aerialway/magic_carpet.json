@@ -10,5 +10,6 @@
     "tags": {
         "aerialway": "magic_carpet"
     },
+    "searchable": false,
     "name": "Magic Carpet Lift"
 }

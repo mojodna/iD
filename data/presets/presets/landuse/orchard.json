@@ -8,5 +8,6 @@
         "landuse": "orchard"
     },
     "terms": [],
+    "searchable": false,
     "name": "Orchard"
 }

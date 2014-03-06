@@ -7,6 +7,7 @@
         "landuse": "farm"
     },
     "terms": [],
+    "searchable": false,
     "name": "Farm",
     "icon": "farm"
 }

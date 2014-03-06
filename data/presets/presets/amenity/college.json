@@ -12,5 +12,6 @@
         "amenity": "college"
     },
     "terms": [],
+    "searchable": false,
     "name": "College"
 }

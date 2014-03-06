@@ -28,5 +28,6 @@
     },
     "icon": "restroom-black",
     "maki": "npmaki",
+    "searchable": false,
     "name": "Toilets"
 }

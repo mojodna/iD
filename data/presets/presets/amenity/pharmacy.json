@@ -15,5 +15,6 @@
         "amenity": "pharmacy"
     },
     "terms": [],
+    "searchable": false,
     "name": "Pharmacy"
 }

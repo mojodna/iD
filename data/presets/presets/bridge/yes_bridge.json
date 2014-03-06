@@ -6,5 +6,6 @@
     "tags": {
         "bridge": "yes"
     },
+    "searchable": false,
     "name": "Bridge"
 }

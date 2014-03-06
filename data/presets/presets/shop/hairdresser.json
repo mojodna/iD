@@ -13,5 +13,6 @@
     "tags": {
         "shop": "hairdresser"
     },
+    "searchable": false,
     "name": "Hairdresser"
 }

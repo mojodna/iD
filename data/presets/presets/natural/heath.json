@@ -6,5 +6,6 @@
     "tags": {
         "natural": "heath"
     },
+    "searchable": false,
     "name": "Heath"
 }

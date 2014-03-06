@@ -12,5 +12,6 @@
         "sport": "volleyball"
     },
     "terms": [],
+    "searchable": false,
     "name": "Volleyball Court"
 }

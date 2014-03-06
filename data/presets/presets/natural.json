@@ -10,5 +10,6 @@
     "tags": {
         "natural": "*"
     },
+    "searchable": false,
     "name": "Natural"
 }

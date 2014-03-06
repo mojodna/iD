@@ -29,5 +29,6 @@
     "tags": {
         "leisure": "park"
     },
+    "searchable": false,
     "name": "Park"
 }

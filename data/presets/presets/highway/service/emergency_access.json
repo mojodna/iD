@@ -12,5 +12,6 @@
         "highway": "service",
         "service": "emergency_access"
     },
+    "searchable": false,
     "name": "Emergency Access"
 }

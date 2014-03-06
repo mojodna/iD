@@ -13,5 +13,6 @@
     "tags": {
         "shop": "newsagent"
     },
+    "searchable": false,
     "name": "Newsagent"
 }

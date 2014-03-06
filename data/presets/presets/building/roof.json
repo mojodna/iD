@@ -12,5 +12,6 @@
     "tags": {
         "building": "roof"
     },
+    "searchable": false,
     "name": "Roof"
 }

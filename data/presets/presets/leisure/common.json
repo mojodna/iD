@@ -9,5 +9,6 @@
     "tags": {
         "leisure": "common"
     },
+    "searchable": false,
     "name": "Common"
 }

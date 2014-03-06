@@ -14,5 +14,6 @@
         "highway": "residential"
     },
     "terms": [],
+    "searchable": false,
     "name": "Residential Road"
 }

@@ -5,6 +5,7 @@
     "tags": {
         "man_made": "lighthouse"
     },
+    "searchable": false,
     "name": "Lighthouse",
     "icon": "lighthouse",
     "maki": "maki"

@@ -13,5 +13,6 @@
     "tags": {
         "shop": "convenience"
     },
+    "searchable": false,
     "name": "Convenience Store"
 }

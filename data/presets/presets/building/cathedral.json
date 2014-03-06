@@ -12,5 +12,6 @@
     "tags": {
         "building": "cathedral"
     },
+    "searchable": false,
     "name": "Cathedral"
 }

@@ -13,5 +13,6 @@
     "tags": {
         "shop": "photo"
     },
+    "searchable": false,
     "name": "Photography Store"
 }

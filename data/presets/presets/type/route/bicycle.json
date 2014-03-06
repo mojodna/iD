@@ -6,6 +6,7 @@
         "type": "route",
         "route": "bicycle"
     },
+    "searchable": false,
     "name": "Cycle Route",
     "icon": "route-bicycle",
     "fields": [

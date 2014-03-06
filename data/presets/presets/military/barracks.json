@@ -8,5 +8,6 @@
         "military": "barracks"
     },
     "terms": [],
+    "searchable": false,
     "name": "Barracks"
 }

@@ -6,5 +6,6 @@
     "tags": {
         "natural": "glacier"
     },
+    "searchable": false,
     "name": "Glacier"
 }

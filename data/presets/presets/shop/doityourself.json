@@ -13,5 +13,6 @@
     "tags": {
         "shop": "doityourself"
     },
+    "searchable": false,
     "name": "DIY Store"
 }

@@ -9,5 +9,6 @@
         "sport": "baseball"
     },
     "terms": [],
+    "searchable": false,
     "name": "Baseball Diamond"
 }

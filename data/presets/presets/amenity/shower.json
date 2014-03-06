@@ -7,5 +7,6 @@
     "tags": {
         "amenity": "shower"
     },
+    "searchable": false,
     "name": "Shower"
 }

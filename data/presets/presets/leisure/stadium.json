@@ -9,5 +9,6 @@
     "fields": [
         "sport"
     ],
+    "searchable": false,
     "name": "Stadium"
 }

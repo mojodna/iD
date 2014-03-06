@@ -12,5 +12,6 @@
         "sport": "basketball"
     },
     "terms": [],
+    "searchable": false,
     "name": "Basketball Court"
 }

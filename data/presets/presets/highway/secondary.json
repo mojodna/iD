@@ -16,5 +16,6 @@
         "highway": "secondary"
     },
     "terms": [],
+    "searchable": false,
     "name": "Secondary Road"
 }

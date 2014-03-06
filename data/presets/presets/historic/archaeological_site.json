@@ -7,5 +7,6 @@
     "tags": {
         "historic": "archaeological_site"
     },
+    "searchable": false,
     "name": "Archaeological Site"
 }

@@ -18,5 +18,6 @@
         "amenity": "place_of_worship",
         "religion": "jewish"
     },
+    "searchable": false,
     "name": "Synagogue"
 }

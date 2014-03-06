@@ -13,5 +13,6 @@
         "office": "insurance"
     },
     "terms": [],
+    "searchable": false,
     "name": "Insurance Office"
 }

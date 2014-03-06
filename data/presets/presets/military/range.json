@@ -8,5 +8,6 @@
         "military": "range"
     },
     "terms": [],
+    "searchable": false,
     "name": "Military Range"
 }

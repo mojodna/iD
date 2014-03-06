@@ -13,5 +13,6 @@
     "tags": {
         "shop": "beverages"
     },
+    "searchable": false,
     "name": "Beverage Store"
 }

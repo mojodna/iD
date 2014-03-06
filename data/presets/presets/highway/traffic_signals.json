@@ -10,5 +10,6 @@
         "stoplight",
         "traffic light"
     ],
+    "searchable": false,
     "name": "Traffic Signals"
 }

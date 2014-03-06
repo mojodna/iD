@@ -17,5 +17,6 @@
         "sculpture",
         "statue"
     ],
+    "searchable": false,
     "name": "Artwork"
 }

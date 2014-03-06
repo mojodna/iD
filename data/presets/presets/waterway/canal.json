@@ -6,5 +6,6 @@
     "tags": {
         "waterway": "canal"
     },
+    "searchable": false,
     "name": "Canal"
 }

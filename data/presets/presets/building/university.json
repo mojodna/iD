@@ -12,5 +12,6 @@
     "tags": {
         "building": "university"
     },
+    "searchable": false,
     "name": "University Building"
 }

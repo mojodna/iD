@@ -17,5 +17,6 @@
         "railway": "funicular"
     },
     "icon": "railway-rail",
+    "searchable": false,
     "name": "Funicular"
 }

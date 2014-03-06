@@ -31,5 +31,6 @@
     "tags": {
         "amenity": "cinema"
     },
+    "searchable": false,
     "name": "Cinema"
 }

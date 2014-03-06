@@ -11,6 +11,7 @@
     "tags": {
         "tourism": "picnic_site"
     },
+    "searchable": false,
     "name": "Picnic Site",
     "icon": "picnic-black",
     "maki": "npmaki"

@@ -8,5 +8,6 @@
     "tags": {
         "barrier": "toll_booth"
     },
+    "searchable": false,
     "name": "Toll Booth"
 }

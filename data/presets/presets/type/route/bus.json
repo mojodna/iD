@@ -6,6 +6,7 @@
         "type": "route",
         "route": "bus"
     },
+    "searchable": false,
     "name": "Bus Route",
     "icon": "route-bus",
     "fields": [

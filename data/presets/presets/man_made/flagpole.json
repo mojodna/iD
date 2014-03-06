@@ -5,6 +5,7 @@
     "tags": {
         "man_made": "flagpole"
     },
+    "searchable": false,
     "name": "Flagpole",
     "icon": "embassy"
 }

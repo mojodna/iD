@@ -13,5 +13,6 @@
     "tags": {
         "shop": "sports"
     },
+    "searchable": false,
     "name": "Sporting Goods Store"
 }

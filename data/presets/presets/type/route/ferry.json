@@ -6,6 +6,7 @@
         "type": "route",
         "route": "ferry"
     },
+    "searchable": false,
     "name": "Ferry Route",
     "icon": "route-ferry",
     "fields": [

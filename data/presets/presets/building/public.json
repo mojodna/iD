@@ -12,5 +12,6 @@
     "tags": {
         "building": "public"
     },
+    "searchable": false,
     "name": "Public Building"
 }

@@ -15,5 +15,6 @@
         "highway": "motorway_link"
     },
     "terms": ["ramp", "on ramp", "off ramp"],
+    "searchable": false,
     "name": "Motorway Link"
 }

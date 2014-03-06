@@ -17,5 +17,6 @@
         "Bed & Breakfast",
         "Bed and Breakfast"
     ],
+    "searchable": false,
     "name": "Guest House"
 }

@@ -13,5 +13,6 @@
     "tags": {
         "aeroway": "apron"
     },
+    "searchable": false,
     "name": "Apron"
 }

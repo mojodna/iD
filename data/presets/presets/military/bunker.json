@@ -8,5 +8,6 @@
         "military": "bunker"
     },
     "terms": [],
+    "searchable": false,
     "name": "Bunker"
 }

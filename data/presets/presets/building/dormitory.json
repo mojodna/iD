@@ -12,5 +12,6 @@
     "tags": {
         "building": "dormitory"
     },
+    "searchable": false,
     "name": "Dormitory"
 }

@@ -6,5 +6,6 @@
         "natural": "scrub"
     },
     "terms": [],
+    "searchable": false,
     "name": "Scrub"
 }

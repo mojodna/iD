@@ -10,6 +10,7 @@
     "tags": {
         "building": "garage"
     },
+    "searchable": false,
     "name": "Garage",
     "icon": "warehouse"
 }

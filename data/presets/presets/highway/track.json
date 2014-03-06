@@ -15,5 +15,6 @@
         "highway": "track"
     },
     "terms": [],
+    "searchable": false,
     "name": "Track"
 }

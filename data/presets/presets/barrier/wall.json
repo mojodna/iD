@@ -6,5 +6,6 @@
     "tags": {
         "barrier": "wall"
     },
+    "searchable": false,
     "name": "Wall"
 }

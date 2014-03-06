@@ -16,5 +16,6 @@
     "terms": [
         "alcohol"
     ],
+    "searchable": false,
     "name": "Liquor Store"
 }

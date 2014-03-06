@@ -8,5 +8,6 @@
     "tags": {
         "aeroway": "hangar"
     },
+    "searchable": false,
     "name": "Hangar"
 }

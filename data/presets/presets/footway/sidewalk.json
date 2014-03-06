@@ -12,5 +12,6 @@
         "footway": "sidewalk"
     },
     "terms": [],
+    "searchable": false,
     "name": "Sidewalk"
 }

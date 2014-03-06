@@ -15,5 +15,6 @@
         "amenity": "fast_food"
     },
     "terms": [],
+    "searchable": false,
     "name": "Fast Food"
 }

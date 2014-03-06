@@ -13,5 +13,6 @@
     "tags": {
         "shop": "confectionery"
     },
+    "searchable": false,
     "name": "Confectionery"
 }

@@ -5,6 +5,7 @@
     "tags": {
         "waterway": "dock"
     },
+    "searchable": false,
     "name": "Dock",
     "icon": "marina-black",
     "maki": "npmaki"

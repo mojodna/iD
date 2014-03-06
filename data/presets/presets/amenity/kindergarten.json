@@ -15,5 +15,6 @@
     "tags": {
         "amenity": "kindergarten"
     },
+    "searchable": false,
     "name": "Kindergarten Grounds"
 }

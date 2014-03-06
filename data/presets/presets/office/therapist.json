@@ -13,5 +13,6 @@
         "office": "therapist"
     },
     "terms": [],
+    "searchable": false,
     "name": "Therapist"
 }

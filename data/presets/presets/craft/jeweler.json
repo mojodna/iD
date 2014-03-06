@@ -1,4 +1,5 @@
 {
+    "searchable": false,
     "name": "Jeweler",
     "geometry": [
         "point",
@@ -13,7 +14,6 @@
         "craft": "jeweler"
     },
     "icon": "marker-stroked",
-    "searchable": false,
     "fields": [
         "building_area",
         "address",

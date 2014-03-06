@@ -7,7 +7,7 @@
         "landuse": "farmland"
     },
     "terms": [],
+    "searchable": false,
     "name": "Farmland",
-    "icon": "farm",
-    "searchable": false
+    "icon": "farm"
 }

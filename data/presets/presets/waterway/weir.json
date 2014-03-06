@@ -7,5 +7,6 @@
     "tags": {
         "waterway": "weir"
     },
+    "searchable": false,
     "name": "Weir"
 }

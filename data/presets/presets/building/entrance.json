@@ -6,6 +6,6 @@
     "tags": {
         "building": "entrance"
     },
-    "name": "Entrance",
-    "searchable": false
+    "searchable": false,
+    "name": "Entrance"
 }

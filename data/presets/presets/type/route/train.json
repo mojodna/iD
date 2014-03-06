@@ -6,6 +6,7 @@
         "type": "route",
         "route": "train"
     },
+    "searchable": false,
     "name": "Train Route",
     "icon": "route-train",
     "fields": [

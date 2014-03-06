@@ -9,5 +9,6 @@
     "tags": {
         "aeroway": "taxiway"
     },
+    "searchable": false,
     "name": "Taxiway"
 }

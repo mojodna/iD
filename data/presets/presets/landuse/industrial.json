@@ -8,5 +8,6 @@
         "landuse": "industrial"
     },
     "terms": [],
+    "searchable": false,
     "name": "Industrial"
 }

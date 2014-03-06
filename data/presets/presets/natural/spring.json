@@ -7,5 +7,6 @@
     "tags": {
         "natural": "spring"
     },
+    "searchable": false,
     "name": "Spring"
 }

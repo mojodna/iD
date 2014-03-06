@@ -9,5 +9,6 @@
     "fields": [
         "towertype"
     ],
+    "searchable": false,
     "name": "Tower"
 }

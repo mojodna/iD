@@ -10,5 +10,6 @@
     "fields": [
         "ref"
     ],
+    "searchable": false,
     "name": "Survey Point"
 }

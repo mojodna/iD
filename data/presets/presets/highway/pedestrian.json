@@ -11,5 +11,6 @@
         "highway": "pedestrian"
     },
     "terms": [],
+    "searchable": false,
     "name": "Pedestrian"
 }

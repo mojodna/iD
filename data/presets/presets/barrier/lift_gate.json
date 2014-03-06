@@ -9,5 +9,6 @@
     "tags": {
         "barrier": "lift_gate"
     },
+    "searchable": false,
     "name": "Lift Gate"
 }

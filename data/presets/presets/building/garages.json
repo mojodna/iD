@@ -11,5 +11,6 @@
     "tags": {
         "building": "garages"
     },
+    "searchable": false,
     "name": "Garages"
 }

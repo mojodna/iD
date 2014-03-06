@@ -13,5 +13,6 @@
     "tags": {
         "tourism": "hostel"
     },
+    "searchable": false,
     "name": "Hostel"
 }

@@ -10,5 +10,6 @@
     "tags": {
         "natural": "beach"
     },
+    "searchable": false,
     "name": "Beach"
 }

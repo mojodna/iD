@@ -29,5 +29,6 @@
     "tags": {
         "tourism": "museum"
     },
+    "searchable": false,
     "name": "Museum"
 }

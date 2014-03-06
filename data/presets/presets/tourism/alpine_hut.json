@@ -5,6 +5,7 @@
     "tags": {
         "tourism": "alpine_hut"
     },
+    "searchable": false,
     "name": "Lodge",
     "icon": "lodging-black",
     "maki": "npmaki"

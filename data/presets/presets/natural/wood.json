@@ -11,5 +11,6 @@
         "natural": "wood"
     },
     "terms": [],
+    "searchable": false,
     "name": "Wood"
 }

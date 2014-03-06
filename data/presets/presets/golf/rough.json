@@ -7,5 +7,6 @@
         "golf": "rough",
         "landuse": "grass"
     },
+    "searchable": false,
     "name": "Rough"
 }

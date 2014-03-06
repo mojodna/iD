@@ -1,4 +1,5 @@
 {
+    "searchable": false,
     "name": "Relation",
     "icon": "relation",
     "tags": {},

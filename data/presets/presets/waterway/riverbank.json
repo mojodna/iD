@@ -6,5 +6,6 @@
     "tags": {
         "waterway": "riverbank"
     },
+    "searchable": false,
     "name": "Riverbank"
 }

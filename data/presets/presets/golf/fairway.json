@@ -7,5 +7,6 @@
         "golf": "fairway",
         "landuse": "grass"
     },
+    "searchable": false,
     "name": "Fairway"
 }

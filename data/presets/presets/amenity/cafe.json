@@ -20,5 +20,6 @@
     "tags": {
         "amenity": "cafe"
     },
+    "searchable": false,
     "name": "Cafe"
 }

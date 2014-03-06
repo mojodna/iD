@@ -5,6 +5,7 @@
     "tags": {
         "tourism": "camp_site"
     },
+    "searchable": false,
     "name": "Camp Site",
     "icon": "camping-black",
     "maki": "npmaki"

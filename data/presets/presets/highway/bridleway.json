@@ -18,5 +18,6 @@
         "bridle road",
         "horse trail"
     ],
+    "searchable": false,
     "name": "Bridle Path"
 }

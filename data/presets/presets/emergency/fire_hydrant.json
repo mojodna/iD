@@ -9,5 +9,6 @@
     "tags": {
         "emergency": "fire_hydrant"
     },
+    "searchable": false,
     "name": "Fire Hydrant"
 }

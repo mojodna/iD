@@ -13,5 +13,6 @@
         "amenity": "university"
     },
     "terms": ["college"],
+    "searchable": false,
     "name": "University"
 }

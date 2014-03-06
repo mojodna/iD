@@ -15,5 +15,6 @@
         "highway": "service"
     },
     "terms": [],
+    "searchable": false,
     "name": "Service Road"
 }

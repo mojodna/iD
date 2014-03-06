@@ -5,6 +5,7 @@
     "tags": {
         "building": "stable"
     },
+    "searchable": false,
     "name": "Stable",
     "icon": "building"
 }

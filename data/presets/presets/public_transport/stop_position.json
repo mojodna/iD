@@ -10,5 +10,6 @@
     "tags": {
         "public_transport": "stop_position"
     },
+    "searchable": false,
     "name": "Stop Position"
 }

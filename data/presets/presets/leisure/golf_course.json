@@ -14,5 +14,6 @@
     "terms": [
         "links"
     ],
+    "searchable": false,
     "name": "Golf Course"
 }

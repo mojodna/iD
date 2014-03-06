@@ -13,5 +13,6 @@
         "office": "estate_agent"
     },
     "terms": [],
+    "searchable": false,
     "name": "Real Estate Office"
 }

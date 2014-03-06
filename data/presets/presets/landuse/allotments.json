@@ -7,5 +7,6 @@
         "landuse": "allotments"
     },
     "terms": [],
+    "searchable": false,
     "name": "Allotments"
 }

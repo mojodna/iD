@@ -10,5 +10,6 @@
     "fields": [
         "building_area"
     ],
+    "searchable": false,
     "name": "Marketplace"
 }

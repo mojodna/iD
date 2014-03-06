@@ -20,5 +20,6 @@
     "tags": {
         "amenity": "theatre"
     },
+    "searchable": false,
     "name": "Amphitheater"
 }

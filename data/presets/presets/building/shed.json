@@ -12,5 +12,6 @@
     "tags": {
         "building": "shed"
     },
+    "searchable": false,
     "name": "Shed"
 }

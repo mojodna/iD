@@ -14,5 +14,6 @@
         "amenity": "pub"
     },
     "terms": [],
+    "searchable": false,
     "name": "Pub"
 }

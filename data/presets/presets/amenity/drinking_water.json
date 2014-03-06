@@ -11,5 +11,6 @@
         "water fountain",
         "potable water"
     ],
+    "searchable": false,
     "name": "Drinking Water"
 }

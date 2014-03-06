@@ -9,5 +9,6 @@
     "tags": {
         "amenity": "vending_machine"
     },
+    "searchable": false,
     "name": "Vending Machine"
 }

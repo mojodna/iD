@@ -12,5 +12,6 @@
         "railway": "subway"
     },
     "terms": [],
+    "searchable": false,
     "name": "Subway"
 }

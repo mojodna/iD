@@ -1,4 +1,5 @@
 {
+    "searchable": false,
     "name": "Blacksmith",
     "geometry": [
         "point",

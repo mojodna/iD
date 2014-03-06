@@ -5,6 +5,7 @@
     "tags": {
         "power": "minor_line"
     },
+    "searchable": false,
     "name": "Minor Power Line",
     "icon": "power-line"
 }

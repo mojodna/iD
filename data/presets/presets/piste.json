@@ -24,5 +24,6 @@
     "tags": {
         "piste:type": "*"
     },
+    "searchable": false,
     "name": "Piste/Ski Trail"
 }

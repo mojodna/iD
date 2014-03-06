@@ -16,5 +16,6 @@
     "tags": {
         "amenity": "bicycle_parking"
     },
+    "searchable": false,
     "name": "Bicycle Parking"
 }

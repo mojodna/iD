@@ -15,5 +15,6 @@
         "narrow gauge railway",
         "narrow gauge railroad"
     ],
+    "searchable": false,
     "name": "Narrow Gauge Rail"
 }

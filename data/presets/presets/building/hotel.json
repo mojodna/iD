@@ -12,5 +12,6 @@
     "tags": {
         "building": "hotel"
     },
+    "searchable": false,
     "name": "Hotel Building"
 }

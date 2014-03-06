@@ -12,5 +12,6 @@
     "tags": {
         "building": "hospital"
     },
+    "searchable": false,
     "name": "Hospital Building"
 }

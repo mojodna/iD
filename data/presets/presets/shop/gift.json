@@ -13,5 +13,6 @@
     "tags": {
         "shop": "gift"
     },
+    "searchable": false,
     "name": "Gift Shop"
 }

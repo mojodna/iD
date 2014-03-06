@@ -6,5 +6,6 @@
     "tags": {
         "barrier": "city_wall"
     },
+    "searchable": false,
     "name": "City Wall"
 }

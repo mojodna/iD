@@ -10,5 +10,6 @@
     "tags": {
         "emergency": "phone"
     },
+    "searchable": false,
     "name": "Emergency Phone"
 }

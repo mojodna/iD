@@ -38,5 +38,6 @@
         "amenity": "place_of_worship",
         "religion": "christian"
     },
+    "searchable": false,
     "name": "Church"
 }

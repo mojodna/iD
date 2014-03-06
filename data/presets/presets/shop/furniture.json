@@ -13,5 +13,6 @@
     "tags": {
         "shop": "furniture"
     },
+    "searchable": false,
     "name": "Furniture Store"
 }

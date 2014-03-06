@@ -10,5 +10,6 @@
     "fields": [
         "operator"
     ],
+    "searchable": false,
     "name": "Car Rental"
 }

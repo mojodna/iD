@@ -16,5 +16,6 @@
         "highway": "primary"
     },
     "terms": [],
+    "searchable": false,
     "name": "Primary Road"
 }

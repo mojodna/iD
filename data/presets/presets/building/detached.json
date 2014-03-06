@@ -12,5 +12,6 @@
     "tags": {
         "building": "detached"
     },
+    "searchable": false,
     "name": "Detached Home"
 }

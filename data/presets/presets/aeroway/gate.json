@@ -7,5 +7,6 @@
     "tags": {
         "aeroway": "gate"
     },
+    "searchable": false,
     "name": "Airport gate"
 }

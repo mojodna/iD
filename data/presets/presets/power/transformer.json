@@ -7,5 +7,6 @@
     "tags": {
         "power": "transformer"
     },
+    "searchable": false,
     "name": "Transformer"
 }

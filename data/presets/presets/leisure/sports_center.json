@@ -10,5 +10,6 @@
         "gym"
     ],
     "icon": "sports",
+    "searchable": false,
     "name": "Sports Center"
 }

@@ -8,5 +8,6 @@
     "tags": {
         "building": "commercial"
     },
+    "searchable": false,
     "name": "Commercial Building"
 }

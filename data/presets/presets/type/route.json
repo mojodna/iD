@@ -5,6 +5,7 @@
     "tags": {
         "type": "route"
     },
+    "searchable": false,
     "name": "Route",
     "icon": "route",
     "fields": [

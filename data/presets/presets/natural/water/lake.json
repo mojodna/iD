@@ -12,5 +12,6 @@
         "mere"
     ],
     "icon": "water",
+    "searchable": false,
     "name": "Lake"
 }

@@ -17,5 +17,6 @@
         "farm shop",
         "farm stand"
     ],
+    "searchable": false,
     "name": "Produce Stand"
 }

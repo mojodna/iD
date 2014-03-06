@@ -5,6 +5,7 @@
     "tags": {
         "sport": "canoe"
     },
+    "searchable": false,
     "name": "Canoe Access",
     "icon": "canoe-access-black",
     "maki": "npmaki"

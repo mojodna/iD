@@ -14,5 +14,6 @@
     "tags": {
         "public_transport": "platform"
     },
+    "searchable": false,
     "name": "Platform"
 }

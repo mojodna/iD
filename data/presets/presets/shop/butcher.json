@@ -13,5 +13,6 @@
     "tags": {
         "shop": "butcher"
     },
+    "searchable": false,
     "name": "Butcher"
 }

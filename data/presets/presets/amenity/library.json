@@ -14,5 +14,6 @@
         "amenity": "library"
     },
     "terms": [],
+    "searchable": false,
     "name": "Library"
 }

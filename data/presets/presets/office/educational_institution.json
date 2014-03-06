@@ -13,5 +13,6 @@
         "office": "educational_institution"
     },
     "terms": [],
+    "searchable": false,
     "name": "Educational Institution"
 }

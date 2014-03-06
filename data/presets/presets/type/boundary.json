@@ -5,6 +5,7 @@
     "tags": {
         "type": "boundary"
     },
+    "searchable": false,
     "name": "Boundary",
     "icon": "boundary",
     "fields": [

@@ -13,5 +13,6 @@
         "office": "telecommunication"
     },
     "terms": [],
+    "searchable": false,
     "name": "Telecom Office"
 }

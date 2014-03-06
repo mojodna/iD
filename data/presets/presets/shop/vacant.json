@@ -13,5 +13,6 @@
     "tags": {
         "shop": "vacant"
     },
+    "searchable": false,
     "name": "Vacant Shop"
 }

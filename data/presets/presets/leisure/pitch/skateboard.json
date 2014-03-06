@@ -12,5 +12,6 @@
         "sport": "skateboard"
     },
     "terms": [],
+    "searchable": false,
     "name": "Skate Park"
 }

@@ -9,5 +9,6 @@
     "fields": [
         "operator"
     ],
+    "searchable": false,
     "name": "Boat Rental"
 }

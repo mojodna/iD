@@ -13,5 +13,6 @@
     "tags": {
         "shop": "bookmaker"
     },
+    "searchable": false,
     "name": "Bookmaker"
 }

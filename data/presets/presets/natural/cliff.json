@@ -9,5 +9,6 @@
     "tags": {
         "natural": "cliff"
     },
+    "searchable": false,
     "name": "Cliff"
 }

@@ -8,5 +8,6 @@
         "golf": "water_hazard",
         "natural": "water"
     },
+    "searchable": false,
     "name": "Water Hazard"
 }

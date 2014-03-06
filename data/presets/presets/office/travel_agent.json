@@ -13,6 +13,6 @@
         "office": "travel_agent"
     },
     "terms": [],
-    "name": "Travel Agency",
-    "searchable": false
+    "searchable": false,
+    "name": "Travel Agency"
 }

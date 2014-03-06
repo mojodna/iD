@@ -12,5 +12,6 @@
     "tags": {
         "building": "warehouse"
     },
+    "searchable": false,
     "name": "Warehouse"
 }

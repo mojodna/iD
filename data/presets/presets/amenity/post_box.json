@@ -19,5 +19,6 @@
         "pillar box",
         "postbox"
     ],
+    "searchable": false,
     "name": "Mailbox"
 }

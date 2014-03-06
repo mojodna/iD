@@ -7,5 +7,6 @@
         "landuse": "grass"
     },
     "terms": [],
+    "searchable": false,
     "name": "Grass"
 }

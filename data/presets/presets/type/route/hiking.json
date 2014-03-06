@@ -6,6 +6,7 @@
         "type": "route",
         "route": "hiking"
     },
+    "searchable": false,
     "name": "Hiking Route",
     "icon": "route-foot",
     "fields": [

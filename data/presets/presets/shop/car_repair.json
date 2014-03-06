@@ -13,5 +13,6 @@
     "tags": {
         "shop": "car_repair"
     },
+    "searchable": false,
     "name": "Car Repair Shop"
 }

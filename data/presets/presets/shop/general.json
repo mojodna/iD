@@ -5,6 +5,7 @@
     "tags": {
         "shop": "general"
     },
+    "searchable": false,
     "name": "Store",
     "icon": "store-black",
     "maki": "npmaki"

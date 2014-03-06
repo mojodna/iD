@@ -7,5 +7,6 @@
         "landuse": "vineyard"
     },
     "terms": [],
+    "searchable": false,
     "name": "Vineyard"
 }

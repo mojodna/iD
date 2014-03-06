@@ -14,5 +14,6 @@
         "shop": "*"
     },
     "terms": [],
+    "searchable": false,
     "name": "Shop"
 }

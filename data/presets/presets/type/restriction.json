@@ -5,6 +5,7 @@
     "tags": {
         "type": "restriction"
     },
+    "searchable": false,
     "name": "Restriction",
     "icon": "restriction",
     "fields": [

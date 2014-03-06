@@ -13,5 +13,6 @@
     "tags": {
         "shop": "outdoor"
     },
+    "searchable": false,
     "name": "Outdoor Store"
 }

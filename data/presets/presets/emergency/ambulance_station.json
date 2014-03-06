@@ -10,5 +10,6 @@
     "tags": {
         "emergency": "ambulance_station"
     },
+    "searchable": false,
     "name": "Ambulance Station"
 }

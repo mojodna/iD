@@ -12,5 +12,6 @@
         "sport": "soccer"
     },
     "terms": [],
+    "searchable": false,
     "name": "Soccer Field"
 }

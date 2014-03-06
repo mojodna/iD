@@ -13,5 +13,6 @@
     "tags": {
         "aeroway": "runway"
     },
+    "searchable": false,
     "name": "Runway"
 }

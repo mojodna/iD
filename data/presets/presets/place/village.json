@@ -7,5 +7,6 @@
     "tags": {
         "place": "village"
     },
+    "searchable": false,
     "name": "Village"
 }

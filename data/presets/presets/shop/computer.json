@@ -13,5 +13,6 @@
     "tags": {
         "shop": "computer"
     },
+    "searchable": false,
     "name": "Computer Store"
 }

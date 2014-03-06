@@ -12,5 +12,6 @@
     "tags": {
         "natural": "tree"
     },
+    "searchable": false,
     "name": "Tree"
 }

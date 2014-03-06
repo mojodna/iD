@@ -13,5 +13,6 @@
     "tags": {
         "shop": "car_parts"
     },
+    "searchable": false,
     "name": "Car Parts Store"
 }

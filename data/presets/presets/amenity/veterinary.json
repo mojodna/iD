@@ -13,5 +13,6 @@
     "tags": {
         "amenity": "veterinary"
     },
+    "searchable": false,
     "name": "Veterinary"
 }

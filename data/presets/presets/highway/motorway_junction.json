@@ -8,5 +8,6 @@
     "fields": [
         "ref"
     ],
+    "searchable": false,
     "name": "Motorway Junction"
 }

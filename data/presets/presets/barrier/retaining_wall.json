@@ -6,5 +6,6 @@
     "tags": {
         "barrier": "retaining_wall"
     },
+    "searchable": false,
     "name": "Retaining Wall"
 }

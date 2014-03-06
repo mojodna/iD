@@ -13,5 +13,6 @@
     "tags": {
         "shop": "variety_store"
     },
+    "searchable": false,
     "name": "Variety Store"
 }

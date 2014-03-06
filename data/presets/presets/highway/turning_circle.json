@@ -7,5 +7,6 @@
         "highway": "turning_circle"
     },
     "terms": [],
+    "searchable": false,
     "name": "Turning Circle"
 }

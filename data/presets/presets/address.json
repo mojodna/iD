@@ -11,5 +11,6 @@
     "addTags": {},
     "removeTags": {},
     "matchScore": 0.2,
+    "searchable": false,
     "name": "Address"
 }

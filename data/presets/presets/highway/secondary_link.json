@@ -15,5 +15,6 @@
         "highway": "secondary_link"
     },
     "terms": ["ramp", "on ramp", "off ramp"],
+    "searchable": false,
     "name": "Secondary Link"
 }

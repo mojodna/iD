@@ -11,5 +11,6 @@
         "landuse": "forest"
     },
     "terms": [],
+    "searchable": false,
     "name": "Forest"
 }

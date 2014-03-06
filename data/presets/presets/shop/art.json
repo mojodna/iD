@@ -17,5 +17,6 @@
     "tags": {
         "shop": "art"
     },
+    "searchable": false,
     "name": "Art Shop"
 }

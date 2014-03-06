@@ -13,5 +13,6 @@
     "tags": {
         "shop": "travel_agency"
     },
+    "searchable": false,
     "name": "Travel Agency"
 }

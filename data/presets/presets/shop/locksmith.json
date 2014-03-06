@@ -16,5 +16,6 @@
     "tags": {
         "shop": "locksmith"
     },
+    "searchable": false,
     "name": "Locksmith"
 }

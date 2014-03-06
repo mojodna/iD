@@ -11,5 +11,6 @@
         "leisure": "swimming_pool"
     },
     "icon": "swimming",
+    "searchable": false,
     "name": "Swimming Pool"
 }

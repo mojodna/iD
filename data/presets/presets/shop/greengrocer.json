@@ -13,5 +13,6 @@
     "tags": {
         "shop": "greengrocer"
     },
+    "searchable": false,
     "name": "Greengrocer"
 }

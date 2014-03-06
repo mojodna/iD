@@ -12,5 +12,6 @@
         "electrified"
     ],
     "terms": ["streetcar"],
+    "searchable": false,
     "name": "Tram"
 }

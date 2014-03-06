@@ -8,5 +8,6 @@
     "tags": {
         "natural": "coastline"
     },
+    "searchable": false,
     "name": "Coastline"
 }

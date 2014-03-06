@@ -13,5 +13,6 @@
     "tags": {
         "shop": "chemist"
     },
+    "searchable": false,
     "name": "Chemist"
 }

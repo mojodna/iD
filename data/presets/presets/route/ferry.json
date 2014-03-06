@@ -6,5 +6,6 @@
     "tags": {
         "route": "ferry"
     },
+    "searchable": false,
     "name": "Ferry Route"
 }

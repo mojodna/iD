@@ -12,5 +12,6 @@
     "tags": {
         "building": "residential"
     },
+    "searchable": false,
     "name": "Residential Building"
 }

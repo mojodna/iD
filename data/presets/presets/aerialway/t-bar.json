@@ -9,5 +9,6 @@
     "tags": {
         "aerialway": "t-bar"
     },
+    "searchable": false,
     "name": "T-bar Lift"
 }

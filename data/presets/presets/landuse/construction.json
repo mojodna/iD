@@ -11,5 +11,6 @@
         "landuse": "construction"
     },
     "terms": [],
+    "searchable": false,
     "name": "Construction"
 }

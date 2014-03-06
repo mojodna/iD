@@ -14,5 +14,6 @@
         "highway": "cycleway"
     },
     "terms": [],
+    "searchable": false,
     "name": "Cycle Path"
 }

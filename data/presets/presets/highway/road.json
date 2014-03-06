@@ -14,5 +14,6 @@
         "highway": "road"
     },
     "terms": [],
+    "searchable": false,
     "name": "Unknown Road"
 }

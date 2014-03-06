@@ -8,5 +8,6 @@
     "tags": {
         "historic": "monument"
     },
+    "searchable": false,
     "name": "Monument"
 }

@@ -7,5 +7,6 @@
         "landuse": "basin"
     },
     "terms": [],
+    "searchable": false,
     "name": "Basin"
 }

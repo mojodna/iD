@@ -7,5 +7,6 @@
         "railway": "subway_entrance"
     },
     "terms": [],
+    "searchable": false,
     "name": "Subway Entrance"
 }
