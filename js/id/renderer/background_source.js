@@ -46,6 +46,7 @@ iD.BackgroundSource = function(data) {
     };
 
     source.validZoom = function(z) {
+        z = z + 2;
         return source.scaleExtent[0] <= z &&
             (!source.isLocatorOverlay() || source.scaleExtent[1] > z);
     };
