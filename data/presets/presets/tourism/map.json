@@ -1,0 +1,12 @@
+{
+    "geometry": [
+        "point"
+    ],
+    "tags": {
+        "tourism": "information",
+        "information": "map"
+    },
+    "name": "Information",
+    "icon": "information-black",
+    "maki": "npmaki"
+}

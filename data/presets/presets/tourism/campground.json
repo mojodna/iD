@@ -3,10 +3,9 @@
         "point"
     ],
     "tags": {
-        "tourism": "camp_site",
-        "camp_site": "pitch"
+        "tourism": "camp_site"
     },
-    "name": "Camp Site",
+    "name": "Campground",
     "icon": "camping-black",
     "maki": "npmaki"
 }

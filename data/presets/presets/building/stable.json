@@ -4,8 +4,9 @@
     ],
     "tags": {
         "building": "stable"
+        "sport": "equestrian",
+        "leisure": "horse_riding"
     },
-    "searchable": false,
-    "name": "Stable",
+    "name": "Horse Stable",
     "icon": "building"
 }

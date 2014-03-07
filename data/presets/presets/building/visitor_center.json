@@ -1,0 +1,11 @@
+{
+    "geometry": [
+        "point"
+    ],
+    "tags": {
+        "building": "yes",
+        "information": "office",
+        "tourism": "information"
+    },
+    "name": "Visitor Center"
+}

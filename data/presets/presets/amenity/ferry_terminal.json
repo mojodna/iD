@@ -4,7 +4,7 @@
         "vertex"
     ],
     "tags": {
-        "tourism": "viewpoint"
+        "amenity": "ferry_terminal"
     },
-    "name": "Viewpoint"
+    "name": "Ferry Terminal"
 }

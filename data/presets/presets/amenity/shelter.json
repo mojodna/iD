@@ -8,11 +8,12 @@
         "area"
     ],
     "tags": {
-        "amenity": "shelter"
+        "amenity": "shelter",
+        "building": "hut",
+        "tourism": "camp_site"
     },
     "terms": [
         "lean-to"
     ],
-    "searchable": false,
     "name": "Shelter"
 }

@@ -1,5 +1,6 @@
 {
-    "icon": "theatre",
+    "icon": "amphitheater-black",
+    "maki": "npmaki",
     "fields": [
         "operator",
         "building_area",
@@ -11,14 +12,15 @@
         "area"
     ],
     "terms": [
+        "amphitheater",
         "theatre",
         "performance",
         "play",
         "musical"
     ],
     "tags": {
-        "amenity": "theatre"
+        "amenity": "theatre",
+        "theatre:type": "amphi"
     },
-    "searchable": false,
-    "name": "Theater"
+    "name": "Amphitheater"
 }

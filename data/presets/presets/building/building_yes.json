@@ -3,7 +3,7 @@
         "point"
     ],
     "tags": {
-        "piste:type": "sled"
+        "building": "yes"
     },
-    "name": "Sledding"
+    "name": "Building"
 }
