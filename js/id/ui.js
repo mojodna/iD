@@ -9,7 +9,7 @@ iD.ui = function(context) {
         hash();
 
         if (!hash.hadHash) {
-            map.centerZoom([-83.533333, 35.683333], 20);
+            map.centerZoom([-77.0228, 38.8944], 14.01);
         }
 
         container.append('div')
