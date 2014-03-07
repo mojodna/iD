@@ -8,8 +8,8 @@ iD.Connection = function() {
         tileZoom = 16,
         oauth = osmAuth({
             url: 'http://inpniscvplaces1:3000',
-            oauth_consumer_key: 'g3cmPe2OSqxkDmSIi8tOZjG4s1DYQtgtyYOOq1yx',
-            oauth_secret: 'VaqYSfpCGFOletdeDaPanfrpbrZbQh38ytBLo3mX',
+            oauth_consumer_key: 'CpIont3biEafgafInTYWkFlooQkcFLtGREu6yMG0',
+            oauth_secret: 'MFgSWe00v8EsddR9KI42uZZX61r2XL8JwEPxHY2p',
             loading: authenticating,
             done: authenticated
         }),
