@@ -13,6 +13,7 @@
     ],
     "terms": [
         "bathroom",
+        "toilet",
         "restroom",
         "outhouse",
         "privy",
@@ -28,5 +29,5 @@
     },
     "icon": "restroom-black",
     "maki": "npmaki",
-    "name": "Toilets"
+    "name": "Restrooms"
 }
