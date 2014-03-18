@@ -3,7 +3,8 @@
         "point"
     ],
     "tags": {
-        "building": "yes"
+        "building": "yes",
+        "nps:fcat": "Building"
     },
     "name": "Building"
 }
