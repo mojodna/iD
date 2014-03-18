@@ -19,7 +19,8 @@
         "warden center"
     ],
     "tags": {
-        "amenity": "ranger_station"
+        "amenity": "ranger_station",
+        "nps:fcat": "Permit Station"
     },
     "icon": "ranger-station-black",
     "maki": "npmaki",
