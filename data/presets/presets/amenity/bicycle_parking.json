@@ -14,7 +14,8 @@
         "area"
     ],
     "tags": {
-        "amenity": "bicycle_parking"
+        "amenity": "bicycle_parking",
+        "nps:fcat": "Bicycle Rack"
     },
     "name": "Bicycle Parking"
 }
