@@ -3,7 +3,8 @@
         "point"
     ],
     "tags": {
-        "man_made": "lighthouse"
+        "man_made": "lighthouse",
+        "nps:fcat": "Light House"
     },
     "name": "Lighthouse",
     "icon": "lighthouse",
