@@ -10,7 +10,8 @@
     "tags": {
         "amenity": "shelter",
         "building": "hut",
-        "tourism": "camp_site"
+        "tourism": "camp_site",
+        "nps:fcat": "Shelter"
     },
     "terms": [
         "lean-to"
