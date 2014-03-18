@@ -6,7 +6,8 @@
         "vertex"
     ],
     "tags": {
-        "amenity": "telephone"
+        "amenity": "telephone",
+        "nps:fcat": "Telephone"
     },
     "terms":  [
         "phone"
