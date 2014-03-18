@@ -5,7 +5,8 @@
         "point"
     ],
     "tags": {
-        "leisure": "marina"
+        "leisure": "marina",
+        "nps:fcat": "Marina"
     },
     "name": "Marina"
 }
