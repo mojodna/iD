@@ -11,7 +11,8 @@
         "medical clinic"
     ],
     "tags": {
-        "amenity": "clinic"
+        "amenity": "clinic",
+        "nps:fcat": "Clinic"
     },
     "fields": [
         "building_area",
