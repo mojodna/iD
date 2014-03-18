@@ -3,7 +3,8 @@
         "point"
     ],
     "tags": {
-        "highway": "milemarker"
+        "highway": "milemarker",
+        "nps:fcat": "Mile Marker"
     },
     "name": "Mile Marker"
 }
