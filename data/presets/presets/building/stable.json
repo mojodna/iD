@@ -5,7 +5,8 @@
     "tags": {
         "building": "stable",
         "sport": "equestrian",
-        "leisure": "horse_riding"
+        "leisure": "horse_riding",
+        "nps:fcat": "Stable"
     },
     "name": "Horse Stable",
     "icon": "building"
