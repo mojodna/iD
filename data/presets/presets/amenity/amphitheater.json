@@ -20,7 +20,8 @@
     ],
     "tags": {
         "amenity": "theatre",
-        "theatre:type": "amphi"
+        "theatre:type": "amphi",
+        "nps:fcat": "Amphitheater"
     },
     "name": "Amphitheater"
 }

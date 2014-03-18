@@ -1,0 +1,12 @@
+{
+    "geometry": [
+        "point"
+    ],
+    "tags": {
+        "access": "canoe",
+        "nps:fcat": "Canoe Access"
+    },
+    "name": "Canoe Access",
+    "icon": "canoe-access-black",
+    "maki": "npmaki"
+}
