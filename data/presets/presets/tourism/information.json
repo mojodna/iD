@@ -3,7 +3,8 @@
         "point"
     ],
     "tags": {
-        "tourism": "information"
+        "tourism": "information",
+        "nps:fcat": "Headquarters"
     },
     "name": "Information",
     "icon": "information-black",
