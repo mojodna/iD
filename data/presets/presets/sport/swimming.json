@@ -3,7 +3,8 @@
         "point"
     ],
     "tags": {
-        "sport": "swimming"
+        "sport": "swimming",
+        "nps:fcat": "Swim"
     },
     "name": "Swim",
     "icon": "swimming",
