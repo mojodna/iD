@@ -4,7 +4,8 @@
         "vertex"
     ],
     "tags": {
-        "tourism": "viewpoint"
+        "tourism": "viewpoint",
+        "nps:fcat": "Overlook"
     },
     "name": "Viewpoint"
 }
