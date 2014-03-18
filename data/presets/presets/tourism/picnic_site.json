@@ -9,7 +9,8 @@
     ],
     "terms": [],
     "tags": {
-        "tourism": "picnic_site"
+        "tourism": "picnic_site",
+        "nps:fcat": "Picnic Area"
     },
     "name": "Picnic Site",
     "icon": "picnic-black",
