@@ -4,7 +4,8 @@
     ],
     "tags": {
         "tourism": "camp_site",
-        "camp_site": "pitch"
+        "camp_site": "pitch",
+        "nps:fcat": "Campsite"
     },
     "name": "Camp Site",
     "icon": "camping-black",
