@@ -12,7 +12,8 @@
     ],
     "terms": [],
     "tags": {
-        "tourism": "hotel"
+        "tourism": "hotel",
+        "nps:fcat": "Lodge"
     },
     "name": "Hotel"
 }
