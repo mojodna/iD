@@ -4,9 +4,9 @@
         "point"
     ],
     "tags": {
-        "railway": "subway_entrance"
+        "railway": "subway_entrance",
+        "nps:fcat": "Metro Station"
     },
-    "terms": [],
-    "searchable": false,
+    "searchable": true,
     "name": "Subway Entrance"
 }
