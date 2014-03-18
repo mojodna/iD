@@ -16,7 +16,8 @@
         "area"
     ],
     "tags": {
-        "amenity": "parking"
+        "amenity": "parking",
+        "nps:fcat": "Parking"
     },
     "terms": [],
     "name": "Car Parking"
