@@ -3,7 +3,8 @@
         "point"
     ],
     "tags": {
-        "railway": "station"
+        "railway": "station",
+        "nps:fcat": "Boarding Station"
     },
     "name": "Railway Station",
     "icon": "rail",
