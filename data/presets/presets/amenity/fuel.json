@@ -21,7 +21,8 @@
         "biodiesel"
     ],
     "tags": {
-        "amenity": "fuel"
+        "amenity": "fuel",
+        "nps:fcat": "Gas Station"
     },
     "name": "Gas Station"
 }
