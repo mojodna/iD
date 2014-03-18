@@ -3,7 +3,8 @@
         "point"
     ],
     "tags": {
-        "leisure": "slipway"
+        "leisure": "slipway",
+        "nps:fcat": "Boat Launch"
     },
     "searchable": false,
     "name": "Boat Launch"
