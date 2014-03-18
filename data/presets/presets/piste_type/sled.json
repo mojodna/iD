@@ -3,7 +3,8 @@
         "point"
     ],
     "tags": {
-        "piste:type": "sled"
+        "piste:type": "sled",
+        "nps:fcat": "Sledding"
     },
     "name": "Sledding"
 }
