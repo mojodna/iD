@@ -12,7 +12,8 @@
     ],
     "terms": [],
     "tags": {
-        "amenity": "recycling"
+        "amenity": "recycling",
+        "nps:fcat": "Recycling"
     },
     "name": "Recycling",
     "icon": "recycling",
