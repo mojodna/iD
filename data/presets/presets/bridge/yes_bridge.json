@@ -4,7 +4,8 @@
         "vertex"
     ],
     "tags": {
-        "bridge": "yes"
+        "bridge": "yes",
+        "nps:fcat": "Bridge"
     },
     "searchable": false,
     "name": "Bridge"
