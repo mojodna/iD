@@ -5,7 +5,8 @@
     "tags": {
         "building": "yes",
         "information": "office",
-        "tourism": "information"
+        "tourism": "information",
+        "nps:fcat": "Visitor Center"
     },
     "name": "Visitor Center"
 }
