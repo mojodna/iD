@@ -3,7 +3,8 @@
         "point"
     ],
     "tags": {
-        "shop": "general"
+        "shop": "general",
+        "nps:fcat": "Store"
     },
     "name": "Store",
     "icon": "store-black",
