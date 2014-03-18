@@ -4,6 +4,7 @@
     ],
     "tags": {
         "leisure": "playground"
+        "nps:fcat": "Playground"
     },
     "name": "Playgound",
     "icon": "playground",
