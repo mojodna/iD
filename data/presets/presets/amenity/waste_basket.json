@@ -6,7 +6,8 @@
         "vertex"
     ],
     "tags": {
-        "amenity": "waste_basket"
+        "amenity": "waste_basket",
+        "nps:fcat": "Trash"
     },
     "terms": [
         "rubbish bin",
