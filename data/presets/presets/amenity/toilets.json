@@ -25,7 +25,8 @@
         "W.C."
     ],
     "tags": {
-        "amenity": "toilets"
+        "amenity": "toilets",
+        "nps:fcat": "Restroom"
     },
     "icon": "restroom-black",
     "maki": "npmaki",
