@@ -1,12 +1,12 @@
 {
-    "icon": "fishing-black",
-    "maki": "npmaki",
     "geometry": [
         "point"
     ],
+    "icon": "fishing-black",
+    "maki": "npmaki",
+    "name": "Fishing",
     "tags": {
         "leisure": "fishing",
         "nps:fcat": "Fishing"
-    },
-    "name": "Fishing"
+    }
 }
