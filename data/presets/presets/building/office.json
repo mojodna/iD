@@ -3,7 +3,8 @@
         "point"
     ],
     "tags": {
-        "building": "office"
+        "building": "office",
+        "nps:fcat": "Headquarters"
     },
     "searchable": false,
     "name": "Office",
