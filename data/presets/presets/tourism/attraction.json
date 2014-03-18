@@ -10,7 +10,8 @@
         "area"
     ],
     "tags": {
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "nps:fcat": "Exhibit"
     },
-    "name": "Tourist Attraction"
+    "name": "Exhibit"
 }
