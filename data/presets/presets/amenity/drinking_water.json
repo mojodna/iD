@@ -5,7 +5,8 @@
         "point"
     ],
     "tags": {
-        "amenity": "drinking_water"
+        "amenity": "drinking_water",
+        "nps:fcat": "Water"
     },
     "terms": [
         "water fountain",
