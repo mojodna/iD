@@ -4,20 +4,13 @@
     "line": [
     ],
     "point": [
-      "amenity/bbq",
-      "amenity/bench",
-      "amenity/bicycle_parking",
-      "amenity/clinic",
-      "amenity/drinking_water",
-      "amenity/food_court",
-      "amenity/fuel",
-      "amenity/parking",
-      "amenity/shelter",
-      "amenity/shower",
-      "amenity/telephone",
-      "amenity/theatre",
       "amenity/toilets",
-      "amenity/waste_basket"
+      "tourism/exhibit",
+      "amenity/food_court",
+      "amenity/ranger_station",
+      "amenity/drinking_water",
+      "tourism/camp_site",
+      "tourism/campground"
     ],
     "vertex": [
     ],
