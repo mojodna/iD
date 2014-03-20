@@ -8,6 +8,10 @@ window.iD = function () {
           point: true,
           line: true,
           area: true
+        },
+        map: {
+          center: [-77.0228, 38.8944],
+          zoom: 14.01
         }
       }
     };
