@@ -6,8 +6,8 @@ window.iD = function () {
         editting: {
           minZoom: 14,
           point: true,
-          line: true,
-          area: true
+          line: false,
+          area: false
         },
         map: {
           center: [-77.0228, 38.8944],
