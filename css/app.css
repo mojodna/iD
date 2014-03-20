@@ -2374,7 +2374,8 @@ img.wiki-image {
 }
 
 .save-success .button.osm:before {
-    background-position: 0px -220px;
+    background:transparent url(img/poi-logo.png) no-repeat;
+    width: 230px;
 }
 
 .save-success .button.twitter:before {
