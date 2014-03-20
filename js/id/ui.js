@@ -9,7 +9,7 @@ iD.ui = function(context) {
         hash();
 
         if (!hash.hadHash) {
-            map.centerZoom([-77.0228, 38.8944], 14.01);
+            map.centerZoom(iD.npmap.settings.map.center, iD.npmap.settings.map.zoom);
         }
 
         container.append('div')
