@@ -167,7 +167,7 @@ iD.Map = function(context) {
             iD.ui.flash(context.container())
                 .select('.content')
                 .text(t('cannot_zoom'));
-            return setZoom(16, true);
+            return setZoom(iD.npmap.settings.editting.minZoom, true);
         }
 
         projection
@@ -208,7 +208,7 @@ iD.Map = function(context) {
         var zoom = String(~~map.zoom());
         if (surface.attr('data-zoom') !== zoom) {
             surface.attr('data-zoom', zoom)
-                .classed('low-zoom', zoom <= 16);
+                .classed('low-zoom', zoom <= iD.npmap.settings.editting.minZoom);
         }
 
         if (!difference) {
@@ -347,7 +347,7 @@ iD.Map = function(context) {
     map.zoomTo = function(entity, zoomLimits) {
         var extent = entity.extent(context.graph()),
             zoom = map.extentZoom(extent);
-        zoomLimits = zoomLimits || [16, 20];
+        zoomLimits = zoomLimits || [iD.npmap.settings.editting.minZoom, 20];
         map.centerZoom(extent.center(), Math.min(Math.max(zoom, zoomLimits[0]), zoomLimits[1]));
     };
 
