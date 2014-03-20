@@ -1,6 +1,16 @@
 window.iD = function () {
     window.locale.en = iD.data.en;
     window.locale.current('en');
+    iD.npmap = {
+      settings: {
+        editting: {
+          minZoom: 14,
+          point: true,
+          line: true,
+          area: true
+        }
+      }
+    };
 
     var context = {},
         storage;
