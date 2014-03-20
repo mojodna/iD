@@ -1,9 +1,8 @@
 iD.ui.Modes = function(context) {
-    var modes = [
-        iD.modes.AddPoint(context)
-        //iD.modes.AddLine(context),
-        //iD.modes.AddArea(context)
-    ];
+    var modes = [];
+    if (iD.npmap.settings.editting.point) {modes.push(iD.modes.AddPoint(context));}
+    if (iD.npmap.settings.editting.line) {modes.push(iD.modes.AddLine(context));}
+    if (iD.npmap.settings.editting.area) {modes.push(iD.modes.AddArea(context));}
 
     return function(selection) {
         var buttons = selection.selectAll('button.add-button')
