@@ -2,9 +2,13 @@
     "geometry": [
         "point"
     ],
+    "terms": [
+      "Trailhead",
+      "Trail head"
+    ],
     "tags": {
-        "highway": "trailhead"
+        "highway": "trailhead",
+        "nps:fcat": "Trailhead"
     },
-    "searchable": false,
     "name": "Trailhead"
 }
