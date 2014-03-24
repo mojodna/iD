@@ -1,0 +1,13 @@
+{
+    "icon": "monument",
+    "geometry": [
+        "point",
+        "vertex",
+        "area"
+    ],
+    "tags": {
+        "tourism": "attraction",
+        "nps:fcat": "Wayside"
+    },
+    "name": "Wayside"
+}
