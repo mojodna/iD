@@ -4,13 +4,22 @@
     "line": [
     ],
     "point": [
-      "amenity/toilets",
-      "tourism/museum",
-      "amenity/food_court",
+      "tourism/campground",
+      "tourism/picnic_site",
+      "tourism/viewpoint",
+      "tourism/attraction",
+      "building/visitor_center",
       "amenity/ranger_station",
-      "amenity/drinking_water",
+      "leisure/slipway",
+      "amenity/toilets",
+      "building/office",
+      "amenity/parking",
       "tourism/camp_site",
-      "tourism/campground"
+      "access/canoe",
+      "amenity/food_court",
+      "wheelchair/yes_wc",
+      "amenity/telephone",
+      "amenity/drinking_water"
     ],
     "vertex": [
     ],
