@@ -1,0 +1,13 @@
+{
+  "icon": "building",
+  "geometry": [
+    "point",
+    "area"
+  ],
+  "tags": {
+    "building": "yes",
+    "historic": "building",
+    "nps:fcat": "Historic Building"
+  },
+  "name": "Historic Building"
+}
