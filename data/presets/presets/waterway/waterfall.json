@@ -1,0 +1,11 @@
+{
+    "icon": "waterway-stream",
+    "geometry": [
+        "point"
+    ],
+    "tags": {
+        "waterway": "waterfall",
+        "nps:fcat": "Waterfall"
+    },
+    "name": "Waterfall"
+}
