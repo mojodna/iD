@@ -27,8 +27,8 @@
         "woodland"
     ],
     "tags": {
-        "leisure": "park"
+        "leisure": "park",
+        "nps:fcat": "Park"
     },
-    "searchable": false,
     "name": "Park"
 }
