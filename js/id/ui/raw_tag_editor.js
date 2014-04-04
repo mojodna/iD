@@ -61,6 +61,7 @@ iD.ui.RawTagEditor = function(context) {
             .attr('class', 'key-wrap')
             .append('input')
             .property('type', 'text')
+            .property('disabled', 'disabled')
             .attr('class', 'key')
             .attr('maxlength', 255);
 
@@ -68,12 +69,14 @@ iD.ui.RawTagEditor = function(context) {
             .attr('class', 'input-wrap-position')
             .append('input')
             .property('type', 'text')
+            .property('disabled', 'disabled')
             .attr('class', 'value')
             .attr('maxlength', 255);
 
         $enter.append('button')
             .attr('tabindex', -1)
             .attr('class', 'remove minor')
+            .property('disabled', 'disabled')
             .append('span')
             .attr('class', 'icon delete');
 
