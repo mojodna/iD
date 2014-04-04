@@ -25,7 +25,19 @@ iD.ui.RawTagEditor = function(context) {
     }
 
     function content($wrap) {
-        var entries = d3.entries(tags);
+        var entries = d3.entries(tags),
+        disabledFields = [
+          'nps:places_uuid'
+        ],
+        isDisabled = function(fieldName) {
+          if (disabledFields.indexOf(fieldName) >= 0) {
+            return true;
+          }
+          return false;
+        },
+        disabledFunction = function(d) {
+          return isDisabled(d.key);
+        };
 
         if (!entries.length || showBlank) {
             showBlank = false;
@@ -61,7 +73,6 @@ iD.ui.RawTagEditor = function(context) {
             .attr('class', 'key-wrap')
             .append('input')
             .property('type', 'text')
-            .property('disabled', 'disabled')
             .attr('class', 'key')
             .attr('maxlength', 255);
 
@@ -69,14 +80,12 @@ iD.ui.RawTagEditor = function(context) {
             .attr('class', 'input-wrap-position')
             .append('input')
             .property('type', 'text')
-            .property('disabled', 'disabled')
             .attr('class', 'value')
             .attr('maxlength', 255);
 
         $enter.append('button')
             .attr('tabindex', -1)
             .attr('class', 'remove minor')
-            .property('disabled', 'disabled')
             .append('span')
             .attr('class', 'icon delete');
 
@@ -100,16 +109,19 @@ iD.ui.RawTagEditor = function(context) {
 
         $items.select('input.key')
             .value(function(d) { return d.key; })
+            .property('disabled', disabledFunction)
             .on('blur', keyChange)
             .on('change', keyChange);
 
         $items.select('input.value')
             .value(function(d) { return d.value; })
+            .property('disabled', disabledFunction)
             .on('blur', valueChange)
             .on('change', valueChange)
             .on('keydown.push-more', pushMore);
 
         $items.select('button.remove')
+            .property('disabled', disabledFunction)
             .on('click', removeTag);
 
         $items.exit()
