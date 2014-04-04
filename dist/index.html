@@ -18,14 +18,22 @@
     <body>
         <div id='id-container'></div>
         <script>
-            if (typeof iD == 'undefined') {
-                document.getElementById('id-container').innerHTML = 'Sorry, Internet Explorer is not currently supported. Please use Potlatch 2 to edit the map.';
-                document.getElementById('id-container').className = 'unsupported';
+          if (typeof iD == 'undefined') {
+            document.getElementById('id-container').innerHTML = 'Sorry, Internet Explorer is not currently supported. Please use Potlatch 2 to edit the map.';
+            document.getElementById('id-container').className = 'unsupported';
             } else {
-                var id = iD();
-                d3.select('#id-container')
-                    .call(id.ui());
-            }
-        </script>
-    </body>
+            var id = iD();
+            d3.select('#id-container')
+            .call(id.ui());
+          }
+          (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+              })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+              ga('create', 'UA-22502841-1');
+              ga('send', 'pageview');
+      </script>
+      </body>
 </html>
