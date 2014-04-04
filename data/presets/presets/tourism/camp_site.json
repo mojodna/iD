@@ -1,4 +1,9 @@
 {
+    "fields": [
+        "operator",
+        "address",
+        "smoking"
+    ],
     "geometry": [
         "point"
     ],

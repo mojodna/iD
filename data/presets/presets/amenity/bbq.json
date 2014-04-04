@@ -1,12 +1,18 @@
 {
     "geometry": [
-        "point",
-        "vertex",
-        "line"
+        "point"
     ],
     "tags": {
-        "amenity": "bbq",
-        "nps:fcat": "Grill"
+        "amenity": "bbq"
     },
-    "name": "Grill"
+    "fields": [
+        "covered",
+        "fuel"
+    ],
+    "terms": [
+        "barbecue",
+        "bbq",
+        "grill"
+    ],
+    "name": "Barbecue/Grill"
 }
