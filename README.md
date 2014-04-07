@@ -1,4 +1,4 @@
-# iD - friendly JavaScript editor for the National Park Service [Places project](http://www.nps.gov/poi/)
+# iD - friendly JavaScript editor for the National Park Service's [Places project](http://www.nps.gov/poi/)
 
 ## Basics
 
