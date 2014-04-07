@@ -1,4 +1,4 @@
-# National Park Service iD - friendly JavaScript editor for the NPMap [Places of Interest Project](http://www.nps.gov/poi/)
+# iD - friendly JavaScript editor for the National Park Service [Places project](http://www.nps.gov/poi/)
 
 ## Basics
 
