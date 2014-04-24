@@ -10,5 +10,7 @@
         "highway": "trailhead",
         "nps:fcat": "Trailhead"
     },
-    "name": "Trailhead"
+    "name": "Trailhead",
+    "icon": "self-guided-trail-black",
+    "maki": "npmaki"
 }

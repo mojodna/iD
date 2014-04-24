@@ -8,7 +8,8 @@
         "vertex"
     ],
     "tags": {
-        "natural": "peak"
+        "natural": "peak",
+        "nps:fcat": "Peak"
     },
     "terms": [
         "acme",
@@ -25,6 +26,6 @@
         "tip",
         "top"
     ],
-    "searchable": false,
+    "searchable": true,
     "name": "Peak"
 }
