@@ -78,7 +78,7 @@ iD.BackgroundSource.Bing = function(data, dispatch) {
     data.template = 'https://ecn.t{switch:0,1,2,3}.tiles.virtualearth.net/tiles/a{u}.jpeg?g=587&mkt=en-gb&n=z';
 
     var bing = iD.BackgroundSource(data),
-        key = 'Arzdiw4nlOJzRwOz__qailc8NiR31Tt51dN2D7cm57NrnceZnCpgOkmJhNpGoppU', // Same as P2 and JOSM
+        key = 'Anqg2cbRJqtC3TWYUXf1cP2HT8J1xVN0urFGnWVFQwsLd4RfI9Gv5H4hcysuOEGj', // NPMap key
         url = 'https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial?include=ImageryProviders&key=' +
             key + '&jsonp={callback}',
         providers = [];

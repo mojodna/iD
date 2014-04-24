@@ -1,19 +1,21 @@
 window.iD = function () {
     window.locale.en = iD.data.en;
     window.locale.current('en');
+
     iD.npmap = {
-      settings: {
-        editting: {
-          minZoom: 14,
-          point: true,
-          line: false,
-          area: false
-        },
-        map: {
-          center: [-77.0228, 38.8944],
-          zoom: 14.01
+        settings: {
+            editing: {
+                area: false,
+                line: false,
+                minZoom: 14,
+                point: true
+            },
+            locationOverlayMaxZoom: 22,
+            map: {
+                center: [-77.0228, 38.8944],
+                zoom: 14.01
+            }
         }
-      }
     };
 
     var context = {},

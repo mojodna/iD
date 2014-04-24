@@ -10079,7 +10079,7 @@
         "template": "http://{switch:a,b,c}.tiles.mapbox.com/v3/openstreetmap.map-btyhiati/{zoom}/{x}/{y}.png",
         "scaleExtent": [
             0,
-            16
+            26.01
         ],
         "terms_url": "http://www.mapbox.com/about/maps/",
         "terms_text": "Terms & Feedback",

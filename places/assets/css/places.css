@@ -1,13 +1,13 @@
 header {
   background-color: #000;
   color: white;
-  height: 100px;
+  height: 150px;
   left: 0;
   position: absolute;
   width: 100%;
 }
   header .left, header .right {
-    height: 70px;
+    height: 100px;
   }
   header .left {
     float: left;
@@ -44,11 +44,27 @@ header {
         top: 0;
         width: 54px;
       }
+  header .toolbar {
+    bottom: 0;
+    background-color: #44433b;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+    header .toolbar .right {
+      height: 50px;
+      margin: 10px 10px 0 0;
+    }
+      header .toolbar .right select {
+        height: 30px;
+        width: 300px;
+      }
 section {
   bottom: 34px;
   left: 0;
   position: absolute;
-  top: 100px;
+  top: 150px;
   width: 100%;
 }
   section iframe {

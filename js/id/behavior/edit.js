@@ -1,7 +1,7 @@
 iD.behavior.Edit = function(context) {
     function edit() {
         context.map()
-            .minzoom(iD.npmap.settings.editting.minZoom);
+            .minzoom(iD.npmap.settings.editing.minZoom);
     }
 
     edit.off = function() {

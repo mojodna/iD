@@ -9,11 +9,10 @@ en:
       description: "Add highways, streets, pedestrian paths, canals or other lines to the map."
       tail: "Click on the map to start drawing a road, path, or route."
     add_point:
-      title: "Add Points to the Map"
-      description: "Add National Park Bus Stops, Bridges, Picnic Areas, or other points of interest to the map."
+      title: "Point"
+      description: "Add National Park bus stops, bridges, picnic areas, or other points of interest to the map."
       tail: Click on the map to add a point.
     browse:
-
       title: Browse
       description: Pan and zoom the map.
     draw_area:
@@ -232,32 +231,31 @@ en:
     reset: Reset
   save:
     title: Save
-    help: "Save changes to The National Park Service Places of Interest Project, making them visible to other users."
+    help: "Save changes to Places, making them visible to other users."
     no_changes: No changes to save.
     error: An error occurred while trying to save
-    uploading: Uploading changes to The National Park Service Places of Interest Project.
+    uploading: Uploading changes to Places.
     unsaved_changes: You have unsaved changes
   success:
-    edited_osm: "Edited NPS Places!"
-    just_edited: "Congratulations, You edited NPS Places!"
-    view_on_osm: "View on NPS Places"
+    edited_osm: "Success!"
+    just_edited: "Congratulations, you just edited Places!"
+    view_on_osm: "View in Places"
     facebook: "Share on Facebook"
     twitter: "Share on Twitter"
     google: "Share on Google+"
     help_html: |
-      Your changes should appear in the "Standard" layer in a few hours. Other layers, and certain features, may take longer
-      (<a href='https://help.openstreetmap.org/questions/4705/why-havent-my-changes-appeared-on-the-map' target='_blank'>details</a>).
+      Your changes will display in Park Tiles the next time it is updated.
   confirm:
     okay: "Okay"
   splash:
-    welcome: Welcome to the iD editor for The National Park Service Places of Interest Project
+    welcome: Welcome to Places
     text: "iD is a friendly but powerful tool for contributing to the world's best free world map. This is version {version}. For more information see {website} and report bugs at {github}."
     walkthrough: "Start the Walkthrough"
     start: "Edit Now"
   source_switch:
-    live: "NPS Live Database"
+    live: "Places Live Database"
     lose_changes: "You have unsaved changes. Switching the map server will discard them. Are you sure you want to switch servers?"
-    dev: "NPS Development Database"
+    dev: "Places Development Database"
   tag_reference:
     description: Description
     on_wiki: "{tag} on wiki.osm.org"
@@ -284,13 +282,12 @@ en:
     help: |
       # Help
 
-      This is an editor for [The National Park Service Places of Interest Project](http://www.nps.gov/poi/), the
-      free and editable map of the world. You can use it to add and update
-      data in your area, making an open-source and open-data map of the world
-      better for everyone.
+      This is an editor for [Places](http://www.nps.gov/poi/), the underlying database
+      for [Park Tiles](http://www.nps.gov/npmap/park-tiles/). You can use this editor to add and update
+      data for your Park, improving your Park's basemap.
 
       Edits that you make on this map will be visible to everyone who uses
-      The National Park Service Places of Interest Project. In order to make an edit, you'll need a
+      Places. In order to make an edit, you'll need a
       [free OpenStreetMap account](https://www.openstreetmap.org/user/new).
 
       The [iD editor](http://ideditor.com/) is a collaborative project with [source
