@@ -35,7 +35,7 @@ iD.ui = function(context) {
             .attr('class', 'limiter');
 
         limiter.append('div')
-            .attr('class', 'button-wrap joined col3')
+            .attr('class', 'button-wrap joined col1') // Change back to 3 when lines and areas are added.
             .call(iD.ui.Modes(context), limiter);
 
         limiter.append('div')

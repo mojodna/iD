@@ -1,4 +1,4 @@
-en:
+zen:
   modes:
     add_area:
       title: Area
@@ -159,7 +159,7 @@ en:
     localized_translation_name: Name
   zoom_in_edit: Zoom in to Edit
   logout: logout
-  loading_auth: "Connecting to The National Park Service Places of Interest Project..."
+  loading_auth: "Connecting to Places..."
   report_a_bug: report a bug
   status:
     error: Unable to connect to API.
@@ -169,8 +169,8 @@ en:
     title: Save Changes
     description_placeholder: Brief description of your contributions
     message_label: Commit message
-    upload_explanation: "The changes you upload will be visible on all maps that use The National Park Service Placs of Interest Project data."
-    upload_explanation_with_user: "The changes you upload as {user} will be visible on all maps that use The National Park Service Places of Interest Project data."
+    upload_explanation: "The changes you upload will be visible on all maps that use Places data."
+    upload_explanation_with_user: "The changes you upload as {user} will be visible on all maps that use Places data."
     save: Save
     cancel: Cancel
     warnings: Warnings
