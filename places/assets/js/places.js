@@ -17,7 +17,6 @@ window.onload = function() {
   iframe.src = src;
   iframe.onload = function() {
     document.getElementById('iframe').contentWindow.onhashchange = function() {
-      console.log('hello');
       window.location.hash = this.location.hash;
     };
   };

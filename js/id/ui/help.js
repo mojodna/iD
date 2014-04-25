@@ -4,12 +4,10 @@ iD.ui.Help = function(context) {
     var docKeys = [
         'help.help',
         'help.editing_saving',
-        'help.roads',
         'help.gps',
         'help.imagery',
         'help.addresses',
         'help.inspector',
-        'help.buildings',
         'help.relations'];
 
     var docs = docKeys.map(function(key) {
