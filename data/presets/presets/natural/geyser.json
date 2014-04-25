@@ -1,6 +1,6 @@
 {
     "fields": [
-        "surface"
+        "name"
     ],
     "geometry": [
         "point",
@@ -8,9 +8,9 @@
     ],
     "terms": [],
     "tags": {
-        "natural": "beach",
-        "nps:fcat": "Fortification"
+        "natural": "geyser",
+        "nps:fcat": "Geyser"
     },
     "searchable": true,
-    "name": "Beach"
+    "name": "Geyser"
 }

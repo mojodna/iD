@@ -11,6 +11,6 @@
         "nps:fcat": "Trailhead"
     },
     "name": "Trailhead",
-    "icon": "self-guided-trail-black",
+    "icon": "trailhead-black",
     "maki": "npmaki"
 }
