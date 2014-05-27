@@ -5,9 +5,10 @@
         "line"
     ],
     "tags": {
-        "amenity": "shower",
-        "nps:fcat": "Shower"
+        "amenity": "shower"
     },
-    "searchable": false,
-    "name": "Shower"
+    "icon": "showers-black",
+    "maki": "npmaki",
+    "searchable": true,
+    "name": "Showers"
 }
