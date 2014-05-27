@@ -3,8 +3,10 @@
         "point"
     ],
     "tags": {
-        "piste:type": "sled",
-        "nps:fcat": "Sledding"
+        "piste:type": "sled"
     },
+    "searchable": true,
+    "icon": "sledding-black",
+    "maki": "npmaki",
     "name": "Sledding"
 }
