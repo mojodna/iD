@@ -3,10 +3,10 @@
         "point"
     ],
     "tags": {
-        "tourism": "information",
-        "nps:fcat": "Headquarters"
+        "tourism": "information"
     },
     "name": "Information",
     "icon": "information-black",
-    "maki": "npmaki"
+    "maki": "npmaki",
+    "searchable": true
 }
