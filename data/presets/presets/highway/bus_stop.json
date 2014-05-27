@@ -5,8 +5,8 @@
         "point"
     ],
     "tags": {
-        "highway": "bus_stop",
-        "nps:fcat": "Bus Stop"
+        "highway": "bus_stop"
     },
-    "name": "Transit Stop"
+    "name": "Bus Stop / Shuttle Stop",
+    "searchable": true
 }
