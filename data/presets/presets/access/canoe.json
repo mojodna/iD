@@ -3,10 +3,10 @@
         "point"
     ],
     "tags": {
-        "access": "canoe",
-        "nps:fcat": "Canoe Access"
+        "access": "canoe"
     },
     "name": "Canoe Access",
     "icon": "canoe-access-black",
-    "maki": "npmaki"
+    "maki": "npmaki",
+    "searchable": true
 }
