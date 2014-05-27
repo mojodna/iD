@@ -1,18 +1,17 @@
 {
     "fields": [
         "operator",
-        "address",
-        "smoking"
+        "address"
     ],
     "geometry": [
         "point"
     ],
     "tags": {
         "tourism": "camp_site",
-        "camp_site": "pitch",
-        "nps:fcat": "Campsite"
+        "camp_site": "pitch"
     },
-    "name": "Camp Site",
-    "icon": "camping-black",
-    "maki": "npmaki"
+    "name": "Campsite",
+    "icon": "camping-white",
+    "maki": "npmaki",
+    "searchable": true
 }
