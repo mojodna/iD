@@ -3,10 +3,10 @@
         "point"
     ],
     "tags": {
-        "sport": "swimming",
-        "nps:fcat": "Swim"
+        "sport": "swimming"
     },
-    "name": "Swim",
-    "icon": "swimming",
-    "maki": "maki"
+    "name": "Swimming Area",
+    "icon": "swimming-black",
+    "maki": "npmaki",
+    "searchable": true
 }
