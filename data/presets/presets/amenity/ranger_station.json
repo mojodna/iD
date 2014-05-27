@@ -10,8 +10,6 @@
         "area"
     ],
     "terms": [
-        "visitor center",
-        "visitor centre",
         "permit center",
         "permit centre",
         "backcountry office",
@@ -19,10 +17,10 @@
         "warden center"
     ],
     "tags": {
-        "amenity": "ranger_station",
-        "nps:fcat": "Permit Station"
+        "amenity": "ranger_station"
     },
     "icon": "ranger-station-black",
     "maki": "npmaki",
-    "name": "Ranger Station"
+    "name": "Ranger Station",
+    "searchable": true
 }
