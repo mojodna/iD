@@ -3,8 +3,6 @@ dist/iD.js
 dist/iD.min.js
 dist/img/maki-sprite.png
 dist/img/npmaki-sprite.png
-dist/locales
-dist/locales/en.json
 node_modules
 transifex.auth
 data/presets/categories.json
