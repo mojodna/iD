@@ -25,10 +25,10 @@
         "W.C."
     ],
     "tags": {
-        "amenity": "toilets",
-        "nps:fcat": "Restroom"
+        "amenity": "toilets"
     },
     "icon": "restroom-black",
     "maki": "npmaki",
-    "name": "Restrooms"
+    "name": "Restrooms",
+    "searchable": true
 }
