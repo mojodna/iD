@@ -1,5 +1,7 @@
 {
-    "icon": "golf",
+    "icon": "golfing-black",
+    "maki": "npmaki",
+    "searchable": true,
     "fields": [
         "operator",
         "address"
@@ -14,6 +16,5 @@
     "terms": [
         "links"
     ],
-    "searchable": false,
     "name": "Golf Course"
 }

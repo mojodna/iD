@@ -1,0 +1,12 @@
+{
+    "geometry": [
+        "point"
+    ],
+    "tags": {
+        "piste:type": "downhill"
+    },
+    "name": "Downhill Skiing",
+    "icon": "downhill-skiing-trail-black",
+    "maki": "npmaki",
+    "searchable": true
+}

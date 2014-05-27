@@ -1,0 +1,10 @@
+{
+    "geometry": [
+        "point"
+    ],
+    "tags": {
+        "wifi": "yes"
+    },
+    "name": "Wifi",
+    "searchable": true
+}

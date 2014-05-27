@@ -1,6 +1,7 @@
 {
     "icon": "bike-trail-black",
     "maki": "npmaki",
+    "searchable": false,
     "fields": [
         "bicycle_parking",
         "capacity",
@@ -14,8 +15,7 @@
         "area"
     ],
     "tags": {
-        "amenity": "bicycle_parking",
-        "nps:fcat": "Bicycle Rack"
+        "amenity": "bicycle_parking"
     },
     "name": "Bicycle Parking"
 }

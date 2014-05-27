@@ -1,11 +1,12 @@
 {
+    "icon": "boat-launch-black",
+    "maki": "npmaki",
     "geometry": [
         "point"
     ],
     "tags": {
-        "leisure": "slipway",
-        "nps:fcat": "Boat Launch"
+        "leisure": "slipway"
     },
-    "searchable": false,
-    "name": "Boat Launch"
+    "name": "Boat Launch",
+    "searchable": true
 }

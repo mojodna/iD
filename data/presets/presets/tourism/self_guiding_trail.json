@@ -1,0 +1,13 @@
+{
+    "geometry": [
+        "point"
+    ],
+    "tags": {
+        "tourism": "information",
+        "information": "guidepost"
+    },
+    "name": "Self-guiding Trail",
+    "icon": "self-guided-trail-black",
+    "maki": "npmaki",
+    "searchable": true
+}

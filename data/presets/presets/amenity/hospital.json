@@ -1,5 +1,6 @@
 {
-    "icon": "hospital",
+    "icon": "hospital-black",
+    "maki": "npmaki",
     "fields": [
         "emergency",
         "address"
@@ -27,6 +28,6 @@
     "tags": {
         "amenity": "hospital"
     },
-    "searchable": false,
-    "name": "Hospital Grounds"
+    "name": "Hospital",
+    "searchable": true
 }

@@ -1,0 +1,12 @@
+{
+    "geometry": [
+        "point"
+    ],
+    "tags": {
+        "sport": "scuba_diving"
+    },
+    "name": "Scuba Driving",
+    "icon": "scuba-diving-black",
+    "maki": "npmaki",
+    "searchable": true
+}

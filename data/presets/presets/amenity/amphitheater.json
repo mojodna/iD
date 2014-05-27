@@ -1,6 +1,7 @@
 {
     "icon": "amphitheater-black",
     "maki": "npmaki",
+    "searchable": true,
     "fields": [
         "operator",
         "building_area",
@@ -20,8 +21,7 @@
     ],
     "tags": {
         "amenity": "theatre",
-        "theatre:type": "amphi",
-        "nps:fcat": "Amphitheater"
+        "theatre:type": "amphi"
     },
     "name": "Amphitheater"
 }

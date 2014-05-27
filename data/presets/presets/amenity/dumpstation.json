@@ -1,0 +1,14 @@
+{
+    "geometry": [
+        "point",
+        "vertex",
+        "area"
+    ],
+    "tags": {
+        "amenity": "dumpstation"
+    },
+    "icon": "sanitary-dump-station-black",
+    "maki": "npmaki",
+    "name": "Sanitary Disposal Station",
+    "searchable": true
+}
