@@ -5,12 +5,12 @@
         "point"
     ],
     "tags": {
-        "amenity": "drinking_water",
-        "nps:fcat": "Water"
+        "amenity": "drinking_water"
     },
     "terms": [
         "water fountain",
         "potable water"
     ],
-    "name": "Drinking Water"
+    "name": "Drinking Water",
+    "searchable": true
 }
