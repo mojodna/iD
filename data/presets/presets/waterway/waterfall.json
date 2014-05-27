@@ -1,11 +1,12 @@
 {
     "icon": "waterway-stream",
+    "maki": "maki",
     "geometry": [
         "point"
     ],
     "tags": {
-        "waterway": "waterfall",
-        "nps:fcat": "Waterfall"
+        "waterway": "waterfall"
     },
-    "name": "Waterfall"
+    "name": "Waterfall",
+    "searchable": true
 }
