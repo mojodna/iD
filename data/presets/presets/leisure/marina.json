@@ -1,12 +1,12 @@
 {
     "icon": "marina-black",
     "maki": "npmaki",
+    "searchable": true,
     "geometry": [
         "point"
     ],
     "tags": {
-        "leisure": "marina",
-        "nps:fcat": "Marina"
+        "leisure": "marina"
     },
     "name": "Marina"
 }
