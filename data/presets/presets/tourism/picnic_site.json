@@ -10,10 +10,10 @@
     ],
     "terms": [],
     "tags": {
-        "tourism": "picnic_site",
-        "nps:fcat": "Picnic Area"
+        "tourism": "picnic_site"
     },
     "name": "Picnic Site",
     "icon": "picnic-black",
-    "maki": "npmaki"
+    "maki": "npmaki",
+    "searchable": true
 }
