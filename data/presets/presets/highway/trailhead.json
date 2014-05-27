@@ -7,10 +7,10 @@
       "Trail head"
     ],
     "tags": {
-        "highway": "trailhead",
-        "nps:fcat": "Trailhead"
+        "highway": "trailhead"
     },
     "name": "Trailhead",
     "icon": "trailhead-black",
-    "maki": "npmaki"
+    "maki": "npmaki",
+    "searchable": true
 }
