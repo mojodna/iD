@@ -5,8 +5,8 @@
     "icon": "fishing-black",
     "maki": "npmaki",
     "name": "Fishing",
+    "searchable": true,
     "tags": {
-        "leisure": "fishing",
-        "nps:fcat": "Fishing"
+        "leisure": "fishing"
     }
 }
