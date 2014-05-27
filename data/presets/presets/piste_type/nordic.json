@@ -3,10 +3,10 @@
         "point"
     ],
     "tags": {
-        "piste:type": "nordic",
-        "nps:fcat": "Crosscountry Skiing"
+        "piste:type": "nordic"
     },
     "name": "Crosscountry Skiing",
     "icon": "cross-country-ski-trail-black",
-    "maki": "npmaki"
+    "maki": "npmaki",
+    "searchable": true
 }
