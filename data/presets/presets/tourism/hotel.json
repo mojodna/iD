@@ -1,5 +1,6 @@
 {
-    "icon": "lodging",
+    "icon": "lodging-black",
+    "maki": "npmaki",
     "fields": [
         "operator",
         "building_area",
@@ -13,8 +14,8 @@
     ],
     "terms": [],
     "tags": {
-        "tourism": "hotel",
-        "nps:fcat": "Lodge"
+        "tourism": "hotel"
     },
-    "name": "Hotel"
+    "name": "Lodging",
+    "searchable": true
 }
