@@ -3,11 +3,10 @@
         "point"
     ],
     "tags": {
-        "building": "stable",
-        "sport": "equestrian",
-        "leisure": "horse_riding",
-        "nps:fcat": "Stable"
+        "building": "stable"
     },
-    "name": "Horse Stable",
-    "icon": "building"
+    "name": "Stable",
+    "icon": "stable-black",
+    "maki": "npmaki",
+    "searchable": true
 }
