@@ -7,8 +7,8 @@
         "line"
     ],
     "tags": {
-        "amenity": "food_court",
-        "nps:fcat": "Food Service"
+        "amenity": "food_court"
     },
-    "name": "Food Service"
+    "name": "Food Service",
+    "searchable": true
 }
