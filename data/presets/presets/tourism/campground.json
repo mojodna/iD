@@ -3,10 +3,10 @@
         "point"
     ],
     "tags": {
-        "tourism": "camp_site",
-        "nps:fcat": "Campground"
+        "tourism": "camp_site"
     },
     "name": "Campground",
     "icon": "camping-black",
-    "maki": "npmaki"
+    "maki": "npmaki",
+    "searchable": true
 }
