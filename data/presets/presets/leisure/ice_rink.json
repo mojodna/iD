@@ -1,5 +1,6 @@
 {
-    "icon": "pitch",
+    "icon": "ice-skating-black",
+    "maki": "npmaki",
     "fields": [
         "building_area",
         "seasonal",
@@ -18,5 +19,5 @@
         "leisure": "ice_rink"
     },
     "name": "Ice Rink",
-    "searchable": false
+    "searchable": true
 }
