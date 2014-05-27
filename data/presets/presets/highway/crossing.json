@@ -1,6 +1,8 @@
 {
     "fields": [
-        "crossing"
+        "crossing",
+        "sloped_curb",
+        "tactile_paving"
     ],
     "geometry": [
         "vertex"
@@ -13,5 +15,6 @@
         "zebra crossing"
     ],
     "searchable": false,
+    "terms": [],
     "name": "Crossing"
 }

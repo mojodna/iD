@@ -5,6 +5,8 @@ iD.ui.EntityEditor = function(context) {
         preset,
         reference;
 
+    var presetEditor = iD.ui.preset(context)
+        .on('change', changeTags);
     var rawTagEditor = iD.ui.RawTagEditor(context)
         .on('change', changeTags);
 
@@ -91,12 +93,11 @@ iD.ui.EntityEditor = function(context) {
             .text(preset.name());
 
         $body.select('.inspector-preset')
-            .call(iD.ui.preset(context)
+            .call(presetEditor
                 .preset(preset)
                 .entityID(id)
                 .tags(tags)
-                .state(state)
-                .on('change', changeTags));
+                .state(state));
 
         $body.select('.raw-tag-editor')
             .call(rawTagEditor
@@ -133,11 +134,13 @@ iD.ui.EntityEditor = function(context) {
 
     function clean(o) {
         var out = {}, k, v;
+        /*jshint -W083 */
         for (k in o) {
             if (k && (v = o[k]) !== undefined) {
-                out[k] = v.trim();
+                out[k] = v.split(';').map(function(s) { return s.trim(); }).join(';');
             }
         }
+        /*jshint +W083 */
         return out;
     }
 

@@ -43,16 +43,44 @@ _.extend(iD.Way.prototype, {
     },
 
     isOneWay: function() {
-        return this.tags.oneway === 'yes' ||
-            this.tags.oneway === '1' ||
-            this.tags.oneway === '-1' ||
-            this.tags.waterway === 'river' ||
-            this.tags.waterway === 'stream' ||
-            this.tags.junction === 'roundabout';
+        // explicit oneway tag..
+        if (['yes', '1', '-1'].indexOf(this.tags.oneway) !== -1) { return true; }
+        if (['no', '0'].indexOf(this.tags.oneway) !== -1) { return false; }
+
+        // implied oneway tag..
+        for (var key in this.tags) {
+            if (key in iD.oneWayTags && (this.tags[key] in iD.oneWayTags[key]))
+                return true;
+        }
+        return false;
     },
 
     isClosed: function() {
         return this.nodes.length > 0 && this.first() === this.last();
+    },
+
+    isConvex: function(resolver) {
+        if (!this.isClosed() || this.isDegenerate()) return null;
+
+        var nodes = _.uniq(resolver.childNodes(this)),
+            coords = _.pluck(nodes, 'loc'),
+            curr = 0, prev = 0;
+
+        for (var i = 0; i < coords.length; i++) {
+            var o = coords[(i+1) % coords.length],
+                a = coords[i],
+                b = coords[(i+2) % coords.length],
+                res = iD.geo.cross(o, a, b);
+
+            curr = (res > 0) ? 1 : (res < 0) ? -1 : 0;
+            if (curr === 0) {
+                continue;
+            } else if (prev && curr !== prev) {
+                return false;
+            }
+            prev = curr;
+        }
+        return true;
     },
 
     isArea: function() {

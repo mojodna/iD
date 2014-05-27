@@ -153,6 +153,7 @@ D3_FILES = \
 	node_modules/d3/src/geo/path.js \
 	node_modules/d3/src/geo/stream.js \
 	node_modules/d3/src/geom/polygon.js \
+	node_modules/d3/src/geom/hull.js \
 	node_modules/d3/src/selection/index.js \
 	node_modules/d3/src/transition/index.js \
 	node_modules/d3/src/xhr/index.js \
@@ -162,3 +163,6 @@ js/lib/d3.v3.js: $(D3_FILES)
 	echo "----< $@ >----"
 	node_modules/.bin/smash $(D3_FILES) > $@
 	@echo 'd3 rebuilt. Please reapply 7e2485d, 4da529f, and 223974d'
+
+js/lib/lodash.js:
+	node_modules/.bin/lodash --debug --output $@ include="any,assign,bind,clone,compact,contains,debounce,difference,each,every,extend,filter,find,first,forEach,groupBy,indexOf,intersection,isEmpty,isEqual,isFunction,keys,last,map,omit,pairs,pluck,reject,some,throttle,union,uniq,unique,values,without,flatten,value,chain,cloneDeep,merge,pick" exports="global,node"

@@ -87,26 +87,94 @@ describe('iD.Way', function() {
         });
     });
 
+    describe('#isConvex', function() {
+        it('returns true for convex ways', function() {
+            //    d -- e
+            //    |     \
+            //    |      a
+            //    |     /
+            //    c -- b
+            var graph = iD.Graph([
+                iD.Node({id: 'a', loc: [ 0.0003,  0.0000]}),
+                iD.Node({id: 'b', loc: [ 0.0002, -0.0002]}),
+                iD.Node({id: 'c', loc: [-0.0002, -0.0002]}),
+                iD.Node({id: 'd', loc: [-0.0002,  0.0002]}),
+                iD.Node({id: 'e', loc: [ 0.0002,  0.0002]}),
+                iD.Way({id: 'w', nodes: ['a','b','c','d','e','a']})
+            ]);
+            expect(graph.entity('w').isConvex(graph)).to.be.true;
+        });
+
+        it('returns false for concave ways', function() {
+            //    d -- e
+            //    |   /
+            //    |  a
+            //    |   \
+            //    c -- b
+            var graph = iD.Graph([
+                iD.Node({id: 'a', loc: [ 0.0000,  0.0000]}),
+                iD.Node({id: 'b', loc: [ 0.0002, -0.0002]}),
+                iD.Node({id: 'c', loc: [-0.0002, -0.0002]}),
+                iD.Node({id: 'd', loc: [-0.0002,  0.0002]}),
+                iD.Node({id: 'e', loc: [ 0.0002,  0.0002]}),
+                iD.Way({id: 'w', nodes: ['a','b','c','d','e','a']})
+            ]);
+            expect(graph.entity('w').isConvex(graph)).to.be.false;
+        });
+
+        it('returns null for non-closed ways', function() {
+            //    d -- e
+            //    |
+            //    |  a
+            //    |   \
+            //    c -- b
+            var graph = iD.Graph([
+                iD.Node({id: 'a', loc: [ 0.0000,  0.0000]}),
+                iD.Node({id: 'b', loc: [ 0.0002, -0.0002]}),
+                iD.Node({id: 'c', loc: [-0.0002, -0.0002]}),
+                iD.Node({id: 'd', loc: [-0.0002,  0.0002]}),
+                iD.Node({id: 'e', loc: [ 0.0002,  0.0002]}),
+                iD.Way({id: 'w', nodes: ['a','b','c','d','e']})
+            ]);
+            expect(graph.entity('w').isConvex(graph)).to.be.null;
+        });
+
+        it('returns null for degenerate ways', function() {
+            var graph = iD.Graph([
+                iD.Node({id: 'a', loc: [0.0000,  0.0000]}),
+                iD.Way({id: 'w', nodes: ['a','a']})
+            ]);
+            expect(graph.entity('w').isConvex(graph)).to.be.null;
+        });
+    });
+
     describe('#isOneWay', function() {
         it('returns false when the way has no tags', function() {
-            expect(iD.Way().isOneWay()).to.eql(false);
+            expect(iD.Way().isOneWay()).to.be.false;
         });
 
         it('returns false when the way has tag oneway=no', function() {
-            expect(iD.Way({tags: { oneway: 'no' }}).isOneWay()).to.equal(false);
+            expect(iD.Way({tags: { oneway: 'no' }}).isOneWay()).to.be.false;
+            expect(iD.Way({tags: { oneway: '0' }}).isOneWay()).to.be.false;
         });
 
         it('returns true when the way has tag oneway=yes', function() {
-            expect(iD.Way({tags: { oneway: 'yes' }}).isOneWay()).to.equal(true);
+            expect(iD.Way({tags: { oneway: 'yes' }}).isOneWay()).to.be.true;
+            expect(iD.Way({tags: { oneway: '1' }}).isOneWay()).to.be.true;
+            expect(iD.Way({tags: { oneway: '-1' }}).isOneWay()).to.be.true;
         });
 
-        it('returns true when the way has tag waterway=river or waterway=stream', function() {
-            expect(iD.Way({tags: { waterway: 'river' }}).isOneWay()).to.equal(true);
-            expect(iD.Way({tags: { waterway: 'stream' }}).isOneWay()).to.equal(true);
+        it('returns true when the way has implied oneway tag (waterway=river, waterway=stream, etc)', function() {
+            expect(iD.Way({tags: { waterway: 'river' }}).isOneWay()).to.be.true;
+            expect(iD.Way({tags: { waterway: 'stream' }}).isOneWay()).to.be.true;
+            expect(iD.Way({tags: { highway: 'motorway' }}).isOneWay()).to.be.true;
+            expect(iD.Way({tags: { highway: 'motorway_link' }}).isOneWay()).to.be.true;
+            expect(iD.Way({tags: { junction: 'roundabout' }}).isOneWay()).to.be.true;
         });
 
-        it('returns true when the way has tag junction=roundabout', function() {
-            expect(iD.Way({tags: { junction: 'roundabout' }}).isOneWay()).to.equal(true);
+        it('returns false when oneway=no overrides implied oneway tag', function() {
+            expect(iD.Way({tags: { junction: 'roundabout', oneway: 'no' }}).isOneWay()).to.be.false;
+            expect(iD.Way({tags: { highway: 'motorway', oneway: 'no' }}).isOneWay()).to.be.false;
         });
     });
 

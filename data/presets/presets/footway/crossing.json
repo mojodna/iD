@@ -2,7 +2,9 @@
     "fields": [
         "crossing",
         "access",
-        "surface"
+        "surface",
+        "sloped_curb",
+        "tactile_paving"
     ],
     "geometry": [
         "line"

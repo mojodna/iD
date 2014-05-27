@@ -14,6 +14,36 @@
                 "type": "string"
             }
         },
+        "reference": {
+            "description": "Taginfo documentation parameters (to be used when a field manages multiple tags)",
+            "type": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "description": "For documentation of a key",
+                            "type": "string",
+                            "required": true
+                        },
+                        "value": {
+                            "description": "For documentation of a tag (key and value)",
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "rtype": {
+                            "description": "For documentation of a relation type",
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            ]
+        },
         "type": {
             "description": "Type of field",
             "type": "string",
@@ -33,7 +63,8 @@
                 "textarea",
                 "localized",
                 "wikipedia",
-                "typeCombo"
+                "typeCombo",
+                "restrictions"
             ],
             "required": true
         },
