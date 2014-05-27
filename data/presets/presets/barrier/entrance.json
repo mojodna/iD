@@ -3,8 +3,8 @@
         "point"
     ],
     "tags": {
-        "barrier": "entrance",
-        "nps:fcat": "Entrance Station"
+        "barrier": "entrance"
     },
-    "name": "Entrance Station"
+    "name": "Entrance Station",
+    "searchable": true
 }
