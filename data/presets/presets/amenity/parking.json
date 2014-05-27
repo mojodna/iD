@@ -1,6 +1,7 @@
 {
     "icon": "parking-black",
     "maki": "npmaki",
+    "searchable": true,
     "fields": [
         "parking",
         "capacity",
@@ -16,9 +17,8 @@
         "area"
     ],
     "tags": {
-        "amenity": "parking",
-        "nps:fcat": "Parking"
+        "amenity": "parking"
     },
     "terms": [],
-    "name": "Car Parking"
+    "name": "Parking"
 }
