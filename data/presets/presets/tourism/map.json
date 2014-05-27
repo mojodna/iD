@@ -9,5 +9,6 @@
     },
     "name": "Information",
     "icon": "information-black",
-    "maki": "npmaki"
+    "maki": "npmaki",
+    "searchable": true
 }
