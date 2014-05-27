@@ -1,5 +1,6 @@
 {
-    "icon": "post",
+    "icon": "post-office-black",
+    "maki": "npmaki",
     "fields": [
         "operator",
         "collection_times",
@@ -13,6 +14,6 @@
     "tags": {
         "amenity": "post_office"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Post Office"
 }
