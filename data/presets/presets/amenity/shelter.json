@@ -10,11 +10,13 @@
     "tags": {
         "amenity": "shelter",
         "building": "hut",
-        "tourism": "camp_site",
-        "nps:fcat": "Shelter"
+        "tourism": "camp_site"
     },
     "terms": [
         "lean-to"
     ],
-    "name": "Shelter"
+    "name": "Shelter",
+    "icon": "shelter-black",
+    "maki": "npmaki",
+    "searchable": true
 }
