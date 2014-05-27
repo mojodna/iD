@@ -12,10 +12,10 @@
     ],
     "terms": [],
     "tags": {
-        "amenity": "recycling",
-        "nps:fcat": "Recycling"
+        "amenity": "recycling"
     },
     "name": "Recycling",
-    "icon": "recycling",
-    "maki": "maki"
+    "icon": "recycling-black",
+    "maki": "npmaki",
+    "searchable": true
 }
