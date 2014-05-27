@@ -3,10 +3,10 @@
         "point"
     ],
     "tags": {
-        "shop": "general",
-        "nps:fcat": "Store"
+        "shop": "general"
     },
     "name": "Store",
     "icon": "store-black",
-    "maki": "npmaki"
+    "maki": "npmaki",
+    "searchable": true
 }
