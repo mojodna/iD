@@ -11,7 +11,8 @@
     ],
     "geometry": [
         "point",
-        "way"
+        "vertex",
+        "line"
     ],
     "tags": {
         "highway": "track",
