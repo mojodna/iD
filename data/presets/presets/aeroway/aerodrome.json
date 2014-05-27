@@ -19,5 +19,6 @@
     "tags": {
         "aeroway": "aerodrome"
     },
-    "name": "Airport"
+    "name": "Airport",
+    "searchable": true
 }
