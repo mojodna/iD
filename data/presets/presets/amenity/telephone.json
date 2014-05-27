@@ -1,13 +1,13 @@
 {
-    "icon": "telephone",
-    "maki": "maki",
+    "icon": "telephone-black",
+    "maki": "npmaki",
+    "searchable": true,
     "geometry": [
         "point",
         "vertex"
     ],
     "tags": {
-        "amenity": "telephone",
-        "nps:fcat": "Telephone"
+        "amenity": "telephone"
     },
     "terms":  [
         "phone"
