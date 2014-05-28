@@ -7,5 +7,6 @@
         "leisure": "nature_reserve",
         "nps:fcat": "Nature Center"
     },
-    "name": "Nature Center"
+    "name": "Nature Center",
+    "searchable": false
 }
