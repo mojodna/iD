@@ -9,5 +9,6 @@
     "historic": "building",
     "nps:fcat": "Historic Building"
   },
-  "name": "Historic Building"
+  "name": "Historic Building",
+  "searchable": false
 }
