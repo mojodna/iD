@@ -5,8 +5,7 @@
         "line"
     ],
     "tags": {
-        "amenity": "bench",
-        "nps:fcat": "Bench"
+        "amenity": "bench"
     },
     "fields": [
         "backrest"
