@@ -10,5 +10,6 @@
     "fields": [
         "except"
     ],
-    "icon": "restriction-only-straight-on"
+    "icon": "restriction-only-straight-on",
+    "searchable": false
 }
