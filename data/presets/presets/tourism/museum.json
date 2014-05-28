@@ -27,8 +27,7 @@
         "vault"
     ],
     "tags": {
-        "tourism": "museum",
-        "nps:fcat": "Museum"
+        "tourism": "museum"
     },
     "name": "Museum",
     "searchable": false
