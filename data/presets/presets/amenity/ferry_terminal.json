@@ -7,5 +7,6 @@
         "amenity": "ferry_terminal",
         "nps:fcat": "Ferry"
     },
-    "name": "Ferry Terminal"
+    "name": "Ferry Terminal",
+    "searchable": false
 }
