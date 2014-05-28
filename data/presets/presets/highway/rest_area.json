@@ -5,8 +5,7 @@
         "area"
     ],
     "tags": {
-        "highway": "rest_area",
-        "nps:fcat": "Pull Off"
+        "highway": "rest_area"
     },
     "terms": [
         "rest stop",
