@@ -30,5 +30,6 @@
         "tourism": "museum",
         "nps:fcat": "Museum"
     },
-    "name": "Museum"
+    "name": "Museum",
+    "searchable": false
 }
