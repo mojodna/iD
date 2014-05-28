@@ -30,5 +30,6 @@
         "leisure": "park",
         "nps:fcat": "Park"
     },
-    "name": "Park"
+    "name": "Park",
+    "searchable": false
 }
