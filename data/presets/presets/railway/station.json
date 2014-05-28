@@ -8,5 +8,6 @@
     },
     "name": "Railway Station",
     "icon": "rail",
-    "maki": "maki"
+    "maki": "maki",
+    "searchable": false
 }
