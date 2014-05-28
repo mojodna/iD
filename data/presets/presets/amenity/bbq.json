@@ -14,5 +14,6 @@
         "bbq",
         "grill"
     ],
-    "name": "Barbecue/Grill"
+    "name": "Barbecue/Grill",
+    "searchable": false
 }
