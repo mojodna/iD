@@ -6,5 +6,6 @@
         "natural": "cave_entrance",
         "nps:fcat": "Cave"
     },
-    "name": "Cave Entrance"
+    "name": "Cave Entrance",
+    "searchable": false
 }
