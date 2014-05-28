@@ -6,8 +6,7 @@
         "area"
     ],
     "tags": {
-        "tourism": "attraction",
-        "nps:fcat": "Wayside"
+        "tourism": "attraction"
     },
     "name": "Wayside",
     "searchable": false
