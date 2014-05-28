@@ -1,5 +1,6 @@
 {
     "icon": "rail-metro",
+    "maki": "maki",
     "geometry": [
         "point"
     ],
