@@ -4,8 +4,7 @@
         "area"
     ],
     "tags": {
-        "leisure": "nature_reserve",
-        "nps:fcat": "Nature Center"
+        "leisure": "nature_reserve"
     },
     "name": "Nature Center",
     "searchable": false
