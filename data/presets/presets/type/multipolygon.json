@@ -10,5 +10,6 @@
     "name": "Multipolygon",
     "icon": "multipolygon",
     "maki": "maki",
-    "matchScore": 0.1
+    "matchScore": 0.1,
+    "searchable": false
 }
