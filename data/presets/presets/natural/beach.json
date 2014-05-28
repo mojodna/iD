@@ -8,9 +8,8 @@
     ],
     "terms": [],
     "tags": {
-        "natural": "beach",
-        "nps:fcat": "Fortification"
+        "natural": "beach"
     },
-    "searchable": true,
+    "searchable": false,
     "name": "Beach"
 }
