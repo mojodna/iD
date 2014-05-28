@@ -13,6 +13,6 @@
         "site_type": "fortification",
         "fortification_type": "hill_fort"
     },
-    "searchable": false,
-    "name": "Fortification"
+    "searchable": true,
+    "name": "Fortification / Hill Fort"
 }
