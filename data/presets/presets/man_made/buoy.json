@@ -6,5 +6,6 @@
         "man_made": "buoy",
         "nps:fcat": "Buoys"
     },
-    "name": "Buoy"
+    "name": "Buoy",
+    "searchable": false
 }
