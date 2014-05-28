@@ -7,5 +7,6 @@
         "tourism": "viewpoint",
         "nps:fcat": "Overlook"
     },
-    "name": "Viewpoint"
+    "name": "Viewpoint",
+    "searchable": false
 }
