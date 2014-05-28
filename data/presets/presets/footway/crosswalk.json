@@ -18,5 +18,6 @@
         "crosswalk",
         "zebra crossing"
     ],
-    "name": "Crosswalk"
+    "name": "Crosswalk",
+    "searchable": false
 }
