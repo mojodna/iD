@@ -7,6 +7,6 @@
         "cemetery": "grave"
     },
     "terms": [],
-    "searchable": false,
-    "name": "Grave Site"
+    "searchable": true,
+    "name": "Cemetery"
 }
