@@ -10,5 +10,6 @@
         "access_simple",
         "ref"
     ],
-    "name": "Parking Garage Entrance/Exit"
+    "name": "Parking Garage Entrance/Exit",
+    "searchable": false
 }
