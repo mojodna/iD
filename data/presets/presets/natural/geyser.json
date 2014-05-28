@@ -10,6 +10,6 @@
     "tags": {
         "natural": "geyser"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Geyser"
 }
