@@ -10,10 +10,9 @@
     ],
     "tags": {
         "historic": "archaeological_site",
-        "nps:fcat": "Fortification",
         "site_type": "fortification",
         "fortification_type": "hill_fort"
     },
-    "searchable": true,
+    "searchable": false,
     "name": "Fortification"
 }
