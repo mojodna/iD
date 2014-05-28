@@ -8,5 +8,6 @@
         "nps:fcat": "Vegetation"
     },
     "terms": [],
-    "name": "Bushes"
+    "name": "Bushes",
+    "searchable": false
 }
