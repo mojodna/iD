@@ -8,5 +8,6 @@
     },
     "name": "Playgound",
     "icon": "playground",
-    "maki": "maki"
+    "maki": "maki",
+    "searchable": false
 }
