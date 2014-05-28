@@ -11,5 +11,6 @@
     "fields": [
         "backrest"
     ],
-    "name": "Bench"
+    "name": "Bench",
+    "searchable": false
 }
