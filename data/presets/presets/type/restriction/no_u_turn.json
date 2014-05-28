@@ -10,5 +10,6 @@
     "fields": [
         "except"
     ],
-    "icon": "restriction-no-u-turn"
+    "icon": "restriction-no-u-turn",
+    "searchable": false
 }
