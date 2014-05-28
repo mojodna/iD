@@ -6,5 +6,6 @@
         "building": "yes",
         "nps:fcat": "Building"
     },
-    "name": "Building"
+    "name": "Building",
+    "searchable": false
 }
