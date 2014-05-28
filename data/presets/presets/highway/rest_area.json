@@ -15,5 +15,6 @@
         "turnout",
         "lay-by"
     ],
-    "name": "Rest Area"
+    "name": "Rest Area",
+    "searchable": false
 }
