@@ -6,5 +6,6 @@
         "landuse": "military"
     },
     "terms": [],
-    "name": "Military"
+    "name": "Military",
+    "searchable": false
 }
