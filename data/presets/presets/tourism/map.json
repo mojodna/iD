@@ -4,8 +4,7 @@
     ],
     "tags": {
         "tourism": "information",
-        "information": "map",
-        "nps:fcat": "Map"
+        "information": "map"
     },
     "name": "Information",
     "icon": "information-black",
