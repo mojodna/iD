@@ -3,8 +3,7 @@
         "point"
     ],
     "tags": {
-        "free_flying:site": "takeoff",
-        "nps:fcat": "Parasailing Launch"
+        "free_flying:site": "takeoff"
     },
     "name": "Parasailing Launch",
     "searchable": false
