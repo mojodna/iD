@@ -8,5 +8,6 @@
     },
     "name": "Lighthouse",
     "icon": "lighthouse",
-    "maki": "maki"
+    "maki": "maki",
+    "searchable": false
 }
