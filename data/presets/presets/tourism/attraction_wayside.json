@@ -9,5 +9,6 @@
         "tourism": "attraction",
         "nps:fcat": "Wayside"
     },
-    "name": "Wayside"
+    "name": "Wayside",
+    "searchable": false
 }
