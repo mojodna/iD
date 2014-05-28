@@ -8,9 +8,8 @@
     ],
     "terms": [],
     "tags": {
-        "natural": "geyser",
-        "nps:fcat": "Geyser"
+        "natural": "geyser"
     },
-    "searchable": true,
+    "searchable": false,
     "name": "Geyser"
 }
