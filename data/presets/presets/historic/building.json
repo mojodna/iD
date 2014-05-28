@@ -6,8 +6,7 @@
   ],
   "tags": {
     "building": "yes",
-    "historic": "building",
-    "nps:fcat": "Historic Building"
+    "historic": "building"
   },
   "name": "Historic Building",
   "searchable": false
