@@ -15,5 +15,6 @@
         "Electric Vehicle",
         "Supercharger"
     ],
-    "name": "Charging Station"
+    "name": "Charging Station",
+    "searchable": false
 }
