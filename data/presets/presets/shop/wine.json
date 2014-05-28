@@ -16,5 +16,6 @@
     "terms": [
         "winery"
     ],
-    "name": "Wine Shop"
+    "name": "Wine Shop",
+    "searchable": false
 }
