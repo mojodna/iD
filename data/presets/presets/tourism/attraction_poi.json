@@ -13,5 +13,6 @@
         "tourism": "attraction",
         "nps:fcat": "Point of Interest"
     },
-    "name": "Point of Interest"
+    "name": "Point of Interest",
+    "searchable": false
 }
