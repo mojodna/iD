@@ -6,5 +6,6 @@
         "barrier": "gate",
         "nps:fcat": "Gate"
     },
-    "name": "Gate"
+    "name": "Gate",
+    "searchable": false
 }
