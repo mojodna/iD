@@ -4,8 +4,7 @@
         "vertex"
     ],
     "tags": {
-        "amenity": "ferry_terminal",
-        "nps:fcat": "Ferry"
+        "amenity": "ferry_terminal"
     },
     "name": "Ferry Terminal",
     "searchable": false
