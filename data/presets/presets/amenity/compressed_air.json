@@ -7,5 +7,6 @@
     "tags": {
         "amenity": "compressed_air"
     },
-    "name": "Compressed Air"
+    "name": "Compressed Air",
+    "searchable": false
 }
