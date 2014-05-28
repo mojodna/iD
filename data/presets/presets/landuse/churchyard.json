@@ -10,5 +10,6 @@
         "landuse": "churchyard"
     },
     "terms": [],
-    "name": "Churchyard"
+    "name": "Churchyard",
+    "searchable": false
 }
