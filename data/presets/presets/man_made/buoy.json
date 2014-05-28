@@ -3,8 +3,7 @@
         "point"
     ],
     "tags": {
-        "man_made": "buoy",
-        "nps:fcat": "Buoys"
+        "man_made": "buoy"
     },
     "name": "Buoy",
     "searchable": false
