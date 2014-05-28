@@ -3,8 +3,7 @@
         "point"
     ],
     "tags": {
-        "barrier": "gate",
-        "nps:fcat": "Gate"
+        "barrier": "gate"
     },
     "name": "Gate",
     "searchable": false
