@@ -1,5 +1,6 @@
 {
     "icon": "bike-trail-black",
+    "maki": "npmaki",
     "geometry": [
         "point"
     ],
@@ -7,5 +8,6 @@
         "highway": "track",
         "bicycle": "yes"
     },
-    "name": "Bicycle Trail"
+    "name": "Bicycle Trail",
+    "searchable": true
 }
