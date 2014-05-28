@@ -3,8 +3,7 @@
         "point"
     ],
     "tags": {
-        "natural": "cave_entrance",
-        "nps:fcat": "Cave"
+        "natural": "cave_entrance"
     },
     "name": "Cave Entrance",
     "searchable": false
