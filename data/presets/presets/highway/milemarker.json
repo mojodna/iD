@@ -6,5 +6,6 @@
         "highway": "milemarker",
         "nps:fcat": "Mile Marker"
     },
-    "name": "Mile Marker"
+    "name": "Mile Marker",
+    "searchable": false
 }
