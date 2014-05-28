@@ -16,5 +16,6 @@
     "terms": [
         "fishmonger"
     ],
-    "name": "Seafood Shop"
+    "name": "Seafood Shop",
+    "searchable": false
 }
