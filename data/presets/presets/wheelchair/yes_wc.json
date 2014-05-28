@@ -3,9 +3,10 @@
         "point"
     ],
     "tags": {
-        "wheelchair": "yes",
-        "nps:fcat": "Wheelchair Accessability"
+        "wheelchair": "yes"
     },
-    "searchable": false,
-    "name": "Wheelchair Accessibility"
+    "searchable": true,
+    "icon": "wheelchair-accessible-black",
+    "maki": "npmaki",
+    "name": "Wheelchair Accessible"
 }
