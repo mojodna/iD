@@ -3,8 +3,8 @@
         "point"
     ],
     "tags": {
-        "safety_equipment": "ladder",
-        "nps:fcat": "Headquarters"
+        "safety_equipment": "ladder"
     },
-    "name": "Ladder"
+    "name": "Ladder",
+    "searchable": false
 }
