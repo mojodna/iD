@@ -13,5 +13,6 @@
         "tourism": "attraction",
         "nps:fcat": "Exhibit"
     },
-    "name": "Exhibit"
+    "name": "Exhibit",
+    "searchable": false
 }
