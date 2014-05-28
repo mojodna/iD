@@ -10,10 +10,9 @@
         "area"
     ],
     "tags": {
-        "landuse": "cemetery",
-        "nps:fcat": "cemetery"
+        "landuse": "cemetery"
     },
     "terms": [],
-    "searchable": true,
+    "searchable": false,
     "name": "Cemetery"
 }
