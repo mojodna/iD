@@ -13,10 +13,10 @@ iD.ui.intro.point = function(context, reveal) {
 
     step.enter = function() {
 
-        context.map().centerZoom([-85.63279, 41.94394], 19);
+        context.map().centerZoom([-119.58383, 37.74669], 18);
         reveal('button.add-point', t('intro.points.add'), {tooltipClass: 'intro-points-add'});
 
-        var corner = [-85.632481,41.944094];
+        var corner = [-119.58383, 37.74669];
 
         context.on('enter.intro', addPoint);
 
@@ -40,14 +40,14 @@ iD.ui.intro.point = function(context, reveal) {
             context.on('enter.intro', null);
 
             setTimeout(function() {
-                reveal('.preset-search-input', t('intro.points.search', {name: context.presets().item('amenity/cafe').name()}));
+                reveal('.preset-search-input', t('intro.points.search', {name: context.presets().item('amenity/parking').name()}));
                 d3.select('.preset-search-input').on('keyup.intro', keySearch);
             }, 500);
         }
 
         function keySearch() {
             var first = d3.select('.preset-list-item:first-child');
-            if (first.classed('preset-amenity-cafe')) {
+            if (first.classed('preset-amenity-parking')) {
                 reveal(first.select('.preset-list-button').node(), t('intro.points.choose'));
                 d3.selection.prototype.one.call(context.history(), 'change.intro', selectedPreset);
 
