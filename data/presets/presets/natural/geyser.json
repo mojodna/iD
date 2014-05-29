@@ -6,7 +6,9 @@
         "point",
         "area"
     ],
-    "terms": [],
+    "terms": [
+      "geyser"
+    ],
     "tags": {
         "natural": "geyser"
     },
