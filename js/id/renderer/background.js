@@ -211,7 +211,7 @@ iD.Background = function(context) {
     if (chosen && chosen.indexOf('custom:') === 0) {
         background.baseLayerSource(iD.BackgroundSource.Custom(chosen.replace(/^custom:/, '')));
     } else {
-        background.baseLayerSource(findSource(chosen) || findSource('Bing'));
+        background.baseLayerSource(findSource(chosen) || findSource(iD.npmap.settings.map.defaultBackground));
     }
 
     var locator = _.find(backgroundSources, function(d) {
