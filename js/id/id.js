@@ -14,7 +14,7 @@ window.iD = function () {
             map: {
                 center: [-77.0228, 38.8944],
                 zoom: 14.01,
-                defaultBackground: 'ESRI'
+                defaultBackground: 'Esri'
             }
         }
     };
