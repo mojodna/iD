@@ -13,7 +13,8 @@ window.iD = function () {
             locationOverlayMaxZoom: 22,
             map: {
                 center: [-77.0228, 38.8944],
-                zoom: 14.01
+                zoom: 14.01,
+                defaultBackground: 'ESRI'
             }
         }
     };
