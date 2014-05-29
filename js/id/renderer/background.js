@@ -119,7 +119,12 @@ iD.Background = function(context) {
     };
 
     background.bing = function() {
-        background.baseLayerSource(findSource('Bing'));
+        //background.baseLayerSource(findSource('Bing'));
+        background.getDefault();
+    };
+
+    background.getDefault = function() {
+        background.baseLayerSource(findSource(iD.npmap.settings.map.defaultBackground));
     };
 
     background.hasGpxLayer = function() {

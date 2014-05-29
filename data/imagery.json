@@ -1,6 +1,6 @@
 [
     {
-        "name": "ESRI World Imagery",
+        "name": "Esri World Imagery",
         "type": "tms",
         "description": "Satellite and aerial imagery.",
         "template": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{zoom}/{y}/{x}",
@@ -8,7 +8,7 @@
             0,
             22
         ],
-        "id": "ESRI",
+        "id": "Esri",
         "default": true
     },
     {
