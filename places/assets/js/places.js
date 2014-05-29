@@ -76,7 +76,6 @@ window.onload = function() {
 
           iframe.src = '../dist/index.html#background=Bing&map=' + contentWindow.id.map().extentZoom(extent) + '/' + center[0] + '/' + center[1]
         } else {
-          console.log(park);
           contentWindow.NPMap.config.L.fitBounds(new contentWindow.L.LatLngBounds([park[2], park[3]],[park[1], park[0]]));
         }
       };
