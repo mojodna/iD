@@ -85,7 +85,7 @@ footer {
     display: block;
     float: left;
     list-style: none;
-    margin: 6px 0 3px 10px;
+    margin: 8px 0 3px 10px;
     padding-left: 0;
     position: relative;
   }
@@ -123,6 +123,9 @@ footer {
     margin: 12px 10px 0 0;
     width: 188px;
   }
+#back-to-park-tiles, #start-editing  {
+  display:  none;
+}
 .ir {
   background-repeat: no-repeat;
   direction: ltr;
