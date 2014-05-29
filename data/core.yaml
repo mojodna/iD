@@ -364,7 +364,7 @@ en:
       airplane flyovers, satellite views, and freely-compiled sources are available
       in the editor under the 'Background Settings' menu on the right.
 
-      By default a [Bing Maps](http://www.bing.com/maps/) satellite layer is
+      By default a [ESRI Maps](http://www.esri.com/) satellite layer is
       presented in the editor, but as you pan and zoom the map to new geographical
       areas, new sources will become available. Some countries, like the United
       States, France, and Denmark have very high-quality imagery available for some areas.
