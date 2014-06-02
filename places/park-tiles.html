@@ -20,7 +20,28 @@
     <script>
       var NPMap = {
         div: 'map',
-        hashControl: true
+        hashControl: true,
+        hooks: {
+          preinit: function(callback) {
+            var baseLayer = L.npmap.preset.baselayers.nps.parkTiles;
+            baseLayer.attribution = '&copy; <a href="http://mapbox.com/about/maps" target="_blank">Mapbox</a> &copy; <a href="http://openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors';
+            baseLayer.id = baseLayer.id + ',nps.jhd2e8lb';
+            baseLayer.popup = {
+              title: function(data) {
+                if (data.name) {
+                  return data.name;
+                } else {
+                  return data.FCategory;
+                }
+              }
+            }
+
+            NPMap.baseLayers = [
+              baseLayer
+            ];
+            callback();
+          }
+        }
       };
 
       (function() {
