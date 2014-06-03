@@ -22,7 +22,7 @@
   <body>
     <header>
       <div class="left">
-        <h1 id="title"></h1>
+        <h1 id="title">Places</h1>
       </div>
       <div class="right">
         <h2>National Park Service<br>U.S. Department of the Interior</h2>
@@ -30,8 +30,8 @@
       </div>
       <div class="toolbar">
         <div class="left" style="padding-top:8px;">
-          <button class="btn btn-primary" id="back-to-park-tiles" onclick="backToParkTiles();return false;">Back to Park Tiles</button>
-          <button class="btn btn-primary" id="start-editing" onclick="startEditing();return false;">Start Editing</button>
+          <button class="btn btn-primary" id="switch-to-editor" onclick="switchToEditor();return false;">Switch to Editor</button>
+          <button class="btn btn-primary" id="switch-to-viewer" onclick="switchToViewer();return false;">Switch to Viewer</button>
         </div>
         <div class="right">
           <select class="form-control" id="to-park"><option disabled="disabled" selected>Zoom to a Park...</option></select>
@@ -43,11 +43,11 @@
     </section>
     <footer>
       <ul>
-        <li class="home-link"><a href="http://insidemaps.nps.gov/">Home</a></li>
+        <li class="home-link"><a href="http://insidemaps.nps.gov/" target="_blank">Home</a></li>
         <li><a href="http://www.nps.gov/npmap/" target="_blank">About NPMap</a></li>
         <li><a href="mailto:npmap@nps.gov">Contact Us</a></li>
-        <li><a href="https://github.com/nationalparkservice/places/issues/">Submit Feedback</a></li>
-        <li><a href="https://github.com/nationalparkservice/places/wiki/">View Help</a></li>
+        <li><a href="https://github.com/nationalparkservice/places/issues/" target="_blank">Submit Feedback</a></li>
+        <li><a href="https://github.com/nationalparkservice/places/wiki/" target="_blank">View Help</a></li>
       </ul>
       <span class="tag-line ir">Experience Your America</span>
     </footer>
