@@ -1,29 +1,31 @@
 {
-    "area": [
-    ],
-    "line": [
-    ],
-    "point": [
-      "tourism/campground",
-      "tourism/camp_site",
-      "tourism/picnic_site",
-      "amenity/parking",
-      "tourism/information",
-      "amenity/toilets",
-      "amenity/ranger_station",
-      "leisure/slipway",
-      "access/canoe",
-      "amenity/food_court",
-      "wheelchair/yes_wc",
-      "amenity/parking",
-      "amenity/telephone",
-      "amenity/drinking_water",
-      "sport/swimming",
-      "leisure/fishing",
-      "building/gov_headquarters"
-    ],
-    "vertex": [
-    ],
-    "relation": [
-    ]
+  "area": [],
+  "line": [],
+  "point": [
+    "tourism/campground",
+    "tourism/picnic_site",
+    "amenity/parking",
+    "tourism/information",
+    "tourism/visitor_center",
+    "amenity/ranger_station",
+    "highway/trailhead",
+    "amenity/food_court",
+    "tourism/hotel",
+    "shop/general",
+    "tourism/map"
+  ],
+  "vertex": [
+    "tourism/campground",
+    "tourism/picnic_site",
+    "amenity/parking",
+    "tourism/information",
+    "tourism/visitor_center",
+    "amenity/ranger_station",
+    "highway/trailhead",
+    "amenity/food_court",
+    "tourism/hotel",
+    "shop/general",
+    "tourism/map"
+],
+  "relation": []
 }
