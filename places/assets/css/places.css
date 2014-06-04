@@ -123,9 +123,6 @@ footer {
     margin: 12px 10px 0 0;
     width: 188px;
   }
-#switch-to-editor, #switch-to-viewer  {
-  display:  none;
-}
 .ir {
   background-repeat: no-repeat;
   direction: ltr;

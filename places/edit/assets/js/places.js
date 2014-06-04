@@ -9,11 +9,17 @@ var iframe = document.getElementById('iframe'),
   initiatedByIframe = false,
   initiatedByParent = false;
 
-function switchTo(to) {
-  var location = window.location,
-    split = location.hash.replace('#', '').split('/');
+function switchTo() {
+  var hash = window.location.hash.replace('#', ''),
+    split;
 
-  window.location.href = 'edit/#background=Esri&map=' + split[0] + '/' + split[2] + '/' + split[1];
+  if (hash.indexOf('background=') === -1) {
+    split = hash.replace('map=', '').split('/');
+  } else {
+    split = hash.split('&')[1].replace('map=', '').split('/');
+  }
+
+  window.location.href = ' ../#' + Math.round(split[0]) + '/' + split[2] + '/' + split[1];
 }
 
 window.onload = function() {
@@ -22,7 +28,7 @@ window.onload = function() {
   window.onhashchange = function() {
     if (!initiatedByIframe) {
       initiatedByParent = true;
-      iframe.src = 'park-tiles.html' + this.location.hash;
+      iframe.src = '../../dist/index.html' + this.location.hash;
       initiatedByParent = false;
     }
   };
@@ -37,12 +43,12 @@ window.onload = function() {
   };
 
   if (hash.length) {
-    iframe.src = 'park-tiles.html' + hash;
+    iframe.src = '../../dist/index.html' + hash;
   } else {
-    var initial = '4/39.00/-99.00';
+    var initial = 'background=Bing&map=4/-99.00/39.00';
 
-    iframe.src = 'park-tiles.html#' + initial;
-    window.location.hash += initial;
+    iframe.src = '../../dist/index.html#' + initial;
+    window.location.hash = 'background=Esri&map=' + initial;
   }
 
   reqwest({
@@ -61,7 +67,10 @@ window.onload = function() {
         var contentWindow = document.getElementById('iframe').contentWindow,
           park = parks[select.options[select.selectedIndex].text];
 
-        contentWindow.NPMap.config.L.fitBounds(new contentWindow.L.LatLngBounds([park[2], park[3]],[park[1], park[0]]));
+        var extent = document.getElementById('iframe').contentWindow.iD.geo.Extent([park[3], park[2]], [park[0], park[1]]),
+          center = extent.center();
+
+        iframe.src = '../../dist/index.html#background=' + 'Esri' + '&map=' + contentWindow.id.map().extentZoom(extent) + '/' + center[0] + '/' + center[1]
       };
     },
     type: 'jsonp',
