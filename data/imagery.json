@@ -1,5 +1,17 @@
 [
     {
+        "name": "Bing aerial imagery",
+        "type": "bing",
+        "description": "Satellite and aerial imagery.",
+        "hidden": true,
+        "template": "http://www.bing.com/maps/",
+        "scaleExtent": [
+            0,
+            22
+        ],
+        "id": "Bing"
+    },
+    {
         "name": "Esri World Imagery",
         "type": "tms",
         "description": "Satellite and aerial imagery.",
