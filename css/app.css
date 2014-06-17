@@ -89,10 +89,6 @@ button,
 .radial-menu-item {
     cursor: pointer; /* Opera */
     cursor: url(img/cursor-pointer.png) 6 1, pointer; /* FF */
-    cursor: -webkit-image-set(
-        url(img/cursor-pointer.png) 1x,
-        url(img/cursor-pointer2x.png) 2x
-        ) 6 1, pointer;
 }
 
 h2 {
@@ -1506,37 +1502,28 @@ input[type=number] {
 
 /* Preset form address */
 
-.form-field .addr-housename {
-    border: 0;
-    border-radius: 0;
+.addr-row input {
+    border-right: 0;
+    border-bottom: 0;
 }
 
-.form-field .addr-number {
-    width: 33.3333%;
-    border: 0;
-    border-radius: 0;
-}
-
-.form-field .addr-street {
-    width: 66.6666%;
+.addr-row:first-of-type input {
     border-top: 0;
-    border-right: 0;
-    border-bottom: 0;
+}
+
+.addr-row input:first-of-type {
+    border-left: 0;
+}
+
+.addr-row input {
     border-radius: 0;
 }
 
-.form-field .addr-city {
-    width: 66.6666%;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 0;
+.addr-row:last-of-type input:first-of-type {
     border-radius: 0 0 0 4px;
 }
 
-.form-field .addr-postcode {
-    width: 33.3333%;
-    border-right: 0;
-    border-bottom: 0;
+.addr-row:last-of-type input:last-of-type {
     border-radius: 0 0 4px 0;
 }
 
