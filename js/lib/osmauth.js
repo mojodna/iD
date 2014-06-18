@@ -30,9 +30,6 @@ module.exports = function(o) {
 
     // TODO: detect lack of click event
     oauth.authenticate = function(callback) {
-        if (oauth.authenticated()) return callback();
-
-        oauth.logout();
 
         // ## Getting a request token
         var params = timenonce(getAuth(o)),
@@ -53,6 +50,22 @@ module.exports = function(o) {
                     }).join(','),
                 popup = window.open('about:blank', 'oauth_window', settings);
         }
+
+        // try the oauth to see if we're really logged in
+        oauth.xhr({ method: 'GET', path: '/api/0.6/user/details' }, function(e,r){console.log('***', e, r); if (!e && (oauth.authenticated())) {
+            // TODO:
+            // the popup comes up as soon as its clicked to prevent popup blockers and gets closed as soon as it's verified
+            // the user can see it trying to open on their screen, but it doesn't do anything
+            // this could be fixed somehow, but i can't figure out a better way right now
+            popup.close();
+            return callback();
+        } else {
+            oauth.logout();
+            // Request a request token. When this is complete, the popup
+            // window is redirected to OSM's authorization page.
+            ohauth.xhr('POST', url, params, null, {}, reqTokenDone);
+            o.loading();
+        }});
 
         // Request a request token. When this is complete, the popup
         // window is redirected to OSM's authorization page.
