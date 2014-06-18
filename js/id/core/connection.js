@@ -1,4 +1,4 @@
-iD.Connection = function() {
+iD.Connection = function(context) {
 
     var event = d3.dispatch('authenticating', 'authenticated', 'auth', 'loading', 'load', 'loaded'),
         url = 'http://192.168.33.15:3000',
@@ -11,7 +11,8 @@ iD.Connection = function() {
             oauth_consumer_key: 'CpIont3biEafgafInTYWkFlooQkcFLtGREu6yMG0',
             oauth_secret: 'MFgSWe00v8EsddR9KI42uZZX61r2XL8JwEPxHY2p',
             loading: authenticating,
-            done: authenticated
+            done: authenticated,
+            context: context
         }),
         ndStr = 'nd',
         tagStr = 'tag',
