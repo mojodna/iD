@@ -48,16 +48,18 @@ module.exports = function(o) {
                     ['top', screen.height / 2 - h / 2]].map(function(x) {
                         return x.join('=');
                     }).join(','),
-                popup = window.open('about:blank', 'oauth_window', settings);
+                    popup = function(popupLocation){
+                      // This will bring up a modal window where they can click
+                      var loginClick = function() {
+                        window.open(popupLocation, 'oauth_window', settings);
+                      };
+                      o.context.container()
+                        .call(iD.ui.Login(o.context, loginClick));
+                  };
         }
 
         // try the oauth to see if we're really logged in
         oauth.xhr({ method: 'GET', path: '/api/0.6/user/details' }, function(e,r){console.log('***', e, r); if (!e && (oauth.authenticated())) {
-            // TODO:
-            // the popup comes up as soon as its clicked to prevent popup blockers and gets closed as soon as it's verified
-            // the user can see it trying to open on their screen, but it doesn't do anything
-            // this could be fixed somehow, but i can't figure out a better way right now
-            popup.close();
             return callback();
         } else {
             oauth.logout();
@@ -66,11 +68,6 @@ module.exports = function(o) {
             ohauth.xhr('POST', url, params, null, {}, reqTokenDone);
             o.loading();
         }});
-
-        // Request a request token. When this is complete, the popup
-        // window is redirected to OSM's authorization page.
-        ohauth.xhr('POST', url, params, null, {}, reqTokenDone);
-        o.loading();
 
         function reqTokenDone(err, xhr) {
             o.done();
@@ -86,7 +83,7 @@ module.exports = function(o) {
             if (o.singlepage) {
                 location.href = authorize_url;
             } else {
-                popup.location = authorize_url;
+                popup(authorize_url);
             }
         }
 
