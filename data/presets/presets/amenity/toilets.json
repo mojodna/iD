@@ -29,6 +29,6 @@
     },
     "icon": "restroom-black",
     "maki": "npmaki",
-    "name": "Restrooms",
+   "name": "Restroom",
     "searchable": true
 }
