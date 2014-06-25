@@ -17,5 +17,6 @@
         "light",
         "gaslight"
     ],
-    "name": "Street Lamp"
+    "name": "Street Lamp",
+    "searchable": false
 }
