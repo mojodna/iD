@@ -5,7 +5,7 @@ window.iD = function () {
     iD.npmap = {
         settings: {
             editing: {
-                area: false,
+                area: true,
                 line: false,
                 minZoom: 14,
                 point: true
