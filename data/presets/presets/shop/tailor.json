@@ -1,5 +1,4 @@
 {
-    "searchable": false,
     "name": "Tailor",
     "geometry": [
         "point",
@@ -10,7 +9,7 @@
         "clothes"
     ],
     "tags": {
-        "craft": "tailor"
+        "shop": "tailor"
     },
     "icon": "clothing-store",
     "fields": [

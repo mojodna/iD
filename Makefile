@@ -33,6 +33,7 @@ dist/iD.js: \
 	js/lib/lodash.js \
 	js/lib/osmauth.js \
 	js/lib/rbush.js \
+	js/lib/sexagesimal.js \
 	js/lib/togeojson.js \
 	js/lib/marked.js \
 	js/id/start.js \
