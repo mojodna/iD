@@ -13,6 +13,6 @@
     "tags": {
         "building": "dormitory"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Dormitory"
 }
