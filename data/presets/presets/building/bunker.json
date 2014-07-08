@@ -11,6 +11,6 @@
     "tags": {
         "building": "bunker"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Bunker"
 }
