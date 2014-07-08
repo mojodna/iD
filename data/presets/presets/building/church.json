@@ -12,6 +12,6 @@
     "tags": {
         "building": "church"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Church"
 }
