@@ -12,6 +12,6 @@
     "tags": {
         "building": "industrial"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Industrial Building"
 }
