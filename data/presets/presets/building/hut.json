@@ -7,6 +7,6 @@
     "tags": {
         "building": "hut"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Hut"
 }
