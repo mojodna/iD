@@ -12,6 +12,6 @@
     "tags": {
         "building": "apartments"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Apartments"
 }
