@@ -12,6 +12,6 @@
     "tags": {
         "building": "school"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "School Building"
 }
