@@ -12,6 +12,6 @@
     "tags": {
         "building": "cabin"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Cabin"
 }
