@@ -13,6 +13,6 @@
     "tags": {
         "building": "retail"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Retail Building"
 }
