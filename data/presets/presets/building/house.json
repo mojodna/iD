@@ -11,6 +11,6 @@
     "tags": {
         "building": "house"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "House"
 }
