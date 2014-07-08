@@ -12,6 +12,6 @@
     "tags": {
         "building": "commercial"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Commercial Building"
 }
