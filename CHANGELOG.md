@@ -1,3 +1,22 @@
+## 1.5.2
+
+* Fixed Chrome/Windows selection bug (#2151)
+* Don't automatically tag motorways, etc. as oneway=yes
+* Disable Move and Rotate operations if area < 80% contained in the viewport
+
+## 1.5.1
+
+* Fix mixed content errors on https osm.org (#2281)
+* Fix suggested access values for parking (#2280)
+
+## 1.5.0
+
+* Add support for localized address fields (#2246)
+* Rendering improvements for layers (#2250)
+* Add a map scale (#2266)
+* Fix preset buttons (#2247)
+* Better midpoint rendering (#2257)
+
 ## 1.4.0
 
 * Ensure combobox menus are closed on blur (#2207)
