@@ -106,6 +106,7 @@ iD.Entity.prototype = {
         return _.keys(this.tags).some(function(key) {
             return key !== 'attribution' &&
                 key !== 'created_by' &&
+                key !== 'nps:places_uuid' &&
                 key !== 'source' &&
                 key !== 'odbl' &&
                 key.indexOf('tiger:') !== 0;
