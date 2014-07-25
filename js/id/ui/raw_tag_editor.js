@@ -27,7 +27,8 @@ iD.ui.RawTagEditor = function(context) {
     function content($wrap) {
         var entries = d3.entries(tags),
         disabledFields = [
-          'nps:places_uuid'
+          'nps:places_uuid',
+          'nps:building_id'
         ],
         isDisabled = function(fieldName) {
           if (disabledFields.indexOf(fieldName) >= 0) {
