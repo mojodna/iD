@@ -1,18 +1,18 @@
 {
     "icon": "shop",
     "fields": [
+        "operator",
         "address",
         "building_area",
         "opening_hours"
     ],
     "geometry": [
         "point",
-        "vertex",
         "area"
     ],
     "tags": {
         "shop": "confectionery"
     },
     "searchable": false,
-    "name": "Confectionery"
+    "name": "Candy Store"
 }

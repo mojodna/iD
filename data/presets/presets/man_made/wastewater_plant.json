@@ -1,18 +1,21 @@
 {
     "icon": "water",
-    "geometry": [
+    "fields": [
+        "operator",
+        "address"
+    ],
+   "geometry": [
         "point",
         "area"
+    ],
+    "searchable": false,
+    "terms": [
+        "sewage*",
+        "water treatment plant",
+        "reclamation plant"
     ],
     "tags": {
         "man_made": "wastewater_plant"
     },
-    "searchable": false,
-    "name": "Wastewater Plant",
-    "terms": [
-        "sewage works",
-        "sewage treatment plant",
-        "water treatment plant",
-        "reclamation plant"
-    ]
+    "name": "Wastewater Plant"
 }

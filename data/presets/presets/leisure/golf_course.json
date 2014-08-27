@@ -4,17 +4,18 @@
     "searchable": true,
     "fields": [
         "operator",
-        "address"
+        "address",
+        "opening_hours"
     ],
     "geometry": [
         "point",
         "area"
     ],
-    "tags": {
-        "leisure": "golf_course"
-    },
     "terms": [
         "links"
     ],
+    "tags": {
+        "leisure": "golf_course"
+    },
     "name": "Golf Course"
 }

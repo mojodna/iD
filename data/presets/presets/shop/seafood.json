@@ -1,21 +1,21 @@
 {
     "icon": "shop",
     "fields": [
+        "operator",
         "address",
         "building_area",
         "opening_hours"
     ],
     "geometry": [
         "point",
-        "vertex",
         "area"
     ],
-    "tags": {
-        "shop": "seafood"
-    },
     "terms": [
         "fishmonger"
     ],
-    "name": "Seafood Shop",
-    "searchable": false
+    "searchable": false,
+    "tags": {
+        "shop": "seafood"
+    },
+    "name": "Seafood Shop"
 }

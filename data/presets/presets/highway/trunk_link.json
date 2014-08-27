@@ -14,7 +14,11 @@
     "tags": {
         "highway": "trunk_link"
     },
-    "terms": ["ramp", "on ramp", "off ramp"],
     "searchable": false,
+    "terms": [
+        "ramp",
+        "on ramp",
+        "off ramp"
+    ],
     "name": "Trunk Link"
 }

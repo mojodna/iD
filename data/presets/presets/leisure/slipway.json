@@ -4,6 +4,10 @@
     "geometry": [
         "point"
     ],
+    "terms": [
+        "boat launch",
+        "boat ramp"
+    ],
     "tags": {
         "leisure": "slipway"
     },

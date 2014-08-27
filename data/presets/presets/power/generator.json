@@ -1,6 +1,11 @@
 {
     "searchable": false,
-    "name": "Power Generator",
+    "fields": [
+        "operator",
+        "generator/source",
+        "generator/method",
+        "generator/type"
+    ],
     "geometry": [
         "point",
         "vertex",
@@ -9,9 +14,5 @@
     "tags": {
         "power": "generator"
     },
-    "fields": [
-        "generator/source",
-        "generator/method",
-        "generator/type"
-    ]
+    "name": "Power Generator"
 }

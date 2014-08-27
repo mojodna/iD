@@ -1,21 +1,18 @@
 {
     "searchable": false,
-    "name": "Blacksmith",
+    "icon": "farm",
+    "fields": [
+        "operator",
+        "address",
+        "building_area",
+        "opening_hours"
+    ],
     "geometry": [
         "point",
         "area"
     ],
-    "terms": [
-        "blacksmith"
-    ],
     "tags": {
         "craft": "blacksmith"
     },
-    "icon": "farm",
-    "fields": [
-        "building_area",
-        "address",
-        "operator",
-        "opening_hours"
-    ]
+    "name": "Blacksmith"
 }

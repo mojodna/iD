@@ -1,12 +1,16 @@
 {
     "icon": "highway-track",
     "fields": [
-        "tracktype",
-        "oneway",
-        "maxspeed",
+        "surface",
+        "width",
         "structure",
         "access",
-        "surface"
+        "incline",
+        "tracktype",
+        "smoothness",
+        "mtb/scale",
+        "mtb/scale/uphill",
+        "mtb/scale/imba"
     ],
     "geometry": [
         "line"
@@ -14,7 +18,10 @@
     "tags": {
         "highway": "track"
     },
-    "terms": [],
     "searchable": false,
+    "terms": [
+        "woods road",
+        "fire road"
+    ],
     "name": "Track"
 }
