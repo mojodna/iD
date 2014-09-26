@@ -1,18 +1,18 @@
 {
     "icon": "shop",
     "fields": [
+        "operator",
         "address",
         "building_area",
         "opening_hours"
     ],
     "geometry": [
         "point",
-        "vertex",
         "area"
     ],
     "tags": {
         "shop": "newsagent"
     },
     "searchable": false,
-    "name": "Newsagent"
+    "name": "Newspaper/Magazine Shop"
 }

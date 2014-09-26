@@ -5,6 +5,9 @@
     "geometry": [
         "point"
     ],
+    "terms": [
+        "boat"
+    ],
     "tags": {
         "leisure": "marina"
     },

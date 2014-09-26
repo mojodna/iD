@@ -1,5 +1,7 @@
 {
     "fields": [
+        "operator",
+        "address",
         "recycling/cans",
         "recycling/glass",
         "recycling/paper",
@@ -7,10 +9,15 @@
     ],
     "geometry": [
         "point",
-        "vertex",
         "area"
     ],
-    "terms": [],
+    "terms": [
+        "can",
+        "bottle",
+        "garbage",
+        "scrap",
+        "trash"
+    ],
     "tags": {
         "amenity": "recycling"
     },

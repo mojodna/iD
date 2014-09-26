@@ -3,6 +3,7 @@
     "maki": "npmaki",
     "searchable": true,
     "fields": [
+        "operator",
         "parking",
         "capacity",
         "fee",

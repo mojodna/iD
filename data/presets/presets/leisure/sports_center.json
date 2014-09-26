@@ -1,5 +1,11 @@
 {
     "icon": "pitch",
+    "fields": [
+        "sport",
+        "address",
+        "building_area",
+        "opening_hours"
+    ],
     "geometry": [
         "point",
         "area"
@@ -11,8 +17,5 @@
         "gym"
     ],
     "searchable": false,
-    "fields": [
-        "sport"
-    ],
     "name": "Sports Center / Gym"
 }

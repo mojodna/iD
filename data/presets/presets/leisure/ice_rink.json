@@ -2,9 +2,12 @@
     "icon": "ice-skating-black",
     "maki": "npmaki",
     "fields": [
-        "building_area",
         "seasonal",
-        "sport_ice"
+        "sport_ice",
+        "operator",
+        "address",
+        "building_area",
+        "opening_hours"
     ],
     "geometry": [
         "point",

@@ -16,7 +16,7 @@ You can participate by either contributing to the OpenStreetMap iD project using
 
 ## Installation
 
-In order to make syncing with the (openstreetmap/iD)[https://github.com/openstreetmap/iD] project easier, we do not include a prebuilt version of the NPS project. You will need to build the project in order to use it.
+In order to make syncing with the [openstreetmap/iD](https://github.com/openstreetmap/iD) project easier, we do not include a prebuilt version of the NPS project. You will need to build the project in order to use it.
 
 ## Building / Installing
 
