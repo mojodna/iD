@@ -33,8 +33,6 @@ iD.Map = function(context) {
         supersurface = selection.append('div')
             .attr('id', 'supersurface');
 
-        supersurface.call(context.background());
-
         // Need a wrapper div because Opera can't cope with an absolutely positioned
         // SVG element: http://bl.ocks.org/jfirebaugh/6fbfbd922552bf776c16
         var dataLayer = supersurface.append('div')
@@ -51,6 +49,8 @@ iD.Map = function(context) {
             })
             .attr('id', 'surface')
             .call(iD.svg.Surface(context));
+
+        supersurface.call(context.background());
 
         surface.on('mousemove.map', function() {
             mousemove = d3.event;
