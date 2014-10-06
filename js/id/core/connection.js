@@ -1,13 +1,13 @@
 iD.Connection = function(context) {
 
     var event = d3.dispatch('authenticating', 'authenticated', 'auth', 'loading', 'load', 'loaded'),
-        url = 'http://inpniscvplaces1:3000',
+        url = 'http://192.168.33.15:3000',
         connection = {},
         inflight = {},
         loadedTiles = {},
         tileZoom = 16,
         oauth = osmAuth({
-            url: 'http://inpniscvplaces1:3000',
+            url: 'http://192.168.33.15:3000',
             oauth_consumer_key: 'CpIont3biEafgafInTYWkFlooQkcFLtGREu6yMG0',
             oauth_secret: 'MFgSWe00v8EsddR9KI42uZZX61r2XL8JwEPxHY2p',
             loading: authenticating,
