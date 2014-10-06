@@ -25,7 +25,7 @@
     "smash": "0.0",
     "lodash-cli": "2.3.0",
     "uglify-js": "~2.2.5",
-    "maki": "0.4",
+    "maki": "0.4.2",
     "npmaki": "git+https://github.com/nationalparkservice/npmaki.git#gh-pages",
     "jshint": "2.3.0",
     "mocha": "1",
