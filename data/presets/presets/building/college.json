@@ -1,0 +1,19 @@
+{
+    "icon": "building",
+    "fields": [
+        "address",
+        "levels"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "university"
+    ],
+    "tags": {
+        "building": "college"
+    },
+    "name": "College Building",
+    "searchable": false
+}

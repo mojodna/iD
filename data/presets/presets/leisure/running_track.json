@@ -1,0 +1,20 @@
+{
+    "icon": "pitch",
+    "fields": [
+        "surface",
+        "sport_racing",
+        "lit",
+        "width",
+        "lanes"
+    ],
+    "geometry": [
+        "point",
+        "line"
+    ],
+    "tags": {
+        "leisure": "track",
+        "sport": "running"
+    },
+    "name": "Running Track",
+    "searchable": false
+}

@@ -1,4 +1,9 @@
 {
+    "fields": [
+        "operator",
+        "address",
+        "building_area"
+    ],
     "geometry": [
         "point"
     ],

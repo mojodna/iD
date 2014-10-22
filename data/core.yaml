@@ -74,7 +74,7 @@ en:
       too_bendy: This can't be straightened because it bends too much.
     delete:
       title: Delete
-      description: Remove this from the map.
+      description: Delete object permanently.
       annotation:
         point: Deleted a point.
         vertex: Deleted a node from a way.
@@ -119,6 +119,7 @@ en:
         area: Moved an area.
         multiple: Moved multiple objects.
       incomplete_relation: This feature can't be moved because it hasn't been fully downloaded.
+      too_large: This can't be moved because not enough of it is currently visible.
     rotate:
       title: Rotate
       description: Rotate this object around its center point.
@@ -126,6 +127,7 @@ en:
       annotation:
         line: Rotated a line.
         area: Rotated an area.
+      too_large: This can't be rotated because not enough of it is currently visible.
     reverse:
       title: Reverse
       description: Make this line go in the opposite direction.
@@ -276,7 +278,9 @@ en:
     untagged_area: Untagged area
     many_deletions: "You're deleting {n} objects. Are you sure you want to do this? This will delete them from the map that everyone else sees on openstreetmap.org."
     tag_suggests_area: "The tag {tag} suggests line should be area, but it is not an area"
-    untagged_tooltip: "Select a feature type that describes what this {geometry} is."
+    untagged_point_tooltip: "Select a feature type that describes what this point is."
+    untagged_line_tooltip: "Select a feature type that describes what this line is."
+    untagged_area_tooltip: "Select a feature type that describes what this area is."
     deprecated_tags: "Deprecated tags: {tags}"
   zoom:
     in: Zoom In
@@ -287,6 +291,10 @@ en:
     drag_drop: "Drag and drop a .gpx file on the page, or click the button to the right to browse"
     zoom: "Zoom to GPX track"
     browse: "Browse for a .gpx file"
+  mapillary:
+    tooltip: "Street-level photos from Mapillary"
+    title: "Photo Overlay (Mapillary)"
+    view_on_mapillary: "View this image on Mapillary"
   help:
     title: "Help"
     help: |
@@ -476,7 +484,7 @@ en:
       delete: "The menu around the point contains operations that can be performed on it, including delete. **Delete the point.**"
     areas:
       title: "Areas"
-      add: "Areas are a more detailed way to represent features. They provide information on the boundaries of the feature. Areas can be used for most feature types points can be used for, and are often preferred. **Click the Area button to add a new area.**"
+      add: "Areas are used to show the boundaries of features like lakes, buildings, and residential areas. They can be also be used for more detailed mapping of many features you might normally map as points. **Click the Area button to add a new area.**"
       corner: "Areas are drawn by placing nodes that mark the boundary of the area. **Place the starting node on one of the corners of the playground.**"
       place: "Draw the area by placing more nodes. Finish the area by clicking on the starting node. **Draw an area for the playground.**"
       search: "**Search for '{name}'.**"

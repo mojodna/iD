@@ -4,6 +4,7 @@ iD.Background = function(context) {
             .projection(context.projection),
         gpxLayer = iD.GpxLayer(context, dispatch)
             .projection(context.projection),
+        mapillaryLayer = iD.MapillaryLayer(context),
         overlayLayers = [];
 
     var backgroundSources = iD.data.imagery.map(function(source) {
@@ -91,6 +92,14 @@ iD.Background = function(context) {
 
         overlays.exit()
             .remove();
+
+        var mapillary = selection.selectAll('.layer-mapillary')
+            .data([0]);
+
+        mapillary.enter().insert('div')
+            .attr('class', 'layer-layer layer-mapillary');
+
+        mapillary.call(mapillaryLayer);
     }
 
     background.sources = function(extent) {
@@ -102,6 +111,7 @@ iD.Background = function(context) {
     background.dimensions = function(_) {
         baseLayer.dimensions(_);
         gpxLayer.dimensions(_);
+        mapillaryLayer.dimensions(_);
 
         overlayLayers.forEach(function(layer) {
             layer.dimensions(_);
@@ -154,13 +164,29 @@ iD.Background = function(context) {
 
     background.zoomToGpxLayer = function() {
         if (background.hasGpxLayer()) {
-            context.map()
-                .extent(d3.geo.bounds(gpxLayer.geojson()));
+            var viewport = context.map().extent().polygon(),
+                coords = _.reduce(gpxLayer.geojson().features, function(coords, feature) {
+                    var c = feature.geometry.coordinates;
+                    return _.union(coords, feature.geometry.type === 'Point' ? [c] : c);
+                }, []);
+
+            if (!iD.geo.polygonIntersectsPolygon(viewport, coords)) {
+                context.map().extent(d3.geo.bounds(gpxLayer.geojson()));
+            }
         }
     };
 
     background.toggleGpxLayer = function() {
         gpxLayer.enable(!gpxLayer.enable());
+        dispatch.change();
+    };
+
+    background.showsMapillaryLayer = function() {
+        return mapillaryLayer.enable();
+    };
+
+    background.toggleMapillaryLayer = function() {
+        mapillaryLayer.enable(!mapillaryLayer.enable());
         dispatch.change();
     };
 

@@ -1,3 +1,47 @@
+## 1.5.4
+
+* Do not fully fill certain landuse values, e.g. landuse=residential (#542)
+* Class midpoints to match parent way and adjust styles
+* Test visibility of gpx coords instead of just comparing extents
+
+## 1.5.3
+
+* When adding gpx, only rezoom map if gpx not in viewport (#2297)
+* Workaround for Chrome crash (#2295)
+* Add mtb fields (#2244)
+* Support option strings for combo fields (#2296)
+* Render triangular midpoints to show direction of any selected way (#2292)
+
+## 1.5.2
+
+* Fixed Chrome/Windows selection bug (#2151)
+* Don't automatically tag motorways, etc. as oneway=yes
+* Disable Move and Rotate operations if area < 80% contained in the viewport
+
+## 1.5.1
+
+* Fix mixed content errors on https osm.org (#2281)
+* Fix suggested access values for parking (#2280)
+
+## 1.5.0
+
+* Add support for localized address fields (#2246)
+* Rendering improvements for layers (#2250)
+* Add a map scale (#2266)
+* Fix preset buttons (#2247)
+* Better midpoint rendering (#2257)
+
+## 1.4.0
+
+* Ensure combobox menus are closed on blur (#2207)
+* Limit imagery_used tag to 255 characters (#2181)
+* Simplify and fix midpoint drawing logic (#2136)
+* Prefer more specific 'Crosswalk' preset over generic 'Crossing'
+* Add amenity=dojo preset
+* Correctly trim whitespace in semicolon-separated multivalues (#2236)
+* oneway fields now show "Assumed to be No" or "Assumed to be Yes" instead of "Unknown" (#2220)
+* Add turn restriction editor
+
 ## 1.3.10
 
 * `oneway=no` overrides implicit oneways on junction=roundabout, etc. (#2220)

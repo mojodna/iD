@@ -1,0 +1,22 @@
+{
+    "icon": "clothing-store",
+    "fields": [
+        "operator",
+        "address",
+        "building_area",
+        "opening_hours"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "clothes",
+        "suit"
+    ],
+    "tags": {
+        "shop": "tailor"
+    },
+    "searchable": false,
+    "name": "Tailor"
+}

@@ -2,5 +2,6 @@
     "key": "access",
     "type": "combo",
     "label": "Access",
-    "options": ["public", "permissive", "private", "customers"]
+    "placeholder": "yes",
+    "options": ["permissive", "private", "customers", "no"]
 }

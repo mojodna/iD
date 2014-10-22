@@ -1,12 +1,12 @@
 {
+    "icon": "lighthouse",
     "geometry": [
         "point"
     ],
     "tags": {
         "man_made": "lighthouse"
     },
-    "name": "Lighthouse",
-    "icon": "lighthouse",
     "maki": "maki",
-    "searchable": false
+    "searchable": false,
+    "name": "Lighthouse"
 }

@@ -17,6 +17,12 @@ iD.svg.Areas = function(projection) {
 
     var patternKeys = ['landuse', 'natural', 'amenity'];
 
+    var clipped = ['residential', 'commercial', 'retail', 'industrial'];
+
+    function clip(entity) {
+        return clipped.indexOf(entity.tags.landuse) !== -1;
+    }
+
     function setPattern(d) {
         for (var i = 0; i < patternKeys.length; i++) {
             if (patterns.hasOwnProperty(d.tags[patternKeys[i]])) {
@@ -59,13 +65,39 @@ iD.svg.Areas = function(projection) {
         });
 
         var data = {
+            clip: areas.filter(clip),
             shadow: strokes,
             stroke: strokes,
             fill: areas
         };
 
-        var paths = surface.selectAll('.layer-shadow, .layer-stroke, .layer-fill')
-            .selectAll('path.area')
+        var clipPaths = surface.selectAll('defs').selectAll('.clipPath')
+           .filter(filter)
+           .data(data.clip, iD.Entity.key);
+
+        clipPaths.enter()
+           .append('clipPath')
+           .attr('class', 'clipPath')
+           .attr('id', function(entity) { return entity.id + '-clippath'; })
+           .append('path');
+
+        clipPaths.selectAll('path')
+           .attr('d', path);
+
+        clipPaths.exit()
+           .remove();
+
+        var areagroup = surface
+            .select('.layer-areas')
+            .selectAll('g.areagroup')
+            .data(['fill', 'shadow', 'stroke']);
+
+        areagroup.enter()
+            .append('g')
+            .attr('class', function(d) { return 'layer areagroup area-' + d; });
+
+        var paths = areagroup
+            .selectAll('path')
             .filter(filter)
             .data(function(layer) { return data[layer]; }, iD.Entity.key);
 
@@ -74,7 +106,7 @@ iD.svg.Areas = function(projection) {
         paths.exit()
             .remove();
 
-        var fills = surface.selectAll('.layer-fill path.area')[0];
+        var fills = surface.selectAll('.area-fill path.area')[0];
 
         var bisect = d3.bisector(function(node) {
             return -node.__data__.area(graph);
@@ -92,6 +124,10 @@ iD.svg.Areas = function(projection) {
                 var layer = this.parentNode.__data__;
 
                 this.setAttribute('class', entity.type + ' area ' + layer + ' ' + entity.id);
+
+                if (layer === 'fill' && clip(entity)) {
+                    this.setAttribute('clip-path', 'url(#' + entity.id + '-clippath)');
+                }
 
                 if (layer === 'fill') {
                     setPattern.apply(this, arguments);

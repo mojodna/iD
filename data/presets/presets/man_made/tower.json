@@ -1,4 +1,7 @@
 {
+    "fields": [
+        "towertype"
+    ],
     "geometry": [
         "point",
         "area"
@@ -6,9 +9,6 @@
     "tags": {
         "man_made": "tower"
     },
-    "fields": [
-        "towertype"
-    ],
     "searchable": false,
     "name": "Tower"
 }

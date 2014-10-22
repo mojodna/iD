@@ -8,11 +8,13 @@
         "point",
         "vertex"
     ],
-    "terms": [],
+    "terms": [
+        "camp"
+    ],
     "tags": {
         "tourism": "picnic_site"
     },
-    "name": "Picnic Site",
+    "name": "Picnic Area",
     "icon": "picnic-black",
     "maki": "npmaki",
     "searchable": true

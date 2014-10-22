@@ -33,8 +33,6 @@ iD.Map = function(context) {
         supersurface = selection.append('div')
             .attr('id', 'supersurface');
 
-        supersurface.call(context.background());
-
         // Need a wrapper div because Opera can't cope with an absolutely positioned
         // SVG element: http://bl.ocks.org/jfirebaugh/6fbfbd922552bf776c16
         var dataLayer = supersurface.append('div')
@@ -51,6 +49,8 @@ iD.Map = function(context) {
             })
             .attr('id', 'surface')
             .call(iD.svg.Surface(context));
+
+        supersurface.call(context.background());
 
         surface.on('mousemove.map', function() {
             mousemove = d3.event;
@@ -76,10 +76,9 @@ iD.Map = function(context) {
             if (map.editable() && !transformed) {
                 var all = context.intersects(map.extent()),
                     filter = d3.functor(true),
-                    extent = map.extent(),
                     graph = context.graph();
-                surface.call(vertices, graph, all, filter, extent, map.zoom());
-                surface.call(midpoints, graph, all, filter, extent);
+                surface.call(vertices, graph, all, filter, map.extent(), map.zoom());
+                surface.call(midpoints, graph, all, filter, map.trimmedExtent());
                 dispatch.drawn({full: false});
             }
         });
@@ -98,30 +97,7 @@ iD.Map = function(context) {
         if (difference) {
             var complete = difference.complete(map.extent());
             all = _.compact(_.values(complete));
-            filter = function(d) {
-                if (d.type === 'midpoint') {
-
-                    var a = d.edge[0],
-                        b = d.edge[1];
-
-                    // redraw a midpoint if it needs to be
-                    // - moved (either edge node moved)
-                    // - deleted (edge nodes not consecutive in any parent way)
-                    if (a in complete || b in complete) return true;
-
-                    var parentsWays = graph.parentWays({ id: a });
-                    for (var i = 0; i < parentsWays.length; i++) {
-                        var nodes = parentsWays[i].nodes;
-                        for (var n = 0; n < nodes.length; n++) {
-                            if (nodes[n] === a && (nodes[n - 1] === b || nodes[n + 1] === b)) return false;
-                        }
-                    }
-                    return true;
-
-                } else {
-                    return d.id in complete;
-                }
-            };
+            filter = function(d) { return d.id in complete; };
 
         } else if (extent) {
             all = context.intersects(map.extent().intersection(extent));
@@ -137,7 +113,7 @@ iD.Map = function(context) {
             .call(vertices, graph, all, filter, map.extent(), map.zoom())
             .call(lines, graph, all, filter)
             .call(areas, graph, all, filter)
-            .call(midpoints, graph, all, filter, map.extent())
+            .call(midpoints, graph, all, filter, map.trimmedExtent())
             .call(labels, graph, all, filter, dimensions, !difference && !extent);
 
         if (points.points(context.intersects(map.extent()), 100).length >= 100) {
@@ -150,8 +126,12 @@ iD.Map = function(context) {
     }
 
     function editOff() {
+        var mode = context.mode();
         surface.selectAll('.layer *').remove();
         dispatch.drawn({full: true});
+        if (!(mode && mode.id === 'browse')) {
+            context.enter(iD.modes.Browse(context));
+        }
     }
 
     function zoomPan() {
@@ -387,6 +367,12 @@ iD.Map = function(context) {
             var extent = iD.geo.Extent(_);
             map.centerZoom(extent.center(), map.extentZoom(extent));
         }
+    };
+
+    map.trimmedExtent = function() {
+        var headerY = 60, footerY = 30, pad = 10;
+        return new iD.geo.Extent(projection.invert([pad, dimensions[1] - footerY - pad]),
+                projection.invert([dimensions[0] - pad, headerY + pad]));
     };
 
     map.extentZoom = function(_) {

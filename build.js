@@ -3,6 +3,7 @@ var fs = require('fs'),
     glob = require('glob'),
     YAML = require('js-yaml'),
     _ = require('./js/lib/lodash'),
+    d3 = require('d3'),
     jsonschema = require('jsonschema'),
     fieldSchema = require('./data/presets/schema/field.json'),
     presetSchema = require('./data/presets/schema/preset.json'),
@@ -90,15 +91,7 @@ function generateFields() {
 }
 
 function suggestionsToPresets(presets) {
-    var existing = {},
-        countThreshold = 0;
-
-    for (var preset in presets) {
-        existing[presets[preset].name] = {
-            category: preset,
-            count: -1
-        };
-    }
+    var existing = {};
 
     for (var key in suggestions) {
         for (var value in suggestions[key]) {
@@ -107,14 +100,19 @@ function suggestionsToPresets(presets) {
                     tags = {},
                     count = suggestions[key][value][name].count;
 
-                tags = _.extend({name: name}, suggestions[key][value][name].tags);
-
-                if (!existing[name] && count > countThreshold) addPreset(item, tags, name, count);
+                if (existing[name] && count > existing[name].count) {
+                    delete presets[existing[name].category];
+                    delete existing[name];
+                }
+                if (!existing[name]) {
+                    tags = _.extend({name: name}, suggestions[key][value][name].tags);
+                    addSuggestion(item, tags, name, count);
+                }
             }
         }
     }
 
-    function addPreset(category, tags, name, count) {
+    function addSuggestion(category, tags, name, count) {
         var tag = category.split('/'),
             parent = presets[tag[0] + '/' + tag[1]];
 
@@ -229,6 +227,43 @@ fs.writeFileSync('data/presets/presets.json', stringify(presets.presets));
 fs.writeFileSync('js/id/core/area_keys.js', '/* jshint -W109 */\niD.areaKeys = ' + stringify(presets.areaKeys) + ';');
 fs.writeFileSync('data/presets.yaml', YAML.dump({en: {presets: presets.presetsYaml}}));
 
+// Write taginfo data
+var taginfo = {
+    "data_format": 1,
+    "data_url": "https://raw.githubusercontent.com/openstreetmap/iD/master/data/taginfo.json",
+    "project": {
+        "name": "iD Editor",
+        "description": "Online editor for OSM data.",
+        "project_url": "https://github.com/openstreetmap/iD",
+        "doc_url": "https://github.com/openstreetmap/iD/blob/master/data/presets/README.md",
+        "icon_url": "https://raw.githubusercontent.com/openstreetmap/iD/master/dist/img/logo.png",
+        "keywords": [
+            "editor"
+        ]
+    },
+    "tags": []
+};
+
+_.forEach(presets.presets, function(preset) {
+    if (preset.suggestion)
+        return;
+
+    var keys = Object.keys(preset.tags),
+        last = keys[keys.length - 1],
+        tag = {key: last};
+
+    if (!last)
+        return;
+
+    if (preset.tags[last] !== '*') {
+        tag.value = preset.tags[last];
+    }
+
+    taginfo.tags.push(tag);
+});
+
+fs.writeFileSync('data/taginfo.json', stringify(taginfo));
+
 // Push changes from data/core.yaml into en.json
 var core = YAML.load(fs.readFileSync('data/core.yaml', 'utf8'));
 var presets = {en: {presets: translations}};
@@ -251,5 +286,6 @@ fs.writeFileSync('data/data.js', 'iD.data = ' + stringify({
     operations: r('operations-sprite.json'),
     locales: r('locales.json'),
     en: read('dist/locales/en.json'),
-    suggestions: r('name-suggestions.json')
+    suggestions: r('name-suggestions.json'),
+    addressFormats: r('address-formats.json')
 }) + ';');

@@ -44,49 +44,74 @@ iD.svg.Vertices = function(projection, context) {
         return vertices;
     }
 
-    function draw(groups, vertices, klass, graph, zoom) {
-        groups = groups.data(vertices, function(entity) {
-            return iD.Entity.key(entity) + ',' + zoom;
-        });
+    function draw(selection, vertices, klass, graph, zoom) {
+        var icons = {},
+            z;
 
         if (zoom < 17) {
-            zoom = 0;
+            z = 0;
         } else if (zoom < 18) {
-            zoom = 1;
+            z = 1;
         } else {
-            zoom = 2;
+            z = 2;
         }
 
-        var icons = {};
+        var groups = selection.data(vertices, function(entity) {
+            return iD.Entity.key(entity);
+        });
+
         function icon(entity) {
             if (entity.id in icons) return icons[entity.id];
-            icons[entity.id] = zoom !== 0 &&
+            icons[entity.id] =
                 entity.hasInterestingTags() &&
                 context.presets().match(entity, graph).icon;
             return icons[entity.id];
         }
 
-        function circle(klass) {
-            var rads = radiuses[klass];
+        function classCircle(klass) {
             return function(entity) {
-                var i = icon(entity),
-                    c = i ? 0.5 : 0,
-                    r = rads[i ? 3 : zoom];
                 this.setAttribute('class', 'node vertex ' + klass + ' ' + entity.id);
-                this.setAttribute('cx', c);
-                this.setAttribute('cy', -c);
-                this.setAttribute('r', r);
             };
         }
 
-        var enter = groups.enter().append('g')
+        function setAttributes(selection) {
+            ['shadow','stroke','fill'].forEach(function(klass) {
+                var rads = radiuses[klass];
+                selection.selectAll('.' + klass)
+                    .each(function(entity) {
+                        var i = z && icon(entity),
+                            c = i ? 0.5 : 0,
+                            r = rads[i ? 3 : z];
+                        this.setAttribute('cx', c);
+                        this.setAttribute('cy', -c);
+                        this.setAttribute('r', r);
+                        if (i && klass === 'fill') {
+                            this.setAttribute('visibility', 'hidden');
+                        } else {
+                            this.removeAttribute('visibility');
+                        }
+                    });
+            });
+
+            selection.selectAll('use')
+                .each(function() {
+                    if (z) {
+                        this.removeAttribute('visibility');
+                    } else {
+                        this.setAttribute('visibility', 'hidden');
+                    }
+                });
+        }
+
+        var enter = groups.enter()
+            .append('g')
             .attr('class', function(d) { return 'node vertex ' + klass + ' ' + d.id; });
 
         enter.append('circle')
-            .each(circle('shadow'));
+            .each(classCircle('shadow'));
 
         enter.append('circle')
-            .each(circle('stroke'));
+            .each(classCircle('stroke'));
 
         // Vertices with icons get a `use`.
         enter.filter(function(d) { return icon(d); })
@@ -98,14 +123,15 @@ iD.svg.Vertices = function(projection, context) {
             });
             // TODO: This will need an update to use npmaki if we add a vertex to npmaki (not likely)
 
-        // Vertices with tags get a `circle`.
-        enter.filter(function(d) { return !icon(d) && d.hasInterestingTags(); })
+        // Vertices with tags get a fill.
+        enter.filter(function(d) { return d.hasInterestingTags(); })
             .append('circle')
-            .each(circle('fill'));
+            .each(classCircle('fill'));
 
         groups
             .attr('transform', iD.svg.PointTransform(projection))
-            .classed('shared', function(entity) { return graph.isShared(entity); });
+            .classed('shared', function(entity) { return graph.isShared(entity); })
+            .call(setAttributes);
 
         groups.exit()
             .remove();

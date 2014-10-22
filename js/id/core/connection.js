@@ -1,4 +1,4 @@
-iD.Connection = function() {
+iD.Connection = function(context) {
 
     var event = d3.dispatch('authenticating', 'authenticated', 'auth', 'loading', 'load', 'loaded'),
         url = 'http://inpniscvplaces1:3000',
@@ -11,7 +11,8 @@ iD.Connection = function() {
             oauth_consumer_key: 'CpIont3biEafgafInTYWkFlooQkcFLtGREu6yMG0',
             oauth_secret: 'MFgSWe00v8EsddR9KI42uZZX61r2XL8JwEPxHY2p',
             loading: authenticating,
-            done: authenticated
+            done: authenticated,
+            context: context
         }),
         ndStr = 'nd',
         tagStr = 'tag',
@@ -72,7 +73,7 @@ iD.Connection = function() {
         var elems = obj.getElementsByTagName(ndStr),
             nodes = new Array(elems.length);
         for (var i = 0, l = elems.length; i < l; i++) {
-            nodes[i] = 'n' + elems[i].attributes.ref.nodeValue;
+            nodes[i] = 'n' + elems[i].attributes.ref.value;
         }
         return nodes;
     }
@@ -82,7 +83,7 @@ iD.Connection = function() {
             tags = {};
         for (var i = 0, l = elems.length; i < l; i++) {
             var attrs = elems[i].attributes;
-            tags[attrs.k.nodeValue] = attrs.v.nodeValue;
+            tags[attrs.k.value] = attrs.v.value;
         }
         return tags;
     }
@@ -93,9 +94,9 @@ iD.Connection = function() {
         for (var i = 0, l = elems.length; i < l; i++) {
             var attrs = elems[i].attributes;
             members[i] = {
-                id: attrs.type.nodeValue[0] + attrs.ref.nodeValue,
-                type: attrs.type.nodeValue,
-                role: attrs.role.nodeValue
+                id: attrs.type.value[0] + attrs.ref.value,
+                type: attrs.type.value,
+                role: attrs.role.value
             };
         }
         return members;
@@ -105,10 +106,10 @@ iD.Connection = function() {
         node: function nodeData(obj) {
             var attrs = obj.attributes;
             return new iD.Node({
-                id: iD.Entity.id.fromOSM(nodeStr, attrs.id.nodeValue),
-                loc: [parseFloat(attrs.lon.nodeValue), parseFloat(attrs.lat.nodeValue)],
-                version: attrs.version.nodeValue,
-                user: attrs.user && attrs.user.nodeValue,
+                id: iD.Entity.id.fromOSM(nodeStr, attrs.id.value),
+                loc: [parseFloat(attrs.lon.value), parseFloat(attrs.lat.value)],
+                version: attrs.version.value,
+                user: attrs.user && attrs.user.value,
                 tags: getTags(obj)
             });
         },
@@ -116,9 +117,9 @@ iD.Connection = function() {
         way: function wayData(obj) {
             var attrs = obj.attributes;
             return new iD.Way({
-                id: iD.Entity.id.fromOSM(wayStr, attrs.id.nodeValue),
-                version: attrs.version.nodeValue,
-                user: attrs.user && attrs.user.nodeValue,
+                id: iD.Entity.id.fromOSM(wayStr, attrs.id.value),
+                version: attrs.version.value,
+                user: attrs.user && attrs.user.value,
                 tags: getTags(obj),
                 nodes: getNodes(obj)
             });
@@ -127,9 +128,9 @@ iD.Connection = function() {
         relation: function relationData(obj) {
             var attrs = obj.attributes;
             return new iD.Relation({
-                id: iD.Entity.id.fromOSM(relationStr, attrs.id.nodeValue),
-                version: attrs.version.nodeValue,
-                user: attrs.user && attrs.user.nodeValue,
+                id: iD.Entity.id.fromOSM(relationStr, attrs.id.value),
+                version: attrs.version.value,
+                user: attrs.user && attrs.user.value,
                 tags: getTags(obj),
                 members: getMembers(obj)
             });
@@ -207,7 +208,7 @@ iD.Connection = function() {
 
     connection.changesetTags = function(comment, imageryUsed) {
         var tags = {
-            imagery_used: imageryUsed.join(';'),
+            imagery_used: imageryUsed.join(';').substr(0, 255),
             created_by: 'iD ' + iD.version
         };
 
@@ -263,9 +264,9 @@ iD.Connection = function() {
             }
 
             userDetails = {
-                display_name: u.attributes.display_name.nodeValue,
+                display_name: u.attributes.display_name.value,
                 image_url: image_url,
-                id: u.attributes.id.nodeValue
+                id: u.attributes.id.value
             };
 
             callback(undefined, userDetails);

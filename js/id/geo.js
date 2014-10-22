@@ -21,11 +21,38 @@ iD.geo.euclideanDistance = function(a, b) {
     var x = a[0] - b[0], y = a[1] - b[1];
     return Math.sqrt((x * x) + (y * y));
 };
+
+// using WGS84 polar radius (6356752.314245179 m)
+// const = 2 * PI * r / 360
+iD.geo.latToMeters = function(dLat) {
+    return dLat * 110946.257617;
+};
+
+// using WGS84 equatorial radius (6378137.0 m)
+// const = 2 * PI * r / 360
+iD.geo.lonToMeters = function(dLon, atLat) {
+    return Math.abs(atLat) >= 90 ? 0 :
+        dLon * 111319.490793 * Math.abs(Math.cos(atLat * (Math.PI/180)));
+};
+
+// using WGS84 polar radius (6356752.314245179 m)
+// const = 2 * PI * r / 360
+iD.geo.metersToLat = function(m) {
+    return m / 110946.257617;
+};
+
+// using WGS84 equatorial radius (6378137.0 m)
+// const = 2 * PI * r / 360
+iD.geo.metersToLon = function(m, atLat) {
+    return Math.abs(atLat) >= 90 ? 0 :
+        m / 111319.490793 / Math.abs(Math.cos(atLat * (Math.PI/180)));
+};
+
 // Equirectangular approximation of spherical distances on Earth
 iD.geo.sphericalDistance = function(a, b) {
-    var x = Math.cos(a[1]*Math.PI/180) * (a[0] - b[0]),
-        y = a[1] - b[1];
-    return 6.3710E6 * Math.sqrt((x * x) + (y * y)) * Math.PI/180;
+    var x = iD.geo.lonToMeters(a[0] - b[0], (a[1] + b[1]) / 2),
+        y = iD.geo.latToMeters(a[1] - b[1]);
+    return Math.sqrt((x * x) + (y * y));
 };
 
 iD.geo.edgeEqual = function(a, b) {
@@ -87,6 +114,39 @@ iD.geo.chooseEdge = function(nodes, point, projection) {
     };
 };
 
+// Return the intersection point of 2 line segments.
+// From https://github.com/pgkelley4/line-segments-intersect
+// This uses the vector cross product approach described below:
+//  http://stackoverflow.com/a/565282/786339
+iD.geo.lineIntersection = function(a, b) {
+    function subtractPoints(point1, point2) {
+        return [point1[0] - point2[0], point1[1] - point2[1]];
+    }
+    function crossProduct(point1, point2) {
+        return point1[0] * point2[1] - point1[1] * point2[0];
+    }
+
+    var p = [a[0][0], a[0][1]],
+        p2 = [a[1][0], a[1][1]],
+        q = [b[0][0], b[0][1]],
+        q2 = [b[1][0], b[1][1]],
+        r = subtractPoints(p2, p),
+        s = subtractPoints(q2, q),
+        uNumerator = crossProduct(subtractPoints(q, p), r),
+        denominator = crossProduct(r, s);
+
+    if (uNumerator && denominator) {
+        var u = uNumerator / denominator,
+            t = crossProduct(subtractPoints(q, p), s) / denominator;
+
+        if ((t >= 0) && (t <= 1) && (u >= 0) && (u <= 1)) {
+            return iD.geo.interp(p, p2, t);
+        }
+    }
+
+    return null;
+};
+
 // Return whether point is contained in polygon.
 //
 // `point` should be a 2-item array of coordinates.
@@ -120,9 +180,20 @@ iD.geo.polygonContainsPolygon = function(outer, inner) {
 };
 
 iD.geo.polygonIntersectsPolygon = function(outer, inner) {
+    function testSegments(outer, inner) {
+        for (var i = 0; i < outer.length - 1; i++) {
+            for (var j = 0; j < inner.length - 1; j++) {
+                var a = [ outer[i], outer[i+1] ],
+                    b = [ inner[j], inner[j+1] ];
+                if (iD.geo.lineIntersection(a, b)) return true;
+            }
+        }
+        return false;
+    }
+
     return _.some(inner, function(point) {
         return iD.geo.pointInPolygon(point, outer);
-    });
+    }) || testSegments(outer, inner);
 };
 
 iD.geo.pathLength = function(path) {

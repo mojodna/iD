@@ -9,9 +9,6 @@
         "leisure": "pitch",
         "sport": "golf"
     },
-    "terms": [
-        "putting green"
-    ],
     "searchable": false,
     "name": "Putting Green"
 }

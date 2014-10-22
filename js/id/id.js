@@ -52,7 +52,7 @@ window.iD = function () {
         mode,
         container,
         ui = iD.ui(context),
-        connection = iD.Connection(),
+        connection = iD.Connection(context),
         locale = iD.detect().locale,
         localePath;
 
@@ -282,7 +282,7 @@ window.iD = function () {
     return d3.rebind(context, dispatch, 'on');
 };
 
-iD.version = '1.3.10';
+iD.version = '1.5.4';
 
 (function() {
     var detected = {};

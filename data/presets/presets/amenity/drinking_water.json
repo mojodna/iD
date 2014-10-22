@@ -8,8 +8,8 @@
         "amenity": "drinking_water"
     },
     "terms": [
-        "water fountain",
-        "potable water"
+        "fountain",
+        "potable"
     ],
     "name": "Drinking Water",
     "searchable": true

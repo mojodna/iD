@@ -1,4 +1,7 @@
 {
+    "fields": [
+        "backrest"
+    ],
     "geometry": [
         "point",
         "vertex",
@@ -7,9 +10,6 @@
     "tags": {
         "amenity": "bench"
     },
-    "fields": [
-        "backrest"
-    ],
     "name": "Bench",
     "searchable": false
 }

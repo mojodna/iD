@@ -89,10 +89,6 @@ button,
 .radial-menu-item {
     cursor: pointer; /* Opera */
     cursor: url(img/cursor-pointer.png) 6 1, pointer; /* FF */
-    cursor: -webkit-image-set(
-        url(img/cursor-pointer.png) 1x,
-        url(img/cursor-pointer2x.png) 2x
-        ) 6 1, pointer;
 }
 
 h2 {
@@ -343,6 +339,7 @@ a.hide {
     height:100%;
     right: -100%;
 }
+
 
 .pane {
     position:absolute;
@@ -723,6 +720,48 @@ a:hover .icon.out-link   { background-position: -500px -14px;}
     right: 0;
     left: 0;
     bottom: 0;
+}
+
+.mapillary-image {
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    width: 330px;
+    height: 250px;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.mapillary-image a {
+    display: block;
+    position: absolute;
+    height: auto;
+    background-color: rgba(0,0,0,.5);
+    bottom: 0;
+    right: 0;
+    padding: 5px 10px;
+}
+
+.mapillary-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mapillary-image.hidden {
+    visibility: hidden;
+}
+
+.mapillary-image.temp button {
+    display: none;
+}
+
+.mapillary-image button {
+    border-radius: 0;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .feature-list-pane .inspector-body {
@@ -1506,37 +1545,28 @@ input[type=number] {
 
 /* Preset form address */
 
-.form-field .addr-housename {
-    border: 0;
-    border-radius: 0;
+.addr-row input {
+    border-right: 0;
+    border-bottom: 0;
 }
 
-.form-field .addr-number {
-    width: 33.3333%;
-    border: 0;
-    border-radius: 0;
-}
-
-.form-field .addr-street {
-    width: 66.6666%;
+.addr-row:first-of-type input {
     border-top: 0;
-    border-right: 0;
-    border-bottom: 0;
+}
+
+.addr-row input:first-of-type {
+    border-left: 0;
+}
+
+.addr-row input {
     border-radius: 0;
 }
 
-.form-field .addr-city {
-    width: 66.6666%;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 0;
+.addr-row:last-of-type input:first-of-type {
     border-radius: 0 0 0 4px;
 }
 
-.form-field .addr-postcode {
-    width: 33.3333%;
-    border-right: 0;
-    border-bottom: 0;
+.addr-row:last-of-type input:last-of-type {
     border-radius: 0 0 4px 0;
 }
 
@@ -2199,7 +2229,8 @@ img.wiki-image {
 /* About Section
 ------------------------------------------------------- */
 
-.about-block {
+#footer {
+    width: 100%;
     position: absolute;
     right:0;
     bottom:0;
@@ -2210,13 +2241,47 @@ img.wiki-image {
     transition: opacity 200ms;
 }
 
-.about-block:hover {
+#footer:hover {
     opacity: 1;
 }
 
-#about {
+#scale-block {
+    display: table-cell;
+    vertical-align: bottom;
+    width: 250px;
+    height: 30px;
+    float: left;
+    clear: left;
+}
+
+#info-block {
+    float: right;
+    clear: right;
+}
+
+#scale {
+    height: 30px;
+    width: 100%;
+}
+
+#scale text {
+    font: 12px sans-serif;
+    stroke: none;
+    fill: #ccc;
+    text-anchor: start;
+}
+
+#scale path {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+#about-list {
     text-align: right;
     margin-right: 10px;
+    clear: right;
 }
 
 .source-switch a {
@@ -2258,29 +2323,18 @@ img.wiki-image {
     content: ', ';
 }
 
-/* API Status */
-
 .api-status {
-    float: left;
+    float: right;
+    clear: both;
+    text-align: right;
+    width: 100%;
 }
 
 .api-status.offline,
-.api-status.readonly {
+.api-status.readonly,
+.api-status.error {
     background: red;
-    padding: 5px 10px;
-}
-
-/* Account Information */
-
-.account {
-    float: left;
-    padding: 5px 10px;
-}
-
-.account .logout {
-    margin-left:10px;
-    border-left: 1px solid white;
-    padding-left: 10px;
+    padding: 0px 5px;
 }
 
 /* Modals

@@ -30,9 +30,6 @@ module.exports = function(o) {
 
     // TODO: detect lack of click event
     oauth.authenticate = function(callback) {
-        if (oauth.authenticated()) return callback();
-
-        oauth.logout();
 
         // ## Getting a request token
         var params = timenonce(getAuth(o)),
@@ -51,13 +48,26 @@ module.exports = function(o) {
                     ['top', screen.height / 2 - h / 2]].map(function(x) {
                         return x.join('=');
                     }).join(','),
-                popup = window.open('about:blank', 'oauth_window', settings);
+                    popup = function(popupLocation){
+                      // This will bring up a modal window where they can click
+                      var loginClick = function() {
+                        window.open(popupLocation, 'oauth_window', settings);
+                      };
+                      o.context.container()
+                        .call(iD.ui.Login(o.context, loginClick));
+                  };
         }
 
-        // Request a request token. When this is complete, the popup
-        // window is redirected to OSM's authorization page.
-        ohauth.xhr('POST', url, params, null, {}, reqTokenDone);
-        o.loading();
+        // try the oauth to see if we're really logged in
+        oauth.xhr({ method: 'GET', path: '/api/0.6/user/details' }, function(e,r){console.log('***', e, r); if (!e && (oauth.authenticated())) {
+            return callback();
+        } else {
+            oauth.logout();
+            // Request a request token. When this is complete, the popup
+            // window is redirected to OSM's authorization page.
+            ohauth.xhr('POST', url, params, null, {}, reqTokenDone);
+            o.loading();
+        }});
 
         function reqTokenDone(err, xhr) {
             o.done();
@@ -73,7 +83,7 @@ module.exports = function(o) {
             if (o.singlepage) {
                 location.href = authorize_url;
             } else {
-                popup.location = authorize_url;
+                popup(authorize_url);
             }
         }
 
