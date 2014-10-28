@@ -6,16 +6,11 @@
         "area"
     ],
     "terms": [
-        "dentist",
-        "dentist's office"
+        "tooth",
+        "teeth"
     ],
     "tags": {
         "amenity": "dentist"
     },
-    "icon": "hospital",
-    "fields": [
-        "building_area",
-        "address",
-        "opening_hours"
-    ]
+    "name": "Dentist"
 }

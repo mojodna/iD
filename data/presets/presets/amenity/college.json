@@ -8,6 +8,9 @@
         "point",
         "area"
     ],
+    "terms": [
+        "university"
+    ],
     "tags": {
         "amenity": "college"
     },

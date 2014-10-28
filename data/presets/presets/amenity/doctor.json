@@ -6,16 +6,10 @@
         "area"
     ],
     "terms": [
-        "doctor",
-        "doctor's office"
+        "medic*"
     ],
     "tags": {
         "amenity": "doctors"
     },
-    "icon": "hospital",
-    "fields": [
-        "building_area",
-        "address",
-        "opening_hours"
-    ]
+    "name": "Doctor"
 }

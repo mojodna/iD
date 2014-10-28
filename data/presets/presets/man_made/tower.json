@@ -1,4 +1,7 @@
 {
+    "fields": [
+        "towertype"
+    ],
     "geometry": [
         "point",
         "area"

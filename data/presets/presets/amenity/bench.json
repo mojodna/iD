@@ -1,4 +1,7 @@
 {
+    "fields": [
+        "backrest"
+    ],
     "geometry": [
         "point",
         "vertex",
@@ -10,6 +13,6 @@
     "fields": [
         "backrest"
     ],
-    "name": "Bench",
-    "searchable": false
+    "searchable": false,
+    "name": "Bench"
 }

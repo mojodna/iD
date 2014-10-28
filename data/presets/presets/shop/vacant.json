@@ -2,12 +2,10 @@
     "icon": "shop",
     "fields": [
         "address",
-        "building_area",
-        "opening_hours"
+        "building_area"
     ],
     "geometry": [
         "point",
-        "vertex",
         "area"
     ],
     "tags": {

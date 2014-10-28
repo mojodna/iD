@@ -12,7 +12,10 @@
     "tags": {
         "leisure": "pitch"
     },
-    "terms": [],
-    "searchable": false,
-    "name": "Sport Pitch"
+
+    "terms": [
+        "field"
+    ],
+    "name": "Sport Pitch",
+    "searchable": false
 }

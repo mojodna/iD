@@ -340,6 +340,7 @@ a.hide {
     right: -100%;
 }
 
+
 .pane {
     position:absolute;
     width:50%;
@@ -719,6 +720,48 @@ a:hover .icon.out-link   { background-position: -500px -14px;}
     right: 0;
     left: 0;
     bottom: 0;
+}
+
+.mapillary-image {
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    width: 330px;
+    height: 250px;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.mapillary-image a {
+    display: block;
+    position: absolute;
+    height: auto;
+    background-color: rgba(0,0,0,.5);
+    bottom: 0;
+    right: 0;
+    padding: 5px 10px;
+}
+
+.mapillary-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mapillary-image.hidden {
+    visibility: hidden;
+}
+
+.mapillary-image.temp button {
+    display: none;
+}
+
+.mapillary-image button {
+    border-radius: 0;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .feature-list-pane .inspector-body {

@@ -5,6 +5,9 @@ dist/iD.min.js
 dist/img/maki-sprite.png
 dist/img/npmaki-sprite.png
 node_modules
+dist/iD.css
+dist/presets.js
+dist/imagery.js
 transifex.auth
 data/presets/categories.json
 data/presets/fields.json

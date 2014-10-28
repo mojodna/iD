@@ -41,6 +41,7 @@ iD.ui.Commit = function(context) {
 
         var commentField = commentSection.append('textarea')
             .attr('placeholder', t('commit.description_placeholder'))
+            .attr('maxlength', 255)
             .property('value', context.storage('comment') || '')
             .on('blur.save', function () {
                 context.storage('comment', this.value);
@@ -133,7 +134,7 @@ iD.ui.Commit = function(context) {
             .attr('class', 'commit-section modal-section fillL2');
 
         changeSection.append('h3')
-            .text(summary.length + ' Changes');
+            .text(t('commit.changes', {count: summary.length}));
 
         var li = changeSection.append('ul')
             .attr('class', 'changeset-list')
@@ -153,7 +154,7 @@ iD.ui.Commit = function(context) {
         li.append('span')
             .attr('class', 'change-type')
             .text(function(d) {
-                return d.changeType + ' ';
+                return t('commit.' + d.changeType) + ' ';
             });
 
         li.append('strong')

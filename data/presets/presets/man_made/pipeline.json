@@ -1,4 +1,9 @@
 {
+    "icon": "pipeline",
+    "fields": [
+        "location",
+        "operator"
+    ],
     "geometry": [
         "line"
     ],

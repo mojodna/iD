@@ -74,7 +74,7 @@ en:
       too_bendy: This can't be straightened because it bends too much.
     delete:
       title: Delete
-      description: Remove this from the map.
+      description: Delete object permanently.
       annotation:
         point: Deleted a point.
         vertex: Deleted a node from a way.
@@ -184,6 +184,7 @@ en:
     upload_explanation_with_user: "The changes you upload as {user} will be visible on all maps that use Places data."
     save: Save
     cancel: Cancel
+    changes: "{count} Changes"
     warnings: Warnings
     modified: Modified
     deleted: Deleted
@@ -247,6 +248,7 @@ en:
     no_changes: No changes to save.
     error: An error occurred while trying to save
     uploading: Uploading changes to Places.
+    unknown_error_details: "Please ensure you are connected to the internet."
     unsaved_changes: You have unsaved changes
   success:
     edited_osm: "Success!"
@@ -291,6 +293,10 @@ en:
     drag_drop: "Drag and drop a .gpx file on the page, or click the button to the right to browse"
     zoom: "Zoom to GPX track"
     browse: "Browse for a .gpx file"
+  mapillary:
+    tooltip: "Street-level photos from Mapillary"
+    title: "Photo Overlay (Mapillary)"
+    view_on_mapillary: "View this image on Mapillary"
   help:
     title: "Help"
     help: |
@@ -480,7 +486,7 @@ en:
       delete: "The menu around the point contains operations that can be performed on it, including delete. **Delete the point.**"
     areas:
       title: "Areas"
-      add: "Areas are a more detailed way to represent features. They provide information on the boundaries of the feature. Areas can be used for most feature types points can be used for, and are often preferred. **Click the Area button to add a new area.**"
+      add: "Areas are used to show the boundaries of features like lakes, buildings, and residential areas. They can be also be used for more detailed mapping of many features you might normally map as points. **Click the Area button to add a new area.**"
       corner: "Areas are drawn by placing nodes that mark the boundary of the area. **Place the starting node on one of the corners of the playground.**"
       place: "Draw the area by placing more nodes. Finish the area by clicking on the starting node. **Draw an area for the playground.**"
       search: "**Search for '{name}'.**"

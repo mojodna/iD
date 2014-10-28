@@ -9,10 +9,10 @@
         "amenity": "waste_basket"
     },
     "terms": [
-        "rubbish bin",
-        "litter bin",
-        "trash can",
-        "garbage can"
+        "rubbish",
+        "litter",
+        "trash",
+        "garbage"
     ],
     "name": "Waste Basket",
     "searchable": true

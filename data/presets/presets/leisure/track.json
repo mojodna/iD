@@ -1,18 +1,19 @@
 {
-    "icon": "pitch",
+    "icon": "highway-road",
     "fields": [
         "surface",
+        "sport_racing",
         "lit",
-        "width"
+        "width",
+        "lanes"
     ],
     "geometry": [
         "point",
-        "line",
-        "area"
+        "line"
     ],
     "tags": {
         "leisure": "track"
     },
     "searchable": false,
-    "name": "Race Track"
+    "name": "Racetrack (non-Motorsport)"
 }

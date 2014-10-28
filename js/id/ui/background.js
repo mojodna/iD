@@ -76,6 +76,11 @@ iD.ui.Background = function(context) {
             update();
         }
 
+        function clickMapillary() {
+            context.background().toggleMapillaryLayer();
+            update();
+        }
+
         function drawList(layerList, type, change, filter) {
             var sources = context.background()
                 .sources(context.map().extent())
@@ -122,6 +127,13 @@ iD.ui.Background = function(context) {
                 .selectAll('input')
                 .property('disabled', !hasGpx)
                 .property('checked', showsGpx);
+
+            var showsMapillary = context.background().showsMapillaryLayer();
+
+            mapillaryLayerItem
+                .classed('active', showsMapillary)
+                .selectAll('input')
+                .property('checked', showsMapillary);
 
             selectLayer();
 
@@ -263,6 +275,20 @@ iD.ui.Background = function(context) {
         var overlayList = content.append('ul')
             .attr('class', 'layer-list');
 
+        var mapillaryLayerItem = overlayList.append('li');
+
+        label = mapillaryLayerItem.append('label')
+            .call(bootstrap.tooltip()
+                .title(t('mapillary.tooltip'))
+                .placement('top'));
+
+        label.append('input')
+            .attr('type', 'checkbox')
+            .on('change', clickMapillary);
+
+        label.append('span')
+            .text(t('mapillary.title'));
+
         var gpxLayerItem = content.append('ul')
             .style('display', iD.detect().filedrop ? 'block' : 'none')
             .attr('class', 'layer-list')
@@ -357,6 +383,9 @@ iD.ui.Background = function(context) {
 
         var keybinding = d3.keybinding('background');
         keybinding.on(key, toggle);
+        keybinding.on('m', function() {
+            context.enter(iD.modes.SelectImage(context));
+        });
 
         d3.select(document)
             .call(keybinding);

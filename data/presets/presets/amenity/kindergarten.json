@@ -1,16 +1,16 @@
 {
     "icon": "school",
     "fields": [
+        "operator",
         "address"
     ],
     "geometry": [
         "point",
-        "vertex",
         "area"
     ],
     "terms": [
-        "nursery",
-        "preschool"
+        "kindergarden",
+        "pre-school"
     ],
     "tags": {
         "amenity": "kindergarten"

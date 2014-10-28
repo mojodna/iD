@@ -58,6 +58,7 @@
         <script src='js/id/renderer/gpx_layer.js'></script>
         <script src='js/id/renderer/tile_layer.js'></script>
         <script src='js/id/renderer/map.js'></script>
+        <script src='js/id/renderer/mapillary_layer.js'></script>
 
         <script src="js/id/svg.js"></script>
         <script src="js/id/svg/areas.js"></script>
@@ -212,7 +213,6 @@
         <script src='js/id/core/relation.js'></script>
         <script src='js/id/core/way.js'></script>
         <script src='js/id/core/tree.js'></script>
-        <script src='js/id/core/area_keys.js'></script>
         <script src='js/id/core/oneway_tags.js'></script>
 
         <script src='js/id/presets.js'></script>
@@ -230,7 +230,11 @@
         <div id='id-container'></div>
         <script>
             iD.data.load(function() {
-                id = iD().assetPath('dist/');
+                id = iD()
+                    .presets(iD.data.presets)
+                    .imagery(iD.data.imagery)
+                    .taginfo(iD.taginfo())
+                    .assetPath('dist/');
 
                 d3.select('#id-container')
                     .call(id.ui());

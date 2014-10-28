@@ -239,17 +239,32 @@ window.iD = function () {
     };
 
     /* Presets */
-    var presets = iD.presets()
-        .load(iD.data.presets);
+    var presets = iD.presets();
 
-    context.presets = function() {
-        return presets;
+    context.presets = function(_) {
+        if (!arguments.length) return presets;
+        presets.load(_);
+        iD.areaKeys = presets.areaKeys();
+        return context;
+    };
+
+    context.imagery = function(_) {
+        background.load(_);
+        return context;
     };
 
     context.container = function(_) {
         if (!arguments.length) return container;
         container = _;
         container.classed('id-container', true);
+        return context;
+    };
+
+    /* Taginfo */
+    var taginfo;
+    context.taginfo = function(_) {
+        if (!arguments.length) return taginfo;
+        taginfo = _;
         return context;
     };
 
@@ -282,7 +297,7 @@ window.iD = function () {
     return d3.rebind(context, dispatch, 'on');
 };
 
-iD.version = '1.5.2';
+iD.version = '1.6.1';
 
 (function() {
     var detected = {};

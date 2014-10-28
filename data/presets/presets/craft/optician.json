@@ -1,13 +1,14 @@
 {
-    "searchable": false,
-    "name": "Optician",
+    "icon": "marker-stroked",
+    "fields": [
+        "operator",
+        "address",
+        "building_area",
+        "opening_hours"
+    ],
     "geometry": [
         "point",
         "area"
-    ],
-    "terms": [
-        "glasses",
-        "optician"
     ],
     "tags": {
         "craft": "optician"
@@ -18,5 +19,7 @@
         "address",
         "operator",
         "opening_hours"
-    ]
+    ],
+    "name": "Optician",
+    "searchable": false
 }

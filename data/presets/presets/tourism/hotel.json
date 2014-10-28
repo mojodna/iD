@@ -3,16 +3,14 @@
     "maki": "npmaki",
     "fields": [
         "operator",
-        "building_area",
         "address",
+        "building_area",
         "smoking"
     ],
     "geometry": [
         "point",
-        "vertex",
         "area"
     ],
-    "terms": [],
     "tags": {
         "tourism": "hotel"
     },

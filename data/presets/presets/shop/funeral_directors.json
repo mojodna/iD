@@ -1,6 +1,7 @@
 {
     "icon": "cemetery",
     "fields": [
+        "operator",
         "address",
         "building_area",
         "religion",
@@ -8,16 +9,10 @@
     ],
     "geometry": [
         "point",
-        "vertex",
         "area"
     ],
-    "tags": {
-        "shop": "funeral_directors"
-    },
     "terms": [
         "undertaker",
-        "funeral parlour",
-        "funeral parlor",
         "memorial home"
     ],
     "name": "Funeral Home",

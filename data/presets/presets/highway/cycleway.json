@@ -16,5 +16,8 @@
     },
     "terms": [],
     "searchable": false,
+    "terms": [
+        "bike"
+    ],
     "name": "Cycle Path"
 }

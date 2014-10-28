@@ -1,11 +1,16 @@
 {
+    "icon": "rail",
+    "fields": [
+        "operator",
+        "address",
+        "building_area"
+    ],
     "geometry": [
         "point"
     ],
     "tags": {
         "railway": "station"
     },
-    "name": "Railway Station",
     "icon": "rail",
     "maki": "maki",
     "searchable": false

@@ -16,5 +16,10 @@
     },
     "terms": ["ramp", "on ramp", "off ramp"],
     "searchable": false,
+    "terms": [
+        "ramp",
+        "on ramp",
+        "off ramp"
+    ],
     "name": "Primary Link"
 }

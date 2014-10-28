@@ -1,5 +1,10 @@
 {
     "icon": "car",
+    "fields": [
+        "address",
+        "building_area",
+        "opening_hours"
+    ],
     "geometry": [
         "point",
         "area"
