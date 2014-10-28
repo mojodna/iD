@@ -17,12 +17,6 @@
     "tags": {
         "shop": "tailor"
     },
-    "icon": "clothing-store",
-    "fields": [
-        "building_area",
-        "address",
-        "operator",
-        "opening_hours"
-    ],
-    "searchable": false
+    "searchable": false,
+    "name": "Tailor"
 }

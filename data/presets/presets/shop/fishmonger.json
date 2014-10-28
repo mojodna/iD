@@ -13,6 +13,6 @@
     "tags": {
         "shop": "fishmonger"
     },
-    "searchable": false,
-    "name": "Fishmonger"
+    "name": "Fishmonger",
+    "searchable": false
 }

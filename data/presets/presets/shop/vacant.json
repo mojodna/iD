@@ -11,6 +11,6 @@
     "tags": {
         "shop": "vacant"
     },
-    "searchable": false,
-    "name": "Vacant Shop"
+    "name": "Vacant Shop",
+    "searchable": false
 }

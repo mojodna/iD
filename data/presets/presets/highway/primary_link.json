@@ -14,7 +14,6 @@
     "tags": {
         "highway": "primary_link"
     },
-    "terms": ["ramp", "on ramp", "off ramp"],
     "searchable": false,
     "terms": [
         "ramp",

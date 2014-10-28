@@ -13,7 +13,12 @@
     "tags": {
         "amenity": "pub"
     },
-    "terms": [],
     "searchable": false,
+    "terms": [
+        "dive",
+        "beer",
+        "bier",
+        "booze"
+    ],
     "name": "Pub"
 }

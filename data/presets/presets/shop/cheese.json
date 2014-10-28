@@ -13,5 +13,6 @@
     "tags": {
         "shop": "cheese"
     },
-    "name": "Cheese Store"
+    "name": "Cheese Store",
+    "searchable": false
 }

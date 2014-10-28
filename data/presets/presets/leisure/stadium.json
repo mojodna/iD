@@ -11,9 +11,6 @@
     "tags": {
         "leisure": "stadium"
     },
-    "fields": [
-        "sport"
-    ],
     "searchable": false,
     "name": "Stadium"
 }

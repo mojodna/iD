@@ -13,5 +13,6 @@
     "tags": {
         "shop": "tobacco"
     },
-    "name": "Tobacco Shop"
+    "name": "Tobacco Shop",
+    "searchable": false
 }

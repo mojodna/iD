@@ -13,7 +13,10 @@
     "tags": {
         "amenity": "pharmacy"
     },
-    "terms": [],
     "searchable": false,
+    "terms": [
+        "drug",
+        "medicine"
+    ],
     "name": "Pharmacy"
 }

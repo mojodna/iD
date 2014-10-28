@@ -13,5 +13,6 @@
     "tags": {
         "shop": "ticket"
     },
-    "name": "Ticket Seller"
+    "name": "Ticket Seller",
+    "searchable": false
 }

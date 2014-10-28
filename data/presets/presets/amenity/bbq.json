@@ -9,9 +9,9 @@
     "terms": [
         "bbq"
     ],
-    "name": "Barbecue/Grill",
     "searchable": false,
     "tags": {
         "amenity": "bbq"
-    }
+    },
+    "name": "Barbecue/Grill"
 }

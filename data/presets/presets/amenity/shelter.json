@@ -17,11 +17,8 @@
         "building": "hut",
         "tourism": "camp_site"
     },
-    "terms": [
-        "lean-to"
-    ],
-    "name": "Shelter",
     "icon": "shelter-black",
     "maki": "npmaki",
-    "searchable": true
+    "searchable": true,
+    "name": "Shelter"
 }

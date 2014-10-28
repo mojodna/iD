@@ -10,9 +10,6 @@
     "tags": {
         "man_made": "survey_point"
     },
-    "fields": [
-        "ref"
-    ],
     "searchable": false,
     "name": "Survey Point"
 }

@@ -13,5 +13,6 @@
     "tags": {
         "shop": "cosmetics"
     },
-    "name": "Cosmetics Store"
+    "name": "Cosmetics Store",
+    "searchable": false
 }

@@ -15,5 +15,8 @@
         "farm stand"
     ],
     "searchable": false,
+    "tags": {
+        "shop": "farm"
+    },
     "name": "Produce Stand"
 }

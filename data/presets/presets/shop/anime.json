@@ -13,5 +13,6 @@
     "tags": {
         "shop": "anime"
     },
-    "name": "Anime Shop"
+    "name": "Anime Shop",
+    "searchable": false
 }

@@ -16,5 +16,6 @@
     "tags": {
         "shop": "fabric"
     },
-    "name": "Fabric Store"
+    "name": "Fabric Store",
+    "searchable": false
 }

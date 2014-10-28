@@ -13,5 +13,6 @@
     "tags": {
         "shop": "video_games"
     },
-    "name": "Video Game Store"
+    "name": "Video Game Store",
+    "searchable": false
 }

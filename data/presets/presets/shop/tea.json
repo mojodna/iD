@@ -13,5 +13,6 @@
     "tags": {
         "shop": "tea"
     },
-    "name": "Tea Store"
+    "name": "Tea Store",
+    "searchable": false
 }

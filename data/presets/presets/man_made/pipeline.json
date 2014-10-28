@@ -10,11 +10,6 @@
     "tags": {
         "man_made": "pipeline"
     },
-    "fields": [
-        "location",
-        "operator"
-    ],
     "searchable": false,
-    "name": "Pipeline",
-    "icon": "pipeline"
+    "name": "Pipeline"
 }

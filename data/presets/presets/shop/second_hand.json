@@ -20,5 +20,6 @@
     "tags": {
         "shop": "second_hand"
     },
-    "name": "Consignment/Thrift Store"
+    "name": "Consignment/Thrift Store",
+    "searchable": false
 }

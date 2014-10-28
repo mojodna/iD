@@ -17,5 +17,6 @@
     "tags": {
         "shop": "curtain"
     },
-    "name": "Curtain Store"
+    "name": "Curtain Store",
+    "searchable": false
 }

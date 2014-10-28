@@ -13,5 +13,6 @@
     "tags": {
         "shop": "baby_goods"
     },
-    "name": "Baby Goods Store"
+    "name": "Baby Goods Store",
+    "searchable": false
 }

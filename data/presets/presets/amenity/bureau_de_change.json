@@ -14,5 +14,6 @@
     "tags": {
         "amenity": "bureau_de_change"
     },
-    "name": "Currency Exchange"
+    "name": "Currency Exchange",
+    "searchable": false
 }

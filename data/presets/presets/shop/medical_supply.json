@@ -13,5 +13,6 @@
     "tags": {
         "shop": "medical_supply"
     },
-    "name": "Medical Supply Store"
+    "name": "Medical Supply Store",
+    "searchable": false
 }

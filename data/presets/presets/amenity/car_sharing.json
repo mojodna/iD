@@ -11,10 +11,6 @@
     "tags": {
         "amenity": "car_sharing"
     },
-    "fields": [
-        "operator",
-        "capacity"
-    ],
     "searchable": false,
     "name": "Car Sharing"
 }

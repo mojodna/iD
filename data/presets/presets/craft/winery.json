@@ -13,5 +13,6 @@
     "tags": {
         "craft": "winery"
     },
-    "name": "Winery"
+    "name": "Winery",
+    "searchable": false
 }

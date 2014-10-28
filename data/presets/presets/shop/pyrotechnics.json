@@ -13,5 +13,6 @@
     "tags": {
         "shop": "pyrotechnics"
     },
-    "name": "Fireworks Store"
+    "name": "Fireworks Store",
+    "searchable": false
 }

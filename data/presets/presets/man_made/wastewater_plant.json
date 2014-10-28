@@ -8,11 +8,7 @@
         "point",
         "area"
     ],
-    "tags": {
-        "man_made": "wastewater_plant"
-    },
     "searchable": false,
-    "name": "Wastewater Plant",
     "terms": [
         "sewage*",
         "water treatment plant",

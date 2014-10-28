@@ -9,9 +9,6 @@
     "tags": {
         "amenity": "boat_rental"
     },
-    "fields": [
-        "operator"
-    ],
     "searchable": false,
     "name": "Boat Rental"
 }

@@ -13,5 +13,6 @@
     "tags": {
         "shop": "massage"
     },
-    "name": "Massage Shop"
+    "name": "Massage Shop",
+    "searchable": false
 }

@@ -13,5 +13,6 @@
     "tags": {
         "shop": "herbalist"
     },
-    "name": "Herbalist"
+    "name": "Herbalist",
+    "searchable": false
 }

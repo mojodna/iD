@@ -14,7 +14,6 @@
     "tags": {
         "amenity": "university"
     },
-    "terms": ["college"],
     "searchable": false,
-    "name": "University"
+    "name": "University Grounds"
 }

@@ -1,6 +1,11 @@
 {
     "searchable": false,
-    "name": "Dentist",
+    "icon": "hospital",
+    "fields": [
+        "address",
+        "building_area",
+        "opening_hours"
+    ],
     "geometry": [
         "point",
         "area"

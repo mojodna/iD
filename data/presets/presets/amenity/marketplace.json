@@ -12,9 +12,6 @@
     "tags": {
         "amenity": "marketplace"
     },
-    "fields": [
-        "building_area"
-    ],
     "searchable": false,
     "name": "Marketplace"
 }

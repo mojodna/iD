@@ -17,8 +17,5 @@
         "gym"
     ],
     "searchable": false,
-    "fields": [
-        "sport"
-    ],
     "name": "Sports Center / Gym"
 }

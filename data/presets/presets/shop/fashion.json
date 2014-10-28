@@ -13,5 +13,6 @@
     "tags": {
         "shop": "fashion"
     },
-    "name": "Fashion Store"
+    "name": "Fashion Store",
+    "searchable": false
 }

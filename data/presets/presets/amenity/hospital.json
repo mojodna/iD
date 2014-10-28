@@ -28,6 +28,6 @@
     "tags": {
         "amenity": "hospital"
     },
-    "name": "Hospital",
-    "searchable": true
+    "searchable": true,
+    "name": "Hospital Grounds"
 }

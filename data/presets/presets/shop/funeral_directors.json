@@ -15,6 +15,9 @@
         "undertaker",
         "memorial home"
     ],
-    "name": "Funeral Home",
-    "searchable": false
+    "searchable": false,
+    "tags": {
+        "shop": "funeral_directors"
+    },
+    "name": "Funeral Home"
 }

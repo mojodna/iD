@@ -13,5 +13,6 @@
     "tags": {
         "shop": "frame"
     },
-    "name": "Framing Shop"
+    "name": "Framing Shop",
+    "searchable": false
 }

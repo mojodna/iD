@@ -15,5 +15,6 @@
     "tags": {
         "building": "kindergarten"
     },
-    "name": "Preschool/Kindergarten Building"
+    "name": "Preschool/Kindergarten Building",
+    "searchable": false
 }

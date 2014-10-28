@@ -10,9 +10,6 @@
     "tags": {
         "amenity": "car_rental"
     },
-    "fields": [
-        "operator"
-    ],
     "searchable": false,
     "name": "Car Rental"
 }

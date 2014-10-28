@@ -13,5 +13,6 @@
     "tags": {
         "shop": "candles"
     },
-    "name": "Candle Shop"
+    "name": "Candle Shop",
+    "searchable": false
 }

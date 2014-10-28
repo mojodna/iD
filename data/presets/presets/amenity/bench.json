@@ -10,9 +10,6 @@
     "tags": {
         "amenity": "bench"
     },
-    "fields": [
-        "backrest"
-    ],
-    "searchable": false,
-    "name": "Bench"
+    "name": "Bench",
+    "searchable": false
 }

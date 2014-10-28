@@ -1,5 +1,4 @@
 {
-    "icon": "toilets",
     "fields": [
         "toilets/disposal",
         "operator",

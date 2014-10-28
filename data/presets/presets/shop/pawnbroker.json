@@ -13,5 +13,6 @@
     "tags": {
         "shop": "pawnbroker"
     },
-    "name": "Pawn Shop"
+    "name": "Pawn Shop",
+    "searchable": false
 }

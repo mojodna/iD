@@ -12,9 +12,6 @@
     "tags": {
         "amenity": "car_wash"
     },
-    "fields": [
-        "building_area"
-    ],
     "searchable": false,
     "name": "Car Wash"
 }

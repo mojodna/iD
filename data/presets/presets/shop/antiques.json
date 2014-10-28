@@ -13,5 +13,6 @@
     "tags": {
         "shop": "antiques"
     },
-    "name": "Antiques Shop"
+    "name": "Antiques Shop",
+    "searchable": false
 }

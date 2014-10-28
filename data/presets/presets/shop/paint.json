@@ -13,5 +13,6 @@
     "tags": {
         "shop": "paint"
     },
-    "name": "Paint Store"
+    "name": "Paint Store",
+    "searchable": false
 }

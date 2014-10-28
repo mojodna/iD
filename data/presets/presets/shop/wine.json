@@ -13,9 +13,6 @@
     "tags": {
         "shop": "wine"
     },
-    "terms": [
-        "winery"
-    ],
-    "name": "Wine Shop",
-    "searchable": false
+    "searchable": false,
+    "name": "Wine Shop"
 }

@@ -13,5 +13,6 @@
     "tags": {
         "shop": "hearing_aids"
     },
-    "name": "Hearing Aids Store"
+    "name": "Hearing Aids Store",
+    "searchable": false
 }

@@ -9,8 +9,5 @@
     "tags": {
         "military": "airfield"
     },
-    "terms": [],
-    "searchable": false,
-    "name": "Airfield",
-    "icon": "airfield"
+    "name": "Airfield"
 }

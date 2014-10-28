@@ -14,6 +14,6 @@
         "office": "travel_agent"
     },
     "terms": [],
-    "searchable": false,
-    "name": "Travel Agency"
+    "name": "Travel Agency",
+    "searchable": false
 }

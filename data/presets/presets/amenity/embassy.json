@@ -12,11 +12,6 @@
     "tags": {
         "amenity": "embassy"
     },
-    "fields": [
-        "country",
-        "building_area"
-    ],
-    "icon": "embassy",
     "searchable": false,
     "name": "Embassy"
 }

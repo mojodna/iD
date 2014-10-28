@@ -19,5 +19,6 @@
     "tags": {
         "shop": "weapons"
     },
-    "name": "Weapon Shop"
+    "name": "Weapon Shop",
+    "searchable": false
 }

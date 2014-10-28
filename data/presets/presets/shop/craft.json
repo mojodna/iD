@@ -13,5 +13,6 @@
     "tags": {
         "shop": "craft"
     },
-    "name": "Arts and Crafts Store"
+    "name": "Arts and Crafts Store",
+    "searchable": false
 }

@@ -13,5 +13,6 @@
     "tags": {
         "shop": "money_lender"
     },
-    "name": "Money Lender"
+    "name": "Money Lender",
+    "searchable": false
 }

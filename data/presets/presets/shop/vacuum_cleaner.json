@@ -13,5 +13,6 @@
     "tags": {
         "shop": "vacuum_cleaner"
     },
-    "name": "Vacuum Cleaner Store"
+    "name": "Vacuum Cleaner Store",
+    "searchable": false
 }

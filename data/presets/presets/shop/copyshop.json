@@ -13,5 +13,6 @@
     "tags": {
         "shop": "copyshop"
     },
-    "name": "Copy Store"
+    "name": "Copy Store",
+    "searchable": false
 }

@@ -11,5 +11,6 @@
     "tags": {
         "amenity": "bus_station"
     },
-    "name": "Bus Station"
+    "name": "Bus Station",
+    "searchable": false
 }

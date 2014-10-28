@@ -13,5 +13,6 @@
     "tags": {
         "shop": "musical_instrument"
     },
-    "name": "Musical Instrument Store"
+    "name": "Musical Instrument Store",
+    "searchable": false
 }

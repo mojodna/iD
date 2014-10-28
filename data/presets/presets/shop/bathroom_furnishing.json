@@ -13,5 +13,6 @@
     "tags": {
         "shop": "bathroom_furnishing"
     },
-    "name": "Bathroom Furnishing Store"
+    "name": "Bathroom Furnishing Store",
+    "searchable": false
 }

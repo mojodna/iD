@@ -18,5 +18,6 @@
     "tags": {
         "shop": "dairy"
     },
-    "name": "Dairy Store"
+    "name": "Dairy Store",
+    "searchable": false
 }

@@ -39,7 +39,7 @@ window.onload = function() {
   if (hash.length) {
     iframe.src = 'park-tiles.html' + hash;
   } else {
-    var initial = '4/39.00/-99.00';
+    var initial = '4/39.06/-99.02';
 
     iframe.src = 'park-tiles.html#' + initial;
     window.location.hash += initial;

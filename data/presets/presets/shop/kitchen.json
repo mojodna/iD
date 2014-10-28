@@ -13,5 +13,6 @@
     "tags": {
         "shop": "kitchen"
     },
-    "name": "Kitchen Design Store"
+    "name": "Kitchen Design Store",
+    "searchable": false
 }

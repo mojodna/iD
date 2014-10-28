@@ -1,5 +1,4 @@
 {
-    "searchable": false,
     "icon": "marker-stroked",
     "fields": [
         "operator",
@@ -14,5 +13,6 @@
     "tags": {
         "craft": "jeweler"
     },
-    "name": "Jeweler"
+    "name": "Jeweler",
+    "searchable": false
 }

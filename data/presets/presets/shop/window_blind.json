@@ -13,5 +13,6 @@
     "tags": {
         "shop": "window_blind"
     },
-    "name": "Window Blind Store"
+    "name": "Window Blind Store",
+    "searchable": false
 }

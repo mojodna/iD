@@ -14,5 +14,6 @@
         "shop": "supermarket",
         "organic": "only"
     },
-    "name": "Organic Goods Store"
+    "name": "Organic Goods Store",
+    "searchable": false
 }

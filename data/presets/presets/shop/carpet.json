@@ -16,5 +16,6 @@
     "tags": {
         "shop": "carpet"
     },
-    "name": "Carpet Store"
+    "name": "Carpet Store",
+    "searchable": false
 }

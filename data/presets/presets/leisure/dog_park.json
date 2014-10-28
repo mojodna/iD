@@ -9,6 +9,6 @@
     "tags": {
         "leisure": "dog_park"
     },
-    "name": "Dog Park",
-    "searchable": false
+    "searchable": false,
+    "name": "Dog Park"
 }

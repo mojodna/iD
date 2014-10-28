@@ -8,13 +8,8 @@
         "highway": "rest_area"
     },
     "terms": [
-        "rest stop",
-        "pull off",
-        "pullout",
-        "turnout",
-        "lay-by"
+        "rest stop"
     ],
-    "name": "Rest Area",
     "searchable": false,
     "name": "Rest Area"
 }
