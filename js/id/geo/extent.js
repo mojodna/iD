@@ -11,7 +11,7 @@ iD.geo.Extent = function geoExtent(min, max) {
     }
 };
 
-iD.geo.Extent.prototype = [[], []];
+iD.geo.Extent.prototype = new Array(2);
 
 _.extend(iD.geo.Extent.prototype, {
     extend: function(obj) {
@@ -20,6 +20,13 @@ _.extend(iD.geo.Extent.prototype, {
                               Math.min(obj[0][1], this[0][1])],
                              [Math.max(obj[1][0], this[1][0]),
                               Math.max(obj[1][1], this[1][1])]);
+    },
+
+    _extend: function(extent) {
+        this[0][0] = Math.min(extent[0][0], this[0][0]);
+        this[0][1] = Math.min(extent[0][1], this[0][1]);
+        this[1][0] = Math.max(extent[1][0], this[1][0]);
+        this[1][1] = Math.max(extent[1][1], this[1][1]);
     },
 
     area: function() {

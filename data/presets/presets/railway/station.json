@@ -10,8 +10,8 @@
     "tags": {
         "railway": "station"
     },
-    "name": "Railway Station",
     "icon": "rail",
     "maki": "maki",
+    "name": "Railway Station",
     "searchable": false
 }
