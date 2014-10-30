@@ -7,14 +7,14 @@ window.iD = function () {
             editing: {
                 area: true,
                 line: false,
-                minZoom: 14,
+                minZoom: 15,
                 point: true
             },
             locationOverlayMaxZoom: 22,
             map: {
                 center: [-77.0228, 38.8944],
                 defaultBackground: 'Esri',
-                zoom: 14.01
+                zoom: 15.01
             }
         }
     };
