@@ -184,6 +184,7 @@ en:
     upload_explanation_with_user: "The changes you upload as {user} will be visible on all maps that use Places data."
     save: Save
     cancel: Cancel
+    changes: "{count} Changes"
     warnings: Warnings
     modified: Modified
     deleted: Deleted
@@ -247,6 +248,7 @@ en:
     no_changes: No changes to save.
     error: An error occurred while trying to save
     uploading: Uploading changes to Places.
+    unknown_error_details: "Please ensure you are connected to the internet."
     unsaved_changes: You have unsaved changes
   success:
     edited_osm: "Success!"

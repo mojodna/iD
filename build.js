@@ -140,11 +140,6 @@ function suggestionsToPresets(presets) {
 function generatePresets() {
     var presets = {};
 
-    // A closed way is considered to be an area if it has a tag with one
-    // of the following keys, and the value is _not_ one of the associated
-    // values for the respective key.
-    var areaKeys = {};
-
     glob.sync(__dirname + '/data/presets/presets/**/*.json').forEach(function(file) {
         var preset = read(file),
             id = file.match(/presets\/presets\/([^.]*)\.json/)[1];
@@ -155,18 +150,6 @@ function generatePresets() {
             name: preset.name,
             terms: (preset.terms || []).join(',')
         };
-
-        for (var key in preset.tags) break;
-        var value = preset.tags[key];
-
-        if (['highway', 'footway', 'railway', 'type'].indexOf(key) === -1) {
-            if (preset.geometry.indexOf('area') >= 0) {
-                areaKeys[key] = areaKeys[key] || {};
-            } else if (key in areaKeys && value !== '*') {
-                areaKeys[key][value] = true;
-            }
-        }
-
         presets[id] = preset;
     });
 
@@ -179,7 +162,6 @@ function generatePresets() {
 
     return {
         presets: presets,
-        areaKeys: areaKeys,
         presetsYaml: presetsYaml
     };
 }
@@ -224,7 +206,6 @@ validatePresetFields(presets.presets, fields);
 fs.writeFileSync('data/presets/categories.json', stringify(categories));
 fs.writeFileSync('data/presets/fields.json', stringify(fields));
 fs.writeFileSync('data/presets/presets.json', stringify(presets.presets));
-fs.writeFileSync('js/id/core/area_keys.js', '/* jshint -W109 */\niD.areaKeys = ' + stringify(presets.areaKeys) + ';');
 fs.writeFileSync('data/presets.yaml', YAML.dump({en: {presets: presets.presetsYaml}}));
 
 // Write taginfo data
@@ -273,14 +254,7 @@ fs.writeFileSync('dist/locales/en.json', stringify(en.en));
 fs.writeFileSync('data/data.js', 'iD.data = ' + stringify({
     deprecated: r('deprecated.json'),
     discarded: r('discarded.json'),
-    imagery: r('imagery.json'),
     wikipedia: r('wikipedia.json'),
-    presets: {
-        presets: rp('presets.json'),
-        defaults: rp('defaults.json'),
-        categories: rp('categories.json'),
-        fields: rp('fields.json')
-    },
     imperial: r('imperial.json'),
     featureIcons: r('feature-icons.json'),
     operations: r('operations-sprite.json'),
@@ -289,3 +263,12 @@ fs.writeFileSync('data/data.js', 'iD.data = ' + stringify({
     suggestions: r('name-suggestions.json'),
     addressFormats: r('address-formats.json')
 }) + ';');
+
+fs.writeFileSync('dist/presets.js', 'iD.data.presets = ' + stringify({
+    presets: rp('presets.json'),
+    defaults: rp('defaults.json'),
+    categories: rp('categories.json'),
+    fields: rp('fields.json')
+}) + ';');
+
+fs.writeFileSync('dist/imagery.js', 'iD.data.imagery = ' + stringify(r('imagery.json')) + ';');

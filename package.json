@@ -1,6 +1,6 @@
 {
   "name": "iD",
-  "version": "1.5.4",
+  "version": "1.6.1",
   "description": "a new editor for openstreetmap",
   "main": "iD.js",
   "directories": {
@@ -25,8 +25,8 @@
     "smash": "0.0",
     "lodash-cli": "2.3.0",
     "uglify-js": "~2.2.5",
-    "maki": "0.4.2",
     "npmaki": "git+https://github.com/nationalparkservice/npmaki.git#gh-pages",
+    "maki": "0.4.5",
     "jshint": "2.3.0",
     "mocha": "1",
     "mocha-phantomjs": "3",
