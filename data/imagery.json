@@ -27,7 +27,7 @@
         "name": "Locator Overlay",
         "type": "tms",
         "description": "Shows major features to help orient you.",
-        "template": "http://{switch:a,b,c}.tiles.mapbox.com/v3/nps.z3hnnp4r,nps.whfyh5gu,nps.dta2y72l/{zoom}/{x}/{y}.png",
+        "template": "http://{switch:a,b,c}.tiles.mapbox.com/v3/nps.gdipreks/{zoom}/{x}/{y}.png",
         "scaleExtent": [
             0,
             26.01
