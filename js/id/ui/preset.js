@@ -98,7 +98,7 @@ iD.ui.preset = function(context) {
         // Enter
 
         var $enter = $fields.enter()
-            .insert('div', '.more-buttons')
+            .append('div')
             .attr('class', function(field) {
                 return 'form-field form-field-' + field.id;
             });
@@ -156,30 +156,49 @@ iD.ui.preset = function(context) {
         $fields.exit()
             .remove();
 
-        var $more = selection.selectAll('.more-buttons')
-            .data([0]);
+        notShown = notShown.map(function(field) {
+            return {
+                title: field.label(),
+                value: field.label(),
+                field: field
+            };
+        });
+
+        var $more = selection.selectAll('.more-fields')
+            .data((notShown.length > 0) ? [0] : []);
 
         $more.enter().append('div')
-            .attr('class', 'more-buttons inspector-inner');
+            .attr('class', 'more-fields')
+            .append('label')
+                .text(t('inspector.add_fields'));
 
-        var $buttons = $more.selectAll('.preset-add-field')
-            .data(notShown, fieldKey);
+        var $input = $more.selectAll('.value')
+            .data([0]);
 
-        $buttons.enter()
-            .append('button')
-            .attr('class', 'preset-add-field')
-            .call(bootstrap.tooltip()
-                .placement('top')
-                .title(function(d) { return d.label(); }))
-            .append('span')
-            .attr('class', function(d) { return 'icon ' + d.icon; });
+        $input.enter().append('input')
+            .attr('class', 'value')
+            .attr('type', 'text');
 
-        $buttons.on('click', show);
+        $input.value('')
+            .attr('placeholder', function() {
+                var placeholder = [];
+                for (var field in notShown) {
+                    placeholder.push(notShown[field].title);
+                }
+                return placeholder.slice(0,3).join(', ') + ((placeholder.length > 3) ? '…' : '');
+            })
+            .call(d3.combobox().data(notShown)
+                .minItems(1)
+                .on('accept', show));
 
-        $buttons.exit()
+        $more.exit()
+            .remove();
+
+        $input.exit()
             .remove();
 
         function show(field) {
+            field = field.field;
             field.show = true;
             presets(selection);
             field.input.focus();

@@ -1,5 +1,5 @@
 iD.ui.Help = function(context) {
-    var key = 'h';
+    var key = 'H';
 
     var docKeys = [
         'help.help',
@@ -138,7 +138,9 @@ iD.ui.Help = function(context) {
         clickHelp(docs[0], 0);
 
         var keybinding = d3.keybinding('help')
-            .on(key, toggle);
+            .on(key, toggle)
+            .on('B', hide)
+            .on('F', hide);
 
         d3.select(document)
             .call(keybinding);

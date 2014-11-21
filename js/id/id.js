@@ -47,6 +47,16 @@ window.iD = function () {
         }
     };
 
+    /* Accessor for setting minimum zoom for editing features. */
+
+    var minEditableZoom = 16;
+    context.minEditableZoom = function(_) {
+        if (!arguments.length) return minEditableZoom;
+        minEditableZoom = _;
+        connection.tileZoom(_);
+        return context;
+    };
+
     var history = iD.History(context),
         dispatch = d3.dispatch('enter', 'exit'),
         mode,
@@ -114,6 +124,7 @@ window.iD = function () {
 
     context.flush = function() {
         connection.flush();
+        features.reset();
         history.reset();
         return context;
     };
@@ -200,9 +211,6 @@ window.iD = function () {
         });
     };
 
-    context.editable = function() {
-        return map.editable() && mode && mode.id !== 'save';
-    };
 
     /* Behaviors */
     context.install = function(behavior) {
@@ -220,11 +228,21 @@ window.iD = function () {
     var background = iD.Background(context);
     context.background = function() { return background; };
 
+    /* Features */
+    var features = iD.Features(context);
+    context.features = function() { return features; };
+    context.hasHiddenConnections = function(id) {
+        var graph = history.graph(),
+            entity = graph.entity(id);
+        return features.hasHiddenConnections(entity, graph);
+    };
+
     /* Map */
     var map = iD.Map(context);
     context.map = function() { return map; };
     context.layers = function() { return map.layers; };
     context.surface = function() { return map.surface; };
+    context.editable = function() { return map.editable(); };
     context.mouse = map.mouse;
     context.extent = map.extent;
     context.pan = map.pan;

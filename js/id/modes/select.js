@@ -93,6 +93,8 @@ iD.modes.Select = function(context, selectedIDs) {
             });
         });
 
+        radialMenu = iD.ui.RadialMenu(context, operations);
+
         context.ui().sidebar
             .select(singular() ? singular().id : null, newFeature);
 
@@ -137,15 +139,21 @@ iD.modes.Select = function(context, selectedIDs) {
             .call(keybinding);
 
         function selectElements() {
-            context.surface()
-                .selectAll(iD.util.entityOrMemberSelector(selectedIDs, context.graph()))
-                .classed('selected', true);
+            var selection = context.surface()
+                    .selectAll(iD.util.entityOrMemberSelector(selectedIDs, context.graph()));
+
+            if (selection.empty()) {
+                // Exit mode if selected DOM elements have disappeared..
+                context.enter(iD.modes.Browse(context));
+            } else {
+                selection
+                    .classed('selected', true);
+            }
         }
 
         context.map().on('drawn.select', selectElements);
         selectElements();
 
-        radialMenu = iD.ui.RadialMenu(context, operations);
         var show = d3.event && !suppressMenu;
 
         if (show) {
