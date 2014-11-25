@@ -1,6 +1,12 @@
 {
     "icon": "bus-shuttle-stop-black",
     "maki": "npmaki",
+    "fields": [
+        "operator",
+        "bench",
+        "shelter",
+        "covered"
+    ],
     "geometry": [
         "point"
     ],
