@@ -6,5 +6,5 @@
         "building": "yes"
     },
     "name": "Building",
-    "searchable": false
+    "searchable": true
 }
