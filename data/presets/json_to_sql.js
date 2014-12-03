@@ -3,33 +3,7 @@ var fs = require('fs'),
   outputFilename = './presets.sql',
   schemaFilename = './presets.schema.json',
   tableName = 'table',
-  toSql = function() {
-    var inserts = [];
-    fs.readFile(schemaFilename, 'utf-8', function(err, schema) {
-      schema = JSON.parse(schema);
-      fs.readFile(inputFilename, 'utf-8', function(err, inputData) {
-        var columns = [],
-          inputJson = JSON.parse(inputData);
-        values = [];
-        for (var key in inputJson) {
-          columns = [];
-          values = [];
-          for (var column in schema) {
-            if (inputJson[key][column] || schema[column].split(' ').indexOf('key') > -1) {
-              columns.push(column);
-              values.push(format(schema[column], inputJson[key][column] || column));
-            }
-          }
-          inserts.push(['INSERT INTO', tableName, '(', columns.join(','), ') VALUES (', values.join(','), ');'].join(' '));
-        }
-        fs.writeFile(outputFilename, inserts.join('\n'), function(err) {
-          if (err) return console.log(err);
-          console.log ('done!');
-        });
-      });
-    });
-  };
-var format = function(dataType, data) {
+  format = function(dataType, data) {
   var typeArray = dataType.split(' '),
     types = {
       'text': function(data) {
@@ -77,5 +51,32 @@ var format = function(dataType, data) {
     throw 'required field (' + dataType + ') missing';
   }
   return returnValue;
-};
+},
+  toSql = function() {
+    var inserts = [];
+    fs.readFile(schemaFilename, 'utf-8', function(err, schema) {
+      schema = JSON.parse(schema);
+      fs.readFile(inputFilename, 'utf-8', function(err, inputData) {
+        var columns = [],
+          inputJson = JSON.parse(inputData),
+        values = [];
+        for (var key in inputJson) {
+          columns = [];
+          values = [];
+          for (var column in schema) {
+            if (inputJson[key][column] || schema[column].split(' ').indexOf('key') > -1) {
+              columns.push(column);
+              values.push(format(schema[column], inputJson[key][column] || column));
+            }
+          }
+          inserts.push(['INSERT INTO', tableName, '(', columns.join(','), ') VALUES (', values.join(','), ');'].join(' '));
+        }
+        fs.writeFile(outputFilename, inserts.join('\n'), function(err) {
+          if (err) return console.log(err);
+          console.log('done!');
+        });
+      });
+    });
+  };
+
 toSql();
