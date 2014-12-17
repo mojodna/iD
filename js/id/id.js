@@ -10,7 +10,7 @@ window.iD = function () {
             },
             editing: {
                 area: true,
-                disabledFields = [
+                disabledFields: [
                   'nps:places_uuid',
                   'nps:building_id',
                   'nps:fcat'
