@@ -4,8 +4,17 @@ window.iD = function () {
 
     iD.npmap = {
         settings: {
+            connection: {
+              api: 'http://165.83.18.96:8000',
+              oauth: 'http://165.83.18.96:8000'
+            },
             editing: {
                 area: true,
+                disabledFields = [
+                  'nps:places_uuid',
+                  'nps:building_id',
+                  'nps:fcat'
+                ],
                 line: false,
                 minZoom: 15,
                 point: true
@@ -15,6 +24,20 @@ window.iD = function () {
                 center: [-77.0228, 38.8944],
                 defaultBackground: 'Esri',
                 zoom: 15.01
+            },
+            tags: {
+              disabledFields: [
+                'nps:building_id',
+                'nps:fcat',
+                'nps:places_uuid'
+              ],
+              uninterestingFields: [
+                'attribution',
+                'created_by',
+                'nps:unit_code',
+                'odbl',
+                'source'
+              ]
             }
         }
     };

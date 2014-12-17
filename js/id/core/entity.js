@@ -104,11 +104,10 @@ iD.Entity.prototype = {
 
     hasInterestingTags: function() {
         return _.keys(this.tags).some(function(key) {
-            return key !== 'attribution' &&
-                key !== 'created_by' &&
-                key !== 'nps:places_uuid' &&
-                key !== 'source' &&
-                key !== 'odbl' &&
+            // All of the npmap disabled tags are also 'uninteresting'
+            return iD.npmap.settings.tags.disabledFields.concat(
+                    iD.npmap.settings.tags.uninterestingFields
+                ).indexOf(key) === -1 &&
                 key.indexOf('tiger:') !== 0;
         });
     },
