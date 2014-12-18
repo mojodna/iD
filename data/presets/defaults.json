@@ -1,5 +1,7 @@
 {
-  "area": [],
+  "area": [
+    "building"
+  ],
   "line": [],
   "point": [
     "tourism/campground",
@@ -27,5 +29,7 @@
     "shop/general",
     "tourism/map"
 ],
-  "relation": []
+  "relation": [
+    "building"
+  ]
 }
