@@ -9,8 +9,10 @@
     "tags": {
         "landuse": "farmland"
     },
-    "terms": [],
     "searchable": false,
     "name": "Farmland",
+    "terms": [
+        "farmland"
+    ],
     "icon": "farm"
 }
