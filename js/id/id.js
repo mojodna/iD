@@ -33,7 +33,7 @@ window.iD = function () {
               disabledFields: [
                 'nps:building_id',
                 'nps:fcat',
-                'nps:places_uuid'
+                'nps:places_id'
               ],
               uninterestingFields: [
                 'attribution',
