@@ -1,6 +1,6 @@
 {
   "area": [
-    "building"
+    "building/building_yes"
   ],
   "line": [],
   "point": [
@@ -30,6 +30,5 @@
     "tourism/map"
 ],
   "relation": [
-    "building"
   ]
 }
