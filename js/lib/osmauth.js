@@ -50,24 +50,29 @@ module.exports = function(o) {
                     }).join(','),
                     popup = function(popupLocation){
                       // This will bring up a modal window where they can click
-                      var loginClick = function() {
-                        window.open(popupLocation, 'oauth_window', settings);
-                      };
+                      // var loginClick = function() {
+                        // window.open(popupLocation, 'oauth_window', settings);
+                      // };
                       o.context.container()
-                        .call(iD.ui.Login(o.context, loginClick));
+                        .call(iD.ui.Login(o.context, popupLocation));
                   };
         }
 
         // try the oauth to see if we're really logged in
-        oauth.xhr({ method: 'GET', path: '/api/0.6/user/details' }, function(e,r){console.log('***', e, r); if (!e && (oauth.authenticated())) {
+        oauth.xhr({
+          method: 'GET',
+          path: '/api/0.6/user/details'
+        }, function(e) {
+          if (!e && (oauth.authenticated())) {
             return callback();
-        } else {
+          } else {
             oauth.logout();
             // Request a request token. When this is complete, the popup
             // window is redirected to OSM's authorization page.
             ohauth.xhr('POST', url, params, null, {}, reqTokenDone);
             o.loading();
-        }});
+          }
+        });
 
         function reqTokenDone(err, xhr) {
             o.done();
