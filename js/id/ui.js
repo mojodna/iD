@@ -105,14 +105,14 @@ iD.ui = function(context) {
             .append('a')
             .attr('target', '_blank')
             .attr('tabindex', -1)
-            .attr('href', 'http://github.com/nationalparkservice/iD')
+            .attr('href', 'http://github.com/nationalparkservice/places')
             .text(iD.version);
 
         var bugReport = aboutList.append('li')
             .append('a')
             .attr('target', '_blank')
             .attr('tabindex', -1)
-            .attr('href', 'https://github.com/nationalparkservice/iD/issues');
+            .attr('href', 'https://github.com/nationalparkservice/places/issues');
 
         bugReport.append('span')
             .attr('class','icon bug light');
