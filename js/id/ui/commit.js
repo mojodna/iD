@@ -104,12 +104,12 @@ iD.ui.Commit = function(context) {
                     .attr('class', 'icon icon-pre-text user-icon');
             }
 
-            userLink.append('a')
+            userLink.append('span')
                 .attr('class','user-info')
-                .text(user.display_name)
-                .attr('href', context.connection().userURL(user.display_name))
-                .attr('tabindex', -1)
-                .attr('target', '_blank');
+                .text(user.display_name);
+                // .attr('href', context.connection().userURL(user.display_name))
+                // .attr('tabindex', -1)
+                // .attr('target', '_blank');
 
             prose.html(t('commit.upload_explanation_with_user', {user: userLink.html()}));
         });
