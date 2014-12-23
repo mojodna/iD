@@ -21,9 +21,9 @@ iD.ui.Account = function(context) {
                 .classed('hide', false);
 
             // Link
-            userLink.append('a')
-                .attr('href', connection.userURL(details.display_name))
-                .attr('target', '_blank');
+            // userLink.append('a')
+                // .attr('href', connection.userURL(details.display_name))
+                // .attr('target', '_blank');
 
             // Add thumbnail or dont
             if (details.image_url) {
