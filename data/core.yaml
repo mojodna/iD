@@ -2,16 +2,16 @@ en:
   modes:
     add_area:
       title: Area
-      description: "Add parks, buildings, lakes or other areas to the map."
-      tail: "Click on the map to start drawing an area, like a park, lake, or building."
+      description: "Add buildings to the map."
+      tail: "Click on the map to start drawing a building."
     add_line:
       title: Line
       description: "Add highways, streets, pedestrian paths, canals or other lines to the map."
       tail: "Click on the map to start drawing a road, path, or route."
     add_point:
       title: "Point"
-      description: "Add bus stops, bridges, picnic areas, or other points of interest to the map."
-      tail: "Click on the map to add a point."
+      description: "Add visitor centers, entrance stations, picnic areas, or other points of interest to the map."
+      tail: "Click on the map to add a point of interest."
     browse:
       title: Browse
       description: Pan and zoom the map.
@@ -293,16 +293,6 @@ en:
     others:
       description: Others
       tooltip: "Everything Else"
-  area_fill:
-    wireframe:
-      description: No Fill (Wireframe)
-      tooltip: "Enabling wireframe mode makes it easy to see the background imagery."
-    partial:
-      description: Partial Fill
-      tooltip: "Areas are drawn with fill only around their inner edges. (Recommended for beginner mappers)"
-    full:
-      description: Full Fill
-      tooltip: "Areas are drawn fully filled."
   restore:
     heading: You have unsaved changes
     description: "Do you wish to restore unsaved changes from a previous editing session?"
@@ -329,13 +319,13 @@ en:
     okay: "Okay"
   splash:
     welcome: Welcome to Places
-    text: "iD is a friendly but powerful tool that makes it easy to contribute to the National Park Service's Places database. This is version {version}. For more information see {website} and report bugs at {github}."
+    text: "The Places Editor is a friendly but powerful tool that makes it easy to contribute to the National Park Service's Places database. This is version {version}. For more information see {website} and report bugs at {github}."
     walkthrough: "Start the Walkthrough"
     start: "Edit Now"
   source_switch:
-    live: "Places Live Database"
+    live: "Production Database"
     lose_changes: "You have unsaved changes. Switching the map server will discard them. Are you sure you want to switch servers?"
-    dev: "Places Development Database"
+    dev: "Development Database"
   tag_reference:
     description: Description
     on_wiki: "{tag} on wiki.osm.org"
@@ -368,9 +358,10 @@ en:
     help: |
       # Help
 
-      This is an editor for [Places](http://www.nps.gov/poi/), the database used by the
-      National Park Service's basemap, [Park Tiles](http://www.nps.gov/npmap/park-tiles/). You
-      can use this editor improve your Park's basemap.
+      This is an editor for Places, the database used by the
+      National Park Service's basemap, [Park Tiles](http://www.nps.gov/npmap/park-tiles/),
+      and National Park Service websites and mobile applications. You can use this editor
+      improve your Park's basemap.
 
       Edits you make on this map will be visible to everyone who uses
       Places and/or Park Tiles. In order to make edits, you'll need a
@@ -379,7 +370,8 @@ en:
       The [iD editor](http://ideditor.com/) is a collaborative project with [source
       code available on GitHub](https://github.com/openstreetmap/iD). The National Park
       Service maintains a forked version of iD with its [source code
-      available on GitHub](https://github.com/nationalparkservice/iD), as well.
+      available on GitHub](https://github.com/nationalparkservice/iD), as well. This is
+      the editor you are seeing here.
     editing_saving: |
       # Editing & Saving
 
@@ -539,7 +531,7 @@ en:
       pane: "When a feature is selected, the feature editor is displayed. The header shows us the feature type and the main pane shows the feature's attributes, such as its name and address. **Close the feature editor with the close button in the top right.**"
     points:
       title: "Points"
-      add: "Points can be used to represent features such as shops, restaurants and monuments. They mark a specific location, and describe what's there. **Click the Point button to add a new point.**"
+      add: "Points can be used to represent features such as visitor centers, entrance stations, and campgrounds. They mark a specific location, and describe what's there. **Click the Point button to add a new point.**"
       place: "Click to place the point on the map. The point we are adding is a Parking Lot. **Place the point at the corner of This Street and That Street**"
       place: "The point can be placed by clicking on the map. **Place the point in the parking lot.**"
       search: "There are many different features that can be represented by points. The point you just added is a Parking Lot. **Search for 'Parking'**"
@@ -552,7 +544,7 @@ en:
       delete: "The menu around the point contains operations that can be performed on it, including delete. **Delete the point.**"
     areas:
       title: "Areas"
-      add: "Areas are used to show the boundaries of features like lakes, buildings, and residential areas. They can be also be used for more detailed mapping of many features you might normally map as points. **Click the Area button to add a new area.**"
+      add: "Areas are used to show the boundaries of features like buildings. They can be also be used for more detailed mapping of many features you might normally map as points. **Click the Area button to add a new area.**"
       corner: "Areas are drawn by placing nodes that mark the boundary of the area. **Place the starting node on one of the corners of the playground.**"
       place: "Draw the area by placing more nodes. Finish the area by clicking on the starting node. **Draw an area for the playground.**"
       search: "**Search for '{name}'.**"
