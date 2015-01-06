@@ -1,5 +1,5 @@
 {
-  "name": "iD",
+  "name": "places",
   "version": "1.6.1",
   "description": "a new editor for openstreetmap",
   "main": "iD.js",
