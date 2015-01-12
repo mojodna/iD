@@ -1,0 +1,1 @@
+iD.npmap = {settings: ''};
