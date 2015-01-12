@@ -40,6 +40,7 @@ dist/iD.js: \
 	js/lib/marked.js \
 	js/id/start.js \
 	js/id/id.js \
+	js/id/npmap.js \
 	js/id/services/*.js \
 	js/id/util.js \
 	js/id/util/*.js \
