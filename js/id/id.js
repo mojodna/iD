@@ -5,9 +5,9 @@ window.iD = function () {
     iD.npmap = {
         settings: {
             connection: {
-              api: 'http://165.83.18.141:8000',
+              api: 'http://10.147.153.193',
               oauth: {
-                url: 'http://165.83.18.141:8000',
+                url: 'http://10.147.153.193',
                 consumerKey: 'CpIont3biEafgafInTYWkFlooQkcFLtGREu6yMG0',
                 secret: 'MFgSWe00v8EsddR9KI42uZZX61r2XL8JwEPxHY2p'
               }
