@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "postInstall": "make",
+    "postInstall": "[ -f ../../updateIdSettings.js ] && node ../../updateIdSettings.js; make",
     "test": "jshint js/id && mocha-phantomjs test/index.html && make && mocha-phantomjs test/index_packaged.html"
   },
   "repository": {
