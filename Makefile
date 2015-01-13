@@ -18,6 +18,10 @@ dist/locales/en.json: data/core.yaml data/presets.yaml data/presets/presets.json
 	@echo "----< $@ >----"
 	node build.js
 
+js/id/npmap.js: npmapInstall.js
+	@echo "----< $@ >----"
+	node npmapInstall.js
+
 dist/iD.js: \
 	js/lib/bootstrap-tooltip.js \
 	js/lib/d3.v3.js \

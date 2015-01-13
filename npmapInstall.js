@@ -15,7 +15,7 @@ if (fs.existsSync(configFile)) {
     consumerKey: config.oauth.consumerKey,
     secret: config.oauth.consumerSecret
   };
-  fs.writeFileSync(settingsFile, 'iD.npmap = ' + JSON.stringify(idSettings, null, 4));
+  fs.writeFileSync(settingsFile, 'iD.npmap = ' + JSON.stringify(idSettings, null, 4) + ';\n');
   console.log('***********************');
   console.log('NPMap settings updated');
   console.log('***********************');
