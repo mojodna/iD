@@ -18,7 +18,7 @@ dist/locales/en.json: data/core.yaml data/presets.yaml data/presets/presets.json
 	@echo "----< $@ >----"
 	node build.js
 
-js/id/npmap.js: npmapInstall.js
+npmap:
 	@echo "----< $@ >----"
 	node npmapInstall.js
 
@@ -75,7 +75,7 @@ dist/iD.js: \
 
 .INTERMEDIATE dist/iD.js: data/data.js
 
-dist/iD.js: node_modules/.install Makefile
+dist/iD.js: npmap node_modules/.install Makefile
 	@echo "----< $@ >----"
 	@rm -f $@
 	cat $(filter %.js,$^) > $@
