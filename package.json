@@ -8,6 +8,7 @@
     "test": "test"
   },
   "scripts": {
+    "postinstall": "npmapInstall.js && make",
     "test": "jshint js/id && mocha-phantomjs test/index.html && make && mocha-phantomjs test/index_packaged.html"
   },
   "repository": {
