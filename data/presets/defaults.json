@@ -3,7 +3,10 @@
     "building",
     "amenity/parking"
   ],
-  "line": [],
+  "line": [
+    "highway/path",
+    "highway/bridleway"
+  ],
   "point": [
     "tourism/campground",
     "tourism/picnic_site",
