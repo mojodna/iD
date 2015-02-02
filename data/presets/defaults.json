@@ -1,6 +1,7 @@
 {
   "area": [
-    "building"
+    "building",
+    "amenity/parking"
   ],
   "line": [],
   "point": [
