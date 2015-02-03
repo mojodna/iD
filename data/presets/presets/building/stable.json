@@ -1,6 +1,7 @@
 {
     "geometry": [
-        "point"
+        "point",
+        "area"
     ],
     "tags": {
         "building": "stable"
