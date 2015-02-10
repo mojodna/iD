@@ -1,4 +1,5 @@
 {
+    "icon": "farm",
     "fields": [
         "crop"
     ],
@@ -10,8 +11,7 @@
         "landuse": "farm"
     },
     "terms": [],
-    "searchable": false,
-    "name": "Farm",
     "icon": "farm",
+    "name": "Farmland",
     "searchable": false
 }

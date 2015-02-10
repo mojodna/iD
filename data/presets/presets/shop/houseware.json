@@ -11,11 +11,12 @@
         "area"
     ],
     "terms": [
-        "home"
+        "home",
+        "household"
     ],
     "tags": {
-        "shop": "household"
+        "shop": "houseware"
     },
-    "name": "Household Store",
-    "searchable": false
+    "searchable": false,
+    "name": "Houseware Store"
 }

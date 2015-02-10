@@ -1,7 +1,6 @@
 {
     "icon": "building",
     "geometry": [
-        "point",
         "area"
     ],
     "tags": {
@@ -9,5 +8,5 @@
     },
     "terms": [],
     "searchable": false,
-    "name": "Residential"
+    "name": "Residential Area"
 }

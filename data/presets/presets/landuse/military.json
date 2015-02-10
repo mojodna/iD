@@ -6,6 +6,6 @@
         "landuse": "military"
     },
     "terms": [],
-    "name": "Military",
-    "searchable": false
+    "searchable": false,
+    "name": "Military Area"
 }
