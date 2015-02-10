@@ -1,7 +1,6 @@
 {
     "icon": "industrial",
     "geometry": [
-        "point",
         "area"
     ],
     "tags": {
@@ -9,5 +8,5 @@
     },
     "terms": [],
     "searchable": false,
-    "name": "Industrial"
+    "name": "Industrial Area"
 }
