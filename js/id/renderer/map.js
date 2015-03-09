@@ -144,7 +144,7 @@ iD.Map = function(context) {
     }
 
     function zoomPan() {
-        if (d3.event && d3.event.sourceEvent.type === 'dblclick') {
+        if (d3.event && (d3.event.sourceEvent === null || d3.event.sourceEvent.type === 'dblclick')) {
             if (!dblclickEnabled) {
                 zoom.scale(projection.scale() * 2 * Math.PI)
                     .translate(projection.translate());
