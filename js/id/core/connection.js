@@ -1,6 +1,6 @@
 iD.Connection = function(context) {
 
-    var event = d3.dispatch('authenticating', 'authenticated', 'auth', 'loading', 'load', 'loaded'),
+    var event = d3.dispatch('authenticating', 'authenticated', 'auth', 'loading', 'loaded'),
         url = iD.npmap.settings.connection.api,
         connection = {},
         inflight = {},
@@ -43,10 +43,10 @@ iD.Connection = function(context) {
     };
 
     connection.loadFromURL = function(url, callback) {
-        function done(dom) {
-            return callback(null, parse(dom));
+        function done(err, dom) {
+            return callback(err, parse(dom));
         }
-        return d3.xml(url).get().on('load', done);
+        return d3.xml(url).get(done);
     };
 
     connection.loadEntity = function(id, callback) {
@@ -56,9 +56,32 @@ iD.Connection = function(context) {
         connection.loadFromURL(
             url + '/api/0.6/' + type + '/' + osmID + (type !== 'node' ? '/full' : ''),
             function(err, entities) {
-                event.load(err, {data: entities});
-                if (callback) callback(err, entities && _.find(entities, function(e) { return e.id === id; }));
+                if (callback) callback(err, {data: entities});
             });
+    };
+
+    connection.loadMultiple = function(ids, callback) {
+        // TODO: upgrade lodash and just use _.chunk
+        function chunk(arr, chunkSize) {
+            var result = [];
+            for (var i = 0; i < arr.length; i += chunkSize) {
+                result.push(arr.slice(i, i + chunkSize));
+            }
+            return result;
+        }
+
+        _.each(_.groupBy(ids, iD.Entity.id.type), function(v, k) {
+            var type = k + 's',
+                osmIDs = _.map(v, iD.Entity.id.toOSM);
+
+            _.each(chunk(osmIDs, 150), function(arr) {
+                connection.loadFromURL(
+                    url + '/api/0.6/' + type + '?' + type + '=' + arr.join(),
+                    function(err, entities) {
+                        if (callback) callback(err, {data: entities});
+                    });
+            });
+        });
     };
 
     function authenticating() {
@@ -67,6 +90,12 @@ iD.Connection = function(context) {
 
     function authenticated() {
         event.authenticated();
+    }
+
+    function getLoc(attrs) {
+        var lon = attrs.lon && attrs.lon.value,
+            lat = attrs.lat && attrs.lat.value;
+        return [parseFloat(lon), parseFloat(lat)];
     }
 
     function getNodes(obj) {
@@ -102,15 +131,20 @@ iD.Connection = function(context) {
         return members;
     }
 
+    function getVisible(attrs) {
+        return (!attrs.visible || attrs.visible.value !== 'false');
+    }
+
     var parsers = {
         node: function nodeData(obj) {
             var attrs = obj.attributes;
             return new iD.Node({
                 id: iD.Entity.id.fromOSM(nodeStr, attrs.id.value),
-                loc: [parseFloat(attrs.lon.value), parseFloat(attrs.lat.value)],
+                loc: getLoc(attrs),
                 version: attrs.version.value,
                 user: attrs.user && attrs.user.value,
-                tags: getTags(obj)
+                tags: getTags(obj),
+                visible: getVisible(attrs)
             });
         },
 
@@ -121,7 +155,8 @@ iD.Connection = function(context) {
                 version: attrs.version.value,
                 user: attrs.user && attrs.user.value,
                 tags: getTags(obj),
-                nodes: getNodes(obj)
+                nodes: getNodes(obj),
+                visible: getVisible(attrs)
             });
         },
 
@@ -132,13 +167,14 @@ iD.Connection = function(context) {
                 version: attrs.version.value,
                 user: attrs.user && attrs.user.value,
                 tags: getTags(obj),
-                members: getMembers(obj)
+                members: getMembers(obj),
+                visible: getVisible(attrs)
             });
         }
     };
 
     function parse(dom) {
-        if (!dom || !dom.childNodes) return new Error('Bad request');
+        if (!dom || !dom.childNodes) return;
 
         var root = dom.childNodes[0],
             children = root.childNodes,
@@ -293,7 +329,7 @@ iD.Connection = function(context) {
         return connection;
     };
 
-    connection.loadTiles = function(projection, dimensions) {
+    connection.loadTiles = function(projection, dimensions, callback) {
 
         if (off) return;
 
@@ -346,7 +382,7 @@ iD.Connection = function(context) {
                 loadedTiles[id] = true;
                 delete inflight[id];
 
-                event.load(err, _.extend({data: parsed}, tile));
+                if (callback) callback(err, _.extend({data: parsed}, tile));
 
                 if (_.isEmpty(inflight)) {
                     event.loaded();
