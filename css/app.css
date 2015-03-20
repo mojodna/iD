@@ -2374,7 +2374,7 @@ img.wiki-image {
     content: '';
     height: 100px;
     width: 100%;
-    max-width: 100px;
+    max-width: 230px;
     margin: auto;
     margin-bottom: 10px;
     background:transparent url(img/sprite.svg) no-repeat 0 -220px;
