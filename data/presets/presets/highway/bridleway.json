@@ -13,10 +13,11 @@
         "highway": "bridleway"
     },
     "terms": [
+        "bridlepath",
         "bridleway",
         "equestrian",
         "horse"
     ],
-    "searchable": false,
-    "name": "Bridle Path"
+    "searchable": true,
+    "name": "Equestrian Path"
 }

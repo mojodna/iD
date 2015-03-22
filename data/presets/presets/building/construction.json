@@ -11,6 +11,6 @@
     "tags": {
         "building": "construction"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Building Under Construction"
 }

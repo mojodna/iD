@@ -11,6 +11,6 @@
     "tags": {
         "building": "greenhouse"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Greenhouse"
 }

@@ -18,6 +18,10 @@ dist/locales/en.json: data/core.yaml data/presets.yaml data/presets/presets.json
 	@echo "----< $@ >----"
 	node build.js
 
+npmap:
+	@echo "----< $@ >----"
+	node npmapInstall.js
+
 dist/iD.js: \
 	js/lib/bootstrap-tooltip.js \
 	js/lib/d3.v3.js \
@@ -31,6 +35,7 @@ dist/iD.js: \
 	js/lib/d3.typeahead.js \
 	js/lib/d3.curtain.js \
 	js/lib/d3.value.js \
+	js/lib/diff3.js \
 	js/lib/jxon.js \
 	js/lib/lodash.js \
 	js/lib/osmauth.js \
@@ -40,6 +45,7 @@ dist/iD.js: \
 	js/lib/marked.js \
 	js/id/start.js \
 	js/id/id.js \
+	js/id/npmap.js \
 	js/id/services/*.js \
 	js/id/util.js \
 	js/id/util/*.js \
@@ -70,7 +76,7 @@ dist/iD.js: \
 
 .INTERMEDIATE dist/iD.js: data/data.js
 
-dist/iD.js: node_modules/.install Makefile
+dist/iD.js: npmap node_modules/.install Makefile
 	@echo "----< $@ >----"
 	@rm -f $@
 	cat $(filter %.js,$^) > $@

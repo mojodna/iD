@@ -11,6 +11,6 @@
     "tags": {
         "building": "barn"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Barn"
 }

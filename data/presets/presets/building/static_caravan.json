@@ -11,6 +11,6 @@
     "tags": {
         "building": "static_caravan"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Static Mobile Home"
 }

@@ -9,7 +9,7 @@
     "tags": {
         "building": "garage"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Garage",
     "icon": "warehouse"
 }

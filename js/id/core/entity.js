@@ -44,13 +44,20 @@ iD.Entity.prototype = {
             var source = sources[i];
             for (var prop in source) {
                 if (Object.prototype.hasOwnProperty.call(source, prop)) {
-                    this[prop] = source[prop];
+                    if (source[prop] === undefined) {
+                        delete this[prop];
+                    } else {
+                        this[prop] = source[prop];
+                    }
                 }
             }
         }
 
         if (!this.id && this.type) {
             this.id = iD.Entity.id(this.type);
+        }
+        if (!this.hasOwnProperty('visible')) {
+            this.visible = true;
         }
 
         if (iD.debug) {
@@ -63,6 +70,12 @@ iD.Entity.prototype = {
         }
 
         return this;
+    },
+
+    copy: function() {
+        // Returns an array so that we can support deep copying ways and relations.
+        // The first array element will contain this.copy, followed by any descendants.
+        return [iD.Entity(this, {id: undefined, user: undefined, version: undefined})];
     },
 
     osmId: function() {
@@ -104,10 +117,10 @@ iD.Entity.prototype = {
 
     hasInterestingTags: function() {
         return _.keys(this.tags).some(function(key) {
-            return key !== 'attribution' &&
-                key !== 'created_by' &&
-                key !== 'source' &&
-                key !== 'odbl' &&
+            // All of the npmap disabled tags are also 'uninteresting'
+            return iD.npmap.settings.tags.disabledFields.concat(
+                    iD.npmap.settings.tags.uninterestingFields
+                ).indexOf(key) === -1 &&
                 key.indexOf('tiger:') !== 0;
         });
     },

@@ -12,6 +12,6 @@
         "building": "*"
     },
     "terms": [],
-    "searchable": false,
+    "searchable": true,
     "name": "Building"
 }

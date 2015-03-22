@@ -1,6 +1,12 @@
 {
-  "area": [],
-  "line": [],
+  "area": [
+    "building",
+    "amenity/parking"
+  ],
+  "line": [
+    "highway/path",
+    "highway/bridleway"
+  ],
   "point": [
     "tourism/campground",
     "tourism/picnic_site",
@@ -27,5 +33,6 @@
     "shop/general",
     "tourism/map"
 ],
-  "relation": []
+  "relation": [
+  ]
 }

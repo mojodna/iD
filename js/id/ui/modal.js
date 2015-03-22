@@ -1,4 +1,4 @@
-iD.ui.modal = function(selection, blocking) {
+iD.ui.modal = function(selection, blocking, options) {
 
     var previous = selection.select('div.modal');
     var animate = previous.empty();
@@ -14,16 +14,24 @@ iD.ui.modal = function(selection, blocking) {
         .style('opacity', 0);
 
     shaded.close = function() {
+      var closeModal = function() {
         shaded
-            .transition()
-            .duration(200)
-            .style('opacity',0)
-            .remove();
+          .transition()
+          .duration(200)
+          .style('opacity', 0)
+          .remove();
         modal
-            .transition()
-            .duration(200)
-            .style('top','0px');
+          .transition()
+          .duration(200)
+          .style('top', '0px');
         keybinding.off();
+      };
+
+      if (options && options.beforeClose) {
+        options.beforeClose(closeModal);
+      } else {
+        closeModal();
+      }
     };
 
     var keybinding = d3.keybinding('modal')
@@ -52,15 +60,9 @@ iD.ui.modal = function(selection, blocking) {
 
     if (animate) {
         shaded.transition().style('opacity', 1);
-        modal
-            .style('top','0px')
-            .transition()
-            .duration(200)
-            .style('top','40px');
     } else {
         shaded.style('opacity', 1);
     }
-
 
     return shaded;
 };

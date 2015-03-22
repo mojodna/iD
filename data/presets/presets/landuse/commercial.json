@@ -1,7 +1,6 @@
 {
     "icon": "commercial",
     "geometry": [
-        "point",
         "area"
     ],
     "tags": {
@@ -9,5 +8,5 @@
     },
     "terms": [],
     "searchable": false,
-    "name": "Commercial"
+    "name": "Commercial Area"
 }

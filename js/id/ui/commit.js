@@ -6,6 +6,7 @@ iD.ui.Commit = function(context) {
             summary = context.history().difference().summary();
 
         function zoomToEntity(change) {
+
             var entity = change.entity;
             if (change.changeType !== 'deleted' &&
                 context.graph().entity(entity.id).geometry(context.graph()) !== 'vertex') {
@@ -104,19 +105,19 @@ iD.ui.Commit = function(context) {
                     .attr('class', 'icon icon-pre-text user-icon');
             }
 
-            userLink.append('a')
+            userLink.append('span')
                 .attr('class','user-info')
-                .text(user.display_name)
-                .attr('href', context.connection().userURL(user.display_name))
-                .attr('tabindex', -1)
-                .attr('target', '_blank');
+                .text(user.display_name);
+                // .attr('href', context.connection().userURL(user.display_name))
+                // .attr('tabindex', -1)
+                // .attr('target', '_blank');
 
             prose.html(t('commit.upload_explanation_with_user', {user: userLink.html()}));
         });
 
         // Confirm Button
         var saveButton = saveSection.append('button')
-            .attr('class', 'action col4 button')
+            .attr('class', 'action col6 button')
             .on('click.save', function() {
                 event.save({
                     comment: commentField.node().value

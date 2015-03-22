@@ -26,6 +26,6 @@
     "tags": {
         "highway": "path"
     },
-    "searchable": false,
-    "name": "Path"
+    "searchable": true,
+    "name": "Trail"
 }
