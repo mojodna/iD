@@ -2,23 +2,6 @@ window.iD = function () {
     window.locale.en = iD.data.en;
     window.locale.current('en');
 
-    iD.npmap = {
-        settings: {
-            editing: {
-                area: false,
-                line: false,
-                minZoom: 14,
-                point: true
-            },
-            locationOverlayMaxZoom: 22,
-            map: {
-                center: [-77.0228, 38.8944],
-                defaultBackground: 'Esri',
-                zoom: 14.01
-            }
-        }
-    };
-
     var context = {},
         storage;
 
@@ -70,10 +53,6 @@ window.iD = function () {
         locale = locale.split('-')[0];
     }
 
-    connection.on('load.context', function loadContext(err, result) {
-        history.merge(result.data, result.extent);
-    });
-
     context.preauth = function(options) {
         connection.switch(options);
         return context;
@@ -103,6 +82,51 @@ window.iD = function () {
     context.connection = function() { return connection; };
     context.history = function() { return history; };
 
+    /* Connection */
+    function entitiesLoaded(err, result) {
+        if (!err) history.merge(result.data, result.extent);
+    }
+
+    context.loadTiles = function(projection, dimensions, callback) {
+        function done(err, result) {
+            entitiesLoaded(err, result);
+            if (callback) callback(err, result);
+        }
+        connection.loadTiles(projection, dimensions, done);
+    };
+
+    context.loadEntity = function(id, callback) {
+        function done(err, result) {
+            entitiesLoaded(err, result);
+            if (callback) callback(err, result);
+        }
+        connection.loadEntity(id, done);
+    };
+
+    context.zoomToEntity = function(id, zoomTo) {
+        if (zoomTo !== false) {
+            this.loadEntity(id, function(err, result) {
+                if (err) return;
+                var entity = _.find(result.data, function(e) { return e.id === id; });
+                if (entity) { map.zoomTo(entity); }
+            });
+        }
+
+        map.on('drawn.zoomToEntity', function() {
+            if (!context.hasEntity(id)) return;
+            map.on('drawn.zoomToEntity', null);
+            context.on('enter.zoomToEntity', null);
+            context.enter(iD.modes.Select(context, [id]));
+        });
+
+        context.on('enter.zoomToEntity', function() {
+            if (mode.id !== 'browse') {
+                map.on('drawn.zoomToEntity', null);
+                context.on('enter.zoomToEntity', null);
+            }
+        });
+    };
+
     /* History */
     context.graph = history.graph;
     context.changes = history.changes;
@@ -117,7 +141,7 @@ window.iD = function () {
     };
 
     context.save = function() {
-        if (inIntro) return;
+        if (inIntro || (mode && mode.id === 'save')) return;
         history.save();
         if (history.hasChanges()) return t('save.unsaved_changes');
     };
@@ -187,31 +211,6 @@ window.iD = function () {
         }
     };
 
-    context.loadEntity = function(id, zoomTo) {
-        if (zoomTo !== false) {
-            connection.loadEntity(id, function(error, entity) {
-                if (entity) {
-                    map.zoomTo(entity);
-                }
-            });
-        }
-
-        map.on('drawn.loadEntity', function() {
-            if (!context.hasEntity(id)) return;
-            map.on('drawn.loadEntity', null);
-            context.on('enter.loadEntity', null);
-            context.enter(iD.modes.Select(context, [id]));
-        });
-
-        context.on('enter.loadEntity', function() {
-            if (mode.id !== 'browse') {
-                map.on('drawn.loadEntity', null);
-                context.on('enter.loadEntity', null);
-            }
-        });
-    };
-
-
     /* Behaviors */
     context.install = function(behavior) {
         context.surface().call(behavior);
@@ -219,6 +218,16 @@ window.iD = function () {
 
     context.uninstall = function(behavior) {
         context.surface().call(behavior.off);
+    };
+
+    /* Copy/Paste */
+    var copyIDs = [], copyGraph;
+    context.copyGraph = function() { return copyGraph; };
+    context.copyIDs = function(_) {
+        if (!arguments.length) return copyIDs;
+        copyIDs = _;
+        copyGraph = history.graph();
+        return context;
     };
 
     /* Projection */
@@ -315,7 +324,7 @@ window.iD = function () {
     return d3.rebind(context, dispatch, 'on');
 };
 
-iD.version = '1.6.1';
+iD.version = '1.7.0';
 
 (function() {
     var detected = {};

@@ -5,7 +5,7 @@
     "tags": {
         "landuse": "garages"
     },
-    "terms": [
-    ],
+    "searchable": false,
+    "terms": [],
     "name": "Garages"
 }

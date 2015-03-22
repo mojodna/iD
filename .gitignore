@@ -21,3 +21,4 @@ dist/presets.js
 js/id/core/area_keys.js
 node_modules
 transifex.auth
+npm-debug.log

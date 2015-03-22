@@ -11,6 +11,6 @@
     "tags": {
         "building": "terrace"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Row Houses"
 }

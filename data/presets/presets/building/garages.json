@@ -10,6 +10,6 @@
     "tags": {
         "building": "garages"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Garages"
 }

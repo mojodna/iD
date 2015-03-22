@@ -1,9 +1,45 @@
 <!DOCTYPE html>
-<html><head></head>
-    <body>
-        <script>
-            opener.authComplete(window.location.href);
-            window.close();
-        </script>
-    </body>
+<html>
+
+<head></head>
+
+<body>
+  <script>
+    var getQuery = function(queryString)
+    {
+      queryString = queryString || window.location.search.substr(1);
+      var value = {};
+      var queries = queryString.split('&').map(function(q)
+      {
+        var split = q.split('=');
+        value[decodeURIComponent(split[0])] = decodeURIComponent(split[
+          1]);
+      });
+      return value;
+    };
+
+    var updateUser = function(d3Library, callback)
+    {
+      d3Library.json("/status/get?version=2", function(error, json)
+      {
+        json.query = getQuery();
+        d3Library.xhr(
+            json.query.addUser
+          )
+          .header('Content-Type', 'application/json')
+          .post(JSON.stringify(json), function(e, d)
+          {
+            callback(e, d);
+          });
+      });
+    }
+
+    updateUser(parent.d3, function(err, res)
+    {
+      parent.authComplete(window.location.href);
+      parent.closeLogin();
+    });
+  </script>
+</body>
+
 </html>

@@ -2,9 +2,7 @@
     "icon": "food-service-black",
     "maki": "npmaki",
     "geometry": [
-        "point",
-        "vertex",
-        "line"
+        "point"
     ],
     "tags": {
         "amenity": "food_court"

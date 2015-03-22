@@ -9,5 +9,5 @@
     "historic": "building"
   },
   "name": "Historic Building",
-  "searchable": false
+  "searchable": true
 }

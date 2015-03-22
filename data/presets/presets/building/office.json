@@ -5,7 +5,7 @@
     "tags": {
         "building": "office"
     },
-    "searchable": false,
+    "searchable": true,
     "name": "Office",
     "icon": "commercial"
 }

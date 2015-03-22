@@ -20,12 +20,15 @@ iD.ui.Contributors = function(context) {
         userList.selectAll()
             .data(subset)
             .enter()
-            .append('a')
-            .attr('class', 'user-link')
-            .attr('href', function(d) { return context.connection().userURL(d); })
-            .attr('target', '_blank')
-            .attr('tabindex', -1)
-            .text(String);
+            .append('span')
+            .attr('style', 'color: #b28000;')
+            // .attr('class', 'user-link')
+            // .attr('href', function(d) { return context.connection().userURL(d); })
+            // .attr('target', '_blank')
+            // .attr('tabindex', -1)
+            .text(function(d, i) {
+              return d + (i === (subset.length - 1) ? '' : ', ');
+            });
 
         if (u.length > limit) {
             var count = d3.select(document.createElement('span'));
@@ -55,7 +58,7 @@ iD.ui.Contributors = function(context) {
     return function(selection) {
         update(selection);
 
-        context.connection().on('load.contributors', function() {
+        context.connection().on('loaded.contributors', function() {
             update(selection);
         });
 

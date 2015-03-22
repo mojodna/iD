@@ -32,6 +32,11 @@ iD.ui = function(context) {
             .attr('id', 'map')
             .call(map);
 
+        content.append('div')
+            .attr('class', 'map-in-map')
+            .style('display', 'none')
+            .call(iD.ui.MapInMap(context));
+
         bar.append('div')
             .attr('class', 'spacer col4');
 
@@ -39,7 +44,7 @@ iD.ui = function(context) {
             .attr('class', 'limiter');
 
         limiter.append('div')
-            .attr('class', 'button-wrap joined col1') // Change back to 3 when lines and areas are added.
+            .attr('class', 'button-wrap joined col3') // Change back to 3 when lines and areas are added.
             .call(iD.ui.Modes(context), limiter);
 
         limiter.append('div')
@@ -89,6 +94,10 @@ iD.ui = function(context) {
             .attr('class', 'fillD');
 
         footer.append('div')
+            .attr('class', 'api-status')
+            .call(iD.ui.Status(context));
+
+        footer.append('div')
             .attr('id', 'scale-block')
             .call(iD.ui.Scale(context));
 
@@ -105,14 +114,14 @@ iD.ui = function(context) {
             .append('a')
             .attr('target', '_blank')
             .attr('tabindex', -1)
-            .attr('href', 'http://github.com/nationalparkservice/iD')
+            .attr('href', 'http://github.com/nationalparkservice/places')
             .text(iD.version);
 
         var bugReport = aboutList.append('li')
             .append('a')
             .attr('target', '_blank')
             .attr('tabindex', -1)
-            .attr('href', 'https://github.com/nationalparkservice/iD/issues');
+            .attr('href', 'https://github.com/nationalparkservice/places/issues');
 
         bugReport.append('span')
             .attr('class','icon bug light');
@@ -131,10 +140,6 @@ iD.ui = function(context) {
             .attr('class', 'user-list')
             .attr('tabindex', -1)
             .call(iD.ui.Contributors(context));
-
-        footer.append('div')
-            .attr('class', 'api-status')
-            .call(iD.ui.Status(context));
 
         window.onbeforeunload = function() {
             return context.save();
