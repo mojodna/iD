@@ -85,11 +85,7 @@ window.onload = function() {
         selected = stored;
       }
 
-      // Selected is set now. You should unset it when the map is panned and zoomed. Should you also reset the select?
-
-
-
-      
+      // TODO: Selected is set now. You should unset it when the map is panned and zoomed. Should you also reset the select?
 
       select.innerHTML = select.innerHTML + options;
       select.onchange = function() {

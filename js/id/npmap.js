@@ -25,7 +25,7 @@ iD.npmap = {
                 -77.0228,
                 38.8944
             ],
-            defaultBackground: 'Esri',
+            defaultBackground: 'bing-imagery',
             zoom: 15.01
         },
         tags: {
