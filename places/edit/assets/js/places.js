@@ -7,8 +7,16 @@
 
 var iframe = document.getElementById('iframe'),
   initiatedByIframe = false,
-  initiatedByParent = false;
+  initiatedByParent = false,
+  selected = null;
 
+function supportsLocalStorage() {
+  try {
+    return 'localStorage' in window && window['localStorage'] !== null;
+  } catch (e) {
+    return false;
+  }
+}
 function switchTo() {
   var hash = window.location.hash.replace('#', ''),
     split;
@@ -19,7 +27,17 @@ function switchTo() {
     split = hash.split('&')[1].replace('map=', '').split('/');
   }
 
-  window.location.href = ' ../#' + Math.round(split[0]) + '/' + split[2] + '/' + split[1];
+  if (selected) {
+    if (supportsLocalStorage()) {
+      localStorage['places-editor:selected'] = selected;
+    }
+  } else {
+    if (supportsLocalStorage()) {
+      delete localStorage['places-editor:selected'];
+    }
+  }
+
+  window.location.href = ' ../view/#' + Math.round(split[0]) + '/' + split[2] + '/' + split[1];
 }
 
 window.onload = function() {
@@ -45,33 +63,62 @@ window.onload = function() {
   if (hash.length) {
     iframe.src = '../../dist/index.html' + hash;
   } else {
-    var initial = 'background=Bing&map=4/-99.00/39.00';
+    var initial = 'background=bing-imagery&map=4/-99.00/39.00';
 
     iframe.src = '../../dist/index.html#' + initial;
-    window.location.hash = 'background=Esri&map=' + initial;
+    window.location.hash = initial;
   }
 
   reqwest({
     success: function(parks) {
       var options = '',
-        select = document.getElementById('to-park');
+        select = document.getElementById('to-park'),
+        stored = (function() {
+          if (supportsLocalStorage() && localStorage['places-editor:selected']) {
+            return localStorage['places-editor:selected'];
+          } else {
+            return null;
+          }
+        })();
+
+      options += '<option disabled="disabled"' + (stored ? '' : ' selected') + '>Zoom to a Park...</option>'
 
       for (var park in parks) {
         if (park !== 'responseText') {
-          options += '<option>' + park + '</option>';
+          options += '<option' + (stored === park ? ' selected' : '') + '>' + park + '</option>';
         }
+      }
+
+      if (stored) {
+        selected = stored;
       }
 
       select.innerHTML = select.innerHTML + options;
       select.onchange = function() {
-        var contentWindow = document.getElementById('iframe').contentWindow,
-          park = parks[select.options[select.selectedIndex].text];
+        var alpha = select.options[select.selectedIndex].text,
+          contentWindow = document.getElementById('iframe').contentWindow,
+          park = parks[alpha],
+          extent = document.getElementById('iframe').contentWindow.iD.geo.Extent([park[3], park[2]], [park[0], park[1]]),
+          center = extent.center(),
+          hash = window.location.hash,
+          background = '';
 
-        var extent = document.getElementById('iframe').contentWindow.iD.geo.Extent([park[3], park[2]], [park[0], park[1]]),
-          center = extent.center();
+        if (hash) {
+          hash = hash.split('&');
 
-        iframe.src = '../../dist/index.html#background=' + 'Esri' + '&map=' + contentWindow.id.map().extentZoom(extent) + '/' + center[0] + '/' + center[1]
+          if (hash && hash[0]) {
+            hash = hash[0].split('=');
+
+            if (hash && hash[1]) {
+              background = hash[1];
+            }
+          }
+        }
+
+        selected = alpha;
+        iframe.src = '../../dist/index.html#background=' + background + '&map=' + contentWindow.id.map().extentZoom(extent) + '/' + center[0] + '/' + center[1]
       };
+      select.style.display = 'block';
     },
     type: 'jsonp',
     url: 'http://www.nps.gov/npmap/data/park-bounds.js?callback=callback'

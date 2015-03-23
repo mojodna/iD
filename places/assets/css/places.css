@@ -67,11 +67,6 @@ section {
   top: 150px;
   width: 100%;
 }
-  section iframe {
-    border: 0;
-    height: 100%;
-    width: 100%;
-  }
 footer {
   background-color: #000;
   border-top: 4px solid #918f7e;
@@ -130,4 +125,10 @@ footer {
   overflow: hidden;
   text-indent: -999em;
   text-align: left;
+}
+section iframe,
+#map {
+  border: 0;
+  height: 100%;
+  width: 100%;
 }

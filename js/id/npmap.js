@@ -15,7 +15,7 @@ iD.npmap = {
                 "nps:building_id",
                 "nps:fcat"
             ],
-            "line": false,
+            "line": true,
             "minZoom": 15,
             "point": true
         },
