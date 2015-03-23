@@ -139,11 +139,11 @@ strong {
 }
 
 a:visited, a {
-    color: #b28000;
+    color: #7092ff;
 }
 
 a:hover {
-    color: #b17f00;
+    color:#597be7;
 }
 
 /* Forms
@@ -237,7 +237,7 @@ ul li { list-style: none;}
     display: block;
     height: 30px;
     background-color: white;
-    color: #b28000;
+    color: #7092FF;
     cursor: pointer;
 }
 
@@ -362,7 +362,7 @@ button.disabled {
 }
 
 button.active {
-    background: #b28000;
+    background: #7092ff;
 }
 
 button.minor {
@@ -416,7 +416,7 @@ button.minor:hover {
 }
 
 button.action {
-    background: #b28000;
+    background: #7092ff;
     color: white;
 }
 
@@ -428,7 +428,7 @@ button[disabled].action:hover {
 
 button.action:focus,
 button.action:hover {
-    background: #b17f00;
+    background: #597BE7;
 }
 
 button.secondary-action {
@@ -831,11 +831,11 @@ a:hover .icon.out-link   { background-position: -500px -14px;}
 }
 
 .feature-list-item .entity-type {
-    color:#b28000;
+    color:#7092ff;
 }
 
 .feature-list-item:hover .entity-type {
-    color:#b17f00;
+    color:#597be7;
 }
 
 .feature-list-item .entity-name {
@@ -872,7 +872,7 @@ a:hover .icon.out-link   { background-position: -500px -14px;}
     background: #ececec;
 }
 
-.preset-icon,.preset-icon-npmaki {
+.preset-icon {
     position: absolute;
     top: 17px;
     left: 17px;
@@ -1287,7 +1287,7 @@ input[type=number] {
     display: block;
     background: white;
     padding: 5px 10px;
-    color: #b28000;
+    color: #7092FF;
 }
 
 .checkselect label:hover {
@@ -1742,7 +1742,7 @@ img.wiki-image {
 
 .map-control > button.active,
 .map-control > button.active:hover {
-    background: #b28000;
+    background: #7092ff;
 }
 
 /* Zoomer */
@@ -1790,7 +1790,7 @@ img.wiki-image {
     position: relative;
     height: 30px;
     background-color: white;
-    color: #b28000;
+    color: #7092FF;
 }
 
 .layer-list > li:first-child {
@@ -1846,11 +1846,11 @@ img.wiki-image {
     top: 5px;
     border-top:  4px solid transparent;
     border-bottom:  4px solid transparent;
-    border-left:  8px solid #b28000;
+    border-left:  8px solid #7092ff;
 }
 
 .hide-toggle.expanded:before {
-    border-top:  8px solid #b28000;
+    border-top:  8px solid #7092ff;
     border-bottom: 0;
     border-right:  4px solid transparent;
     border-left:  4px solid transparent;
@@ -1925,7 +1925,7 @@ img.wiki-image {
 .map-data-control li.selected .select-box,
 .background-control li:hover .select-box,
 .background-control li.selected .select-box {
-    border: 2px solid #b28000;
+    border: 2px solid #7092ff;
     background: rgba(89, 123, 231, .5);
     opacity: .5;
 }
@@ -2354,7 +2354,7 @@ img.wiki-image {
 .modal-actions button,
 .save-success a.button {
     font-weight: normal;
-    color: #b28000;
+    color: #7092FF;
     border-bottom: 1px solid #CCC;
     border-radius: 0;
     height: 160px;
@@ -2374,7 +2374,7 @@ img.wiki-image {
     content: '';
     height: 100px;
     width: 100%;
-    max-width: 230px;
+    max-width: 100px;
     margin: auto;
     margin-bottom: 10px;
     background:transparent url(img/sprite.svg) no-repeat 0 -220px;
@@ -2419,8 +2419,7 @@ img.wiki-image {
 }
 
 .save-success .button.osm:before {
-    background:transparent url(img/poi-logo.png) no-repeat;
-    width: 230px;
+    background-position: 0px -220px;
 }
 
 .save-success .button.twitter:before {
@@ -2472,7 +2471,7 @@ img.wiki-image {
     line-height: 12px;
     border-radius:24px;
     padding:5px;
-    background:#b28000;
+    background:#7092ff;
     color:#fff;
 }
 
@@ -2594,7 +2593,7 @@ img.wiki-image {
 }
 
 .notice .zoom-to:hover {
-    background: #f5d176;
+    background: #d8e1ff;
 }
 
 .notice .zoom-to .icon {

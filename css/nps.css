@@ -4,3 +4,76 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: Constantia,"Lucida Bright",Lucidabright,"Lucida Serif",Lucida,"DejaVu Serif","Bitstream Vera Serif","Liberation Serif",Georgia,serif;
 }
+
+/* iD Overrides */
+a:visited, a {
+  color: #b28000;
+}
+a:hover {
+  color: #b17f00;
+}
+.help-wrap .toc li a.selected,
+.layer-list li.active {
+  background: #f5d176;
+}
+.toggle-list > label {
+  color: #b28000;
+}
+button.active,
+button.action {
+  background: #b28000;
+}
+button.action:focus,
+button.action:hover {
+  background: #b17f00;
+}
+.feature-list-item .entity-type {
+  color: #b28000;
+}
+.feature-list-item:hover .entity-type {
+  color: #b17f00;
+}
+.preset-icon-npmaki {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  margin: auto;
+}
+.checkselect label:last-of-type {
+  color: #b28000;
+}
+.map-control > button.active,
+.map-control > button.active:hover {
+  background: #b28000;
+}
+.layer-list li {
+  color: #b28000;
+}
+.hide-toggle:before {
+  border-left:  8px solid #b28000;
+}
+.hide-toggle.expanded:before {
+  border-top:  8px solid #b28000;
+}
+.map-data-control li:hover .select-box,
+.map-data-control li.selected .select-box,
+.background-control li:hover .select-box,
+.background-control li.selected .select-box {
+  border: 2px solid #b28000;
+}
+.modal-actions button,
+.save-success a.button {
+  color: #b28000;
+}
+.save-success .button.osm:before {
+  /*
+  background:transparent url(img/poi-logo.png) no-repeat;
+  width: 230px;
+  */
+}
+.mode-save h3 small.count {
+  background: #b28000;
+}
+.notice .zoom-to:hover {
+  background: #f5d176;
+}
