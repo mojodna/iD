@@ -6,7 +6,6 @@ iD.ui.Help = function(context) {
         'help.editing_saving',
         'help.gps',
         'help.imagery',
-        'help.addresses',
         'help.inspector',
         'help.relations'];
 

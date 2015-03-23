@@ -88,7 +88,7 @@ dist/iD.min.js: dist/iD.js Makefile
 
 dist/iD.css: css/*.css dist/img/maki-sprite.png
 	@echo "----< $@ >----"
-	cat css/reset.css css/map.css css/app.css css/feature-icons.css> $@
+	cat css/reset.css css/map.css css/app.css css/feature-icons.css css/nps.css> $@
 
 node_modules/.install: package.json
 	@echo "----< $@ >----"

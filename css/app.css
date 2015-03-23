@@ -139,11 +139,11 @@ strong {
 }
 
 a:visited, a {
-    color: #7092ff;
+    color: #b28000;
 }
 
 a:hover {
-    color:#597be7;
+    color: #b17f00;
 }
 
 /* Forms
@@ -237,7 +237,7 @@ ul li { list-style: none;}
     display: block;
     height: 30px;
     background-color: white;
-    color: #7092FF;
+    color: #b28000;
     cursor: pointer;
 }
 
@@ -362,7 +362,7 @@ button.disabled {
 }
 
 button.active {
-    background: #7092ff;
+    background: #b28000;
 }
 
 button.minor {
@@ -416,7 +416,7 @@ button.minor:hover {
 }
 
 button.action {
-    background: #7092ff;
+    background: #b28000;
     color: white;
 }
 
@@ -428,7 +428,7 @@ button[disabled].action:hover {
 
 button.action:focus,
 button.action:hover {
-    background: #597BE7;
+    background: #b17f00;
 }
 
 button.secondary-action {
@@ -831,11 +831,11 @@ a:hover .icon.out-link   { background-position: -500px -14px;}
 }
 
 .feature-list-item .entity-type {
-    color:#7092ff;
+    color:#b28000;
 }
 
 .feature-list-item:hover .entity-type {
-    color:#597be7;
+    color:#b17f00;
 }
 
 .feature-list-item .entity-name {
@@ -1287,7 +1287,7 @@ input[type=number] {
     display: block;
     background: white;
     padding: 5px 10px;
-    color: #7092FF;
+    color: #b28000;
 }
 
 .checkselect label:hover {
@@ -1742,7 +1742,7 @@ img.wiki-image {
 
 .map-control > button.active,
 .map-control > button.active:hover {
-    background: #7092ff;
+    background: #b28000;
 }
 
 /* Zoomer */
@@ -1790,7 +1790,7 @@ img.wiki-image {
     position: relative;
     height: 30px;
     background-color: white;
-    color: #7092FF;
+    color: #b28000;
 }
 
 .layer-list > li:first-child {
@@ -1846,11 +1846,11 @@ img.wiki-image {
     top: 5px;
     border-top:  4px solid transparent;
     border-bottom:  4px solid transparent;
-    border-left:  8px solid #7092ff;
+    border-left:  8px solid #b28000;
 }
 
 .hide-toggle.expanded:before {
-    border-top:  8px solid #7092ff;
+    border-top:  8px solid #b28000;
     border-bottom: 0;
     border-right:  4px solid transparent;
     border-left:  4px solid transparent;
@@ -1925,7 +1925,7 @@ img.wiki-image {
 .map-data-control li.selected .select-box,
 .background-control li:hover .select-box,
 .background-control li.selected .select-box {
-    border: 2px solid #7092ff;
+    border: 2px solid #b28000;
     background: rgba(89, 123, 231, .5);
     opacity: .5;
 }
@@ -2354,7 +2354,7 @@ img.wiki-image {
 .modal-actions button,
 .save-success a.button {
     font-weight: normal;
-    color: #7092FF;
+    color: #b28000;
     border-bottom: 1px solid #CCC;
     border-radius: 0;
     height: 160px;
@@ -2472,7 +2472,7 @@ img.wiki-image {
     line-height: 12px;
     border-radius:24px;
     padding:5px;
-    background:#7092ff;
+    background:#b28000;
     color:#fff;
 }
 
@@ -2594,7 +2594,7 @@ img.wiki-image {
 }
 
 .notice .zoom-to:hover {
-    background: #d8e1ff;
+    background: #f5d176;
 }
 
 .notice .zoom-to .icon {

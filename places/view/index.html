@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="author" content="The NPMap Team">
-    <meta name="description" content="Build your Park's map.">
+    <meta name="author" content="NPMap">
+    <meta name="description" content="Improve your Park's map.">
     <meta name="viewport" content="initial-scale=1.0 maximum-scale=1.0">
-    <link href="http://www.nps.gov/npmap/bootstrap/dist/css/nps-bootstrap.min.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="http://www.nps.gov/npmap/bootstrap/3.3.2/dist/css/nps-bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/places.css">
     <link rel="shortcut icon" href="http://www.nps.gov/npmap/assets/img/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.nps.gov/npmap/assets/img/apple-touch-icon-144x144-precomposed.png">
@@ -30,7 +30,7 @@
       </div>
       <div class="toolbar">
         <div class="left" style="padding-top:8px;">
-          <button class="btn btn-primary" id="switch-to-viewer" onclick="switchTo();return false;">Switch to Viewer</button>
+          <button class="btn btn-primary" id="switch-to-editor" onclick="switchTo();return false;">Switch to Editor</button>
         </div>
         <div class="right">
           <select class="form-control" id="to-park" style="display:none;"></select>
@@ -38,17 +38,27 @@
       </div>
     </header>
     <section>
-      <iframe id="iframe"></iframe>
+      <div id="map"></div>
     </section>
     <footer>
       <ul>
-        <li class="home-link"><a href="http://insidemaps.nps.gov/" target="_blank">Home</a></li>
-        <li><a href="http://www.nps.gov/npmap/" target="_blank">About NPMap</a></li>
-        <li><a href="mailto:npmap@nps.gov">Contact Us</a></li>
-        <li><a href="https://github.com/nationalparkservice/places/issues/" target="_blank">Submit Feedback</a></li>
-        <li><a href="https://github.com/nationalparkservice/places/wiki/" target="_blank">View Help</a></li>
+        <li class="home-link">
+          <a href="http://insidemaps.nps.gov/" target="_blank">Home</a>
+        </li>
+        <li>
+          <a href="http://www.nps.gov/npmap/" target="_blank">About NPMap</a>
+        </li>
+        <li>
+          <a href="mailto:npmap@nps.gov">Contact Us</a>
+        </li>
+        <li>
+          <a href="https://github.com/nationalparkservice/places/issues/" target="_blank">Submit Feedback</a>
+        </li>
+        <li>
+          <a href="https://github.com/nationalparkservice/places/wiki/" target="_blank">View Help</a>
+        </li>
       </ul>
-      <span class="tag-line ir">Experience Your America</span>
+      <span class="ir tag-line">Experience Your America</span>
     </footer>
     <script src="assets/js/places.js"></script>
   </body>
