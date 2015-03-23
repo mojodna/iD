@@ -63,7 +63,7 @@ window.onload = function() {
   if (hash.length) {
     iframe.src = '../../dist/index.html' + hash;
   } else {
-    var initial = 'background=bing-imagery&map=4/-99.00/39.00';
+    var initial = 'background=bing-imagery&map=4.00/-99.00/39.00&overlays=locator';
 
     iframe.src = '../../dist/index.html#' + initial;
     window.location.hash = initial;
@@ -90,6 +90,7 @@ window.onload = function() {
       }
 
       if (stored) {
+        delete localStorage['places-editor:selected'];
         selected = stored;
       }
 
@@ -100,23 +101,31 @@ window.onload = function() {
           park = parks[alpha],
           extent = document.getElementById('iframe').contentWindow.iD.geo.Extent([park[3], park[2]], [park[0], park[1]]),
           center = extent.center(),
-          hash = window.location.hash,
-          background = '';
+          hash = window.location.hash.replace('#', ''),
+          indexMap = -1,
+          map = 'map=' + contentWindow.id.map().extentZoom(extent) + '/' + center[0] + '/' + center[1];
 
         if (hash) {
           hash = hash.split('&');
 
-          if (hash && hash[0]) {
-            hash = hash[0].split('=');
+          for (var i = 0; i < hash.length; i++) {
+            var split = hash[i].split('='),
+              prop = split[0];
 
-            if (hash && hash[1]) {
-              background = hash[1];
+            if (prop === 'map') {
+              indexMap = i;
+              break;
             }
           }
         }
 
-        selected = alpha;
-        iframe.src = '../../dist/index.html#background=' + background + '&map=' + contentWindow.id.map().extentZoom(extent) + '/' + center[0] + '/' + center[1]
+        if (indexMap) {
+          hash[indexMap] = map;
+        } else {
+          hash.push(map);
+        }
+
+        iframe.src = '../../dist/index.html#' + hash.join('&');
       };
       select.style.display = 'block';
     },

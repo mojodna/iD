@@ -56,7 +56,7 @@ function switchTo(to) {
     }
   }
 
-  window.location.href = '../edit/#background=bing-imagery&map=' + split[0] + '/' + split[2] + '/' + split[1];
+  window.location.href = '../edit/#background=bing-imagery&map=' + split[0] + '/' + split[2] + '/' + split[1] + '&overlays=locator';
 }
 
 window.onload = function() {
@@ -81,8 +81,15 @@ window.onload = function() {
       }
 
       if (stored) {
+        delete localStorage['places-editor:selected'];
         selected = stored;
       }
+
+      // Selected is set now. You should unset it when the map is panned and zoomed. Should you also reset the select?
+
+
+
+      
 
       select.innerHTML = select.innerHTML + options;
       select.onchange = function() {
