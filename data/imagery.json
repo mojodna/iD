@@ -1,72 +1,59 @@
 [
     {
-        "name": "Bing Imagery",
-        "type": "bing",
-        "description": "Satellite and aerial imagery.",
-        "hidden": true,
-        "template": "http://www.bing.com/maps/",
-        "scaleExtent": [
-            0,
-            22
-        ],
-        "id": "bing-imagery"
-    },
-    {
-        "name": "Esri Imagery",
-        "type": "tms",
-        "description": "Satellite and aerial imagery.",
-        "template": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{zoom}/{y}/{x}",
-        "scaleExtent": [
-            0,
-            22
-        ],
-        "id": "esri-imagery",
-        "default": true
-    },
-    {
-        "name": "Locator Overlay",
-        "type": "tms",
-        "description": "Shows major features to help orient you.",
-        "template": "http://{switch:a,b,c}.tiles.mapbox.com/v3/nps.gdipreks/{zoom}/{x}/{y}.png",
-        "scaleExtent": [
-            0,
-            26.01
-        ],
-        "terms_url": "http://www.mapbox.com/about/maps/",
-        "terms_text": "Terms & Feedback",
         "default": true,
-        "overlay": true
+        "description": "Satellite and aerial imagery.",
+        "id": "bing-imagery",
+        "name": "Bing Imagery",
+        "scaleExtent": [
+            0,
+            22
+        ],
+        "template": "http://www.bing.com/maps/",
+        "type": "bing"
     },
     {
-        "name": "Mapbox Satellite",
-        "type": "tms",
+        "default": true,
         "description": "Satellite and aerial imagery.",
-        "template": "http://{switch:a,b,c}.tiles.mapbox.com/v3/nps.map-n9nxe12m/{zoom}/{x}/{y}.png",
+        "id": "esri-imagery",
+        "name": "Esri Imagery",
+        "scaleExtent": [
+            0,
+            22
+        ],
+        "template": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{zoom}/{y}/{x}",
+        "type": "tms"
+    },
+    {
+        "default": true,
+        "description": "Satellite and aerial imagery.",
+        "id": "mapbox-satellite",
+        "name": "Mapbox Satellite",
         "scaleExtent": [
             0,
             19
         ],
-        "terms_url": "http://www.mapbox.com/about/maps/",
+        "template": "http://{switch:a,b,c}.tiles.mapbox.com/v3/nps.map-n9nxe12m/{zoom}/{x}/{y}.png",
         "terms_text": "Terms & Feedback",
-        "id": "mapbox-satellite",
-        "default": true
+        "terms_url": "http://www.mapbox.com/about/maps/",
+        "type": "tms"
     },
     {
-        "name": "MapQuest Open Aerial",
-        "type": "tms",
-        "template": "http://oatile{switch:1,2,3,4}.mqcdn.com/tiles/1.0.0/sat/{zoom}/{x}/{y}.png",
         "default": true,
-        "id": "mapquest-open-aerial"
+        "id": "mapquest-open-aerial",
+        "name": "MapQuest Open Aerial",
+        "template": "http://oatile{switch:1,2,3,4}.mqcdn.com/tiles/1.0.0/sat/{zoom}/{x}/{y}.png",
+        "type": "tms"
     },
     {
+        "default": true,
         "id": "usgs-naip",
         "name": "USGS NAIP",
-        "type": "tms",
-        "template": "http://navigator.er.usgs.gov/tiles/tilecache.cgi/1.0.0/naip/{zoom}/{x}/{y}.jpg",
         "scaleExtent": [
             12,
             20
         ],
+        "template": "http://navigator.er.usgs.gov/tiles/tilecache.cgi/1.0.0/naip/{zoom}/{x}/{y}.jpg",
+        "type": "tms",
         "polygon": [
             [
                 [
@@ -4217,10 +4204,11 @@
         ]
     },
     {
+        "default": true,
         "id": "usgs-topo",
         "name": "USGS Topographic Maps",
-        "type": "tms",
         "template": "http://{switch:a,b,c}.tile.openstreetmap.us/usgs_scanned_topos/{zoom}/{x}/{y}.png",
+        "type": "tms",
         "polygon": [
             [
                 [
@@ -4971,5 +4959,32 @@
                 ]
             ]
         ]
+    },
+    {
+        "default": true,
+        "description": "Shows major features to help orient you.",
+        "id": "locator",
+        "name": "Locator Overlay",
+        "overlay": true,
+        "scaleExtent": [
+            0,
+            26.01
+        ],
+        "template": "http://{switch:a,b,c}.tiles.mapbox.com/v3/nps.gdipreks/{zoom}/{x}/{y}.png",
+        "type": "tms"
+    },
+    {
+        "default": true,
+        "description": "Strava Heat",
+        "id": "strava-heat",
+        "name": "Strava Heat",
+        "overlay": true,
+        "scaleExtent": [
+            0,
+            17
+        ],
+        "sourcetag": "Strava Global Heat",
+        "template": "http://globalheat.strava.com/tiles/both/color4/{zoom}/{x}/{y}.png",
+        "type": "tms"
     }
 ]

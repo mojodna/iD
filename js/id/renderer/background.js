@@ -121,12 +121,7 @@ iD.Background = function(context) {
     };
 
     background.bing = function() {
-        //background.baseLayerSource(findSource('Bing'));
-        background.getDefault();
-    };
-
-    background.getDefault = function() {
-        background.baseLayerSource(findSource(iD.npmap.settings.map.defaultBackground));
+        background.baseLayerSource(findSource('bing-imagery'));
     };
 
     background.hasGpxLayer = function() {
@@ -247,22 +242,17 @@ iD.Background = function(context) {
         if (chosen && chosen.indexOf('custom:') === 0) {
             background.baseLayerSource(iD.BackgroundSource.Custom(chosen.replace(/^custom:/, '')));
         } else {
-            background.baseLayerSource(findSource(chosen) || findSource('Bing') || backgroundSources[1]);
+            background.baseLayerSource(findSource(chosen) || findSource('bing-imagery') || backgroundSources[1]);
         }
 
-        var locator = _.find(backgroundSources, function(d) {
-            return d.overlay && d.default;
-        });
+        if (q.overlays) {
+            var overlays = q.overlays.split(',');
 
-        if (locator) {
-            background.toggleOverlayLayer(locator);
+            overlays.forEach(function(overlay) {
+                overlay = findSource(overlay);
+                if (overlay) background.toggleOverlayLayer(overlay);
+            });
         }
-
-        var overlays = (q.overlays || '').split(',');
-        overlays.forEach(function(overlay) {
-            overlay = findSource(overlay);
-            if (overlay) background.toggleOverlayLayer(overlay);
-        });
 
         var gpx = q.gpx;
         if (gpx) {
