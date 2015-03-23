@@ -2,23 +2,23 @@ en:
   modes:
     add_area:
       title: Area
-      description: "Add buildings to the map."
-      tail: "Click on the map to start drawing a building."
+      description: "Add buildings, parking lots, or districts to the map."
+      tail: "Click on the map to start drawing an area."
     add_line:
       title: Line
-      description: "Add highways, streets, pedestrian paths, canals or other lines to the map."
-      tail: "Click on the map to start drawing a road, path, or route."
+      description: "Add roads and trails to the map."
+      tail: "Click on the map to start drawing a line."
     add_point:
       title: "Point"
       description: "Add visitor centers, entrance stations, picnic areas, or other points of interest to the map."
-      tail: "Click on the map to add a point of interest."
+      tail: "Click on the map to draw a point."
     browse:
       title: Browse
       description: Pan and zoom the map.
     draw_area:
       tail: "Click to add nodes to your area. Click the first node to finish the area."
     draw_line:
-      tail: "Click to add more nodes to the line. Click on other lines to connect to them, and double-click to end the line."
+      tail: "Click to add more nodes to the line. Click on other lines to connect to them and double-click to end the line."
   operations:
     add:
       annotation:
@@ -294,6 +294,16 @@ en:
     others:
       description: Others
       tooltip: "Everything Else"
+  area_fill:
+    wireframe:
+      description: No Fill (Wireframe)
+      tooltip: "Enabling wireframe mode makes it easy to see the background imagery."
+    partial:
+      description: Partial Fill
+      tooltip: "Areas are drawn with fill only around their inner edges. (Recommended for beginner mappers)"
+    full:
+      description: Full Fill
+      tooltip: "Areas are drawn fully filled."
   restore:
     heading: You have unsaved changes
     description: "Do you wish to restore unsaved changes from a previous editing session?"
@@ -384,19 +394,15 @@ en:
       # Help
 
       This is an editor for Places, the database used by the
-      National Park Service's basemap, [Park Tiles](http://www.nps.gov/npmap/park-tiles/),
-      and National Park Service websites and mobile applications. You can use this editor
+      National Park Service's basemap, [Park Tiles](http://www.nps.gov/npmap/tools/park-tiles/),
+      and National Park Service websites and mobile applications. You can use this editor to
       improve your Park's basemap.
 
       Edits you make on this map will be visible to everyone who uses
-      Places and/or Park Tiles. In order to make edits, you'll need a
-      [free OpenStreetMap account](https://www.openstreetmap.org/user/new).
+      Places and/or Park Tiles.
 
-      The [iD editor](http://ideditor.com/) is a collaborative project with [source
-      code available on GitHub](https://github.com/openstreetmap/iD). The National Park
-      Service maintains a forked version of iD with its [source code
-      available on GitHub](https://github.com/nationalparkservice/iD), as well. This is
-      the editor you are seeing here.
+      The Places Editor is a collaborative project with [source
+      code available on GitHub](https://github.com/nationalparkservce/iD).
     editing_saving: |
       # Editing & Saving
 
@@ -430,8 +436,8 @@ en:
       and improve upon.
 
       If you can't finish your edits in one sitting, you can leave the editor
-      window and come back (on the same browser and computer), and the
-      iD will offer to restore your work.
+      window and come back (on the same browser and computer), and
+      the Editor will offer to restore your work.
     gps: |
       # GPS
 
@@ -457,29 +463,15 @@ en:
       airplane flyovers, satellite views, and freely-compiled sources are available
       in the editor under the 'Background Settings' menu on the right.
 
-      By default a [Esri Maps](http://www.esri.com/) satellite layer is
+      By default a Bing Maps satellite layer is
       presented in the editor, but as you pan and zoom the map to new geographical
-      areas, new sources will become available. Some countries, like the United
-      States, France, and Denmark have very high-quality imagery available for some areas.
+      areas, new sources will become available.
 
       Imagery is sometimes offset from the map data because of a mistake on the
       imagery provider's side. If you see a lot of roads shifted from the background,
       don't immediately move them all to match the background. Instead you can adjust
       the imagery so that it matches the existing data by clicking 'Fix alignment' at
       the bottom of the Background Settings UI.
-    addresses: |
-      # Addresses
-
-      Addresses are some of the most useful information for the map.
-
-      Although addresses are often represented as parts of streets, in OpenStreetMap
-      they're recorded as attributes of buildings and places along streets.
-
-      You can add address information to places mapped as building outlines
-      as well as those mapped as single points. The optimal source of address
-      data is from an on-the-ground survey or personal knowledge - as with any
-      other feature, copying from commercial sources like Google Maps is strictly
-      forbidden.
     inspector: |
       # Using the Inspector
 
@@ -515,10 +507,10 @@ en:
     relations: |
       # Relations
 
-      A relation is a special type of feature in OpenStreetMap that groups together
+      A relation is a special type of feature that groups together
       other features. For example, two common types of relations are *route relations*,
       which group together sections of road that belong to a specific freeway or
-      highway, and *multipolygons*, which group together several lines that define
+      highway, and *multipolygons*, which group together several polygons that define
       a complex area (one with several pieces or holes in it like a donut).
 
       The group of features in a relation are called *members*. In the sidebar, you can
@@ -526,7 +518,7 @@ en:
       to select the it. When the relation is selected, you can see all of its
       members listed in the sidebar and highlighted on the map.
 
-      For the most part, iD will take care of maintaining relations automatically
+      For the most part, the Places Editor will take care of maintaining relations automatically
       while you edit. The main thing you should be aware of is that if you delete a
       section of road to redraw it more accurately, you should make sure that the
       new section is a member of the same relations as the original.
@@ -557,9 +549,9 @@ en:
     points:
       title: "Points"
       add: "Points can be used to represent features such as visitor centers, entrance stations, and campgrounds. They mark a specific location, and describe what's there. **Click the Point button to add a new point.**"
-      place: "Click to place the point on the map. The point we are adding is a Parking Lot. **Place the point at the corner of This Street and That Street**"
+      place: "Click to place the point on the map. The point we are adding is a parking lot. **Place the point at the corner of This Street and That Street**"
       place: "The point can be placed by clicking on the map. **Place the point in the parking lot.**"
-      search: "There are many different features that can be represented by points. The point you just added is a Parking Lot. **Search for 'Parking'**"
+      search: "There are many different features that can be represented by points. The point you just added is a parking lot. **Search for 'Parking'**"
       choose: "**Choose Parking from the list.**"
       describe: "The point is now marked as a parking lot. Using the feature editor, we can add more information about the feature. **Add a name**"
       close: "The feature editor can be closed by clicking on the close button. **Close the feature editor**"
@@ -577,7 +569,7 @@ en:
       describe: "**Add a name, and close the feature editor**"
     lines:
       title: "Lines"
-      add: "Lines are used to represent features such as roads, railroads and rivers. **Click the Line button to add a new line.**"
+      add: "Lines are used to represent features such as roads and trails. **Click the Line button to add a new line.**"
       start: "**Start the line by clicking on the end of the road.**"
       intersect: "Click to add more nodes to the line. You can drag the map while drawing if necessary. Roads, and many other types of lines, are part of a larger network. It is important for these lines to be connected properly in order for routing applications to work. **Click on Flower Street, to create an intersection connecting the two lines.**"
       finish: "Lines can be finished by clicking on the last node again. **Finish drawing the road.**"
