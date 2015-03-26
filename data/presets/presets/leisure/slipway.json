@@ -1,16 +1,23 @@
 {
     "icon": "boat-launch-black",
     "maki": "npmaki",
+    "fields": [
+        "description",
+        "seasons",
+        "images",
+        "fees"
+    ],
     "geometry": [
         "point"
     ],
     "terms": [
         "boat launch",
-        "boat ramp"
+        "boat ramp",
+        "slipway"
     ],
     "tags": {
         "leisure": "slipway"
     },
-    "name": "Boat Launch",
+    "name": "Boat Ramp",
     "searchable": true
 }

@@ -1,0 +1,10 @@
+{
+    "type": "array",
+    "key": "json:fees",
+    "label": "Fees",
+    "fields": [
+      "name": "Title",
+      "description": "Description",
+      "nps/price": "Cost"
+    ]
+}
