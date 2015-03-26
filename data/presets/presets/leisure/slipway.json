@@ -3,9 +3,7 @@
     "maki": "npmaki",
     "fields": [
         "description",
-        "seasons",
-        "images",
-        "fees"
+        "nps/fees"
     ],
     "geometry": [
         "point"
