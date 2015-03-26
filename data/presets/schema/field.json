@@ -3,6 +3,10 @@
     "description": "A reusable form element for presets",
     "type": "object",
     "properties": {
+        "fields": {
+            "description": "A list of fields that will be encoded into this object as JSON",
+            "type": "array"
+        },
         "key": {
             "description": "Tag key whose value is to be displayed",
             "type": "string"
@@ -50,6 +54,7 @@
             "enum": [
                 "access",
                 "address",
+                "array",
                 "check",
                 "combo",
                 "defaultcheck",
