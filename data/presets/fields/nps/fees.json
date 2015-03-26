@@ -3,8 +3,8 @@
     "key": "json:fees",
     "label": "Fees",
     "fields": [
-      "name": "Title",
-      "description": "Description",
-      "nps/price": "Cost"
+      {"name": "Title"},
+      {"description": "Description"},
+      {"nps/price": "Cost"}
     ]
 }
