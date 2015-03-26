@@ -1,5 +1,6 @@
 {
   "key": "price",
   "type": "number",
+  "label": "Cost",
   "placeholder": "Cost in US Dollars"
 }
