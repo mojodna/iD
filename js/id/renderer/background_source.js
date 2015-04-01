@@ -4,6 +4,7 @@ iD.BackgroundSource = function(data) {
         name = source.name;
 
     source.scaleExtent = data.scaleExtent || [0, 20];
+    source.overzoom = data.overzoom !== false;
 
     source.offset = function(_) {
         if (!arguments.length) return offset;
@@ -59,7 +60,7 @@ iD.BackgroundSource = function(data) {
     source.validZoom = function(z) {
         z = z + 2;
         return source.scaleExtent[0] <= z &&
-            (!source.isLocatorOverlay() || source.scaleExtent[1] > z);
+            (source.overzoom || source.scaleExtent[1] > z);
     };
 
     source.isLocatorOverlay = function() {
