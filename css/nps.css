@@ -77,3 +77,8 @@ button.action:hover {
 .notice .zoom-to:hover {
   background: #f5d176;
 }
+
+.form-field .json-wrap {
+    background-color: #e2e2e2;
+    padding: 10px;
+}
