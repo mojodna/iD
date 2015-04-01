@@ -5,7 +5,6 @@ iD.ui.preset.array = function(field, context) {
     wrap,
     formFields = [{}],
     hiddenInput,
-    inputArea,
     parsedObj = {},
     presets = [{}];
 
@@ -34,16 +33,6 @@ iD.ui.preset.array = function(field, context) {
     wrap = selection.append('div')
       .attr('class', 'json-wrap');
 
-    inputArea = wrap.selectAll('div').data(field.fields.map(function(fieldName) {
-        var returnValue = _.clone(iD.data.presets.fields[fieldName]);
-        returnValue.id = fieldName;
-        return returnValue;
-      })).enter()
-      .append('div')
-      .attr('class', function(subField) {
-        return 'form-field form-field-' + field.id + '/' + subField.id;
-      });
-
     hiddenInput = wrap.selectAll('.json-main')
       .data([0])
       .enter()
@@ -54,6 +43,72 @@ iD.ui.preset.array = function(field, context) {
       .attr('id', 'present-input-' + field.id)
       .attr('class', 'json-main');
 
+  }
+
+  function addEntries(tags) {
+    var dispFields = [];
+    for (var i = 0; i < tags.length; i++) {
+      dispFields.push(
+        field.fields.map(function(d) {
+          console.log(d);
+          var preset = _.clone(iD.data.presets.fields[d]);
+          console.log(preset);
+          // Functionify (or update) the placeholder
+          preset.placeholder = function() {
+            return iD.data.presets.fields[d].placeholder;
+          };
+          preset.index = i;
+          preset.id = field.id + '/' + d;
+          preset.input = iD.ui.preset[preset.type](preset, context)
+            .on('change', function(newValue) {
+              return change(preset.index, newValue);
+            });
+          preset.tags = tags[i];
+          // preset.key = preset.id;
+          return preset;
+        })
+      );
+    }
+
+    var diventer = wrap.selectAll('.json-wrap')
+      .data(dispFields)
+      .enter()
+      .append('div')
+      .attr('class', 'json-entry')
+      .selectAll('.json-entry')
+      .data(
+        function(d) {
+          return d;
+        })
+      .enter()
+      .append('div')
+      .attr('class', function(d) {
+        return 'form-field form-field-' + d.id;
+      });
+
+    diventer.insert('label', ':first-child')
+      .attr('class', 'form-label')
+      .text(function(d) {
+        return d.label;
+      });
+
+    diventer.each(function(f) {
+      f.input(d3.select(this));
+      f.input.tags(f.tags);
+    });
+
+
+
+    /*
+    insert('div', ':last-child')
+      .text(function(d) {
+        console.log(d3.selectAll(this));
+        iD.ui.preset[d.type](d, context)(d3.selectAll(this));
+        return null;
+      });
+    */
+
+    /*
     field.fields.map(function(fieldName) {
       var formFieldObj = getFormFieldObj(fieldName),
         preset;
@@ -82,22 +137,20 @@ iD.ui.preset.array = function(field, context) {
         presets[0][fieldName](formFieldObj);
         presets[0][fieldName]
           .on('change', change);
-
-        window.boatRamp = {
-          wrap: wrap,
-          hiddenInput: hiddenInput
-        };
       }
     });
+    */
+
   }
 
-  function change(newValue) {
+  function change(index, newValue) {
+    console.log('newValue', newValue);
     var key, t = {};
     if (!parsedObj) {
       parsedObj = [{}];
     }
     for (key in newValue) {
-      parsedObj[0][key] = newValue[key];
+      parsedObj[index][key] = newValue[key];
     }
     hiddenInput.attr('value', JSON.stringify(parsedObj));
     t[field.key] = hiddenInput.value();
@@ -118,19 +171,19 @@ iD.ui.preset.array = function(field, context) {
       return parsedObj;
     }
 
-    // TODO: Get arrays to work (remove the next line)
-    parsedObj = [parsedObj][0];
+    addEntries(parsedObj);
 
-    parsedObj.map(function(record /*, index*/ ) {
-      var key,
-        formFieldObj;
-      for (key in record) {
-        if (presets[0][key]) {
-          formFieldObj = presets[0][key];
-          formFieldObj.tags(record);
-        }
-      }
-    });
+    /*    parsedObj.map(function(record, index) {
+          var key,
+            formFieldObj;
+          for (key in record) {
+            if (presets[index][key]) {
+              formFieldObj = presets[index][key];
+              formFieldObj.tags(record);
+            }
+          }
+        });
+        */
   };
 
   jsonArray.focus = function() {
