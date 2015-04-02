@@ -3,31 +3,11 @@ iD.ui.preset.array = function(field, context) {
 
   var event = d3.dispatch('change'),
     wrap,
-    formFields = [{}],
     hiddenInput,
-    parsedObj = {},
-    presets = [{}];
-
-  function getFormFieldObj(fieldName) {
-    var returnValue;
-    if (wrap && fieldName) {
-      wrap.selectAll('div').selectAll('.form-field').map(function(formField) {
-        // This is a hack to allow us to use slashes in the class identifier
-        if (
-          formField.parentNode.className
-          .split(' ')
-          .indexOf('form-field-' + field.id + '/' + fieldName) >= 0
-        ) {
-          returnValue = d3.select(formField.parentNode);
-        }
-      });
-    }
-    return returnValue;
-  }
-
+    parsedObj = {};
 
   function jsonArray(selection) {
-    selection.selectAll('.json-wrap')
+     selection.selectAll('.json-wrap')
       .remove();
 
     wrap = selection.append('div')
@@ -45,29 +25,30 @@ iD.ui.preset.array = function(field, context) {
 
   }
 
-  function addEntries(tags) {
+  function matchFields(availFields, tags, index) {
+    return availFields.map(function(d) {
+      var preset = _.clone(iD.data.presets.fields[d]);
+      // Functionify (or update) the placeholder
+      preset.placeholder = function() {
+        return iD.data.presets.fields[d].placeholder;
+      };
+      preset.index = index;
+      preset.id = field.id + '/' + d;
+      preset.tags = tags;
+      preset.input = iD.ui.preset[preset.type](preset, context)
+        .on('change', function(newValue) {
+          return change(preset.index, newValue);
+        });
+      // preset.key = preset.id;
+      return preset;
+    });
+
+  }
+
+  function addEntries(tagArray) {
     var dispFields = [];
-    for (var i = 0; i < tags.length; i++) {
-      dispFields.push(
-        field.fields.map(function(d) {
-          console.log(d);
-          var preset = _.clone(iD.data.presets.fields[d]);
-          console.log(preset);
-          // Functionify (or update) the placeholder
-          preset.placeholder = function() {
-            return iD.data.presets.fields[d].placeholder;
-          };
-          preset.index = i;
-          preset.id = field.id + '/' + d;
-          preset.input = iD.ui.preset[preset.type](preset, context)
-            .on('change', function(newValue) {
-              return change(preset.index, newValue);
-            });
-          preset.tags = tags[i];
-          // preset.key = preset.id;
-          return preset;
-        })
-      );
+    for (var i = 0; i < tagArray.length; i++) {
+      dispFields.push(matchFields(field.fields, tagArray[i], i));
     }
 
     var diventer = wrap.selectAll('.json-wrap')
@@ -90,61 +71,27 @@ iD.ui.preset.array = function(field, context) {
       .attr('class', 'form-label')
       .text(function(d) {
         return d.label;
-      });
+      }).append('button')
+      .attr('class', 'minor remove')
+      .on('click', function(d) {
+        d3.event.preventDefault();
+        for (var tag in d.tags) {
+          if (tag === d.key || tag.match(new RegExp(d.key + ':([a-zA-Z_-]+)$'))) {
+            d.tags[tag] = '';
+          }
+        }
+        change(d.index, d.tags);
+      })
+      .append('span').attr('class', 'icon delete');
+
 
     diventer.each(function(f) {
-      f.input(d3.select(this));
-      f.input.tags(f.tags);
+        f.input(d3.select(this));
+        f.input.tags(f.tags, 0);
     });
-
-
-
-    /*
-    insert('div', ':last-child')
-      .text(function(d) {
-        console.log(d3.selectAll(this));
-        iD.ui.preset[d.type](d, context)(d3.selectAll(this));
-        return null;
-      });
-    */
-
-    /*
-    field.fields.map(function(fieldName) {
-      var formFieldObj = getFormFieldObj(fieldName),
-        preset;
-      if (formFieldObj) {
-        preset = _.clone(iD.data.presets.fields[fieldName]);
-        // Functionify (or update) the placeholder
-        preset.placeholder = function() {
-          return iD.data.presets.fields[fieldName].placeholder;
-        };
-        preset.id = field.id + '/' + fieldName;
-        preset.key = fieldName;
-
-        // Add the header
-        formFieldObj.selectAll('.form-label-button-wrap')
-          .data([preset.label])
-          .enter()
-          .insert('label', ':first-child')
-          .attr('class', 'form-label')
-          .text(function(d) {
-            return d;
-          });
-        // Add the preset
-        presets[0][fieldName] = iD.ui.preset[preset.type](preset, context);
-        formFields[0][fieldName] = formFieldObj;
-
-        presets[0][fieldName](formFieldObj);
-        presets[0][fieldName]
-          .on('change', change);
-      }
-    });
-    */
-
   }
 
   function change(index, newValue) {
-    console.log('newValue', newValue);
     var key, t = {};
     if (!parsedObj) {
       parsedObj = [{}];
@@ -157,7 +104,6 @@ iD.ui.preset.array = function(field, context) {
     event.change(t);
     return {};
   }
-
 
   jsonArray.tags = function(tags) {
     // Parse the tag or return none
@@ -172,28 +118,9 @@ iD.ui.preset.array = function(field, context) {
     }
 
     addEntries(parsedObj);
-
-    /*    parsedObj.map(function(record, index) {
-          var key,
-            formFieldObj;
-          for (key in record) {
-            if (presets[index][key]) {
-              formFieldObj = presets[index][key];
-              formFieldObj.tags(record);
-            }
-          }
-        });
-        */
   };
 
-  jsonArray.focus = function() {
-    /*
-    presets.map(function(input) {
-      console.log(input);
-      // input.node().focus();
-    });
-    */
-  };
+  jsonArray.focus = function() {};
 
   return d3.rebind(jsonArray, event, 'on');
 };
