@@ -159,12 +159,15 @@ iD.ui.preset.localized = function(field, context) {
                     .attr('class', 'localized-value');
             });
 
+            window.lastSel = selection;
         innerWrap
             .style('margin-top', '0px')
             .style('max-height', '0px')
             .style('opacity', '0')
             .transition()
-            .duration(200)
+            .duration(function(d){
+                return (!d.transition && d.transition !== 0) ? 200 : 0;
+            })
             .style('margin-top', '10px')
             .style('max-height', '240px')
             .style('opacity', '1')
@@ -176,7 +179,9 @@ iD.ui.preset.localized = function(field, context) {
 
         wraps.exit()
             .transition()
-            .duration(200)
+            .duration(function(d) {
+                return (!d.transition && d.transition !== 0) ? 200 : 0;
+            })
             .style('max-height','0px')
             .style('opacity', '0')
             .style('top','-10px')
@@ -194,7 +199,7 @@ iD.ui.preset.localized = function(field, context) {
             .value(function(d) { return d.value; });
     }
 
-    i.tags = function(tags) {
+    i.tags = function(tags, transition) {
 
         // Fetch translations from wikipedia
         if (tags.wikipedia && !wikiTitles) {
@@ -213,7 +218,7 @@ iD.ui.preset.localized = function(field, context) {
         for (var i in tags) {
             var m = i.match(new RegExp(field.key + ':([a-zA-Z_-]+)$'));
             if (m && m[1]) {
-                postfixed.push({ lang: m[1], value: tags[i]});
+                postfixed.push({ lang: m[1], value: tags[i], transition: transition});
             }
         }
 
