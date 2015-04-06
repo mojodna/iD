@@ -48,14 +48,21 @@ module.exports = function(o) {
                     ['top', screen.height / 2 - h / 2]].map(function(x) {
                         return x.join('=');
                     }).join(','),
-                    popup = function(popupLocation){
+                    popup,
+                    popupWindow;
+                    if (iD.npmap.settings.connection.oauth.external) {
+                      // External oauth requires cross domain, so we use a popup
                       // This will bring up a modal window where they can click
-                      // var loginClick = function() {
-                        // window.open(popupLocation, 'oauth_window', settings);
-                      // };
-                      o.context.container()
-                        .call(iD.ui.Login(o.context, popupLocation));
-                  };
+                      popupWindow = window.open('about:blank', 'oauth_window', settings);
+                      popup = function(popupLocation) {
+                        popupWindow.location = popupLocation;
+                      };
+                    } else {
+                      popup = function(popupLocation){
+                        o.context.container()
+                          .call(iD.ui.Login(o.context, popupLocation));
+                      };
+                    }
         }
 
         // try the oauth to see if we're really logged in
