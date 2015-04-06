@@ -53,9 +53,13 @@ module.exports = function(o) {
                     if (iD.npmap.settings.connection.oauth.external) {
                       // External oauth requires cross domain, so we use a popup
                       // This will bring up a modal window where they can click
-                      popupWindow = window.open('about:blank', 'oauth_window', settings);
+                      if (!oauth.authenticated()) {
+                        popupWindow = window.open('about:blank', 'oauth_window', settings);
+                      }
                       popup = function(popupLocation) {
-                        popupWindow.location = popupLocation;
+                        if (popupWindow) {
+                          popupWindow.location = popupLocation;
+                        }
                       };
                     } else {
                       popup = function(popupLocation){
