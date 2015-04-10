@@ -4968,7 +4968,7 @@ iD.data.imagery = [
         "overlay": true,
         "scaleExtent": [
             0,
-            17
+            20
         ],
         "template": "http://45.55.178.97:3003/tileLode/esriOverlay/{zoom}/{x}/{y}.png",
         "type": "tms"
@@ -4981,7 +4981,7 @@ iD.data.imagery = [
         "overlay": true,
         "scaleExtent": [
             0,
-            17
+            20
         ],
         "template": "http://45.55.178.97:3003/tileLode/tnmOverlay/{zoom}/{x}/{y}.png",
         "type": "tms"
