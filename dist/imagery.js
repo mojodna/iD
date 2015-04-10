@@ -4963,7 +4963,7 @@ iD.data.imagery = [
     {
         "default": true,
         "description": "Shows major features to help orient you.",
-        "id": "locator",
+        "id": "esri-roads-overlay",
         "name": "Esri Locator Overlay",
         "overlay": true,
         "scaleExtent": [
@@ -4976,7 +4976,7 @@ iD.data.imagery = [
     {
         "default": true,
         "description": "Shows public domain major features to help orient you.",
-        "id": "locator",
+        "id": "usgs-overlay",
         "name": "USGS Locator Overlay",
         "overlay": true,
         "scaleExtent": [
