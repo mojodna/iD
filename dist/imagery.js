@@ -4970,7 +4970,7 @@ iD.data.imagery = [
             0,
             17
         ],
-        "template": "http://45.55.178.97:3003/tileLode/esriOverlay/11/599/772/{zoom}/{x}/{y}.png",
+        "template": "http://45.55.178.97:3003/tileLode/esriOverlay/{zoom}/{x}/{y}.png",
         "type": "tms"
     }, 
     {
