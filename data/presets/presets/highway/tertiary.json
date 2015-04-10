@@ -16,6 +16,6 @@
         "highway": "tertiary"
     },
     "terms": [],
-    "searchable": false,
+    "searchable": true,
     "name": "Tertiary Road"
 }

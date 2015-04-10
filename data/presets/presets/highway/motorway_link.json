@@ -23,6 +23,6 @@
         "oneway": "yes"
     },
     "terms": ["ramp", "on ramp", "off ramp"],
-    "searchable": false,
+    "searchable": true,
     "name": "Motorway Link"
 }

@@ -16,6 +16,6 @@
         "highway": "trunk"
     },
     "terms": [],
-    "searchable": false,
+    "searchable": true,
     "name": "Trunk Road"
 }

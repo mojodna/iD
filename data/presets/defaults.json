@@ -5,7 +5,14 @@
   ],
   "line": [
     "highway/path",
-    "highway/bridleway"
+    "highway/bridleway",
+    "highway/motorway",
+    "highway/residential",
+    "highway/road",
+    "highway/secondary",
+    "highway/service",
+    "highway/tertiary",
+    "highway/trunk"
   ],
   "point": [
     "tourism/campground",

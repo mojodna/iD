@@ -18,7 +18,7 @@
     "tags": {
         "highway": "track"
     },
-    "searchable": false,
+    "searchable": true,
     "terms": [
         "woods road",
         "fire road"

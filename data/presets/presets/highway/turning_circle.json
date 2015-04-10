@@ -6,7 +6,7 @@
     "tags": {
         "highway": "turning_circle"
     },
-    "searchable": false,
+    "searchable": true,
     "terms": [
         "cul-de-sac"
     ],

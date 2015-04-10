@@ -16,6 +16,6 @@
         "highway": "motorway"
     },
     "terms": [],
-    "searchable": false,
+    "searchable": true,
     "name": "Motorway"
 }
