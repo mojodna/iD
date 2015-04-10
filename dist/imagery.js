@@ -4963,8 +4963,21 @@ iD.data.imagery = [
     {
         "default": true,
         "description": "Shows major features to help orient you.",
+        "id": "esri-boundaries-overlay",
+        "name": "Esri Boundaries Locator Overlay",
+        "overlay": true,
+        "scaleExtent": [
+            0,
+            20
+        ],
+        "template": "http://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{zoom}/{y}/{x}.png",
+        "type": "tms"
+    },
+    {
+        "default": true,
+        "description": "Shows major features to help orient you.",
         "id": "esri-roads-overlay",
-        "name": "Esri Locator Overlay",
+        "name": "Esri Roads Locator Overlay",
         "overlay": true,
         "scaleExtent": [
             0,
