@@ -4387,7 +4387,7 @@ iD.data.presets = {
                 "highway": "motorway"
             },
             "terms": [],
-            "searchable": false,
+            "searchable": true,
             "name": "Motorway"
         },
         "highway/motorway_junction": {
@@ -4400,7 +4400,7 @@ iD.data.presets = {
             "fields": [
                 "ref"
             ],
-            "searchable": false,
+            "searchable": true,
             "name": "Motorway Junction / Exit"
         },
         "highway/motorway_link": {
@@ -4432,7 +4432,7 @@ iD.data.presets = {
                 "on ramp",
                 "off ramp"
             ],
-            "searchable": false,
+            "searchable": true,
             "name": "Motorway Link"
         },
         "highway/path": {
@@ -4504,7 +4504,7 @@ iD.data.presets = {
                 "highway": "primary"
             },
             "terms": [],
-            "searchable": false,
+            "searchable": true,
             "name": "Primary Road"
         },
         "highway/primary_link": {
@@ -4523,7 +4523,7 @@ iD.data.presets = {
             "tags": {
                 "highway": "primary_link"
             },
-            "searchable": false,
+            "searchable": true,
             "terms": [
                 "ramp",
                 "on ramp",
@@ -4573,7 +4573,7 @@ iD.data.presets = {
                 "highway": "residential"
             },
             "terms": [],
-            "searchable": false,
+            "searchable": true,
             "name": "Residential Road"
         },
         "highway/rest_area": {
@@ -4607,7 +4607,7 @@ iD.data.presets = {
                 "highway": "road"
             },
             "terms": [],
-            "searchable": false,
+            "searchable": true,
             "name": "Unknown Road"
         },
         "highway/secondary": {
@@ -4628,7 +4628,7 @@ iD.data.presets = {
                 "highway": "secondary"
             },
             "terms": [],
-            "searchable": false,
+            "searchable": true,
             "name": "Secondary Road"
         },
         "highway/secondary_link": {
@@ -4647,7 +4647,7 @@ iD.data.presets = {
             "tags": {
                 "highway": "secondary_link"
             },
-            "searchable": false,
+            "searchable": true,
             "terms": [
                 "ramp",
                 "on ramp",
@@ -4672,7 +4672,7 @@ iD.data.presets = {
                 "highway": "service"
             },
             "terms": [],
-            "searchable": false,
+            "searchable": true,
             "name": "Service Road"
         },
         "highway/service/alley": {
@@ -4879,7 +4879,7 @@ iD.data.presets = {
                 "highway": "tertiary"
             },
             "terms": [],
-            "searchable": false,
+            "searchable": true,
             "name": "Tertiary Road"
         },
         "highway/tertiary_link": {
@@ -4898,7 +4898,7 @@ iD.data.presets = {
             "tags": {
                 "highway": "tertiary_link"
             },
-            "searchable": false,
+            "searchable": true,
             "terms": [
                 "ramp",
                 "on ramp",
@@ -4926,7 +4926,7 @@ iD.data.presets = {
             "tags": {
                 "highway": "track"
             },
-            "searchable": false,
+            "searchable": true,
             "terms": [
                 "woods road",
                 "fire road"
@@ -4945,7 +4945,7 @@ iD.data.presets = {
                 "stoplight",
                 "traffic light"
             ],
-            "searchable": false,
+            "searchable": true,
             "name": "Traffic Signals"
         },
         "highway/trailhead": {
@@ -4983,7 +4983,7 @@ iD.data.presets = {
                 "highway": "trunk"
             },
             "terms": [],
-            "searchable": false,
+            "searchable": true,
             "name": "Trunk Road"
         },
         "highway/trunk_link": {
@@ -5002,7 +5002,7 @@ iD.data.presets = {
             "tags": {
                 "highway": "trunk_link"
             },
-            "searchable": false,
+            "searchable": true,
             "terms": [
                 "ramp",
                 "on ramp",
@@ -5018,7 +5018,7 @@ iD.data.presets = {
             "tags": {
                 "highway": "turning_circle"
             },
-            "searchable": false,
+            "searchable": true,
             "terms": [
                 "cul-de-sac"
             ],
@@ -5040,7 +5040,7 @@ iD.data.presets = {
                 "highway": "unclassified"
             },
             "terms": [],
-            "searchable": false,
+            "searchable": true,
             "name": "Unclassified Road"
         },
         "historic": {
