@@ -4962,6 +4962,19 @@ iD.data.imagery = [
     },
     {
         "default": true,
+        "description": "Shows public domain major features to help orient you.",
+        "id": "locator",
+        "name": "USGS Locator Overlay",
+        "overlay": true,
+        "scaleExtent": [
+            0,
+            26.01
+        ],
+        "template": "http://45.55.178.97:3003/tileLode/tnmOverlay/{zoom}/{x}/{y}.png",
+        "type": "tms"
+    },    
+    {
+        "default": true,
         "description": "Shows major features to help orient you.",
         "id": "locator",
         "name": "Locator Overlay",
