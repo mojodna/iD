@@ -11,6 +11,7 @@ if (fs.existsSync(configFile)) {
   config = JSON.parse(fs.readFileSync(configFile));
   idSettings = config.iD;
   idSettings.settings.connection.oauth = {
+    external: config.oauth.external,
     url: idSettings.settings.connection.api,
     consumerKey: config.oauth.consumerKey,
     secret: config.oauth.consumerSecret
