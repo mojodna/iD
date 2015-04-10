@@ -1,0 +1,134 @@
+header {
+  background-color: #000;
+  color: white;
+  height: 150px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+  header .left, header .right {
+    height: 100px;
+  }
+  header .left {
+    float: left;
+    font-family: inherit;
+    font-size: 14px;
+    left: 0;
+    margin: 0;
+    padding: 15px 0 0 10px;
+    position: absolute;
+    right: 300px;
+  }
+    header .left h1 {
+      font-family: inherit;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    header .right {
+      float: right;
+    }
+      header .right h2 {
+        font-family: inherit;
+        font-size: 14px;
+        margin: 20px 80px 0 0;
+      }
+      header .right .arrowhead {
+        background: url(../img/arrowhead.png) no-repeat;
+        background: -webkit-image-set(url(../img/arrowhead.png) 1x,url(../img/arrowhead@2x.png) 2x) no-repeat;
+        height: 70px;
+        margin: 10px 10px 0 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 54px;
+      }
+  header .toolbar {
+    bottom: 0;
+    background-color: #44433b;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+    header .toolbar .right {
+      height: 50px;
+      margin: 10px 10px 0 0;
+    }
+      header .toolbar .right select {
+        height: 30px;
+        width: 300px;
+      }
+section {
+  bottom: 34px;
+  left: 0;
+  position: absolute;
+  top: 150px;
+  width: 100%;
+}
+footer {
+  background-color: #000;
+  border-top: 4px solid #918f7e;
+  bottom: 0;
+  height: 34px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+  footer ul {
+    display: block;
+    float: left;
+    list-style: none;
+    margin: 8px 0 3px 10px;
+    padding-left: 0;
+    position: relative;
+  }
+    footer ul li {
+      display: block;
+      float: left;
+      position: relative;
+    }
+      footer ul li a {
+        border-left: 1px solid #6a695c;
+        color: #fff;
+        display: block;
+        font-size: 11px;
+        margin-left: 7px;
+        padding-left: 7px;
+        text-decoration: none;
+      }
+      footer ul li a:hover {
+        color: #918f7e;
+        text-decoration: none;
+      }
+      footer ul li:first-child a {
+        border: 0;
+        margin: 0;
+      }
+      .home-link a {
+        background: url(../img/nps-arrowhead-small.jpg) no-repeat left;
+        padding-left: 14px;
+      }
+  footer .tag-line {
+    background: url(../img/experience-your-america.png) no-repeat left;
+    background: -webkit-image-set(url(../img/experience-your-america.png) 1x,url(../img/experience-your-america@2x.png) 2x) no-repeat left;
+    float: right;
+    height: 7px;
+    margin: 12px 10px 0 0;
+    width: 188px;
+  }
+.ir {
+  background-repeat: no-repeat;
+  direction: ltr;
+  display: block;
+  overflow: hidden;
+  text-indent: -999em;
+  text-align: left;
+}
+section iframe,
+#map {
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
