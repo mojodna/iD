@@ -41,12 +41,19 @@ function switchTo() {
 }
 
 window.onload = function() {
-  var hash = window.location.hash;
+  var hash = window.location.hash,
+    path;
 
   window.onhashchange = function() {
     if (!initiatedByIframe) {
+      path = '../dist/index.html' + this.location.hash;
       initiatedByParent = true;
-      iframe.src = '../../dist/index.html' + this.location.hash;
+
+      if (location.host.indexOf('nationalparkservice.github.io') === -1) {
+        path = '../' + path;
+      }
+
+      iframe.src = path;
       initiatedByParent = false;
     }
   };
@@ -61,11 +68,23 @@ window.onload = function() {
   };
 
   if (hash.length) {
-    iframe.src = '../../dist/index.html' + hash;
+    path = '../dist/index.html' + hash;
+
+    if (location.host.indexOf('nationalparkservice.github.io') === -1) {
+      path = '../' + path;
+    }
+
+    iframe.src = path;
   } else {
     var initial = 'background=bing-imagery&map=4.00/-99.00/39.00&overlays=locator';
 
-    iframe.src = '../../dist/index.html#' + initial;
+    path = '../dist/index.html#' + initial;
+
+    if (location.host.indexOf('nationalparkservice.github.io') === -1) {
+      path = '../' + path;
+    }
+
+    iframe.src = path;
     window.location.hash = initial;
   }
 
@@ -125,7 +144,13 @@ window.onload = function() {
           hash.push(map);
         }
 
-        iframe.src = '../../dist/index.html#' + hash.join('&');
+        path = '../dist/index.html#' + hash.join('&');
+
+        if (location.host.indexOf('nationalparkservice.github.io') === -1) {
+          path = '../' + path;
+        }
+
+        iframe.src = path;
       };
       select.style.display = 'block';
     },
