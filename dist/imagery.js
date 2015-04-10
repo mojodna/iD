@@ -4962,13 +4962,26 @@ iD.data.imagery = [
     },
     {
         "default": true,
+        "description": "Shows major features to help orient you.",
+        "id": "locator",
+        "name": "Esri Locator Overlay",
+        "overlay": true,
+        "scaleExtent": [
+            0,
+            17
+        ],
+        "template": "http://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{zoom}/{x}/{y}.png",
+        "type": "tms"
+    }, 
+    {
+        "default": true,
         "description": "Shows public domain major features to help orient you.",
         "id": "locator",
         "name": "USGS Locator Overlay",
         "overlay": true,
         "scaleExtent": [
             0,
-            26.01
+            17
         ],
         "template": "http://45.55.178.97:3003/tileLode/tnmOverlay/{zoom}/{x}/{y}.png",
         "type": "tms"
