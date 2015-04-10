@@ -17147,50 +17147,51 @@ iD.version = '1.7.0';
     iD.detect = function() { return detected; };
 })();
 iD.npmap = {
-   settings: {
-       connection: {
-           api: 'http://localhost',
-           oauth: {
-               url: 'http://localhost',
-               consumerKey: 'consumer_key',
-               secret: 'consumer_secret'
-           }
-       },
-      editing: {
-           area: true,
-           disabledFields: [
-             'nps:places_uuid',
-             'nps:building_id',
-             'nps:fcat'
-           ],
-           line: true,
-           minZoom: 15,
-           point: true
-       },
-       locationOverlayMaxZoom: 22,
-       map: {
-           center: [
-               -77.0228,
-               38.8944
-           ],
-           defaultBackground: 'bing-imagery',
-           zoom: 15.01
-       },
-       tags: {
-           disabledFields: [
-               'nps:building_id',
-               'nps:fcat',
-               'nps:places_id'
-           ],
-           uninterestingFields: [
-               'attribution',
-               'created_by',
-               'nps:unit_code',
-               'odbl',
-               'source'
-           ]
-       }
-   }
+    "settings": {
+        "connection": {
+            "api": "http://45.55.178.97",
+            "oauth": {
+                "external": true,
+                "url": "http://45.55.178.97",
+                "consumerKey": "CpIont3biEafgafInTYWkFlooQkcFLtGREu6yMG0",
+                "secret": "MFgSWe00v8EsddR9KI42uZZX61r2XL8JwEPxHY2p"
+            }
+        },
+        "editing": {
+            "area": true,
+            "disabledFields": [
+                "nps:places_uuid",
+                "nps:building_id",
+                "nps:fcat"
+            ],
+            "line": true,
+            "minZoom": 15,
+            "point": true
+        },
+        "locationOverlayMaxZoom": 22,
+        "map": {
+            "center": [
+                -77.0228,
+                38.8944
+            ],
+            "defaultBackground": "bing-imagery",
+            "zoom": 15.01
+        },
+        "tags": {
+            "disabledFields": [
+                "nps:building_id",
+                "nps:fcat",
+                "nps:places_id"
+            ],
+            "uninterestingFields": [
+                "attribution",
+                "created_by",
+                "nps:unit_code",
+                "odbl",
+                "source"
+            ]
+        }
+    }
 };
 iD.countryCode  = function() {
     var countryCode = {},
@@ -26713,6 +26714,165 @@ iD.GpxLayer = function(context) {
 
     return render;
 };
+iD.MapillaryLayer = function (context) {
+    var enable = false,
+        currentImage,
+        svg, div, request;
+
+    function show(image) {
+        svg.selectAll('g')
+            .classed('selected', function(d) {
+                return currentImage && d.key === currentImage.key;
+            });
+
+        div.classed('hidden', false)
+            .classed('temp', image !== currentImage);
+
+        div.selectAll('img')
+            .attr('src', 'https://d1cuyjsrcm0gby.cloudfront.net/' + image.key + '/thumb-320.jpg');
+
+        div.selectAll('a')
+            .attr('href', 'http://mapillary.com/map/im/' + image.key);
+    }
+
+    function hide() {
+        currentImage = undefined;
+
+        svg.selectAll('g')
+            .classed('selected', false);
+
+        div.classed('hidden', true);
+    }
+
+    function transform(image) {
+        var t = 'translate(' + context.projection(image.loc) + ')';
+        if (image.ca) t += 'rotate(' + image.ca + ',0,0)';
+        return t;
+    }
+
+    function render(selection) {
+        svg = selection.selectAll('svg')
+            .data([0]);
+
+        svg.enter().append('svg')
+            .on('click', function() {
+                var image = d3.event.target.__data__;
+                if (currentImage === image) {
+                    hide();
+                } else {
+                    currentImage = image;
+                    show(image);
+                }
+            })
+            .on('mouseover', function() {
+                show(d3.event.target.__data__);
+            })
+            .on('mouseout', function() {
+                if (currentImage) {
+                    show(currentImage);
+                } else {
+                    hide();
+                }
+            });
+
+        svg.style('display', enable ? 'block' : 'none');
+
+        div = context.container().selectAll('.mapillary-image')
+            .data([0]);
+
+        var enter = div.enter().append('div')
+            .attr('class', 'mapillary-image');
+
+        enter.append('button')
+            .on('click', hide)
+            .append('div')
+            .attr('class', 'icon close');
+
+        enter.append('img');
+
+        var link = enter.append('a')
+            .attr('class', 'link')
+            .attr('target', '_blank');
+
+        link.append('span')
+            .attr('class', 'icon icon-pre-text out-link');
+
+        link.append('span')
+            .text(t('mapillary.view_on_mapillary'));
+
+        if (!enable) {
+            hide();
+
+            svg.selectAll('g')
+                .remove();
+
+            return;
+        }
+
+        // Update existing images while waiting for new ones to load.
+        svg.selectAll('g')
+            .attr('transform', transform);
+
+        var extent = context.map().extent();
+
+        if (request)
+            request.abort();
+
+        request = d3.json('https://a.mapillary.com/v2/search/s/geojson?client_id=NzNRM2otQkR2SHJzaXJmNmdQWVQ0dzoxNjQ3MDY4ZTUxY2QzNGI2&min_lat=' +
+            extent[0][1] + '&max_lat=' + extent[1][1] + '&min_lon=' +
+            extent[0][0] + '&max_lon=' + extent[1][0] + '&max_results=100&geojson=true',
+            function (error, data) {
+                if (error) return;
+
+                var images = [];
+
+                for (var i = 0; i < data.features.length; i++) {
+                    var sequence = data.features[i];
+                    for (var j = 0; j < sequence.geometry.coordinates.length; j++) {
+                        images.push({
+                            key: sequence.properties.keys[j],
+                            ca: sequence.properties.cas[j],
+                            loc: sequence.geometry.coordinates[j]
+                        });
+                        if (images.length >= 1000) break;
+                    }
+                }
+
+                var g = svg.selectAll('g')
+                    .data(images, function(d) { return d.key; });
+
+                var enter = g.enter().append('g')
+                    .attr('class', 'image');
+
+                enter.append('path')
+                    .attr('d', 'M 0,-5 l 0,-20 l -5,30 l 10,0 l -5,-30');
+
+                enter.append('circle')
+                    .attr('dx', '0')
+                    .attr('dy', '0')
+                    .attr('r', '8');
+
+                g.attr('transform', transform);
+
+                g.exit()
+                    .remove();
+            });
+    }
+
+    render.enable = function(_) {
+        if (!arguments.length) return enable;
+        enable = _;
+        return render;
+    };
+
+    render.dimensions = function(_) {
+        if (!arguments.length) return svg.dimensions();
+        svg.dimensions(_);
+        return render;
+    };
+
+    return render;
+};
 iD.Map = function(context) {
     var dimensions = [1, 1],
         dispatch = d3.dispatch('move', 'drawn'),
@@ -27165,165 +27325,6 @@ iD.Map = function(context) {
     };
 
     return d3.rebind(map, dispatch, 'on');
-};
-iD.MapillaryLayer = function (context) {
-    var enable = false,
-        currentImage,
-        svg, div, request;
-
-    function show(image) {
-        svg.selectAll('g')
-            .classed('selected', function(d) {
-                return currentImage && d.key === currentImage.key;
-            });
-
-        div.classed('hidden', false)
-            .classed('temp', image !== currentImage);
-
-        div.selectAll('img')
-            .attr('src', 'https://d1cuyjsrcm0gby.cloudfront.net/' + image.key + '/thumb-320.jpg');
-
-        div.selectAll('a')
-            .attr('href', 'http://mapillary.com/map/im/' + image.key);
-    }
-
-    function hide() {
-        currentImage = undefined;
-
-        svg.selectAll('g')
-            .classed('selected', false);
-
-        div.classed('hidden', true);
-    }
-
-    function transform(image) {
-        var t = 'translate(' + context.projection(image.loc) + ')';
-        if (image.ca) t += 'rotate(' + image.ca + ',0,0)';
-        return t;
-    }
-
-    function render(selection) {
-        svg = selection.selectAll('svg')
-            .data([0]);
-
-        svg.enter().append('svg')
-            .on('click', function() {
-                var image = d3.event.target.__data__;
-                if (currentImage === image) {
-                    hide();
-                } else {
-                    currentImage = image;
-                    show(image);
-                }
-            })
-            .on('mouseover', function() {
-                show(d3.event.target.__data__);
-            })
-            .on('mouseout', function() {
-                if (currentImage) {
-                    show(currentImage);
-                } else {
-                    hide();
-                }
-            });
-
-        svg.style('display', enable ? 'block' : 'none');
-
-        div = context.container().selectAll('.mapillary-image')
-            .data([0]);
-
-        var enter = div.enter().append('div')
-            .attr('class', 'mapillary-image');
-
-        enter.append('button')
-            .on('click', hide)
-            .append('div')
-            .attr('class', 'icon close');
-
-        enter.append('img');
-
-        var link = enter.append('a')
-            .attr('class', 'link')
-            .attr('target', '_blank');
-
-        link.append('span')
-            .attr('class', 'icon icon-pre-text out-link');
-
-        link.append('span')
-            .text(t('mapillary.view_on_mapillary'));
-
-        if (!enable) {
-            hide();
-
-            svg.selectAll('g')
-                .remove();
-
-            return;
-        }
-
-        // Update existing images while waiting for new ones to load.
-        svg.selectAll('g')
-            .attr('transform', transform);
-
-        var extent = context.map().extent();
-
-        if (request)
-            request.abort();
-
-        request = d3.json('https://a.mapillary.com/v2/search/s/geojson?client_id=NzNRM2otQkR2SHJzaXJmNmdQWVQ0dzoxNjQ3MDY4ZTUxY2QzNGI2&min_lat=' +
-            extent[0][1] + '&max_lat=' + extent[1][1] + '&min_lon=' +
-            extent[0][0] + '&max_lon=' + extent[1][0] + '&max_results=100&geojson=true',
-            function (error, data) {
-                if (error) return;
-
-                var images = [];
-
-                for (var i = 0; i < data.features.length; i++) {
-                    var sequence = data.features[i];
-                    for (var j = 0; j < sequence.geometry.coordinates.length; j++) {
-                        images.push({
-                            key: sequence.properties.keys[j],
-                            ca: sequence.properties.cas[j],
-                            loc: sequence.geometry.coordinates[j]
-                        });
-                        if (images.length >= 1000) break;
-                    }
-                }
-
-                var g = svg.selectAll('g')
-                    .data(images, function(d) { return d.key; });
-
-                var enter = g.enter().append('g')
-                    .attr('class', 'image');
-
-                enter.append('path')
-                    .attr('d', 'M 0,-5 l 0,-20 l -5,30 l 10,0 l -5,-30');
-
-                enter.append('circle')
-                    .attr('dx', '0')
-                    .attr('dy', '0')
-                    .attr('r', '8');
-
-                g.attr('transform', transform);
-
-                g.exit()
-                    .remove();
-            });
-    }
-
-    render.enable = function(_) {
-        if (!arguments.length) return enable;
-        enable = _;
-        return render;
-    };
-
-    render.dimensions = function(_) {
-        if (!arguments.length) return svg.dimensions();
-        svg.dimensions(_);
-        return render;
-    };
-
-    return render;
 };
 iD.TileLayer = function() {
     var tileSize = 256,
@@ -32017,6 +32018,66 @@ iD.ui.Notice = function(context) {
         disableTooHigh();
     };
 };
+iD.ui.PresetIcon = function() {
+    var preset, geometry;
+
+    function presetIcon(selection) {
+        selection.each(setup);
+    }
+
+    function setup() {
+        var selection = d3.select(this),
+            p = preset.apply(this, arguments),
+            geom = geometry.apply(this, arguments);
+
+        var $fill = selection.selectAll('.preset-icon-fill')
+            .data([0]);
+
+        $fill.enter().append('div');
+
+        $fill.attr('class', function() {
+            var s = 'preset-icon-fill preset-icon-fill-' + geom;
+            for (var i in p.tags) {
+                s += ' tag-' + i + ' tag-' + i + '-' + p.tags[i];
+            }
+            return s;
+        });
+
+        var $icon = selection.selectAll('.preset-icon,.preset-icon-npmaki')
+            .data([0]);
+
+        $icon.enter().append('div');
+
+        $icon.attr('class', function() {
+            var icon = p.icon || (geom === 'line' ? 'other-line' : 'marker-stroked'),
+                klass = 'feature-' + icon + ' preset-icon' + (p.maki && p.maki !== 'maki' ? '-' + p.maki : '');
+
+            var featureicon = iD.data.featureIcons[icon];
+            if (featureicon && featureicon[geom]) {
+                klass += ' preset-icon-' + geom;
+            } else if (icon === 'multipolygon') {
+                // Special case (geometry === 'area')
+                klass += ' preset-icon-relation';
+            }
+
+            return klass;
+        });
+    }
+
+    presetIcon.preset = function(_) {
+        if (!arguments.length) return preset;
+        preset = d3.functor(_);
+        return presetIcon;
+    };
+
+    presetIcon.geometry = function(_) {
+        if (!arguments.length) return geometry;
+        geometry = d3.functor(_);
+        return presetIcon;
+    };
+
+    return presetIcon;
+};
 iD.ui.preset = function(context) {
     var event = d3.dispatch('change'),
         state,
@@ -32266,66 +32327,6 @@ iD.ui.preset = function(context) {
     };
 
     return d3.rebind(presets, event, 'on');
-};
-iD.ui.PresetIcon = function() {
-    var preset, geometry;
-
-    function presetIcon(selection) {
-        selection.each(setup);
-    }
-
-    function setup() {
-        var selection = d3.select(this),
-            p = preset.apply(this, arguments),
-            geom = geometry.apply(this, arguments);
-
-        var $fill = selection.selectAll('.preset-icon-fill')
-            .data([0]);
-
-        $fill.enter().append('div');
-
-        $fill.attr('class', function() {
-            var s = 'preset-icon-fill preset-icon-fill-' + geom;
-            for (var i in p.tags) {
-                s += ' tag-' + i + ' tag-' + i + '-' + p.tags[i];
-            }
-            return s;
-        });
-
-        var $icon = selection.selectAll('.preset-icon,.preset-icon-npmaki')
-            .data([0]);
-
-        $icon.enter().append('div');
-
-        $icon.attr('class', function() {
-            var icon = p.icon || (geom === 'line' ? 'other-line' : 'marker-stroked'),
-                klass = 'feature-' + icon + ' preset-icon' + (p.maki && p.maki !== 'maki' ? '-' + p.maki : '');
-
-            var featureicon = iD.data.featureIcons[icon];
-            if (featureicon && featureicon[geom]) {
-                klass += ' preset-icon-' + geom;
-            } else if (icon === 'multipolygon') {
-                // Special case (geometry === 'area')
-                klass += ' preset-icon-relation';
-            }
-
-            return klass;
-        });
-    }
-
-    presetIcon.preset = function(_) {
-        if (!arguments.length) return preset;
-        preset = d3.functor(_);
-        return presetIcon;
-    };
-
-    presetIcon.geometry = function(_) {
-        if (!arguments.length) return geometry;
-        geometry = d3.functor(_);
-        return presetIcon;
-    };
-
-    return presetIcon;
 };
 iD.ui.PresetList = function(context) {
     var event = d3.dispatch('choose'),
