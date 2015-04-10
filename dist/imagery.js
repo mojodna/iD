@@ -4988,19 +4988,6 @@ iD.data.imagery = [
     },    
     {
         "default": true,
-        "description": "Shows major features to help orient you.",
-        "id": "locator",
-        "name": "Locator Overlay",
-        "overlay": true,
-        "scaleExtent": [
-            0,
-            26.01
-        ],
-        "template": "http://{switch:a,b,c}.tiles.mapbox.com/v3/nps.gdipreks/{zoom}/{x}/{y}.png",
-        "type": "tms"
-    },
-    {
-        "default": true,
         "description": "Strava Heat",
         "id": "strava-heat",
         "name": "Strava Heat",
