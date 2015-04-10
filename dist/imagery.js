@@ -4970,7 +4970,7 @@ iD.data.imagery = [
             0,
             17
         ],
-        "template": "http://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{zoom}/{x}/{y}.png",
+        "template": "http://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{zoom}/{y}/{x}.png",
         "type": "tms"
     }, 
     {
