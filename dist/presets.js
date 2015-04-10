@@ -4400,7 +4400,7 @@ iD.data.presets = {
             "fields": [
                 "ref"
             ],
-            "searchable": true,
+            "searchable": false,
             "name": "Motorway Junction / Exit"
         },
         "highway/motorway_link": {
@@ -10923,7 +10923,14 @@ iD.data.presets = {
         ],
         "line": [
             "highway/path",
-            "highway/bridleway"
+            "highway/bridleway",
+            "highway/motorway",
+            "highway/residential",
+            "highway/road",
+            "highway/secondary",
+            "highway/service",
+            "highway/tertiary",
+            "highway/trunk"
         ],
         "point": [
             "tourism/campground",
