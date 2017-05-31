@@ -1268,6 +1268,9 @@
                         }
                     }
                 },
+                "damage": {
+                    "label": "Building Damage"
+                },
                 "date": {
                     "label": "Date"
                 },
@@ -3059,6 +3062,10 @@
                     "name": "Winery",
                     "terms": ""
                 },
+                "damage": {
+                    "name": "Building Damage",
+                    "terms": ""
+                },
                 "embankment": {
                     "name": "Embankment",
                     "terms": ""
@@ -4100,7 +4107,7 @@
                     "terms": ""
                 },
                 "point": {
-                    "name": "Point",
+                    "name": "Assess Damage",
                     "terms": ""
                 },
                 "power/sub_station": {

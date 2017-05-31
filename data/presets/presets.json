@@ -3306,9 +3306,8 @@
         "building": {
             "icon": "home",
             "fields": [
-                "building",
-                "levels",
-                "address"
+                "damage",
+                "building"
             ],
             "geometry": [
                 "point",
@@ -4825,6 +4824,18 @@
                 "craft": "winery"
             },
             "name": "Winery"
+        },
+        "damage": {
+            "fields": [
+                "damage"
+            ],
+            "geometry": [
+                "point"
+            ],
+            "tags": {},
+            "matchScore": 0.6,
+            "terms": [],
+            "name": "Building Damage"
         },
         "embankment": {
             "geometry": [
@@ -9697,7 +9708,10 @@
             "name": "Village"
         },
         "point": {
-            "name": "Point",
+            "name": "Assess Damage",
+            "fields": [
+                "damage"
+            ],
             "tags": {},
             "geometry": [
                 "point"

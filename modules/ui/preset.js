@@ -103,9 +103,10 @@ export function uiPreset(context) {
 
             fieldsArr = [];
 
-            if (presets.field('name')) {
-                fieldsArr.push(UIField(presets.field('name'), entity));
-            }
+            // removing to not show name field
+            // if (presets.field('name')) {
+            //     fieldsArr.push(UIField(presets.field('name'), entity));
+            // }
 
             preset.fields.forEach(function(field) {
                 if (field.matchGeometry(geometry)) {

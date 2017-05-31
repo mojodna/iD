@@ -1,0 +1,12 @@
+{
+    "fields": [
+        "damage"
+    ],
+    "geometry": [
+        "point"
+    ],
+    "tags": {},
+    "matchScore": 0.6,
+    "terms": [],
+    "name": "Building Damage"
+}

@@ -1,5 +1,8 @@
 {
-    "name": "Point",
+    "name": "Assess Damage",
+    "fields": [
+        "damage"
+    ],
     "tags": {},
     "geometry": ["point"],
     "matchScore": 0.1

@@ -536,6 +536,16 @@
                 }
             }
         },
+        "damage": {
+            "key": "damage",
+            "type": "combo",
+            "label": "Building Damage",
+            "options": [
+                "none",
+                "some",
+                "destroyed"
+            ]
+        },
         "date": {
             "key": "date",
             "type": "check",

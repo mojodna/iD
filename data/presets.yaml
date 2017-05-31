@@ -406,6 +406,9 @@ en:
         types:
           'cycleway:left': Left side
           'cycleway:right': Right side
+      damage:
+        # damage=*
+        label: Building Damage
       date:
         # date=*
         label: Date
@@ -2429,6 +2432,9 @@ en:
         # craft=winery
         name: Winery
         terms: '<translate with synonyms or related terms for ''Winery'', separated by commas>'
+      damage:
+        name: Building Damage
+        terms: '<translate with synonyms or related terms for ''Building Damage'', separated by commas>'
       embankment:
         # embankment=yes
         name: Embankment
@@ -3586,8 +3592,8 @@ en:
         name: Village
         terms: '<translate with synonyms or related terms for ''Village'', separated by commas>'
       point:
-        name: Point
-        terms: '<translate with synonyms or related terms for ''Point'', separated by commas>'
+        name: Assess Damage
+        terms: '<translate with synonyms or related terms for ''Assess Damage'', separated by commas>'
       power:
         # power=*
         name: Power
