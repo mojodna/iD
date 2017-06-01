@@ -92,10 +92,10 @@ export function uiInit(context) {
         var limiter = bar.append('div')
             .attr('class', 'limiter');
 
-        limiter
-            .append('div')
-            .attr('class', 'button-wrap joined col3')
-            .call(uiModes(context), limiter);
+        // limiter
+        //     .append('div')
+        //     .attr('class', 'button-wrap joined col3')
+        //     .call(uiModes(context), limiter);
 
         limiter
             .append('div')
