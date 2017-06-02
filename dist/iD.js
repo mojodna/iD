@@ -49038,6 +49038,7 @@ function svgTagClasses() {
             'razed', 'demolished', 'obliterated'
         ],
         secondaries = [
+            'damage',
             'oneway', 'bridge', 'tunnel', 'embankment', 'cutting', 'barrier',
             'surface', 'tracktype', 'crossing'
         ],
