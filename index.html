@@ -7,6 +7,57 @@
         <meta name='viewport' content='initial-scale=1.0 maximum-scale=1.0'/>
         <meta name='apple-mobile-web-app-capable' content='yes'/>
         <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'/>
+
+        <style>
+
+        /* custom styles */
+        .preset-icon-fill-point {
+            cursor: inherit;
+            height: 100%;
+            width: 100%;
+        }
+
+        .node.tag-damage-none path.stroke {
+            fill: #80ff80;
+        }
+        .node.tag-damage-none use {
+            fill: #008000;
+        }
+        .preset-icon-fill.tag-damage-none {
+            background-color: #80ff80;
+        }
+        .preset-icon-fill.tag-damage-none + .preset-icon use {
+            fill: #008000;
+        }
+
+        .node.tag-damage-some path.stroke {
+            fill: #ffff80;
+        }
+        .node.tag-damage-some use {
+            fill: #806000;
+        }
+        .preset-icon-fill.tag-damage-some {
+            background-color: #ffff80;
+        }
+        .preset-icon-fill.tag-damage-some + .preset-icon use {
+            fill: #806000;
+        }
+
+        .node.tag-damage-destroyed path.stroke {
+            fill: #ff8080;
+        }
+        .node.tag-damage-destroyed use {
+            fill: #800000;
+        }
+        .preset-icon-fill.tag-damage-destroyed {
+            background-color: #ff8080;
+        }
+        .preset-icon-fill.tag-damage-destroyed + .preset-icon use {
+            fill: #800000;
+        }
+
+        </style>
+
         <script src='dist/iD.js'></script>
     </head>
     <body>
@@ -17,7 +68,7 @@
             .assetPath('dist/');
 
         //
-        // override presets
+        // custom presets
         //
         iD.data.presets = {
 
@@ -46,25 +97,29 @@
                     "geometry": ["relation"],
                     "searchable": false
                 },
+
                 "point": {
-                    "name": "Building - Unspecified",
+                    "name": "Assess Damage",
                     "tags": {},
                     "geometry": ["point"],
                     "fields": ["damage"]
                 },
                 "building_no_damage": {
+                    "icon": "home",
                     "name": "Building - No Damage",
                     "tags": { "damage": "none" },
                     "geometry": ["point"],
                     "fields": ["damage"]
                 },
                 "building_some_damage": {
+                    "icon": "home",
                     "name": "Building - Some Damage",
                     "tags": { "damage": "some" },
                     "geometry": ["point"],
                     "fields": ["damage"]
                 },
                 "building_destroyed": {
+                    "icon": "home",
                     "name": "Building - Destroyed",
                     "tags": { "damage": "destroyed" },
                     "geometry": ["point"],
