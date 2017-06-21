@@ -233,16 +233,7 @@ export function modeDragNode(context) {
         context.surface().selectAll(utilEntitySelector(activeIDs))
             .classed('active', true);
     }
-
-
-    var behavior = behaviorDrag()
-        .selector('g.node, g.point, g.midpoint')
-        .surface(d3.select('#map').node())
-        .origin(origin)
-        .on('start', start)
-        .on('move', move)
-        .on('end', end);
-
+    
 
     mode.enter = function() {
         context.install(hover);
