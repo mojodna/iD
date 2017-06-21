@@ -110,6 +110,22 @@
                 ["street", "housenumber"],
                 ["postcode", "district", "city"]
             ]
+        },
+        {
+            "countryCodes": ["ua"],
+            "format": [
+                ["housenumber", "postcode"],
+                ["street"]
+            ]
+        },
+        {
+            "countryCodes": ["cn"],
+            "format": [
+                ["postcode", "province"],
+                ["city"],
+                ["district"],
+                ["street", "housenumber"]
+            ]
         }
     ]
 }

@@ -103,9 +103,10 @@ export function uiPreset(context) {
 
             fieldsArr = [];
 
-            if (presets.field('name')) {
-                fieldsArr.push(UIField(presets.field('name'), entity));
-            }
+            // removing to not show name field
+            // if (presets.field('name')) {
+            //     fieldsArr.push(UIField(presets.field('name'), entity));
+            // }
 
             preset.fields.forEach(function(field) {
                 if (field.matchGeometry(geometry)) {
@@ -188,7 +189,11 @@ export function uiPreset(context) {
             .classed('modified', function(field) { return field.modified(); })
             .classed('present', function(field) { return field.present(); })
             .each(function(field) {
-                var reference = uiTagReference(field.reference || { key: field.key }, context);
+                var referenceKey = field.key;
+                if (field.type === 'multiCombo') {   // lookup key without the trailing ':'
+                    referenceKey = referenceKey.replace(/:$/, '');
+                }
+                var reference = uiTagReference(field.reference || { key: referenceKey }, context);
 
                 if (state === 'hover') {
                     reference.showing(false);
@@ -202,7 +207,9 @@ export function uiPreset(context) {
                         if (d3.event.keyCode === 13 && d3.select('.combobox').empty()) {
                             context.enter(modeBrowse(context));
                         }
-                    })
+                    });
+
+                d3.select(this)
                     .call(reference.body)
                     .select('.form-label-button-wrap')
                     .call(reference.button);
@@ -255,9 +262,12 @@ export function uiPreset(context) {
                 }
                 return placeholder.slice(0,3).join(', ') + ((placeholder.length > 3) ? '…' : '');
             })
-            .call(d3combobox().data(notShown)
+            .call(d3combobox()
+                .container(context.container())
+                .data(notShown)
                 .minItems(1)
-                .on('accept', show));
+                .on('accept', show)
+            );
 
 
         function show(field) {

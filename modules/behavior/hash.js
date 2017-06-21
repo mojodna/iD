@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
 import _ from 'lodash';
-import { utilQsString, utilStringQs } from '../util/index';
+import { modeBrowse } from '../modes';
+import { utilQsString, utilStringQs } from '../util';
 
 
 export function behaviorHash(context) {
@@ -14,8 +15,11 @@ export function behaviorHash(context) {
         if (args.length < 3 || args.some(isNaN)) {
             return true; // replace bogus hash
         } else if (s !== formatter(map).slice(1)) {
-            map.centerZoom([args[2],
-                Math.min(lat, Math.max(-lat, args[1]))], args[0]);
+            var mode = context.mode();
+            if (mode && mode.id.match(/^draw/) !== null) {
+                context.enter(modeBrowse(context));
+            }
+            map.centerZoom([args[2], Math.min(lat, Math.max(-lat, args[1]))], args[0]);
         }
     };
 
@@ -75,8 +79,13 @@ export function behaviorHash(context) {
 
         if (window.location.hash) {
             var q = utilStringQs(window.location.hash.substring(1));
-            if (q.id) context.zoomToEntity(q.id.split(',')[0], !q.map);
-            if (q.comment) context.storage('comment', q.comment);
+            if (q.id) {
+                context.zoomToEntity(q.id.split(',')[0], !q.map);
+            }
+            if (q.comment) {
+                context.storage('comment', q.comment);
+                context.storage('commentDate', Date.now());
+            }
             hashchange();
             if (q.map) hash.hadHash = true;
         }

@@ -536,6 +536,16 @@
                 }
             }
         },
+        "damage": {
+            "key": "damage",
+            "type": "combo",
+            "label": "Building Damage",
+            "options": [
+                "none",
+                "some",
+                "destroyed"
+            ]
+        },
         "date": {
             "key": "date",
             "type": "check",
@@ -821,6 +831,11 @@
             "type": "typeCombo",
             "label": "Type"
         },
+        "inscription": {
+            "key": "inscription",
+            "type": "textarea",
+            "label": "Inscription"
+        },
         "internet_access": {
             "key": "internet_access",
             "type": "combo",
@@ -848,7 +863,7 @@
         "kerb": {
             "key": "kerb",
             "type": "combo",
-            "label": "Curb Ramp"
+            "label": "Curb"
         },
         "lamp_type": {
             "key": "lamp_type",
@@ -1002,6 +1017,12 @@
             ],
             "snake_case": false
         },
+        "maxweight": {
+            "key": "maxweight",
+            "type": "combo",
+            "label": "Max Weight",
+            "snake_case": false
+        },
         "mtb/scale": {
             "key": "mtb:scale",
             "type": "combo",
@@ -1151,8 +1172,9 @@
         },
         "opening_hours": {
             "key": "opening_hours",
-            "type": "text",
-            "label": "Hours"
+            "type": "combo",
+            "label": "Hours",
+            "snake_case": false
         },
         "operator": {
             "key": "operator",

@@ -1,0 +1,6 @@
+{
+    "key": "damage",
+    "type": "combo",
+    "label": "Building Damage",
+    "options": ["none", "some", "destroyed"]
+}

@@ -92,10 +92,10 @@ export function uiInit(context) {
         var limiter = bar.append('div')
             .attr('class', 'limiter');
 
-        limiter
-            .append('div')
-            .attr('class', 'button-wrap joined col3')
-            .call(uiModes(context), limiter);
+        // limiter
+        //     .append('div')
+        //     .attr('class', 'button-wrap joined col3')
+        //     .call(uiModes(context), limiter);
 
         limiter
             .append('div')
@@ -197,6 +197,7 @@ export function uiInit(context) {
 
         aboutList
             .append('li')
+            .attr('class', 'version')
             .call(uiVersion(context));
 
         var issueLinks = aboutList
@@ -255,9 +256,7 @@ export function uiInit(context) {
         function pan(d) {
             return function() {
                 d3.event.preventDefault();
-                if (!context.inIntro()) {
-                    context.pan(d, 100);
-                }
+                context.pan(d, 100);
             };
         }
 

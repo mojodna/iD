@@ -13,7 +13,7 @@ import {
 export { uiFieldRadio as uiFieldStructureRadio };
 
 
-export function uiFieldRadio(field) {
+export function uiFieldRadio(field, context) {
     var dispatch = d3.dispatch('change'),
         taginfo = services.taginfo,
         placeholder = d3.select(null),
@@ -24,7 +24,6 @@ export function uiFieldRadio(field) {
         layerInput = d3.select(null),
         oldType = {},
         entity;
-
 
 
     function selectedKey() {
@@ -157,7 +156,10 @@ export function uiFieldRadio(field) {
 
         if (taginfo) {
             typeInput
-                .call(d3combobox().fetcher(typeFetcher));
+                .call(d3combobox()
+                    .container(context.container())
+                    .fetcher(typeFetcher)
+                );
         }
 
         typeInput
@@ -199,14 +201,14 @@ export function uiFieldRadio(field) {
 
         spin
             .append('button')
-            .datum(1)
-            .attr('class', 'increment')
+            .datum(-1)
+            .attr('class', 'decrement')
             .attr('tabindex', -1);
 
         spin
             .append('button')
-            .datum(-1)
-            .attr('class', 'decrement')
+            .datum(1)
+            .attr('class', 'increment')
             .attr('tabindex', -1);
 
         layerItem = layerItem

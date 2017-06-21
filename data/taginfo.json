@@ -508,6 +508,14 @@
             "value": "university"
         },
         {
+            "key": "amenity",
+            "value": "vending_machine"
+        },
+        {
+            "key": "vending",
+            "value": "news_papers"
+        },
+        {
             "key": "vending",
             "value": "cigarettes"
         },
@@ -525,7 +533,7 @@
         },
         {
             "key": "vending",
-            "value": "news_papers"
+            "value": "newspapers"
         },
         {
             "key": "vending",
@@ -542,10 +550,6 @@
         {
             "key": "vending",
             "value": "sweets"
-        },
-        {
-            "key": "amenity",
-            "value": "vending_machine"
         },
         {
             "key": "amenity",
@@ -876,6 +880,10 @@
         },
         {
             "key": "craft",
+            "value": "electronics_repair"
+        },
+        {
+            "key": "craft",
             "value": "gardener"
         },
         {
@@ -1120,6 +1128,10 @@
         {
             "key": "highway",
             "value": "cycleway"
+        },
+        {
+            "key": "highway",
+            "value": "elevator"
         },
         {
             "key": "highway",
@@ -1561,6 +1573,10 @@
         {
             "key": "sport",
             "value": "basketball"
+        },
+        {
+            "key": "sport",
+            "value": "beachvolleyball"
         },
         {
             "key": "sport",
@@ -2140,6 +2156,10 @@
         {
             "key": "shop",
             "value": "antiques"
+        },
+        {
+            "key": "shop",
+            "value": "appliance"
         },
         {
             "key": "shop",

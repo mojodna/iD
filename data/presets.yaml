@@ -406,6 +406,9 @@ en:
         types:
           'cycleway:left': Left side
           'cycleway:right': Right side
+      damage:
+        # damage=*
+        label: Building Damage
       date:
         # date=*
         label: Date
@@ -588,6 +591,9 @@ en:
       information:
         # information=*
         label: Type
+      inscription:
+        # inscription=*
+        label: Inscription
       internet_access:
         # internet_access=*
         label: Internet Access
@@ -610,7 +616,7 @@ en:
         label: SSID (Network Name)
       kerb:
         # kerb=*
-        label: Curb Ramp
+        label: Curb
       lamp_type:
         # lamp_type=*
         label: Type
@@ -715,6 +721,9 @@ en:
       maxstay:
         # maxstay=*
         label: Max Stay
+      maxweight:
+        # maxweight=*
+        label: Max Weight
       mtb/scale:
         # 'mtb:scale=*'
         label: Mountain Biking Difficulty
@@ -1897,6 +1906,10 @@ en:
         name: University Grounds
         # 'terms: college'
         terms: '<translate with synonyms or related terms for ''University Grounds'', separated by commas>'
+      amenity/vending_machine:
+        # amenity=vending_machine
+        name: Vending Machine
+        terms: '<translate with synonyms or related terms for ''Vending Machine'', separated by commas>'
       amenity/vending_machine/cigarettes:
         # 'amenity=vending_machine, vending=cigarettes'
         name: Cigarette Vending Machine
@@ -1920,6 +1933,9 @@ en:
       amenity/vending_machine/news_papers:
         # 'amenity=vending_machine, vending=news_papers'
         name: Newspaper Vending Machine
+      amenity/vending_machine/newspapers:
+        # 'amenity=vending_machine, vending=newspapers'
+        name: Newspaper Vending Machine
         # 'terms: newspaper'
         terms: '<translate with synonyms or related terms for ''Newspaper Vending Machine'', separated by commas>'
       amenity/vending_machine/parcel_pickup_dropoff:
@@ -1942,10 +1958,6 @@ en:
         name: Snack Vending Machine
         # 'terms: candy,gum,chip,pretzel,cookie,cracker'
         terms: '<translate with synonyms or related terms for ''Snack Vending Machine'', separated by commas>'
-      amenity/vending_machine/vending_machine:
-        # amenity=vending_machine
-        name: Vending Machine
-        terms: '<translate with synonyms or related terms for ''Vending Machine'', separated by commas>'
       amenity/veterinary:
         # amenity=veterinary
         name: Veterinary
@@ -2278,6 +2290,10 @@ en:
         name: Electrician
         # 'terms: power,wire'
         terms: '<translate with synonyms or related terms for ''Electrician'', separated by commas>'
+      craft/electronics_repair:
+        # craft=electronics_repair
+        name: Electronics Repair Shop
+        terms: '<translate with synonyms or related terms for ''Electronics Repair Shop'', separated by commas>'
       craft/gardener:
         # craft=gardener
         name: Gardener
@@ -2416,6 +2432,9 @@ en:
         # craft=winery
         name: Winery
         terms: '<translate with synonyms or related terms for ''Winery'', separated by commas>'
+      damage:
+        name: Building Damage
+        terms: '<translate with synonyms or related terms for ''Building Damage'', separated by commas>'
       embankment:
         # embankment=yes
         name: Embankment
@@ -2556,6 +2575,11 @@ en:
         name: Cycle Path
         # 'terms: bike'
         terms: '<translate with synonyms or related terms for ''Cycle Path'', separated by commas>'
+      highway/elevator:
+        # highway=elevator
+        name: Elevator
+        # 'terms: lift'
+        terms: '<translate with synonyms or related terms for ''Elevator'', separated by commas>'
       highway/footway:
         # highway=footway
         name: Foot Path
@@ -3059,6 +3083,11 @@ en:
         # 'leisure=pitch, sport=basketball'
         name: Basketball Court
         terms: '<translate with synonyms or related terms for ''Basketball Court'', separated by commas>'
+      leisure/pitch/beachvolleyball:
+        # 'leisure=pitch, sport=beachvolleyball'
+        name: Beach Volleyball Court
+        # 'terms: volleyball'
+        terms: '<translate with synonyms or related terms for ''Beach Volleyball Court'', separated by commas>'
       leisure/pitch/bowls:
         # 'leisure=pitch, sport=bowls'
         name: Bowling Green
@@ -3087,6 +3116,7 @@ en:
       leisure/pitch/soccer:
         # 'leisure=pitch, sport=soccer'
         name: Soccer Field
+        # 'terms: football'
         terms: '<translate with synonyms or related terms for ''Soccer Field'', separated by commas>'
       leisure/pitch/table_tennis:
         # 'leisure=pitch, sport=table_tennis'
@@ -3562,8 +3592,8 @@ en:
         name: Village
         terms: '<translate with synonyms or related terms for ''Village'', separated by commas>'
       point:
-        name: Point
-        terms: '<translate with synonyms or related terms for ''Point'', separated by commas>'
+        name: Assess Damage
+        terms: '<translate with synonyms or related terms for ''Assess Damage'', separated by commas>'
       power:
         # power=*
         name: Power
@@ -3710,6 +3740,11 @@ en:
         # shop=antiques
         name: Antiques Shop
         terms: '<translate with synonyms or related terms for ''Antiques Shop'', separated by commas>'
+      shop/appliance:
+        # shop=appliance
+        name: Appliance Store
+        # 'terms: air conditioner,appliance,dishwasher,dryer,freezer,fridge,grill,kitchen,oven,refrigerator,stove,washer,washing machine'
+        terms: '<translate with synonyms or related terms for ''Appliance Store'', separated by commas>'
       shop/art:
         # shop=art
         name: Art Store
@@ -3887,7 +3922,7 @@ en:
       shop/electronics:
         # shop=electronics
         name: Electronics Store
-        # 'terms: appliance,audio,computer,tv'
+        # 'terms: appliance,audio,blueray,camera,computer,dvd,home theater,radio,speaker,tv,video'
         terms: '<translate with synonyms or related terms for ''Electronics Store'', separated by commas>'
       shop/erotic:
         # shop=erotic
