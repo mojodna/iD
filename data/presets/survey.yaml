@@ -1,0 +1,5 @@
+schema_version: 0.0.1
+version: 2.2.2
+
+name: OSM
+description: Default OSM presets from iD
