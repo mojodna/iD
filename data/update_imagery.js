@@ -35,18 +35,30 @@ var blacklist = {
 var whitelist = [
     // Add custom sources here if needed.
     // Pre/Post event imagary - https://github.com/hotosm/iD/issues/1
-    {
-        "id": "2010-eq-pre-event",
-        "name": "2010 EQ pre-event imagery",
-        "type": "tms",
-        "url": "http://tiles.staging.openaerialmap.org/58efcec02d30b500119a84f4/0/{z}/{x}/{y}.png"
-    },
-    {
-        "id": "2010-eq-post-event",
-        "name": "2010 EQ post-event imagery",
-        "type": "tms",
-        "url": "http://tiles.staging.openaerialmap.org/58ef73b596b4910010327d45/0/{z}/{x}/{y}.png"
-    }
+{
+            "id": "2017-hur-post-event-centre",
+            "name": "2017 Hurricane Irma post-event imagery - centre",
+            "type": "tms",
+            "url": "https://tiles.openaerialmap.org/59ca252e23c8440011d7b224/0/cb0609db-299a-4f1d-af28-8f3408a6b7ae/{z}/{x}/{y}.png"
+        },
+        {
+            "id": "2017-hur-post-event-centre",
+            "name": "2017 Hurricane Irma post-event imagery - west",
+            "type": "tms",
+            "url": "https://tiles.openaerialmap.org/59ca252e23c8440011d7b224/0/ccb92b1e-a41b-4554-bb16-c3cc04f58f98/{z}/{x}/{y}.png"
+        },
+        {
+            "id": "2017-hur-post-event-centre",
+            "name": "2017 Hurricane Irma post-event imagery - east",
+            "type": "tms",
+            "url": "https://tiles.openaerialmap.org/59ca252e23c8440011d7b224/0/3939b494-b03d-40f4-bce5-5a49bb5e073b/{z}/{x}/{y}.png"
+        },
+        {
+            "id": "2017-hur-pre-event",
+            "name": "2017 Hurricane Irma pre-event imagery",
+            "type": "tms",
+            "url": "https://tiles.openaerialmap.org/59ba90ef23c8440011d7b194/0/53cf7018-0035-46b3-9fb1-f694ecf4c486/{z}/{x}/{y}.png"
+        }
 ];
 
 var descriptions = {
