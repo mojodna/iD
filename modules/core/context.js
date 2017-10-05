@@ -13,6 +13,7 @@ import { services } from '../services/index';
 import { uiInit } from '../ui/init';
 import { utilDetect } from '../util/detect';
 import { utilRebind } from '../util/rebind';
+import { utilCallWhenIdle } from '../util/index';
 
 
 export var areaKeys = {};
@@ -23,6 +24,8 @@ export function setAreaKeys(value) {
 
 
 export function coreContext() {
+    var context = {};
+    context.version = '2.4.1';
 
     // create a special translation that contains the keys in place of the strings
     var tkeys = _.cloneDeep(dataEn);
@@ -44,8 +47,7 @@ export function coreContext() {
     addTranslation('en', dataEn);
     setLocale('en');
 
-    var dispatch = d3.dispatch('enter', 'exit', 'change'),
-        context = {};
+    var dispatch = d3.dispatch('enter', 'exit', 'change');
 
     // https://github.com/openstreetmap/iD/issues/772
     // http://mathiasbynens.be/notes/localstorage-pattern#comment-9
@@ -82,29 +84,35 @@ export function coreContext() {
 
 
     /* Connection */
-    function entitiesLoaded(err, result) {
+    var entitiesLoaded = utilCallWhenIdle(function entitiesLoaded(err, result) {
         if (!err) history.merge(result.data, result.extent);
-    }
+    });
 
     context.preauth = function(options) {
-        connection.switch(options);
+        if (connection) {
+            connection.switch(options);
+        }
         return context;
     };
 
-    context.loadTiles = function(projection, dimensions, callback) {
+    context.loadTiles = utilCallWhenIdle(function(projection, dimensions, callback) {
         function done(err, result) {
             entitiesLoaded(err, result);
             if (callback) callback(err, result);
         }
-        connection.loadTiles(projection, dimensions, done);
-    };
+        if (connection) {
+            connection.loadTiles(projection, dimensions, done);
+        }
+    });
 
     context.loadEntity = function(id, callback) {
         function done(err, result) {
             entitiesLoaded(err, result);
             if (callback) callback(err, result);
         }
-        connection.loadEntity(id, done);
+        if (connection) {
+            connection.loadEntity(id, done);
+        }
     };
 
     context.zoomToEntity = function(id, zoomTo) {
@@ -135,7 +143,9 @@ export function coreContext() {
     context.minEditableZoom = function(_) {
         if (!arguments.length) return minEditableZoom;
         minEditableZoom = _;
-        connection.tileZoom(_);
+        if (connection) {
+            connection.tileZoom(_);
+        }
         return context;
     };
 
@@ -377,7 +387,6 @@ export function coreContext() {
 
 
     /* Init */
-    context.version = '2.2.1';
 
     context.projection = geoRawMercator();
     context.curtainProjection = geoRawMercator();

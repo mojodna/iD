@@ -1,10 +1,12 @@
 import * as d3 from 'd3';
 import _ from 'lodash';
 import { t } from '../util/locale';
+import { geoExtent } from '../geo';
 
-import { utilRebind } from '../util/rebind';
-import { utilBindOnce } from '../util/bind_once';
-import { utilGetDimensions } from '../util/dimensions';
+import {
+    modeBrowse,
+    modeSelect
+} from '../modes';
 
 import {
     svgAreas,
@@ -14,18 +16,20 @@ import {
     svgMidpoints,
     svgPoints,
     svgVertices
-} from '../svg/index';
+} from '../svg';
 
-import { geoExtent } from '../geo/index';
-import { modeSelect } from '../modes/select';
+import { uiFlash } from '../ui';
 
 import {
     utilFastMouse,
-    utilSetTransform,
-    utilFunctor
-} from '../util/index';
+    utilFunctor,
+    utilRebind,
+    utilSetTransform
+} from '../util';
 
-import { uiFlash } from '../ui/index';
+import { utilBindOnce } from '../util/bind_once';
+import { utilGetDimensions } from '../util/dimensions';
+
 
 
 export function rendererMap(context) {
@@ -60,8 +64,27 @@ export function rendererMap(context) {
             .on('zoom', zoomPan);
 
     var _selection = d3.select(null);
+    var isRedrawScheduled = false;
+    var pendingRedrawCall;
 
+    function scheduleRedraw() {
+        // Only schedule the redraw if one has not already been set.
+        if (isRedrawScheduled) return;
+        isRedrawScheduled = true;
+        var that = this;
+        var args = arguments;
+        pendingRedrawCall = requestIdleCallback(function () {
+            // Reset the boolean so future redraws can be set.
+            isRedrawScheduled = false;
+            redraw.apply(that, args);
+        }, { timeout: 1400 });
+    }
 
+    function cancelPendingRedraw() {
+        isRedrawScheduled = false;
+        window.cancelIdleCallback(pendingRedrawCall);
+    }
+        
     function map(selection) {
 
         _selection = selection;
@@ -69,8 +92,10 @@ export function rendererMap(context) {
         context
             .on('change.map', immediateRedraw);
 
-        context.connection()
-            .on('change.map', immediateRedraw);
+        var osm = context.connection();
+        if (osm) {
+            osm.on('change.map', immediateRedraw);
+        }
 
         context.history()
             .on('change.map', immediateRedraw)
@@ -267,6 +292,7 @@ export function rendererMap(context) {
     function editOff() {
         context.features().resetStats();
         surface.selectAll('.layer-osm *').remove();
+        context.enter(modeBrowse(context));
         dispatch.call('drawn', this, {full: true});
     }
 
@@ -316,7 +342,7 @@ export function rendererMap(context) {
             surface.interrupt();
             uiFlash().text(t('cannot_zoom'));
             setZoom(context.minEditableZoom(), true);
-            queueRedraw();
+            scheduleRedraw();
             dispatch.call('move', this, map);
             return;
         }
@@ -335,10 +361,11 @@ export function rendererMap(context) {
             });
         }
 
+        mousemove = event;
         transformed = true;
         transformLast = eventTransform;
         utilSetTransform(supersurface, tX, tY, scale);
-        queueRedraw();
+        scheduleRedraw();
 
         dispatch.call('move', this, map);
     }
@@ -395,11 +422,9 @@ export function rendererMap(context) {
     }
 
 
-    var queueRedraw = _.throttle(redraw, 750);
-
 
     var immediateRedraw = function(difference, extent) {
-        if (!difference && !extent) queueRedraw.cancel();
+        if (!difference && !extent) cancelPendingRedraw();
         redraw(difference, extent);
     };
 
@@ -568,7 +593,7 @@ export function rendererMap(context) {
         mouse = utilFastMouse(supersurface.node());
         setCenter(center);
 
-        queueRedraw();
+        scheduleRedraw();
         return map;
     };
 
@@ -597,7 +622,7 @@ export function rendererMap(context) {
             dispatch.call('move', this, map);
         }
 
-        queueRedraw();
+        scheduleRedraw();
         return map;
     };
 
@@ -617,7 +642,7 @@ export function rendererMap(context) {
             dispatch.call('move', this, map);
         }
 
-        queueRedraw();
+        scheduleRedraw();
         return map;
     };
 
@@ -640,7 +665,7 @@ export function rendererMap(context) {
             dispatch.call('move', this, map);
         }
 
-        queueRedraw();
+        scheduleRedraw();
         return map;
     };
 

@@ -1,4 +1,5 @@
 import * as d3 from 'd3';
+import _ from 'lodash';
 import { t, textDirection } from '../../util/locale';
 import { localize } from './helper';
 
@@ -55,14 +56,15 @@ export function uiIntro(context) {
         context.enter(modeBrowse(context));
 
         // Save current map state
-        var history = context.history().toJSON(),
+        var osm = context.connection(),
+            history = context.history().toJSON(),
             hash = window.location.hash,
             center = context.map().center(),
             zoom = context.map().zoom(),
             background = context.background().baseLayerSource(),
             overlays = context.background().overlayLayerSources(),
             opacity = d3.selectAll('#map .layer-background').style('opacity'),
-            loadedTiles = context.connection().loadedTiles(),
+            loadedTiles = osm && osm.loadedTiles(),
             baseEntities = context.history().graph().base().entities,
             countryCode = services.geocoder.countryCode;
 
@@ -70,7 +72,7 @@ export function uiIntro(context) {
         context.inIntro(true);
 
         // Load semi-real data used in intro
-        context.connection().toggle(false).reset();
+        if (osm) { osm.toggle(false).reset(); }
         context.history().reset();
         context.history().merge(d3.values(coreGraph().load(introGraph).entities));
         context.history().checkpoint('initial');
@@ -87,6 +89,13 @@ export function uiIntro(context) {
         var curtain = uiCurtain();
         selection.call(curtain);
 
+        // store that the user started the walkthrough..
+        context.storage('walkthrough_started', 'yes');
+
+        // restore previous walkthrough progress..
+        var storedProgress = context.storage('walkthrough_progress') || '';
+        var progress = storedProgress.split(';').filter(Boolean);
+
         var chapters = chapterFlow.map(function(chapter, i) {
             var s = chapterUi[chapter](context, curtain.reveal)
                 .on('done', function() {
@@ -101,19 +110,33 @@ export function uiIntro(context) {
                         d3.select('button.chapter-' + next)
                             .classed('next', true);
                     }
+
+                    // store walkthrough progress..
+                    progress.push(chapter);
+                    context.storage('walkthrough_progress', _.uniq(progress).join(';'));
                 });
             return s;
         });
 
         chapters[chapters.length - 1].on('startEditing', function() {
+            // store walkthrough progress..
+            progress.push('startEditing');
+            context.storage('walkthrough_progress', _.uniq(progress).join(';'));
+
+            // store if walkthrough is completed..
+            var incomplete = _.difference(chapterFlow, progress);
+            if (!incomplete.length) {
+                context.storage('walkthrough_completed', 'yes');
+            }
+
             curtain.remove();
             navwrap.remove();
             d3.selectAll('#map .layer-background').style('opacity', opacity);
-            context.connection().toggle(true).reset().loadedTiles(loadedTiles);
+            if (osm) { osm.toggle(true).reset().loadedTiles(loadedTiles); }
             context.history().reset().merge(d3.values(baseEntities));
             context.background().baseLayerSource(background);
             overlays.forEach(function (d) { context.background().toggleOverlayLayer(d); });
-            if (history) context.history().fromJSON(history, false);
+            if (history) { context.history().fromJSON(history, false); }
             context.map().centerZoom(center, zoom);
             window.location.replace(hash);
             services.geocoder.countryCode = countryCode;

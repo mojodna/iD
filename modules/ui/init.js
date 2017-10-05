@@ -17,6 +17,7 @@ import { uiFullScreen } from './full_screen';
 import { uiGeolocate } from './geolocate';
 import { uiHelp } from './help';
 import { uiInfo } from './info';
+import { uiIntro } from './intro';
 import { uiLoading } from './loading';
 import { uiMapData } from './map_data';
 import { uiMapInMap } from './map_in_map';
@@ -24,6 +25,7 @@ import { uiModes } from './modes';
 import { uiRestore } from './restore';
 import { uiSave } from './save';
 import { uiScale } from './scale';
+import { uiShortcuts } from './shortcuts';
 import { uiSidebar } from './sidebar';
 import { uiSpinner } from './spinner';
 import { uiSplash } from './splash';
@@ -79,10 +81,7 @@ export function uiInit(context) {
             .call(map);
 
         content
-            .call(uiMapInMap(context));
-
-        content
-            .append('div')
+            .call(uiMapInMap(context))
             .call(uiInfo(context));
 
         bar
@@ -262,7 +261,7 @@ export function uiInit(context) {
 
 
         // pan amount
-        var pa = 10;
+        var pa = 80;
 
         var keybinding = d3keybinding('main')
             .on('⌫', function() { d3.event.preventDefault(); })
@@ -281,25 +280,36 @@ export function uiInit(context) {
         context.enter(modeBrowse(context));
 
         if (!uiInitCounter++) {
+            if (!hash.startWalkthrough) {
+                context.container()
+                    .call(uiSplash(context))
+                    .call(uiRestore(context));
+            }
+
             context.container()
-                .call(uiSplash(context))
-                .call(uiRestore(context));
+                .call(uiShortcuts(context));
         }
 
-        var authenticating = uiLoading(context)
-            .message(t('loading_auth'))
-            .blocking(true);
+        var osm = context.connection(),
+            auth = uiLoading(context).message(t('loading_auth')).blocking(true);
 
-        context.connection()
-            .on('authLoading.ui', function() {
-                context.container()
-                    .call(authenticating);
-            })
-            .on('authDone.ui', function() {
-                authenticating.close();
-            });
+        if (osm && auth) {
+            osm
+                .on('authLoading.ui', function() {
+                    context.container()
+                        .call(auth);
+                })
+                .on('authDone.ui', function() {
+                    auth.close();
+                });
+        }
 
         uiInitCounter++;
+
+        if (hash.startWalkthrough) {
+            hash.startWalkthrough = false;
+            context.container().call(uiIntro(context));
+        }
     }
 
 

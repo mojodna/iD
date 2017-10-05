@@ -12,6 +12,7 @@ export * from './services/index';
 export * from './svg/index';
 export * from './ui/fields/index';
 export * from './ui/intro/index';
+export * from './ui/panels/index';
 export * from './ui/index';
 export * from './util/index';
 export * from './lib/index';
@@ -36,6 +37,7 @@ export { rendererFeatures as Features } from './renderer/features';
 export { rendererMap as Map } from './renderer/map';
 export { rendererTileLayer as TileLayer } from './renderer/tile_layer';
 export { utilDetect as Detect } from './util/detect';
+export { uiPresetEditor as uiPreset } from './ui/preset_editor';
 
 export var debug = false;
 

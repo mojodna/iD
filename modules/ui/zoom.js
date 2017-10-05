@@ -71,13 +71,14 @@ export function uiZoom(context) {
 
         var keybinding = d3keybinding('zoom');
 
-        _.each(['=','ffequals','plus','ffplus'], function(key) {
-            keybinding.on([key, '⇧' + key], zoomIn);
-            keybinding.on([uiCmd('⌘' + key), uiCmd('⌘⇧' + key)], zoomInFurther);
+       _.each(['plus', 'ffplus', '=', 'ffequals'], function(key) {
+            keybinding.on([key], zoomIn);
+            keybinding.on([uiCmd('⌘' + key)], zoomInFurther);
         });
-        _.each(['-','ffminus','dash'], function(key) {
-            keybinding.on([key, '⇧' + key], zoomOut);
-            keybinding.on([uiCmd('⌘' + key), uiCmd('⌘⇧' + key)], zoomOutFurther);
+
+        _.each(['_', '-', 'ffminus', 'dash'], function(key) {
+            keybinding.on([key], zoomOut);
+            keybinding.on([uiCmd('⌘' + key)], zoomOutFurther);
         });
 
         d3.select(document)

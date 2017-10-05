@@ -2,14 +2,15 @@ import * as d3 from 'd3';
 import marked from 'marked';
 import { d3keybinding } from '../lib/d3.keybinding.js';
 import { t, textDirection } from '../util/locale';
-import { svgIcon } from '../svg/index';
-import { uiIntro } from './intro/index';
+import { svgIcon } from '../svg';
+import { uiIntro } from './intro';
+import { uiShortcuts } from './shortcuts';
 import { uiTooltipHtml } from './tooltipHtml';
 import { tooltip } from '../util/tooltip';
 
 
 export function uiHelp(context) {
-    var key = 'H';
+    var key = t('help.key');
 
     var docKeys = [
         'help.help',
@@ -135,6 +136,11 @@ export function uiHelp(context) {
         }
 
 
+        function clickShortcuts() {
+            context.container().call(uiShortcuts(context), true);
+        }
+
+
         var pane = selection.append('div')
                 .attr('class', 'help-wrap map-overlay fillL col5 content hide'),
             tooltipBehavior = tooltip()
@@ -159,6 +165,21 @@ export function uiHelp(context) {
             .append('a')
             .html(function(d) { return d.title; })
             .on('click', clickHelp);
+
+        var shortcuts = toc
+            .append('li')
+            .attr('class', 'shortcuts')
+            .call(tooltip()
+                .html(true)
+                .title(uiTooltipHtml(t('shortcuts.tooltip'), '?'))
+                .placement('top')
+            )
+            .append('a')
+            .on('click', clickShortcuts);
+
+        shortcuts
+            .append('div')
+            .text(t('shortcuts.title'));
 
         var walkthrough = toc
             .append('li')
@@ -193,8 +214,7 @@ export function uiHelp(context) {
 
         var keybinding = d3keybinding('help')
             .on(key, toggle)
-            .on('B', hide)
-            .on('F', hide);
+            .on([t('background.key'), t('map_data.key')], hide);
 
         d3.select(document)
             .call(keybinding);

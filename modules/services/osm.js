@@ -11,7 +11,7 @@ import {
     osmWay
 } from '../osm';
 
-import { utilRebind } from '../util';
+import { utilRebind, utilIdleWorker } from '../util';
 
 
 var dispatch = d3.dispatch('authLoading', 'authDone', 'change', 'loading', 'loaded'),
@@ -19,6 +19,7 @@ var dispatch = d3.dispatch('authLoading', 'authDone', 'change', 'loading', 'load
     blacklists = ['.*\.google(apis)?\..*/(vt|kh)[\?/].*([xyz]=.*){3}.*'],
     inflight = {},
     loadedTiles = {},
+    entityCache = {},
     tileZoom = 16,
     oauth = osmAuth({
         url: urlroot,
@@ -100,60 +101,72 @@ function getVisible(attrs) {
 
 
 var parsers = {
-    node: function nodeData(obj) {
+    node: function nodeData(obj, uid) {
         var attrs = obj.attributes;
         return new osmNode({
-            id: osmEntity.id.fromOSM('node', attrs.id.value),
-            loc: getLoc(attrs),
+            id:uid,
+            visible: getVisible(attrs),
             version: attrs.version.value,
+            changeset: attrs.changeset && attrs.changeset.value,
+            timestamp: attrs.timestamp && attrs.timestamp.value,
             user: attrs.user && attrs.user.value,
-            tags: getTags(obj),
-            visible: getVisible(attrs)
+            uid: attrs.uid && attrs.uid.value,
+            loc: getLoc(attrs),
+            tags: getTags(obj)
         });
     },
 
-    way: function wayData(obj) {
+    way: function wayData(obj, uid) {
         var attrs = obj.attributes;
         return new osmWay({
-            id: osmEntity.id.fromOSM('way', attrs.id.value),
+            id: uid,
+            visible: getVisible(attrs),
             version: attrs.version.value,
+            changeset: attrs.changeset && attrs.changeset.value,
+            timestamp: attrs.timestamp && attrs.timestamp.value,
             user: attrs.user && attrs.user.value,
+            uid: attrs.uid && attrs.uid.value,
             tags: getTags(obj),
             nodes: getNodes(obj),
-            visible: getVisible(attrs)
         });
     },
 
-    relation: function relationData(obj) {
+    relation: function relationData(obj, uid) {
         var attrs = obj.attributes;
         return new osmRelation({
-            id: osmEntity.id.fromOSM('relation', attrs.id.value),
+            id: uid,
+            visible: getVisible(attrs),
             version: attrs.version.value,
+            changeset: attrs.changeset && attrs.changeset.value,
+            timestamp: attrs.timestamp && attrs.timestamp.value,
             user: attrs.user && attrs.user.value,
+            uid: attrs.uid && attrs.uid.value,
             tags: getTags(obj),
-            members: getMembers(obj),
-            visible: getVisible(attrs)
+            members: getMembers(obj)
         });
     }
 };
 
 
-function parse(xml) {
+function parse(xml, callback, options) {
+    options = _.extend({ cache: true }, options);
     if (!xml || !xml.childNodes) return;
 
     var root = xml.childNodes[0],
-        children = root.childNodes,
-        entities = [];
+        children = root.childNodes;
 
-    for (var i = 0, l = children.length; i < l; i++) {
-        var child = children[i],
-            parser = parsers[child.nodeName];
+    function parseChild(child) {
+        var parser = parsers[child.nodeName];
         if (parser) {
-            entities.push(parser(child));
+            var uid = osmEntity.id.fromOSM(child.nodeName, child.attributes.id.value);
+            if (options.cache && entityCache[uid]) {
+                return null;
+            }
+            return parser(child, uid);
         }
     }
 
-    return entities;
+    utilIdleWorker(children, parseChild, callback);
 }
 
 
@@ -169,6 +182,7 @@ export default {
         userDetails = undefined;
         rateLimitError = undefined;
         _.forEach(inflight, abortRequest);
+        entityCache = {};
         loadedTiles = {};
         inflight = {};
         return this;
@@ -194,12 +208,18 @@ export default {
     },
 
 
+    historyURL: function(entity) {
+        return urlroot + '/' + entity.type + '/' + entity.osmId() + '/history';
+    },
+
+
     userURL: function(username) {
         return urlroot + '/user/' + username;
     },
 
 
-    loadFromAPI: function(path, callback) {
+    loadFromAPI: function(path, callback, options) {
+        options = _.extend({ cache: true }, options);
         var that = this;
 
         function done(err, xml) {
@@ -223,7 +243,15 @@ export default {
                 }
 
                 if (callback) {
-                    callback(err, parse(xml));
+                    if (err) return callback(err, null);
+                    parse(xml, function (entities) {
+                        if (options.cache) {
+                            for (var i in entities) {
+                                entityCache[entities[i].id] = true;
+                            }
+                        }
+                        callback(null, entities);
+                    }, options);
                 }
             }
         }
@@ -239,42 +267,49 @@ export default {
 
     loadEntity: function(id, callback) {
         var type = osmEntity.id.type(id),
-            osmID = osmEntity.id.toOSM(id);
+            osmID = osmEntity.id.toOSM(id),
+            options = { cache: false };
 
         this.loadFromAPI(
             '/api/0.6/' + type + '/' + osmID + (type !== 'node' ? '/full' : ''),
             function(err, entities) {
                 if (callback) callback(err, { data: entities });
-            }
+            },
+            options
         );
     },
 
 
     loadEntityVersion: function(id, version, callback) {
         var type = osmEntity.id.type(id),
-            osmID = osmEntity.id.toOSM(id);
+            osmID = osmEntity.id.toOSM(id),
+            options = { cache: false };
 
         this.loadFromAPI(
             '/api/0.6/' + type + '/' + osmID + '/' + version,
             function(err, entities) {
                 if (callback) callback(err, { data: entities });
-            }
+            },
+            options
         );
     },
 
 
     loadMultiple: function(ids, callback) {
         var that = this;
+
         _.each(_.groupBy(_.uniq(ids), osmEntity.id.type), function(v, k) {
             var type = k + 's',
-                osmIDs = _.map(v, osmEntity.id.toOSM);
+                osmIDs = _.map(v, osmEntity.id.toOSM),
+                options = { cache: false };
 
             _.each(_.chunk(osmIDs, 150), function(arr) {
                 that.loadFromAPI(
                     '/api/0.6/' + type + '?' + type + '=' + arr.join(),
                     function(err, entities) {
                         if (callback) callback(err, { data: entities });
-                    }
+                    },
+                    options
                 );
             });
         });
@@ -347,10 +382,18 @@ export default {
                 image_url = img[0].getAttribute('href');
             }
 
+            var changesets = u.getElementsByTagName('changesets'),
+                changesets_count = 0;
+
+            if (changesets && changesets[0] && changesets[0].getAttribute('count')) {
+                changesets_count = changesets[0].getAttribute('count');
+            }
+
             userDetails = {
+                id: u.attributes.id.value,
                 display_name: u.attributes.display_name.value,
                 image_url: image_url,
-                id: u.attributes.id.value
+                changesets_count: changesets_count
             };
 
             callback(undefined, userDetails);

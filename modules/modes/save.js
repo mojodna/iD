@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
 import _ from 'lodash';
 
+import { d3keybinding } from '../lib/d3.keybinding.js';
 import { t } from '../util/locale';
 import { JXON } from '../util/jxon';
 
@@ -34,9 +35,11 @@ export function modeSave(context) {
         id: 'save'
     };
 
+    var keybinding = d3keybinding('select');
+
     var commit = uiCommit(context)
-            .on('cancel', cancel)
-            .on('save', save);
+        .on('cancel', cancel)
+        .on('save', save);
 
 
     function cancel() {
@@ -46,7 +49,8 @@ export function modeSave(context) {
 
     function save(changeset, tryAgain) {
 
-        var loading = uiLoading(context).message(t('save.uploading')).blocking(true),
+        var osm = context.connection(),
+            loading = uiLoading(context).message(t('save.uploading')).blocking(true),
             history = context.history(),
             origChanges = history.changes(actionDiscardTags(history.difference())),
             localGraph = context.graph(),
@@ -57,6 +61,8 @@ export function modeSave(context) {
             conflicts = [],
             errors = [];
 
+        if (!osm) return;
+
         if (!tryAgain) {
             history.perform(actionNoop());  // checkpoint
         }
@@ -64,7 +70,7 @@ export function modeSave(context) {
         context.container().call(loading);
 
         if (toCheck.length) {
-            context.connection().loadMultiple(toLoad, loaded);
+            osm.loadMultiple(toLoad, loaded);
         } else {
             upload();
         }
@@ -119,7 +125,7 @@ export function modeSave(context) {
 
                 if (loadMore.length) {
                     toLoad.push.apply(toLoad, loadMore);
-                    context.connection().loadMultiple(loadMore, loaded);
+                    osm.loadMultiple(loadMore, loaded);
                 }
 
                 if (!toLoad.length) {
@@ -134,7 +140,7 @@ export function modeSave(context) {
                 return { id: id, text: text, action: function() { history.replace(action); } };
             }
             function formatUser(d) {
-                return '<a href="' + context.connection().userURL(d) + '" target="_blank">' + d + '</a>';
+                return '<a href="' + osm.userURL(d) + '" target="_blank">' + d + '</a>';
             }
             function entityName(entity) {
                 return utilDisplayName(entity) || (utilDisplayType(entity.id) + ' ' + entity.id);
@@ -201,7 +207,7 @@ export function modeSave(context) {
             } else {
                 var changes = history.changes(actionDiscardTags(history.difference()));
                 if (changes.modified.length || changes.created.length || changes.deleted.length) {
-                    context.connection().putChangeset(changeset, changes, uploadCallback);
+                    osm.putChangeset(changeset, changes, uploadCallback);
                 } else {        // changes were insignificant or reverted by user
                     d3.select('.inspector-wrap *').remove();
                     loading.close();
@@ -357,13 +363,22 @@ export function modeSave(context) {
             context.ui().sidebar.show(commit);
         }
 
+        keybinding
+            .on('⎋', cancel, true);
+
+        d3.select(document)
+            .call(keybinding);
+
         context.container().selectAll('#content')
             .attr('class', 'inactive');
 
-        if (context.connection().authenticated()) {
+        var osm = context.connection();
+        if (!osm) return;
+
+        if (osm.authenticated()) {
             done();
         } else {
-            context.connection().authenticate(function(err) {
+            osm.authenticate(function(err) {
                 if (err) {
                     cancel();
                 } else {
@@ -375,6 +390,8 @@ export function modeSave(context) {
 
 
     mode.exit = function() {
+        keybinding.off();
+
         context.container().selectAll('#content')
             .attr('class', 'active');
 
