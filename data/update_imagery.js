@@ -50,7 +50,7 @@ var whitelist = [
 ];
 
 
-whitelist.concat(sources).forEach(function(source) {
+sources.concat(whitelist).forEach(function(source) {
     if (source.type !== 'tms' && source.type !== 'bing') return;
     if (source.id in blacklist) return;
 
